@@ -47,15 +47,17 @@
 </nav>
 
 <div class="container">
+	<form method="POST">
+		
 	<div class="row">
 		<h2 class="text-center">Inscripcion de Grupo</h2>
 		<div class="col-lg-3">
 			<label>Nombre de Grupo:</label>
-			<input type="text" class="form-control">
+			<input type="text" name="nomGrupo" class="form-control">
 			<label>Numero de Grupo:</label>
-			<input type="text" class="form-control">
+			<input type="text" name="numGrupo" class="form-control">
 			<label>Fecha de Fundacion</label>
-			<input type="date" class="form-control">
+			<input type="date" name="fechFundacion" class="form-control">
 			<label>Exclusivo:</label>
 			<br>
 			<label>
@@ -68,11 +70,11 @@
 			</label>
 			<br>
 			<label>Lugar de Reunion:</label>
-			<input type="text" class="form-control">	
+			<input type="text" name="lugarReunion" class="form-control">	
 			<label>Propietario Lugar:</label>
-			<input type="text" class="form-control">	
+			<input type="text" name="propLugar" class="form-control">	
 			<label>Telefono:</label>
-			<input type="text" class="form-control">	
+			<input type="text" name="telefono" class="form-control">	
 		</div>	
 		<div class="col-lg-4"> 
 			<label>Municipio:</label>
@@ -94,24 +96,23 @@
 				</select>
 			<br>	
 			<label>Calle:</label>
-			<input type="text" class="form-control">
+			<input type="text" name="calle" class="form-control">
 			<br>	
 			<label>Numero de Casa:</label>
-			<input type="text" class="form-control">
+			<input type="text" name="numCasa" class="form-control">
 			<br>
 			<label>Colonia:</label>
-			<input type="text" class="form-control">
+			<input type="text" name="colonia" class="form-control">
 			<br>
-			<label>Complemento:</label>	
-			<input type="text" class="form-control">
+			
 			<br>
 		</div>
 		<div class="col-lg-4">
 				<div id="map" >
 			
 				</div>
-				<input type="hidden" id="txt_lat" class="form-control">
-				<input type="hidden"  id="txt_lng" class="form-control">
+				<input type="hidden" name="txt_lat" id="txt_lat" class="form-control">
+				<input type="hidden" name="txt_lng" id="txt_lng" class="form-control">
 				<br>
 				<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Cancelar</a>
 				<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Guardar</a>
@@ -123,6 +124,7 @@
 		
 
 
+	</form>
 
 </div>
 
