@@ -77,8 +77,14 @@
 				<input type="text" name="telefono" class="form-control">	
 			</div>	
 			<div class="col-lg-4"> 
+				<label>Departamento:</label>
+					<select class="form-control">
+						<option>San Salvador</option>
+						<option>La Libertad</option>
+					</select>
+				<br>
 				<label>Municipio:</label>
-				<select>
+				<select class="form-control">
 					<option>
 						San Marcos
 					</option>
@@ -87,13 +93,9 @@
 					</option>
 						
 				</select>
-				<br>
-				<br>
-				<label>Departamento:</label>
-					<select>
-						<option>San Salvador</option>
-						<option>La Libertad</option>
-					</select>
+
+				
+				
 				<br>	
 				<label>Calle:</label>
 				<input type="text" name="calle" class="form-control">
