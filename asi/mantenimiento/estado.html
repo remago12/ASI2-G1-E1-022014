@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Solicitud de Miembro</title>
+	<title>Estado</title>
 
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -43,49 +43,53 @@
     <div class="container">
       <div class="row">
           <div class="col-md-4">
-            <h1>Listado de Bancos</h1>
-            <select class="form-control">
-              <option>
-                Nuevo Banco
-
-              </option>
-              <option>
-                Banco Davivienda
-              </option>
-            </select><br>
+            <h1>Lista de Estados.</h1>
             <label>
               Nombre:
             </label> 
-            <input type="text" class="form-control" name="nomBanco">
+            <input type="text" class="form-control" name="nomEstado">
+            <br>
             <label>
-              Numero de Cuenta:
+              Pertenece a:
             </label>
-            <input type="text" class="form-control" name="numCuenta">
+            <select class="form-control">
+              <option>
+                Solicitud
+              </option>
+            </select>
             <br>
             <button class="btn btn-success ">Cancelar</button>
-            <button class="btn btn-success" >Guardar</button>
+            <button class="btn btn-warning">Modificar</button>
+            <button class="btn btn-success" >Nuevo</button>
           </div>
           <div class="col-md-4">
+            <br>
+          <br>
             <table class="table table-hover">
               <thead>
             <tr>
-              <th>Nombre de Banco</th>
-              <th>Numero De Cuenta</th>
+              <th>Nombre del Estado</th>
+              <th>Pertenece a</th>
             </tr>
           </thead>
           <tbody>
               <tr>
-              
               <td>
-                Banco Davivienda
+              Pendiente de Pago
               </td>
               <td>
-                00909878-8
+              
+              Solicitud 
               </td>
-              
-              
             </tr>            
-
+            <tr>
+              <td>
+                En espera
+              </td>
+              <td>
+                Solicitud
+              </td>
+            </tr>
           </tbody>
         </table>
             
