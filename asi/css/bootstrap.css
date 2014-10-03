@@ -18,6 +18,13 @@ background-color:#DF38B1  !important;
 h2{
   padding: 0.7% !important;
 }
+.log{
+  /*padding: 0% !important;*/
+  margin: 0% !important;
+}
+.log1{
+  padding: 0% !important;
+}
 .borde{
   border: 1px solid black;
 }
