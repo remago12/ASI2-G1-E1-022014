@@ -10,6 +10,9 @@
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link type="text/css" href="../css/mapLog.css" rel="stylesheet" media="all" />
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
+  <script type="text/javascript" src="../js/mapLog.js"></script>
 </head>
 <meta charset="UTF-8">
 <body>
@@ -31,12 +34,14 @@
       
       <br>
       <ul class="nav navbar-nav navbar-right">
+      
+      <!--
         <li><a href="index.html">Inicio</a></li>
         <li><a href="solicitudes_de_inscripcion.html">Inscripciones</a></li>
 
         <li><a href="solicitudes_renovacion.html">Renovacion</a></li>
-        <!--<li><a href="grupos_scout.html">Grupos Scout</a></li> -->
-        <li><a href="miembros_scout.html">Miembros Scout</a></li>
+        <li><a href="grupos_scout.html">Grupos Scout</a></li>-->
+        <li ><a href="#" data-toggle="modal" data-target="#myModal">Ingresar</a></li>
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
 
       </ul>
@@ -46,35 +51,49 @@
   </div><!-- /.container-fluid -->
 </nav>
       
-  <class class="container">
+  <class class="container" id="log">
     <div class="row">
+        <div class="col-md-12">
+          <div id="map" >
       
-      <form class="form-horizontal" role="form">
-        <div class="col-md-4 col-md-offset-4">
-          <h1 class="text-center">Iniciar Sesion</h1>
-          <label>Usuario:</label>
-          <input type="text" placeholder="usuario" class="form-control">
-          <label>Contraseña:</label>
-          <input type="password" placeholder="contraseña" class="form-control">
-          <br>
-          <div class="row">
-            <div class="col-md-8 col-md-offset-4"> 
-            <button class="btn btn-primary">
-            Cancelar
-          </button>
-          <button class="btn btn-primary">
-            Entrar
-          </button>
-            <a href="inscripcion_m.html">Registrate</a>
-
-          </div>  
           </div>
-          
-        
-      </form>
+          <input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
+    <input type="hidden" name="c_y" class="form-control" id="txt_lng" placeholder="Coordenadas en y">
+              
+        </div>
+    </div>
     </div>
         </div>
-
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel">Ingresa</h4>
+          </div>
+          <div class="modal-body">
+            <class class="row">
+              
+            <form>
+              <label>
+                Usuario:
+              </label>
+              <input type="text" placeholder="Usuario"  class="form-control"  >
+              <label>
+                Contrasea:
+              </label>
+              <input type="password" placeholder="contrase;a" class="form-control" >
+            </form>
+            </class>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
       
 
