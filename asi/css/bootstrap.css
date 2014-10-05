@@ -11,15 +11,20 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
+
+
 li:hover
 {
 background-color:#DF38B1  !important;
 }
+.nohov:hover{
+  background-color: #8F2471 !important;
+}
+
 h2{
   padding: 0.7% !important;
 }
 .log{
-  /*padding: 0% !important;*/
   margin: 0% !important;
 }
 .log1{
