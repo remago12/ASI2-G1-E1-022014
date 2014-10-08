@@ -22,8 +22,8 @@ include_once ("adodb/adodb-exceptions.inc.php");
 $driver   = "mysql";
 $host     = "localhost";
 $scheme   = "scout";
-$user     = "root";
-$password = 'toor';
+$user     = "asi2";
+$password = 'equipo1';
 
 // Definir el objeto de la conexion
 $DATA = null;

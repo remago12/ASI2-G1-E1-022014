@@ -17,56 +17,47 @@
 <meta charset="UTF-8">
 <body>
 
-<nav class="navbar navbar-default log" role="navigation">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
-      <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
-      
-    </div>
+  <nav class="navbar navbar-default log" role="navigation">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
+        <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a>       
+      </div>
       
       <br>
-      <ul class="nav navbar-nav navbar-right">
-      
-      <!--
+      <ul class="nav navbar-nav navbar-right">   
+        <!--
         <li><a href="index.html">Inicio</a></li>
         <li><a href="solicitudes_de_inscripcion.html">Inscripciones</a></li>
-
         <li><a href="solicitudes_renovacion.html">Renovacion</a></li>
         <li><a href="grupos_scout.html">Grupos Scout</a></li>-->
         <li class="nohov"><a href="inscripcion_m.html"> <button class="btn btn-default">Registrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
-        
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
-
       </ul>
 
-    </div><!-- /.navbar-collapse -->
+      </div><!-- /.navbar-collapse -->
 
-  </div><!-- /.container-fluid -->
-</nav>
-      
+    </div><!-- /.container-fluid -->
+  </nav>
+        
   <class class="container log1">
     <div class="row">
-        <div class="col-md-12">
-          <div id="map" >
-      
-          </div>
-          <input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
-    <input type="hidden" name="c_y" class="form-control" id="txt_lng" placeholder="Coordenadas en y">
-              
+      <div class="col-md-12">
+        <div id="map" >
         </div>
+        <input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
+        <input type="hidden" name="c_y" class="form-control" id="txt_lng" placeholder="Coordenadas en y">    
+      </div>
     </div>
-    </div>
-        </div>
-    <!-- Modal -->
+            <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -75,18 +66,17 @@
             <h4 class="modal-title" id="myModalLabel">Ingresa</h4>
           </div>
           <div class="modal-body">
-            <class class="row">
-              
-            <form>
-              <label>
-                Usuario:
-              </label>
-              <input type="text" placeholder="Usuario"  class="form-control"  >
-              <label>
-                Contrasea:
-              </label>
-              <input type="password" placeholder="contrase;a" class="form-control" >
-            </form>
+            <class class="row">    
+              <form method="POST">
+                <label>
+                  Usuario:
+                </label>
+                <input type="text" placeholder="Usuario" name="username_id" class="form-control"  >
+                <label>
+                  Contraseña:
+                </label>
+                <input type="password" placeholder="contraseña" name="password" class="form-control" >
+              </form>
             </class>
           </div>
           <div class="modal-footer">
@@ -97,10 +87,5 @@
         </div>
       </div>
     </div>
-
-      
-
-
-
 </body>
 </html>
