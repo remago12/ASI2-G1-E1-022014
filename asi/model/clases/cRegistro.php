@@ -43,6 +43,16 @@ class Registro
 			}
 		}
 
+		function seleccionar_departamento2(){
+			$result = mysql_query("select * from departamento");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
 function seleccionar_municipio()
 	{
 		
