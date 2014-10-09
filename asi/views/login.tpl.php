@@ -66,7 +66,7 @@
             <h4 class="modal-title" id="myModalLabel">Ingresa</h4>
           </div>
           <div class="modal-body">
-            <class class="row">    
+            <div class="row">    
               <form method="POST">
                 <label>
                   Usuario:
@@ -76,13 +76,13 @@
                   Contraseña:
                 </label>
                 <input type="password" placeholder="contraseña" name="password" class="form-control" >
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-primary">Entrar</button>
+                  <a href="inscripcion_m.html">Registrate</a>
+                </div>
               </form>
-            </class>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Entrar</button>
-            <a href="inscripcion_m.html">Registrate</a>
+            </div>
           </div>
         </div>
       </div>
