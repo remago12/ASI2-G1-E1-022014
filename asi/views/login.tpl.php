@@ -77,8 +77,13 @@
                 </label>
                 <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
                 <div class="modal-footer">
+<<<<<<< HEAD
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                   <button value="Entrar" class="btn btn-primary">Entrar</button>
+=======
+                  <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                  <button  class="btn btn-primary">Entrar</button>
+>>>>>>> 929b4a2ec3afa4b69cf13b6cd333cb56a9ad9d30
                   <a href="inscripcion_m.html">Registrate</a>
                 </div>
               </form>
