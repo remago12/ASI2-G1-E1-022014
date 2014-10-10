@@ -11,8 +11,9 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 	
-	case 'num_grupo':
-		# code...
+	case 'municipio':
+		$response = Registro::seleccionar_municipio2();
+		echo json_encode($response);
 		break;
 }
 }

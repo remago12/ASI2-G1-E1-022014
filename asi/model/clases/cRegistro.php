@@ -52,6 +52,16 @@ class Registro
 				return array('rows'=>$rows);
 				
 		}
+			function seleccionar_municipio2(){
+			$result = mysql_query("select * from municipio");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
 
 function seleccionar_municipio()
 	{
@@ -71,6 +81,7 @@ function seleccionar_municipio()
 				return false;
 			}
 			}
+
 			    
 function seleccionar_grupos()
 {

@@ -1,18 +1,32 @@
 $(document).ready(function(){
 
-	$('#departamento').click(function(){
+	$('#departamento').ready(function(){
 $.post("../model/clases/ajax.php",{action:"departamento"},function(data){
 var IdDept="";
 var NomDept ="";
-cadena ="<option>HOla</option>";
-$('#combodep').html(cadena);
-for(i=0;i<data.rows.lenght;i++){
-IdDeot=data.rows[i]["0"];
+var cadena ="";
+for(i=0; i < data.rows.length;i++){
+IdDept=data.rows[i]["0"];
 NomDept=data.rows[i]["1"];
-cadena ="<option>"+NomDept+"</option>";
-$('#departamento').append(cadena);
+cadena=cadena + "<option value='"+IdDept+"'>"+NomDept+"</option>";
+$('#departamento').html(cadena); 
 }},'json');
 });
+
+	$('#departamento').change(function(){
+var IdDept=$('#departamento').val();
+var IdMUn="";
+var NomMUn ="";
+var cadena ="";
+$.post("../model/clases/ajax.php",{action:"municipio",IdDept:IdDept},function(data){
+for(i= 0; i < data.rows.length;i++){
+IdMUn=data.rows[i]["0"];
+NomMUn=data.rows[i]["1"];
+cadena=cadena + "<option value='"+IdMUn+"'>"+NomMUn+"</option>";
+$('#municipio').html(cadena); 
+}},'json');
+});
+
 
 });
 

@@ -82,13 +82,10 @@
 			<br>
 			<label>Departamento</label>
 			<select class="combobox form-control" id="departamento" nombre="departamento">
-		<div id="combodep" name="combodep"> </div>
 			</select>
-			<label>
 				Municipio
 			</label>
-			<select class="combobox form-control">
-			  <option>Mejicanos</option>
+			<select class="combobox form-control" id="municipio" nombre="municipio">
 			</select>
 
 			<br><br>
