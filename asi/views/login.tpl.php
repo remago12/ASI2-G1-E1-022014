@@ -75,11 +75,8 @@
                 <label>
                   Contraseña:
                 </label>
-<<<<<<< HEAD
-                <input type="password" placeholder="Contraseña" name="password" class="form-control" >
-=======
                 <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
->>>>>>> 6a02adc055a7ff2cdfe8d1bcdbf011a0c8a38321
+
                 <div class="modal-footer">
 
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
