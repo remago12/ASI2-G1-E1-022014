@@ -12,7 +12,7 @@ switch ($_POST['action']) {
 		break;
 	
 	case 'municipio':
-		$response = Registro::seleccionar_municipio2();
+		$response = Registro::seleccionar_municipio2($_POST['IdDept']);
 		echo json_encode($response);
 		break;
 }

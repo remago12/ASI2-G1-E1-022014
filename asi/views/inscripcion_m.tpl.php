@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 	<title>Inscripcion de miembro</title>
 
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
@@ -82,10 +83,12 @@
 			<br>
 			<label>Departamento</label>
 			<select class="combobox form-control" id="departamento" nombre="departamento">
+			
 			</select>
 				Municipio
 			</label>
 			<select class="combobox form-control" id="municipio" nombre="municipio">
+		
 			</select>
 
 			<br><br>

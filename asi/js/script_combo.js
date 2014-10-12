@@ -13,7 +13,7 @@ $('#departamento').html(cadena);
 }},'json');
 });
 
-	$('#departamento').change(function(){
+	$('#departamento').click(function(){
 var IdDept=$('#departamento').val();
 var IdMUn="";
 var NomMUn ="";
@@ -29,4 +29,5 @@ $('#municipio').html(cadena);
 
 
 });
+
 
