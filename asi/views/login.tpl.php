@@ -75,7 +75,7 @@
                 <label>
                   Contraseña:
                 </label>
-                <input type="password" placeholder="contraseña" name="password" class="form-control" >
+                <input type="password" placeholder="Contraseña" name="password" class="form-control" >
                 <div class="modal-footer">
                   <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
                   <button  class="btn btn-primary">Entrar</button>
