@@ -43,6 +43,26 @@ class Registro
 			}
 		}
 
+		function seleccionar_departamento2(){
+			$result = mysql_query("SELECT * FROM scout.departamento order by idDep ASC");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+			function seleccionar_municipio2($IdDept){
+			$result = mysql_query("select * from municipio where departamento_idDep =".$IdDept); 
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+
 function seleccionar_municipio()
 	{
 		
@@ -61,6 +81,7 @@ function seleccionar_municipio()
 				return false;
 			}
 			}
+
 			    
 function seleccionar_grupos()
 {

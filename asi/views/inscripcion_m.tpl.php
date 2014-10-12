@@ -1,14 +1,14 @@
 <?php
     //Database
-	require_once 'clases/cEmpleado.php';
-
+	//require_once 'clases/cEmpleado.php';
     // Objetos
-     $oRegistro   = new Registro();
+     //$oRegistro   = new Registro();
 ?>
 
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 	<title>Inscripcion de miembro</title>
 
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
@@ -18,6 +18,7 @@
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
   <script type="text/javascript" src="../js/mapIns.js"></script>
+  <script type="text/javascript" src="../js/script_combo.js"></script>
 </head>
 <body>
 	
@@ -81,15 +82,13 @@
 			<h2>Direccion</h2>
 			<br>
 			<label>Departamento</label>
-			<select class="combobox form-control" >
-			  	
-			  	<option>Santa Ana</option>
+			<select class="combobox form-control" id="departamento" nombre="departamento">
+			
 			</select>
-			<label>
 				Municipio
 			</label>
-			<select class="combobox form-control">
-			  <option>Mejicanos</option>
+			<select class="combobox form-control" id="municipio" nombre="municipio">
+		
 			</select>
 
 			<br><br>
