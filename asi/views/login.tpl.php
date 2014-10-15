@@ -6,13 +6,13 @@
 	<title>
 		
 	</title>
-  <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="../css/custom.css">
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-  <link type="text/css" href="../css/mapLog.css" rel="stylesheet" media="all" />
+  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/custom.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+  <link type="text/css" href="css/mapLog.css" rel="stylesheet" media="all" />
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  <script type="text/javascript" src="../js/mapLog.js"></script>
+  <script type="text/javascript" src="js/mapLog.js"></script>
 </head>
 <meta charset="UTF-8">
 <body>
