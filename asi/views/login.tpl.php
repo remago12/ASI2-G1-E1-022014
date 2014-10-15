@@ -16,7 +16,6 @@
 </head>
 <meta charset="UTF-8">
 <body>
-
   <nav class="navbar navbar-default log" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -48,7 +47,7 @@
     </div><!-- /.container-fluid -->
   </nav>
         
-  <class class="container log1">
+  
     <div class="row">
       <div class="col-md-12">
         <div id="map" >
@@ -76,12 +75,9 @@
                   Contraseña:
                 </label>
                 <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
-
                 <div class="modal-footer">
-
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                   <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
-
                   <a href="inscripcion_m.html">Registrate</a>
                 </div>
               </form>
@@ -89,6 +85,5 @@
           </div>
         </div>
       </div>
-    </div>
-</body>
+  </body>
 </html>
