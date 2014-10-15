@@ -80,7 +80,7 @@
                 <div class="modal-footer">
 
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                  <button value="Entrar" class="btn btn-primary">Entrar</button>
+                  <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
 
                   <a href="inscripcion_m.html">Registrate</a>
                 </div>
