@@ -27,7 +27,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
+        <img id="logo1" src="img/ases1.jpg" class="img-responsive" alt="Responsive image">
         <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a>       
       </div>
       
@@ -40,7 +40,7 @@
         <li><a href="grupos_scout.html">Grupos Scout</a></li>-->
         <li class="nohov"><a href="inscripcion_m.html"> <button class="btn btn-default">Registrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
-        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
+        <img id="logo2" src="img/logo1.png" class="img-responsive" alt="Responsive image">
       </ul>
 
       </div><!-- /.navbar-collapse -->
