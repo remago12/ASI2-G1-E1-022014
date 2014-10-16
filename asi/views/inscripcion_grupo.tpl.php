@@ -89,7 +89,7 @@
 					Dia de Reunion:
 				</label>
 				
-				<select class="form-control">
+				<select class="form-control" name="dia_reu">
 					<option>
 						Sabado
 					</option>
@@ -112,7 +112,7 @@
 				</label>
 				<input type="text" name="limiteMiem" class="form-control">
 				<label>Municipio:</label><br>
-				<select class="form-control">
+				<select class="form-control" >
 					<option>
 						San Marcos
 					</option>
