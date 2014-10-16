@@ -61,7 +61,25 @@ class Registro
 				return array('rows'=>$rows);
 				
 		}
+			function seleccionar_grupo(){
+			$result = mysql_query("SELECT numGrup,nomGruo FROM scout.grupo order by numGrup ASC");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
 
+		function seleccionar_grupo2($IdGrupo){
+			$result = mysql_query("SELECT latGrup,lngGrup FROM scout.grupo where numGrup =".$IdGrupo);
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
 
 function seleccionar_municipio()
 	{
