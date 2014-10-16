@@ -1,3 +1,9 @@
+<?php 
+require_once '/var/www/html/asi2/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
+require_once '/var/www/html/asi2/ASI2-G1-E1-022014/asi/model/clases/cBancSql.php';
+
+$banco= new Banco();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +59,7 @@
                 Banco Davivienda
               </option>
             </select><br>
-          <form name="banco" action="../model/clases/acBanco.php" method="POST">
+          <form name="banco" action="../../model/clases/acBanco.php" method="POST">
               <label>
                 Nombre:
               </label> 
