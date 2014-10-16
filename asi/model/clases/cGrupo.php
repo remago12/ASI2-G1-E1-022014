@@ -7,7 +7,9 @@
         $this->DATA = $DATA;
     	}
 
-    	function crearGrupo($paramsGrupo){
+    	function crearGrupo($paramsGrupo){	
+
+
     		$sql="INSERT INTO grupo(numGrup, nomGruo, exclGrup, lugReuGrup, proLugGrup, fchaFundGrup, lugNacGrup, diaReuGrup, horaReuGrup, limMiemGrup, callGrup, numCasGrup, colGrup, idMunic, latGrup, lngGrup, idEst, nomUsu, telGrup)"
     			." values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 

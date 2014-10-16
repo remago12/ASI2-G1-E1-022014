@@ -1,6 +1,6 @@
 function initialize() {
  var x= document.getElementById("txt_lat").value;
- var y= document.getElementById("txt_lat").value;
+ var y= document.getElementById("txt_lng").value;
   var mapOptions = {
     zoom: 10,
     center: new google.maps.LatLng(x,y),
@@ -30,8 +30,8 @@ function initialize() {
 
       // Update the textbox
 
-      document.getElementById('txt_lat').value=point.lat();
-      document.getElementById('txt_lng').value=point.lng();
+      x=point.lat();
+      y=point.lng();
    });
 
   google.maps.event.addListener(marker, 'click', function() {

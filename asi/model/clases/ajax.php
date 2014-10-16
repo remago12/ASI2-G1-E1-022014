@@ -15,6 +15,16 @@ switch ($_POST['action']) {
 		$response = Registro::seleccionar_municipio2($_POST['IdDept']);
 		echo json_encode($response);
 		break;
+
+		case 'grupo':
+		$response = Registro::seleccionar_grupo();
+		echo json_encode($response);
+		break;
+
+		case 'coordenada':
+		$response = Registro::seleccionar_grupo2($_POST['IdGrupo']);
+		echo json_encode($response);
+		break;
 }
 }
 	catch(Exception $e){

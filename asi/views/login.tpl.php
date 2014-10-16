@@ -6,13 +6,13 @@
 	<title>
 		
 	</title>
-  <script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="css/custom.css">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link type="text/css" href="css/mapLog.css" rel="stylesheet" media="all" />
+  <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link type="text/css" href="../css/mapLog.css" rel="stylesheet" media="all" />
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  <script type="text/javascript" src="js/mapLog.js"></script>
+  <script type="text/javascript" src="../js/mapLog.js"></script>
 </head>
 <meta charset="UTF-8">
 <body>
@@ -26,7 +26,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <img id="logo1" src="img/ases1.jpg" class="img-responsive" alt="Responsive image">
+        <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
         <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a>       
       </div>
       
@@ -39,7 +39,7 @@
         <li><a href="grupos_scout.html">Grupos Scout</a></li>-->
         <li class="nohov"><a href="inscripcion_m.html"> <button class="btn btn-default">Registrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
-        <img id="logo2" src="img/logo1.png" class="img-responsive" alt="Responsive image">
+        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
       </ul>
 
       </div><!-- /.navbar-collapse -->

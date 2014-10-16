@@ -79,40 +79,16 @@
 				<input type="radio" checked="true" name="exclusivo">	
 				</label>
 				<br>
-				<label>
-					Lugar de Fundacion:
-				</label>
-				<input type="text" name="LugarFundacion" class="form-control">
 				<label>Lugar de Reunion:</label>
-				<input type="text" name="lugarReunion" class="form-control">
-				<label>
-					Dia de Reunion:
-				</label>
-				
-				<select class="form-control" name="dia_reu">
-					<option>
-						Sabado
-					</option>
-					<option>
-						Domingo
-					</option>
-				</select>
-				<label>
-					Hora de Reunion:
-				</label>
-				<input type="text" name="horaReunion" class="form-control">		
+				<input type="text" name="lugarReunion" class="form-control">	
 				<label>Propietario Lugar:</label>
 				<input type="text" name="propLugar" class="form-control">	
 				<label>Telefono:</label>
 				<input type="text" name="telefono" class="form-control">	
 			</div>	
 			<div class="col-lg-4"> 
-				<label>
-					Limite de Miembros:
-				</label>
-				<input type="text" name="limiteMiem" class="form-control">
 				<label>Municipio:</label><br>
-				<select class="form-control" >
+				<select class="form-control">
 					<option>
 						San Marcos
 					</option>

@@ -11,14 +11,14 @@
 <meta charset="UTF-8">
 	<title>Inscripcion de miembro</title>
 
-	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="css/custom.css">
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../css/custom.css">
   	<link type="text/css" href="css/map.css" rel="stylesheet" media="all" />
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  <script type="text/javascript" src="js/mapIns.js"></script>
-  <script type="text/javascript" src="js/script_combo.js"></script>
+  <script type="text/javascript" src="../js/mapIns.js"></script>
+  <script type="text/javascript" src="../js/script_combo.js"></script>
 </head>
 <body>
 	
@@ -32,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
+      <img id="logo1" src="img/ases1.jpg" class="img-responsive" alt="Responsive image">
       <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
       
     </div>
@@ -44,7 +44,7 @@
         <li><a href="#">Renovacion</a></li>
         <li><a href="#">Grupos Scout</a></li>
         <li><a href="#">Miembros Scout</a></li>
-        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
+        <img id="logo2" src="img/logo1.png" class="img-responsive" alt="Responsive image">
 
       </ul>
 
@@ -83,7 +83,6 @@
 			<br>
 			<label>Departamento</label>
 			<select class="combobox form-control" id="departamento" nombre="departamento">
-			
 			</select>
 				Municipio
 			</label>
@@ -116,21 +115,18 @@
 		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control"><br>
 		<label>DUI:</label>
 		<input type="text"  name="dui" id="dui" placeholder="dui" class="validate[required] medium form-control"><br>
-		<label>Pasaporte:</label>
+		<label>Pasaporte:</label>scr
 		<input type="text"  name="pasaporte" id="pasaporte" placeholder="pasaporte" class="validate[required] medium form-control"><br>
 		<label>No. de grupo:</label><br>
-		<select class="combobox form-control">
+		<select class="combobox form-control" nombre="grupo" id="grupo">
 			  
-			  <option>01</option>
+			
 		</select>
 		<br>
 		<br>
-		<div id="map" >
-			
-		</div>
-		<input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
-		<input type="hidden" name="c_y" class="form-control" id="txt_lng" placeholder="Coordenadas en y">
-		
+		<div id="mapa">
+
+	</div>
 		<br>
 		<br>
 			<button class="btn btn-danger">

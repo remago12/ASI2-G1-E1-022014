@@ -1,38 +1,37 @@
 <?php
 
-require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/html/data/dataBase.php';
-require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/html/clases/cRegistro.php';
+require_once 'cGrupo.php';
 
 
 
 //variables POST
-  $registro =new Registro();
+  $grupo = new Grupo();
 
-  $numGrup			          =$_POST['num_grup'];
-  $nomGruo			          =$_POST['nom_grup'];
+  $numGrup			          =$_POST['numGrupo'];
+  $nomGruo			          =$_POST['nomGrupo'];
   $exclGrup			          =$_POST['exclusivo'];
-  $lugReuGrup		          =$_POST['lug_reu'];
-  $proLugGrup		          =$_POST['pro_reu'];
-  $fchaFundGrup	          =$_POST['fech_funda'];
-  $lugNacGrup             =$_POST['lug_nac'];
+  $lugReuGrup		          =$_POST['lugarReunion'];
+  $proLugGrup		          =$_POST['propLugar'];
+  $fchaFundGrup	          =$_POST['fecFundacion'];
+  $lugNacGrup             =$_POST['LugarFundacion'];
   $diaReuGrup		          =$_POST['dia_reu'];
-  $horaReuGrup	          =$_POST['hora_reu'];
-  $limMiemGrup	          =$_POST['lim_miem'];
+  $horaReuGrup	          =$_POST['horaReunion'];
+  $limMiemGrup	          =$_POST['limiteMiem'];
   $callGrup			          =$_POST['calle'];
   $numCasGrup 	          =$_POST['num_cas'];
   $colGrup 			          =$_POST['colonia'];
   $municipio_idMunic		  =$_POST['municipio'];
   $latGrup			          =$_POST['txt_lat'];
   $lngGrup 			          =$_POST['txt_lng'];
-  $estado_idEst           =$_POST['estado'];
   $fchaCreaGrup 	        =date('y-m-d');
   $usuario_nomUsu         =$_POST['usuario'];
+  $telefono               =$_POST['telefono'];
 try{
  
 //arrays
  
     $reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$estado_idEst,$fchaCreaGrup,$usuario_nomUsu); 
-	$registro->crear_grupos($reg);
+    $grupo->crearGrupo($reg);
 	
 
 	 //var_dump($reg);
