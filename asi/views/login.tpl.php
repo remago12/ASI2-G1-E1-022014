@@ -65,22 +65,24 @@
             <h4 class="modal-title" id="myModalLabel">Ingresa</h4>
           </div>
           <div class="modal-body">
-            <div class="row">    
-              <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
-                <label>
-                  Usuario:
-                </label>
-                <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control"  >
-                <label>
-                  Contraseña:
-                </label>
-                <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                  <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
-                  <a href="inscripcion_m.html">Registrate</a>
-                </div>
-              </form>
+            <div class="row">
+              <div class="col-md-8">
+                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
+                  <label>
+                    Usuario:
+                  </label>
+                  <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control"  >
+                  <label>
+                    Contraseña:
+                  </label>
+                  <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
+                    <a href="inscripcion_m.html">Registrate</a>
+                  </div>
+                </form>
+              </div>  
             </div>
           </div>
         </div>
