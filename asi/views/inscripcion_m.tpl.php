@@ -32,7 +32,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <img id="logo1" src="img/ases1.jpg" class="img-responsive" alt="Responsive image">
+      <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
       <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
       
     </div>
@@ -44,7 +44,7 @@
         <li><a href="#">Renovacion</a></li>
         <li><a href="#">Grupos Scout</a></li>
         <li><a href="#">Miembros Scout</a></li>
-        <img id="logo2" src="img/logo1.png" class="img-responsive" alt="Responsive image">
+        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
 
       </ul>
 

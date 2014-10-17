@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Soicitud de Renovacion 		
+		Soicitud de Renovación 		
 	</title>
 
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
@@ -61,7 +61,7 @@
 					Espera
 				</p>
 				<label>
-					Excento de Pago:
+					Exento de Pago:
 				</label>
 				<br>
 				<select>

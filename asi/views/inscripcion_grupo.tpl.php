@@ -6,13 +6,13 @@
 		Inscripcion de Grupo
 	</title>
 
-	<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-  	<link rel="stylesheet" type="text/css" href="css/custom.css">
-  	<link type="text/css" href="css/map.css" rel="stylesheet" media="all" />
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+  	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  	<script type="text/javascript" src="js/mapa.js"></script>
+  	<script type="text/javascript" src="../js/mapa.js"></script>
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -29,7 +29,7 @@
         <span class="icon-bar"></span>
       </button>
       <br>
-      <img id="logo1" src="img/ases1.jpg" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">	
+      <img id="logo1" src="../img/ases1.jpg" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">	
       
 
     </div>
@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav navbar-right">
       	<!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="#">Link</a></li>
-        <img id="logo2" src="img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
+        <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
