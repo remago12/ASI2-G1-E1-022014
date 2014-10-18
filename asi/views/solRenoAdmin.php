@@ -24,10 +24,9 @@
       <br>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="indexadmin.html">Inicio</a></li>
-        <li><a href="solicitudes_de_miembro.html">Inscripciones</a></li>
-        <li><a href="#">Renovación</a></li>
-        <li><a href="#">Grupos Scout</a></li>
-        <li><a href="#">Miembros Scout</a></li>
+        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
+        <li><a href="solicitudes_renovacion.html">Renovación</a></li>
+        <li><a href="miembros_scout.html">Miembros Scout</a></li>
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
 
       </ul>
