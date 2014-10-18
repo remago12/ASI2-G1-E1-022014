@@ -50,40 +50,40 @@
 			<label>
 			Cargar Imagen:	
 			</label>
-			<input type="file" name="field" id="field"  class="">
+			<input type="file" name="field" id="field"  class=""><br>
 			<label>Nombre:</label>
-			<input type="text"  name="nombre" id="nombre" placeholder="Nombre" class="validate[required] medium form-control" required/>
+			<input type="text"  name="nombre" id="nombre" placeholder="Nombre" class="validate[required] medium form-control" required/><br>
 			<label>Apellido:</label>
-			<input type="text"   name="apellido" id="apellido" placeholder="Apellido" class="validate[required] medium form-control">
+			<input type="text"   name="apellido" id="apellido" placeholder="Apellido" class="validate[required] medium form-control"><br>
 			<label>Fecha de Nacimiento:</label>
 			<input type="date"   name="fecha" id="fecha" placeholder="Fecha" class="validate[required] medium form-control">
 			<br>
 			<label>Género:</label>
 			<label>Masculino
 			<input type="radio" name="genero" checked="true">	
-			</label>
-			<label>Femenino
-			<input type="radio" name="genero">	
-			</label>
+			</label>&nbsp;&nbsp;&nbsp;
+			<label>Femenino</label>
+			<input type="radio" name="genero">
+			<br><br>
 			<div class="well well-lg">
-			<h2>Direccion</h2>
+			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
 			<select class="combobox form-control" id="departamento" nombre="departamento">
-			</select>
-				Municipio
+			</select><br>
+			<label>Municipio</label>
 			</label>
 			<select class="combobox form-control" id="municipio" nombre="municipio">
 		
 			</select>
 
-			<br><br>
+			<br>
 			<label>Calle:</label>
-			<input type="text"   name="calle" id="calle" placeholder="calle" class="validate[required] medium form-control"><br>
+			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control"><br>
 			<label>Colonia:</label>
-			<input type="text"   name="colonia" id="colonia" placeholder="colonia" class="validate[required] medium form-control"><br>
+			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control"><br>
 			<label>No. Casa:</label>
-			<input type="text"   name="casa" id="casa" placeholder="casa" class="validate[required] medium form-control"><br>
+			<input type="text"   name="casa" id="casa" placeholder="Número de casa" class="validate[required] medium form-control"><br>
 		</div>
 		</div>
 		<div class="col-lg-6">
@@ -98,7 +98,7 @@
 		<label>DUI:</label>
 		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control"><br>
 		<label>Pasaporte:</label>
-		<input type="text"  name="pasaporte" id="pasaporte" placeholder="pasaporte" class="validate[required] medium form-control"><br>
+		<input type="text"  name="pasaporte" id="pasaporte" placeholder="Pasaporte" class="validate[required] medium form-control"><br>
 		<label>No. de grupo:</label><br>
 		<select class="combobox form-control" nombre="grupo" id="grupo">
 		</select>
@@ -120,6 +120,6 @@
 		</div>
 
 	</div>
-		
+		<br><br>
 </body>
 </html>
