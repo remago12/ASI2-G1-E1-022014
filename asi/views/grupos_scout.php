@@ -21,12 +21,6 @@ $registro   = new Registro();
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
       <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
       
@@ -34,10 +28,9 @@ $registro   = new Registro();
       
       <br>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="indexadmin.html">Inicio</a></li>
-        <li><a href="solicitudes_de_inscripcion.html">Inscripciones</a></li>
-        <li><a href="solicitudes_de_renovacion.html">Renovacion</a></li>
-        <li><a href="grupos_scout.html">Grupos Scout</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
+        <li><a href="solicitudes_renovacion.html">Renovación</a></li>
         <li><a href="miembros_scout.html">Miembros Scout</a></li>
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
 

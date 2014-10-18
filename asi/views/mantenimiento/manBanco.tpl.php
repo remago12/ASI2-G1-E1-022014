@@ -8,11 +8,11 @@ $banco= new Banco();
 <html>
 <head>
 	<title>Solicitud de Miembro</title>
-
-	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-  <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="../../css/custom.css">
+  <meta charset="UTF-8">
 </head>
   <body>
 
@@ -20,12 +20,6 @@ $banco= new Banco();
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <img id="logo1" src="../../img/ases1.jpg" class="img-responsive" alt="Responsive image">
         <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
         
@@ -33,11 +27,11 @@ $banco= new Banco();
         
         <br>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">Inscripciones</a></li>
-          <li><a href="#">Renovacion</a></li>
-          <li><a href="#">Grupos Scout</a></li>
-          <li><a href="#">Miembros Scout</a></li>
+          <li><a href="../index.html">Inicio</a></li>
+        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
+        <li><a href="solicitudes_renovacion.html">Renovación</a></li>
+        <li><a href="../grupos_scout.html">Grupos Scout</a></li>
+        <li><a href="../miembros_scout.html">Miembros Scout</a></li>
           <img id="logo2" src="../../img/logo1.png" class="img-responsive" alt="Responsive image">
 
         </ul>
@@ -53,7 +47,6 @@ $banco= new Banco();
             <select class="form-control">
               <option>
                 Nuevo Banco
-
               </option>
               <option>
                 Banco Davivienda
@@ -65,7 +58,7 @@ $banco= new Banco();
               </label> 
               <input type="text" class="form-control" name="nomBanco">
               <label>
-                Numero de Cuenta:
+                Número de Cuenta:
               </label>
               <input type="text" class="form-control" name="numCuenta">
               <br>
