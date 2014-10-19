@@ -67,7 +67,7 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-12">
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
+                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form" action="">
                   <label>
                     Usuario:
                   </label>
@@ -77,8 +77,8 @@
                   </label>
                   <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
+                    <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.html">Registrate</a>
                   </div>
                 </form>
