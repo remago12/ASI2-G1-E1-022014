@@ -85,7 +85,7 @@ class Usuario{
 		    $login = $this->ingreso($paramsUser);
 		 
 		    if ($login){
-		      header("Location: inscripcion_m.php");
+		      header("Location: inscripcion_grupo.php");
 		      $estadoLogin="Usuario o Contraseña incorrectos";
 		    }else {
 		      header("Location: login.php");

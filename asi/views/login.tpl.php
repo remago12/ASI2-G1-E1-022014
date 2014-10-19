@@ -65,8 +65,8 @@
                   </label>
                   <input type="password" placeholder="Contraseña" name="password" id="password" class="form-control" required/>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button value="Entrar" class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.tpl.php">Regístrate</a>
                     <p><p><a href="inscripcion_m.tpl.php">¿Has olvidado tu contraseña?</a>
                   </div>

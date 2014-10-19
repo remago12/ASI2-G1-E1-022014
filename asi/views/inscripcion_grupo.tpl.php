@@ -39,14 +39,14 @@
 	
 
 	<div class="container">
-		<form method="POST">
+		<form method="POST" data-toggle="validator">
 			
 		<div class="row">
 			<h2 class="text-center">Inscripción de Grupo</h2>
 			<hr class="line"><br><br>
 			<div class="col-lg-3">
 				<label>Nombre de Grupo:</label>
-				<input type="text" name="nomGrupo" class="form-control"><br>
+				<input type="number" name="nomGrupo" class="form-control" required><br>
 				<label>Número de Grupo:</label>
 				<input type="text" name="numGrupo" class="form-control"><br>
 				<label>Fecha de Fundación:</label>
@@ -125,7 +125,7 @@
 					<input type="hidden" name="txt_lng" id="txt_lng" class="form-control">
 					<br>
 					<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Cancelar</a>
-					<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Guardar</a>
+					<button value="Guardar" class="btn btn-primary">Guardar</button>
 					<br>
 					<br>
 			</div>
