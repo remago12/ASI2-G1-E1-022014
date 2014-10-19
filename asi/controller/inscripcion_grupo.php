@@ -4,5 +4,8 @@
 	require "../model/data/dataBase.php";
 	require "../model/clases/cGrupo.php";
 
+	$grupo = new Grupo;
+
+	$grupo->crearGrupo;
 
 	
