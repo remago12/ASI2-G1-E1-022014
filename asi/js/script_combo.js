@@ -94,12 +94,12 @@ var mapOptions = {
     map.setCenter(marker.getPosition());
   });
   google.maps.event.addDomListener(window, 'load', initialize);
-//cadena="<input type='input' name='c_x' class='form-control' id='txt_lat' placeholder='Coordenadas en x' value='"+latGrupo+"'>"+"<input type='input' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>"
-//+ "<div id='map'>" + "</div>";
-//$('#mapa').html(cadena);
-//$('#mapa').html("<input type='input' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>");
-//$('#mapa').html("<div id='map'>")
-//$('#mapa').html("</div>")
+/*cadena="<input type='input' name='c_x' class='form-control' id='txt_lat' placeholder='Coordenadas en x' value='"+latGrupo+"'>"+"<input type='input' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>"
++ "<div id='map'>" + "</div>";
+$('#mapa').html(cadena);
+$('#mapa').html("<input type='input' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>");
+$('#mapa').html("<div id='map'>")
+$('#mapa').html("</div>")*/
 
 }},'json');
 }); 
