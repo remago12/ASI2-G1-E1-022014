@@ -6,7 +6,7 @@ require_once 'cGrupo.php';
 
 //variables POST
   $grupo = new Grupo();
-
+  $idPersona= 1
   $numGrup			          =$_POST['numGrupo'];
   $nomGruo			          =$_POST['nomGrupo'];
   $exclGrup			          =$_POST['exclusivo'];
@@ -30,7 +30,7 @@ try{
  
 //arrays
  
-    $reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$estado_idEst,$fchaCreaGrup,$usuario_nomUsu); 
+    $reg=array($idPersona,$numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$estado_idEst,$fchaCreaGrup,$usuario_nomUsu); 
     $grupo->crearGrupo($reg);
 	
 

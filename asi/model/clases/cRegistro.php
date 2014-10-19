@@ -14,8 +14,8 @@ class Registro
 
 	function crear_registro($parametrosReg)
     {
-    $sql="INSERT INTO persona (nomPer, apelPer, fechNacPer, telPer, celPer,duiPer,pasPer,fotPer,callPer,numCasPer,colPer,municipio_idMunic,fchaCreaPer)"
-                            . " values (?,?,?,?,?,?,?,?,?,?,?,?,?) ";
+    $sql="INSERT INTO persona (nomPer,apelPer,fechNacPer,genPer,telPer,celPer,corrPer,duiPer,pasPer,callPer,numCasPer,colPer,municipio_idMunic,fchaCreaPer)"
+                            . " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $save = $this->DATA->Execute($sql, $parametrosReg); 
           if ($save){
             return true;
