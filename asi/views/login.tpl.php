@@ -71,11 +71,11 @@
                 <label>
                   Usuario:
                 </label>
-                <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control"  >
+                <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control"  required maxlength="20">
                 <label>
                   Contraseña:
                 </label>
-                <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" >
+                <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" required maxlength="20">
                 <div class="modal-footer">
 
                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
