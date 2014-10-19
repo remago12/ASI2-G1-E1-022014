@@ -53,26 +53,6 @@
             <h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
           </div>
           <div class="modal-body">
-<<<<<<< HEAD
-            <div class="row">    
-              <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
-                <label>
-                  Usuario:
-                </label>
-                <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control"  required maxlength="20">
-                <label>
-                  Contraseña:
-                </label>
-                <input type="password" placeholder="contraseña" name="password" id="password" class="form-control" required maxlength="20">
-                <div class="modal-footer">
-
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                  <button value="Entrar" class="btn btn-primary">Entrar</button>
-
-                  <a href="inscripcion_m.html">Registrate</a>
-                </div>
-              </form>
-=======
             <div class="row">
               <div class="col-md-12">
                 <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
@@ -92,7 +72,6 @@
                   </div>
                 </form>
               </div>  
->>>>>>> 9b5cc99860cf529b91276267149bc3115f559cf1
             </div>
           </div>
         </div>
