@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>
-		Soicitud de Renovacion 		
+		Solicitud de Renovación 		
 	</title>
 
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
@@ -10,18 +10,13 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
   <link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
+  <meta charset="UTF-8">
 </head>
 <body>
 	<nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
       <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
       <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
       
@@ -29,11 +24,10 @@
       
       <br>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="indexadmin.html">Inicio</a></li>
-        <li><a href="solicitudes_de_miembro.html">Inscripciones</a></li>
-        <li><a href="#">Renovacion</a></li>
-        <li><a href="#">Grupos Scout</a></li>
-        <li><a href="#">Miembros Scout</a></li>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
+        <li><a href="solicitudes_renovacion.html">Renovación</a></li>
+        <li><a href="miembros_scout.html">Miembros Scout</a></li>
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
 
       </ul>
@@ -45,11 +39,12 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
-				<h2>Datos Renovacion</h2>
-				<label>N solicitud de Renovacion:</label>
+				<h2>Datos Renovación</h2>
+				<hr class="line">
+				<label>No. Solicitud de Renovación:</label>
 				<p>001-2014</p>
 				<label>
-					Fecha de Renovacion:
+					Fecha de Renovación:
 				</label>	
 				<p>
 				26/9/2014
@@ -61,7 +56,7 @@
 					Espera
 				</p>
 				<label>
-					Excento de Pago:
+					Exento de Pago:
 				</label>
 				<p>
 					No
@@ -71,7 +66,7 @@
 					
 				</p>
 				<label>
-					Numero de Factura:
+					Número de Factura:
 				</label>	
 				<p>14252626-62</p>
 				<label>
@@ -79,7 +74,7 @@
 				</label>
 				<p>5/06/2014</p>	
 				<label>
-					Monto de Renovacion:
+					Monto de Renovación:
 				</label>
 				<P>$5</P>
 
@@ -87,7 +82,8 @@
 
 			<div class="col-md-5">
 				<h2>Datos Solicitante</h2>
-				<label>Numero de Grupo:</label>	
+				<hr class="line">
+				<label>Número de Grupo:</label>	
 				<br>
 				<select>
 					<option>
@@ -119,13 +115,13 @@
 				</label>
 				<p>Caminante</p>
 				<label>
-					Genero:
+					Género:
 				</label>
 				<p>Masculino</p>
 				<label>Fecha de Nacimiento:</label>
 				<input type="date" class="form-control">
 				<label>
-					Telefono:
+					Teléfono:
 				</label>
 					<input	type="text" class="form-control">
 				<label>
@@ -138,7 +134,7 @@
 				</label>
 					<input	type="email" class="form-control">
 				<label>
-					Dui:
+					DUI:
 				</label>
 				<input type="text" class="form-control">
 				<label>

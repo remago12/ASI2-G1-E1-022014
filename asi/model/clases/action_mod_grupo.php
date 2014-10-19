@@ -1,7 +1,7 @@
 <?php
 
-require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/html/data/dataBase.php';
-require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/html/clases/cRegistro.php';
+require_once '../data/dataBase.php';
+require_once 'cRegistro.php';
 
 
 

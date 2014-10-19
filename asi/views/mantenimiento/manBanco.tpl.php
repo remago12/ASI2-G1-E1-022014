@@ -1,11 +1,16 @@
+<?php 
+require_once '/var/www/html/asi2/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
+require_once '/var/www/html/asi2/ASI2-G1-E1-022014/asi/model/clases/cBancSql.php';
+
+$banco= new Banco();
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Parentesco</title>
-
-	<script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+	<title>Solicitud de Miembro</title>
+  <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../../css/custom.css">
   <meta charset="UTF-8">
 </head>
@@ -37,35 +42,49 @@
   	</nav>
     <div class="container">
       <div class="row">
-          
-            <h1 class="text-center">Listado de Parentescos</h1>
-            <hr class="line">
-            <br>
-            <div class="col-md-4">
-            <label>
-              Nombre:
-            </label> 
-            <input type="text" class="form-control" name="nomBanco">
-            <br>
-            <button class="btn btn-success ">Cancelar</button>
-            <button class="btn btn-warning">Modificar</button>
-            <button class="btn btn-success" >Nuevo</button>
+          <div class="col-md-4">
+            <h1>Listado de Bancos</h1>
+            <select class="form-control">
+              <option>
+                Nuevo Banco
+              </option>
+              <option>
+                Banco Davivienda
+              </option>
+            </select><br>
+          <form name="banco" action="../../model/clases/acBanco.php" method="POST">
+              <label>
+                Nombre:
+              </label> 
+              <input type="text" class="form-control" name="nomBanco">
+              <label>
+                Número de Cuenta:
+              </label>
+              <input type="text" class="form-control" name="numCuenta">
+              <br>
+              <button class="btn btn-success ">Cancelar</button>
+              <button class="btn btn-success" >Guardar</button>
+          </form>  
           </div>
           <div class="col-md-4">
-          
-         
             <table class="table table-hover">
               <thead>
             <tr>
-              <th>Nombre del Parentesco</th>
+              <th>Nombre de Banco</th>
+              <th>Numero De Cuenta</th>
             </tr>
           </thead>
           <tbody>
               <tr>
               
               <td>
-                Padre
+                Banco Davivienda
               </td>
+              <td>
+                00909878-8
+              </td>
+              
+              
             </tr>            
 
           </tbody>

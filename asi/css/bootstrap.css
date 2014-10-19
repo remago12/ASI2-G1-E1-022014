@@ -11,7 +11,14 @@ html {
   -ms-text-size-adjust: 100%;
 }
 
-
+.nav,li{
+  margin-top:2%;
+  border-radius: 0.3em;
+}
+.tema{
+  margin-top:0px !important;
+  margin-bottom: 0px;
+}
 
 li:hover
 {
