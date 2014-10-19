@@ -1,6 +1,8 @@
 function initialize() {
- var x= document.getElementById("txt_lat").value;
- var y= document.getElementById("txt_lng").value;
+// var x= document.getElementById("txt_lat").value;
+ //var y= document.getElementById("txt_lng").value;
+ var x = 13.69245810;
+ var y = -89.22053040;
   var mapOptions = {
     zoom: 10,
     center: new google.maps.LatLng(x,y),
