@@ -3,8 +3,7 @@
 
   require_once '../model/clases/cRegistro.php';
   require_once '../model/data/dataBase.php';
-
-
+  require_once '../views/mantenimiento/inscripcion_m.tpl.php';
 
 //variables POST
   $registro =new Registro();

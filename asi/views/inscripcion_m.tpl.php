@@ -1,4 +1,4 @@
-<?php
+ <?php
     //Database
 	require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/clases/cRegistro.php';
 	require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
@@ -46,7 +46,7 @@
   </div><!-- /.container-fluid -->
 	</nav>
 	<h2 class="text-center">Inscripción de Miembro</h2>
-	<form method="POST" action="../model/clases/action_registro.php">
+	<form method="POST" >
 	<div class="container">
 	<hr class="line">
 		<div class="col-lg-6"><br><br>
