@@ -5,7 +5,7 @@
 	<title>
 		Inscripción de Grupo
 	</title>
-
+	<meta charset="UTF-8">
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -13,7 +13,8 @@
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
   	<script type="text/javascript" src="../js/mapa.js"></script>
-  	<meta charset="UTF-8">
+  	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	
 </head>
 <body>
 <nav class="navbar navbar-default" role="navigation">
@@ -54,10 +55,10 @@
 				<label>Exclusivo:</label>
 				<p>
 				<label>Si</label>
-				<input type="radio" name="exclusivo">	
+				<input type="radio" name="exclusivo" value="S">	
 				&nbsp;&nbsp;&nbsp;
 				<label>No</label>
-				<input type="radio" checked="true" name="exclusivo">
+				<input type="radio" checked="true" name="exclusivo" value="N">
 				<br><br>
 				<label>Lugar de Fundación:</label>
 				<input type="text" name="LugarFundacion" class="form-control"><br>
@@ -102,23 +103,14 @@
 				<label>
 					Límite de Miembros:
 				</label>
-				<input type="number" name="limiteMiem" class="form-control"><br>
-				<label>Municipio:</label><br>
-				<select class="form-control" >
-					<option>
-						San Marcos
-					</option>
-					<option>
-						San Salvador
-					</option>
-						
+				<input type="number" name="limiteMiem" class="form-control" required pattern="[0-9]{4}" min="10" max="2000"><br>
+				<label>Departamento</label>
+				<select class="combobox form-control" id="departamento" name="departamento">
+				</select><br>
+				<label>Municipio</label>
+				</label>
+				<select class="combobox form-control" id="municipio" name="municipio">
 				</select>
-				<br>
-				<label>Departamento:</label>
-					<select class="form-control"><br>
-						<option>San Salvador</option>
-						<option>La Libertad</option>
-					</select>
 				<br>	
 				<label>Calle:</label>
 				<input type="text" name="calle" class="form-control">
