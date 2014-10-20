@@ -7,6 +7,8 @@ require_once 'cRegistro.php';
 
 //variables POST
   $registro =new Registro();
+  $usuario = new Registro();
+  $NIS       = $_POST['NIS'];
   $nombre			=$_POST['nombre'];
   $apellido			=$_POST['apellido'];
   $fechaNac			=$_POST['fechaNac'];
@@ -31,6 +33,11 @@ try{
  
     $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
 	$registro->crear_registro($reg);
+  
+  $reg2=array($NIS,$NIS,2);
+  $registro->crear_usuario($reg2);
+
+  //$reg3=array($NIS,)
 
 	 //var_dump($reg);
   
