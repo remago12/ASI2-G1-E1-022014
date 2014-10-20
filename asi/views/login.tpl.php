@@ -65,17 +65,11 @@
                   </label>
                   <input type="password" placeholder="Contraseña" name="password" id="password" class="form-control" required/>
                   <div class="modal-footer">
-<<<<<<< HEAD
+
                     <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.html">Registrate</a>
-=======
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button type="button" value="Entrar" class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_m.tpl.php">Regístrate</a>
-                    <p><p><a href="inscripcion_m.tpl.php">¿Has olvidado tu contraseña?</a>
->>>>>>> cd5986b6d4bd984771ba3bcf94f9ad07889e7dbc
-                  </div>
+
                 </form>
               </div>  
             </div>
