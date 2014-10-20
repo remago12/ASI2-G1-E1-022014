@@ -8,8 +8,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-	<title>Inscripción de miembro</title>
+	<title>
+		Inscripción de miembro
+	</title>
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -19,8 +20,8 @@
   	<script type="text/javascript" src="../js/mapa.js"></script>
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
-  		<script type="text/javascript" src="../js/script_combo.js"></script>
-  		<script type="text/javascript" src="../js/nis.js"></script>
+  	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/nis.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -57,6 +58,7 @@
 			<input type="file" name="file" id="file"  class=""><br>
 			<label>Nombre:</label>
 			<input type="text"  name="nombre" id="nombre" placeholder="Nombre" class="validate[required] medium form-control" required/><br>
+			<div class="help-block with-errors"></div>
 			<label>Apellido:</label>
 			<input type="text"   name="apellido" id="apellido" placeholder="Apellido" class="validate[required] medium form-control"><br>
 			<label>NIS:</label>
@@ -102,7 +104,7 @@
 		<label>Teléfono Celular:</label>
 		<input type="text"  name="telcel" id="telcel" placeholder="telcel" class="validate[required] medium form-control"><br>
 		<label>Correo:</label>
-		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control"><br>
+		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control" pattern="^([_A-z0-9]){3,}$" maxlength="30" required><br>
 		<label>DUI:</label>
 		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control"><br>
 		<label>Pasaporte:</label>

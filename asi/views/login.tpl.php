@@ -55,7 +55,7 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-12">
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form">
+                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
                   <label>
                     Usuario:
                   </label>
@@ -68,7 +68,7 @@
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.tpl.php">Regístrate</a>
-                    <p><p><a href="inscripcion_m.tpl.php">¿Has olvidado tu contraseña?</a>
+                    <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
                 </form>
               </div>  
