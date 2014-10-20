@@ -46,9 +46,9 @@
 			<hr class="line"><br><br>
 			<div class="col-lg-3">
 				<label>Nombre de Grupo:</label>
-				<input type="number" name="nomGrupo" class="form-control" required><br>
+				<input type="text" name="nomGrupo" class="form-control" required><br>
 				<label>Número de Grupo:</label>
-				<input type="text" name="numGrupo" class="form-control"><br>
+				<input type="number" name="numGrupo" class="form-control"><br>
 				<label>Fecha de Fundación:</label>
 				<input type="date" name="fechFundacion" class="form-control"><br>
 				<label>Exclusivo:</label>
@@ -68,6 +68,21 @@
 				</label>
 				<select class="form-control" name="dia_reu">
 					<option>
+						Lunes
+					</option>
+					<option>
+						Martes
+					</option>
+					<option>
+						Miercoles
+					</option>
+					<option>
+						Jueves
+					</option>
+					<option>
+						Viernes
+					</option>
+					<option>
 						Sábado
 					</option>
 					<option>
@@ -77,7 +92,7 @@
 				<label>
 				Hora de Reunión:
 				</label>
-				<input type="text" name="horaReunion" class="form-control"><br>		
+				<input type="time" name="horaReunion" class="form-control"><br>		
 				<label>Propietario Lugar:</label>
 				<input type="text" name="propLugar" class="form-control"><br>	
 				<label>Telefono:</label>
@@ -87,7 +102,7 @@
 				<label>
 					Límite de Miembros:
 				</label>
-				<input type="text" name="limiteMiem" class="form-control"><br>
+				<input type="number" name="limiteMiem" class="form-control"><br>
 				<label>Municipio:</label><br>
 				<select class="form-control" >
 					<option>
