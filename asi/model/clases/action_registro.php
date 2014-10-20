@@ -7,7 +7,7 @@ require_once 'cRegistro.php';
 
 //variables POST
   $registro =new Registro();
-  $usuario = new Registro();
+
   $NIS       = $_POST['NIS'];
   $nombre			=$_POST['nombre'];
   $apellido			=$_POST['apellido'];

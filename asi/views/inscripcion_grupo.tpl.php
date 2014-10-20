@@ -78,7 +78,7 @@
 						Martes
 					</option>
 					<option>
-						Mi[ercoles
+						Miercoles
 					</option>
 					<option>
 						Jueves
