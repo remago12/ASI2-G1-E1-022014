@@ -1,6 +1,6 @@
 <?php 
 require_once '../../model/data/dataBase.php';
-require_once '../../model/clases/cBancSql.php';
+require_once '../../model/clases/cbanco.php';
 
 $banco= new Banco();
  ?>
@@ -52,7 +52,7 @@ $banco= new Banco();
                 Banco Davivienda
               </option>
             </select><br>
-          <form name="banco" action="../../model/clases/acBanco.php" method="POST">
+          <form action="../../model/clases/acBanco.php" method="POST">
               <label>
                 Nombre:
               </label> 
@@ -62,7 +62,7 @@ $banco= new Banco();
               </label>
               <input type="text" class="form-control" name="numCuenta">
               <br>
-              <button class="btn btn-success ">Cancelar</button>
+              
               <button class="btn btn-success" >Guardar</button>
           </form>  
           </div>
