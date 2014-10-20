@@ -1,7 +1,7 @@
 <?php
     //Database
-  require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/model/clases/cCuadro_Clinico.php';
-  require_once '/var/www/html/html/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
+  require_once '../../model/clases/cCuadro_Clinico.php';
+  require_once '../../model/data/dataBase.php';
 
   $cuadroC =new CuadroClinico();
   $idE = base64_decode($_GET['id']);
