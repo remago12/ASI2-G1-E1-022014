@@ -55,7 +55,11 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-12">
+<<<<<<< HEAD
                 <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form" action="">
+=======
+                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
+>>>>>>> 43ba1f3baf2b9f7320b720939cc6a7b6b059e957
                   <label>
                     Usuario:
                   </label>
@@ -65,11 +69,19 @@
                   </label>
                   <input type="password" placeholder="Contraseña" name="password" id="password" class="form-control" required/>
                   <div class="modal-footer">
+<<<<<<< HEAD
 
                     <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.html">Registrate</a>
 
+=======
+                    <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                    <button value="Entrar" class="btn btn-primary">Entrar</button>
+                    <a href="inscripcion_m.tpl.php">Regístrate</a>
+                    <p><p><a href="#">¿Has olvidado tu contraseña?</a>
+                  </div>
+>>>>>>> 43ba1f3baf2b9f7320b720939cc6a7b6b059e957
                 </form>
               </div>  
             </div>

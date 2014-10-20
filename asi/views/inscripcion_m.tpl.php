@@ -1,14 +1,16 @@
 <?php
     //Database
-	//require_once 'clases/cEmpleado.php';
+	require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/clases/cRegistro.php';
+	require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
     // Objetos
-     //$oRegistro   = new Registro();
+     $oRegistro   = new Registro();
 ?>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-	<title>Inscripción de miembro</title>
+	<title>
+		Inscripción de miembro
+	</title>
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -18,7 +20,8 @@
   	<script type="text/javascript" src="../js/mapa.js"></script>
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
-  		<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/nis.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -43,6 +46,7 @@
   </div><!-- /.container-fluid -->
 	</nav>
 	<h2 class="text-center">Inscripción de Miembro</h2>
+	<form method="POST" action="../model/clases/action_registro.php">
 	<div class="container">
 	<hr class="line">
 		<div class="col-lg-6"><br><br>
@@ -51,30 +55,35 @@
 			<label>
 			Cargar Imagen:	
 			</label>
-			<input type="file" name="field" id="field"  class=""><br>
+			<input type="file" name="file" id="file"  class=""><br>
 			<label>Nombre:</label>
 			<input type="text"  name="nombre" id="nombre" placeholder="Nombre" class="validate[required] medium form-control" required/><br>
+			<div class="help-block with-errors"></div>
 			<label>Apellido:</label>
 			<input type="text"   name="apellido" id="apellido" placeholder="Apellido" class="validate[required] medium form-control"><br>
+			<label>NIS:</label>
+			<div id="nisp" nombre="nisp">
+            <input type="text" name="NIS" id="NIS" placeholder="" class="validate[required] medium form-control"><br>
+			</div>
 			<label>Fecha de Nacimiento:</label>
-			<input type="date"   name="fecha" id="fecha" placeholder="Fecha" class="validate[required] medium form-control">
+			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control">
 			<br>
 			<label>Género:</label>
 			<label>Masculino
-			<input type="radio" name="genero" checked="true">	
+			<input type="radio" name="genero" checked="true" value="M">	
 			</label>&nbsp;&nbsp;&nbsp;
 			<label>Femenino</label>
-			<input type="radio" name="genero">
+			<input type="radio" name="genero" value="F">
 			<br><br>
 			<div class="well well-lg">
 			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
-			<select class="combobox form-control" id="departamento" nombre="departamento">
+			<select class="combobox form-control" id="departamento" name="departamento">
 			</select><br>
 			<label>Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" nombre="municipio">
+			<select class="combobox form-control" id="municipio" name="municipio">
 		
 			</select>
 
@@ -95,7 +104,7 @@
 		<label>Teléfono Celular:</label>
 		<input type="text"  name="telcel" id="telcel" placeholder="telcel" class="validate[required] medium form-control"><br>
 		<label>Correo:</label>
-		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control"><br>
+		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control" pattern="^([_A-z0-9]){3,}$" maxlength="30" required><br>
 		<label>DUI:</label>
 		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control"><br>
 		<label>Pasaporte:</label>
@@ -122,6 +131,7 @@
 		</div>
 
 	</div>
+	</form>
 		<br><br>
 </body>
 </html>

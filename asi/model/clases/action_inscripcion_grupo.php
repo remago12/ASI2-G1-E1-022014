@@ -30,7 +30,7 @@ try{
  
 //arrays
  
-    $reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$estado_idEst,$fchaCreaGrup,$usuario_nomUsu); 
+    $reg=compact($idPersona,$numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$estado_idEst,$fchaCreaGrup,$usuario_nomUsu); 
     $grupo->crearGrupo($reg);
 	
 

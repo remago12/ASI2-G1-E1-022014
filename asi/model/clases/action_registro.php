@@ -1,34 +1,43 @@
 <?php
 
-require_once 'C:\xampp\htdocs\ASI2-G1-E1-022014\asi\html\clases/cRegistro.php';
-require_once 'C:\xampp\htdocs\ASI2-G1-E1-022014\asi\html\data/dataBase.php';
+require_once 'cRegistro.php';
+  require_once '../data/dataBase.php';
 
 
 
 //variables POST
   $registro =new Registro();
-
+  $usuario = new Registro();
+  $NIS       = $_POST['NIS'];
   $nombre			=$_POST['nombre'];
   $apellido			=$_POST['apellido'];
   $fechaNac			=$_POST['fechaNac'];
-  $telefono			=$_POST['telefono'];
-  $celular			=$_POST['celular'];
-  $dui				=$_POST['dui'];
-  $pasaporte		=$_POST['pass'];
-  $imagen			=$_POST['imagen'];
+  $genero       =$_POST['genero'];
+  $telcasa			=$_POST['telcasa'];
+  $celular			=$_POST['telcel'];
+  $email        =$_POST['email'];
+  $dui				  =$_POST['dui'];
+  $pasaporte		=$_POST['pasaporte'];
+  //$img          =$_FILES['file']['name'];
+  //$imagen			  =$_POST['file'];
   $calle			=$_POST['calle'];
   $casa				=$_POST['casa'];
   $colonia			=$_POST['colonia'];
-  $municipio		=$_POST['municipio'];
+  $municipio		= $_POST['municipio'];
   $fecha			=date('y-m-d');
 
+ 
 try{
  
 //arrays
  
-    $reg=array($nombre, $apellido, $fechaNac, $telefono, $celular,$dui,$pasaporte,$imagen,$calle,$casa,$colonia,$municipio,$fecha); 
+    $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
 	$registro->crear_registro($reg);
-	
+  
+  $reg2=array($NIS,$NIS,2);
+  $registro->crear_usuario($reg2);
+
+  //$reg3=array($NIS,)
 
 	 //var_dump($reg);
   
@@ -40,6 +49,5 @@ try{
 //echo "$e";
 	 	var_dump($e);
 	 }
-	
 	 
 ?>
