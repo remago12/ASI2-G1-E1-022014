@@ -33,6 +33,12 @@ try{
  
     $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
   $registro->crear_registro($reg);
+
+
+  $idPersona = mysql_insert_id();
+
+  
+
   
   $reg2=array($NIS,$NIS,2);
   $registro->crear_usuario($reg2);

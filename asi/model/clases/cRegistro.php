@@ -26,8 +26,9 @@ class Registro
 
 
     function inscripcion($paramInsc){
-    	$count = "SELECT idPersona FROM persona ORDER BY idMunic DESC LIMIT 1"
-
+    	//$count = "SELECT idPersona FROM persona ORDER BY idMunic DESC LIMIT 1"
+    	
+    	
     }
 
     function crear_usuario($parametrosReg)
