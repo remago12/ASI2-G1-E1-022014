@@ -20,7 +20,7 @@ class Inscripcion
 		}
 
      function seleccionar_inscripcion($idPersona){
-      $result = mysql_query("SELECT * FROM scout.inscripcion where persona_idPersona = ".$idPersona);
+      $result = mysql_query("SELECT i.*, g.numGrup FROM inscripcion AS i, grupo AS g WHERE g.idGrup = i.grupo_idGrup and i.persona_idPersona =".$idPersona);
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
     $rows[]=($row);

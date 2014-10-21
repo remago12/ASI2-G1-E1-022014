@@ -7,7 +7,10 @@ var last_id = "";
 var d = new Date();
 var año = d.getFullYear().toString();
 $.post("../model/clases/ajax.php",{action:"corrnis"},function(data){
-
+if (data == null){
+var NIS= nombre.substr(0,1) + apellido.substr(0,1) + "0001" +año.substr(2,4);
+$('#NIS').val(NIS);
+}else{
 for(i= 0; i < data.rows.length;i++){
 last_id=data.rows[i]["0"];
 if (last_id.length == 1){
@@ -29,7 +32,7 @@ else if (last_id.length==3){
 $('#NIS').val(NIS);
 
 }
-
+}
 }},'json')
 
 });
@@ -41,7 +44,10 @@ var last_id = "";
 var d = new Date();
 var año = d.getFullYear().toString();
 $.post("../model/clases/ajax.php",{action:"corrnis"},function(data){
-
+if (data == null){
+var NIS= nombre.substr(0,1) + apellido.substr(0,1) + "0001" +año.substr(2,4);
+$('#NIS').val(NIS);
+}else{
 for(i= 0; i < data.rows.length;i++){
 last_id=data.rows[i]["0"];
 if (last_id.length == 1){
@@ -63,7 +69,7 @@ else if (last_id.length==3){
 $('#NIS').val(NIS);
 
 }
-
+}
 }},'json')
 //var cadena="<input type='text' name='NIS' id='NIS' placeholder='' class='validate[required] medium form-control'><br>";
 //$('#nisp').html(cadena); 

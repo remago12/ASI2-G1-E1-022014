@@ -117,13 +117,18 @@ $sql="INSERT INTO inscripcion (numSolicInsc,estado_idEst,banco_idBanc,grupo_idGr
 
 		function seleccionar_corrnis(){
 			$result = mysql_query("SELECT (idPersona+1) FROM scout.persona order by idPersona desc limit 1");
+			if(mysql_num_rows($result) == null){
+			
+			}
+			else{
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
   	$rows[]=($row);
-  }
+  } 
 				return array('rows'=>$rows);
 				
 		}
+	}
 		/*
 
 function seleccionar_municipio()

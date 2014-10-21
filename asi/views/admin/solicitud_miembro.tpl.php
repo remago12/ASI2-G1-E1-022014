@@ -55,20 +55,16 @@
 				</div>
 				<div name="telcel" id="telcel">
 				</div>
-				<label>Teléfono de Casa:</label>
-				22345679 
-				<br>
-				<label>Género:</label>
-				Masculino 
-				<br>
-				<label>Dirección:</label>
-				Barrio San Juan, Calle los pinos, pasaje  10 , casa #7 
-				<br>
-				
+				<div name="telcasa" id="telcasa">
+				</div>
+				<div name="genero" id="genero">
+				</div>
+			<div name="direccion" id="direccion">
+				</div>
 				</div>
 			<div class="col-lg-4">
-				<label>Grupo Solicitado:</label>
-				8 
+			<div name="numGrup" id="numGrup">
+			</div> 
 			</div><br>
 			<div class="col-lg-4">
 				<label>Comprobante de Pago:</label>
