@@ -79,11 +79,11 @@
 			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
-			<select class="combobox form-control" id="departamento" name="departamento">
+			<select class="combobox form-control" id="departamento" name="departamento" required>
 			</select><br>
 			<label>Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" name="municipio">
+			<select class="combobox form-control" id="municipio" name="municipio" required>
 			
 			</select>
 
@@ -110,7 +110,7 @@
 		<label>Pasaporte:</label>
 		<input type="text"  name="pasaporte" id="pasaporte" placeholder="Pasaporte" class="validate[required] medium form-control"><br>
 		<label>No. de grupo:</label><br>
-		<select class="combobox form-control" nombre="grupo" id="grupo">
+		<select class="combobox form-control" name="grupo" id="grupo" required>
 		</select>
 		<br>
 		<br>

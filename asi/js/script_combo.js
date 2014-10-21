@@ -35,13 +35,11 @@ var NomGrupo ="";
 var cadena="<option>Seleccione un grupo</option>";
 for(i=0; i < data.rows.length;i++){
 IdGrupo=data.rows[i]["0"];
-NomGrupo=data.rows[i]["1"];
-//latGrupo=data.rows[i]["2"];
-//lngGrupo=data.rows[i]["3"];
-cadena= cadena + "<option value='"+IdGrupo+"'>"+IdGrupo+" "+NomGrupo+"</option>";
+NumGrupo=data.rows[i]["1"];
+NomGrupo=data.rows[i]["2"];
+cadena= cadena + "<option value='"+IdGrupo+"'>"+NumGrupo+"  "+NomGrupo+"</option>";
 $('#grupo').html(cadena); 
-//$('#mapa').html("<input type='hidden' name='c_x' class='form-control' id='txt_lat' placeholder='Coordenadas en x' value='"+latGrupo+"'>");
-//$('#mapa').html("<input type='hidden' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>");
+
 }},'json');
 }); 
 

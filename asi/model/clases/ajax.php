@@ -25,6 +25,11 @@ switch ($_POST['action']) {
 		$response = Registro::seleccionar_grupo2($_POST['IdGrupo']);
 		echo json_encode($response);
 		break;
+
+		case 'corrnis':
+		$response = Registro::seleccionar_corrnis();
+		echo json_encode($response);
+		break;
 }
 }
 	catch(Exception $e){

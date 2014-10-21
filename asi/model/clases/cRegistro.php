@@ -38,17 +38,23 @@ class Registro
         }
     }
 
-    function crear_miembro($parametrosReg)
+    function crear_inscripcion($parametrosReg)
     {
-
-    $sql="INSERT INTO miembro (nisMiem,fchaCreaMiem,persona_idPersona,estado_idEst,usuario_nomUsu,grupo_idGrup)"
-                            . " values (?,?,?,?,?,?)";
+    	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
+    	if ($row = mysql_fetch_row($rs)) {
+$id = trim($row[0]);
+$sql="INSERT INTO inscripcion (numSolicInsc,estado_idEst,banco_idBanc,grupo_idGrup,persona_idPersona)"
+                            . " values (?,?,?,?,".$id.")";
     $save = $this->DATA->Execute($sql, $parametrosReg); 
           if ($save){
             return true;
         } else {
             return false;
         }
+
+}
+
+    
     }
 /*
     function seleccionar_departamento()
@@ -90,7 +96,7 @@ class Registro
 		}
 
 			function seleccionar_grupo(){
-			$result = mysql_query("SELECT numGrup,nomGruo FROM scout.grupo order by numGrup ASC");
+			$result = mysql_query("SELECT idGrup,numGrup,nomGruo FROM scout.grupo order by numGrup ASC");
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
   	$rows[]=($row);
@@ -100,7 +106,17 @@ class Registro
 		}
 
 		function seleccionar_grupo2($IdGrupo){
-			$result = mysql_query("SELECT latGrup,lngGrup FROM scout.grupo where numGrup =".$IdGrupo);
+			$result = mysql_query("SELECT latGrup,lngGrup FROM scout.grupo where idGrup =".$IdGrupo);
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+		function seleccionar_corrnis(){
+			$result = mysql_query("SELECT (idPersona+1) FROM scout.persona order by idPersona desc limit 1");
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
   	$rows[]=($row);

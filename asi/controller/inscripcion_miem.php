@@ -25,10 +25,10 @@
   $colonia      =$_POST['colonia'];
   $municipio    = $_POST['municipio'];
   $fecha      =date('y-m-d');
-  $numGrupo     =$_POST['grupo'];
+  $grupo      = $_POST['grupo'];
 
  
-try{
+//try{
  
 //arrays
  
@@ -36,22 +36,21 @@ try{
   $registro->crear_registro($reg);
 
 
-  $idPersona = mysql_insert_id();
-
   $reg2=array($NIS,$NIS,2);
   $registro->crear_usuario($reg2);
 
-  $reg3= array($NIS,$fecha,$idPersona,1,$NIS,$numGrupo);
-  $registro->crear_miembro($reg3);
+  $reg3= array($NIS,1,1,$grupo);
+  $registro->crear_inscripcion($reg3);
+ 
 
 
    //var_dump($reg);
   
   //header('Location: inscripcion_m.php ');  
 
-   }catch(Exception $e){
+  // }catch(Exception $e){
 
    //header('Location:  consulta.php'); 
 //echo "$e";
-    var_dump($e);
-   }
+    //var_dump($e);
+   //}
