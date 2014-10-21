@@ -9,6 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
 <body>
