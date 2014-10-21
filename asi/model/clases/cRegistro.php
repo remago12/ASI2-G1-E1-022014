@@ -43,24 +43,18 @@ class Registro
         }
     }
 
-   /* function crear_miembro($parametrosReg)
+    function crear_miembro($parametrosReg)
     {
-    		{
-					$result = mysql_query("SELECT max(idPersona) FROM scout.persona");
-  $rows=array();
-  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
-  	$rows[]=($row);
-  }
 
-    $sql="INSERT INTO miembro (nisMiem,persona_idPersona,estado_idEst,usuario_nomUsu,grupo_idGrup)"
-                            . " values (?,?,?,?,".$rows.")";
+    $sql="INSERT INTO miembro (nisMiem,fchaCreaMiem,persona_idPersona,estado_idEst,usuario_nomUsu,grupo_idGrup)"
+                            . " values (?,?,?,?,?,?)";
     $save = $this->DATA->Execute($sql, $parametrosReg); 
           if ($save){
             return true;
         } else {
             return false;
         }
-    }*/
+    }
 
     function seleccionar_departamento()
 			$sql = "SELECT * FROM departamento ORDER BY idDep desc";

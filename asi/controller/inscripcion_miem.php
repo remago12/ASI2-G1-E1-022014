@@ -3,7 +3,6 @@
 
   require_once '../model/clases/cRegistro.php';
   require_once '../model/data/dataBase.php';
-  require_once '../views/mantenimiento/inscripcion_m.tpl.php';
 
 //variables POST
   $registro =new Registro();
@@ -25,6 +24,7 @@
   $colonia      =$_POST['colonia'];
   $municipio    = $_POST['municipio'];
   $fecha      =date('y-m-d');
+  $numGrupo     =$_POST['grupo'];
 
  
 try{
@@ -37,11 +37,11 @@ try{
 
   $idPersona = mysql_insert_id();
 
-  
-
-  
   $reg2=array($NIS,$NIS,2);
   $registro->crear_usuario($reg2);
+
+  $reg3= array($NIS,$fecha,$idPersona,1,$NIS,$numGrupo)
+  $registro->crear_miembro($reg3);
 
   //$reg3=array($NIS,)
 
