@@ -104,7 +104,7 @@
 		<label>Teléfono Celular:</label>
 		<input type="text"  name="telcel" id="telcel" placeholder="telcel" class="validate[required] medium form-control"><br>
 		<label>Correo:</label>
-		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control" pattern="^([_A-z0-9]){3,}$" maxlength="30" required><br>
+		<input type="email" name="email" id="email" placeholder="email" class="validate[required] medium form-control"  maxlength="30" required><br>
 		<label>DUI:</label>
 		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control"><br>
 		<label>Pasaporte:</label>
