@@ -41,7 +41,7 @@ try{
   $reg2=array($NIS,$NIS,2);
   $registro->crear_usuario($reg2);
 
-  $reg3= array($NIS,$fecha,$idPersona,1,$NIS,$numGrupo)
+  $reg3= array($NIS,$fecha,$idPersona,1,$NIS,$numGrupo);
   $registro->crear_miembro($reg3);
 
   //$reg3=array($NIS,)
