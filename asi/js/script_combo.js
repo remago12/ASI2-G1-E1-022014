@@ -99,8 +99,8 @@ var mapOptions = {
 $('#mapa').html(cadena);
 $('#mapa').html("<input type='input' name='c_y' class='form-control' id='txt_lng' placeholder='Coordenadas en y' value='"+lngGrupo+"'>");
 $('#mapa').html("<div id='map'>")
-$('#mapa').html("</div>")*/
-
+$('#mapa').html("</div>")
+*/
 }},'json');
 }); 
 
