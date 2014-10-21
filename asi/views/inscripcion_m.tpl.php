@@ -84,7 +84,7 @@
 			<label>Municipio</label>
 			</label>
 			<select class="combobox form-control" id="municipio" name="municipio">
-		
+			
 			</select>
 
 			<br>

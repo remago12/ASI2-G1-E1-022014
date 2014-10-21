@@ -4,6 +4,7 @@ class Registro
 	
     //Constructor
 
+    
    function __construct() 
 
 	{
@@ -24,12 +25,6 @@ class Registro
         }
     }
 
-
-    function inscripcion($paramInsc){
-    	//$count = "SELECT idPersona FROM persona ORDER BY idMunic DESC LIMIT 1"
-    	
-    	
-    }
 
     function crear_usuario($parametrosReg)
     {
@@ -55,7 +50,7 @@ class Registro
             return false;
         }
     }
-
+/*
     function seleccionar_departamento()
 			$sql = "SELECT * FROM departamento ORDER BY idDep desc";
   
@@ -73,7 +68,7 @@ class Registro
 				return false;
 			}
 		}
-
+*/
 		function seleccionar_departamento2(){
 			$result = mysql_query("SELECT * FROM scout.departamento order by idDep ASC");
   $rows=array();
@@ -83,6 +78,7 @@ class Registro
 				return array('rows'=>$rows);
 				
 		}
+
 			function seleccionar_municipio2($IdDept){
 			$result = mysql_query("select * from municipio where departamento_idDep =".$IdDept); 
   $rows=array();
@@ -92,6 +88,7 @@ class Registro
 				return array('rows'=>$rows);
 				
 		}
+
 			function seleccionar_grupo(){
 			$result = mysql_query("SELECT numGrup,nomGruo FROM scout.grupo order by numGrup ASC");
   $rows=array();
@@ -111,6 +108,7 @@ class Registro
 				return array('rows'=>$rows);
 				
 		}
+		/*
 
 function seleccionar_municipio()
 	{
@@ -158,7 +156,7 @@ function seleccionar_grupos()
 		}
 		}
 
-
+*/
      
 } 
 

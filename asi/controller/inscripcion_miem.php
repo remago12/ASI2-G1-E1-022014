@@ -44,7 +44,6 @@ try{
   $reg3= array($NIS,$fecha,$idPersona,1,$NIS,$numGrupo);
   $registro->crear_miembro($reg3);
 
-  //$reg3=array($NIS,)
 
    //var_dump($reg);
   
