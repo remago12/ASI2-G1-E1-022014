@@ -51,15 +51,10 @@
 				</div>
 				<div name="DUI" id="DUI">
 				</div>
-				<label>Ocupación:</label>
-				Estudiante 
-				<br>
-				<label>Fecha de Nacimiento:</label>
-				8/08/1991 
-				<br>
-				<label>Teléfono Celular:</label>
-				78909808 
-				<br>
+				<div name="fecna" id="fecna">
+				</div>
+				<div name="telcel" id="telcel">
+				</div>
 				<label>Teléfono de Casa:</label>
 				22345679 
 				<br>

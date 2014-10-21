@@ -21,16 +21,26 @@ var apellido ="";
 var cadena_apellido="";
 var DUI="";
 var cadena_DUI="";
+var fecna ="";
+var cadena_fecna="";
+var telcel ="";
+var cadena_telcel="";
 for(i=0; i < data.rows.length;i++){
 nombre=data.rows[i]["1"];
 apellido=data.rows[i]["2"];
+fecna=data.rows[i]["4"];
 DUI=data.rows[i]["8"];
+telcel=data.rows[i]["6"];
 cadena_nombre="<label>Nombre:</label> "+nombre;
 cadena_apellido="<label>Apellido:</label> "+apellido;
 cadena_DUI="<label>DUI:</label> "+DUI;
+cadena_fecna="<label>Fecha de nacimiento:</label> "+fecna;
+cadena_telcel="<label>Telefono Celular:</label> "+telcel;
 $('#nombre').html(cadena_nombre); 
 $('#apellido').html(cadena_apellido); 
 $('#DUI').html(cadena_DUI); 
+$('#fecna').html(cadena_fecna); 
+$('#telcel').html(cadena_telcel); 
 }},'json');
 
 });
