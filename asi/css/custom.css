@@ -1,15 +1,16 @@
 #logo2{
-	height: 80px;
-	float: right;
-	margin-top: 45px;
-	margin-right: 30px;
-	margin-left: 30px;
+	
 
-}
-#logo1{
 	height: 80px;
 	float: right;
 	margin-top: 2px;
 	margin-right: 80px;
 	margin-bottom: 4px;
+}
+#logo1{
+	height: 80px;
+	float: right;
+	margin-top: 45px;
+	margin-right: 30px;
+	margin-left: 30px;
 }

@@ -15,10 +15,11 @@
 </head>
 
 <body>
+  <!-- 
   <nav class="navbar navbar-default log" role="navigation">
     <div class="container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header">
+      <!--<div class="navbar-header">
         <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
         <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a>       
       </div>
@@ -29,11 +30,57 @@
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
         <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
       </ul>
+        
+      </div>--><!-- /.navbar-collapse -->
 
-      </div><!-- /.navbar-collapse -->
+    <!--</div>--><!-- /.container-fluid -->
+  <!--</nav>-->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <a class="navbar-brand tema" href="#">Scout</a>
+    
+    <a class="navbar-brand tema" href="#">El Salvador</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <br>
+      <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
+      
 
-    </div><!-- /.container-fluid -->
-  </nav>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!--solo tienen que   copiar la siguiente linea para generar mas items -->
+        <li><a href="#">Link</a></li>
+        
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+        <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
+        <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav> 
+
+
+
+
+
         
   
     <div class="row">

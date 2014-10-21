@@ -16,6 +16,7 @@
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
   	<script type="text/javascript" src="../js/mapa.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	
 </head>
 <body>

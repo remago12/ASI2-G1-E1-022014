@@ -22,10 +22,11 @@ html {
 
 li:hover
 {
-background-color:#DF38B1  !important;
+background-color:#430170  !important;
+
 }
 .nohov:hover{
-  background-color: #8F2471 !important;
+  background-color: #430050 !important;
 }
 
 h2{
@@ -106,6 +107,7 @@ dfn {
   font-style: italic;
 }
 h1 {
+  font-family: 'Francois One', sans-serif !important;
   margin: .67em 0;
   font-size: 2em;
 }
@@ -4138,7 +4140,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #8F2471;
+  background-color: #430050;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -4189,8 +4191,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-  color: #555;
-  background-color: #DF38B1 ;
+  color: white;
+  background-color: #430170;
+  border-radius: 0.3em;
+
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
