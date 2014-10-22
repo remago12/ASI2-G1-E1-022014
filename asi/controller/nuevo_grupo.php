@@ -27,7 +27,7 @@
 	$telefono               =$_POST['telefono'];
 
 
-	$reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$idEst,$usuario_nomUsu, $telefono); 
+	$reg=compact($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$idEst,$usuario_nomUsu, $telefono); 
     
     $grupo->crearGrupo($reg);
 	
