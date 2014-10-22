@@ -57,7 +57,7 @@ $sql="INSERT INTO inscripcion (numSolicInsc,estado_idEst,banco_idBanc,grupo_idGr
     
     }
 /*
-    function seleccionar_departamento()
+    function seleccionar_departamento(){
 			$sql = "SELECT * FROM departamento ORDER BY idDep desc";
   
 		$rs = $this->DATA->Execute($sql);

@@ -1,3 +1,11 @@
+<?php
+    //Database
+	require_once '../../model/clases/cInscripcion.php';
+	require_once '../../model/data/dataBase.php';
+     //Objetos
+     $oInscripcion   = new Inscripcion();
+     $idI = base64_decode($_GET['numSolicInsc']);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,10 +50,10 @@
 			</div>
 			<hr class="line">
 			<div class="col-lg-4">
-			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control"><br>
+			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control" value="<?=$idI?>"><br>
 			<div name="NIS" id="NIS">
 			</div>
-			<div name='nombre' id="nombre">
+			<div name='nombre' id="nombre" >
 				</div>
 				<div name="apellido" id="apellido">
 				</div>

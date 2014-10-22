@@ -36,8 +36,8 @@
   $registro->crear_registro($reg);
 
 
-  $reg2=array($NIS,$NIS,2);
-  $registro->crear_usuario($reg2);
+  //$reg2=array($NIS,$NIS,2);
+  //$registro->crear_usuario($reg2);
 
   $reg3= array($NIS,1,1,$grupo);
   $registro->crear_inscripcion($reg3);
