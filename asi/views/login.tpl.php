@@ -15,26 +15,7 @@
 </head>
 
 <body>
-  <!-- 
-  <nav class="navbar navbar-default log" role="navigation">
-    <div class="container-fluid">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <!--<div class="navbar-header">
-        <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
-        <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a>       
-      </div>
-      
-      <br>
-      <ul class="nav navbar-nav navbar-right">
-        <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
-        <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
-        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
-      </ul>
-        
-      </div>--><!-- /.navbar-collapse -->
-
-    <!--</div>--><!-- /.container-fluid -->
-  <!--</nav>-->
+  
   <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -102,11 +83,9 @@
           <div class="modal-body">
             <div class="row">
               <div class="col-md-12">
-<<<<<<< HEAD
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" role="form" action="">
-=======
+
                 <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
->>>>>>> 43ba1f3baf2b9f7320b720939cc6a7b6b059e957
+
                   <label>
                     Usuario:
                   </label>
@@ -116,19 +95,12 @@
                   </label>
                   <input type="password" placeholder="Contraseña" name="password" id="password" class="form-control" required/>
                   <div class="modal-footer">
-<<<<<<< HEAD
 
-                    <button  class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <button class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_m.html">Registrate</a>
-
-=======
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
                     <a href="inscripcion_m.tpl.php">Regístrate</a>
                     <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
->>>>>>> 43ba1f3baf2b9f7320b720939cc6a7b6b059e957
                 </form>
               </div>  
             </div>
