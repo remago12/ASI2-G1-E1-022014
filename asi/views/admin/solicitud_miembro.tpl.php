@@ -29,6 +29,8 @@
         $fecha = time() - strtotime($fechNacPer);
 $edadPer = floor((($fecha / 3600) / 24) / 360);
 $numGrup =$bl['numGrup'];
+$idEst =$bl['idEst'];
+$nomEst =$bl['nomEst'];
         ?>
         <?php
         
@@ -130,7 +132,7 @@ $numGrup =$bl['numGrup'];
 				</label>
 				<br>
 				<select>
-					<option>Espera</option>
+					<option value="<?=$idEst?>"> <?=$nomEst?> </option>
 					<option>Denegado</option>
 					<option>Aceptada</option>
 				</select>

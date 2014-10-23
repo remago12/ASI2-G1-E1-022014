@@ -66,7 +66,7 @@ class Inscripcion
  
      function seleccionar_inscripcion($idInscripcion)
 {
- $sql= "SELECT i.*,p.*,g.numGrup from inscripcion as i, persona as p , grupo as g where i.persona_idPersona = p.idPersona and i.grupo_idGrup=g.idGrup and i.numSolicInsc =".$idInscripcion;
+ $sql= "SELECT i.*,p.*,g.numGrup,e.* from inscripcion as i, persona as p , grupo as g , estado as e where i.persona_idPersona = p.idPersona  and i.grupo_idGrup=g.idGrup and e.idEst=i.estado_idEst and i.numSolicInsc =".$idInscripcion;
   $rs= $this-> DATA->Execute($sql);
   if($rs->RecordCount()){
     while(!$rs->EOF){
@@ -78,6 +78,8 @@ class Inscripcion
       $info[$id]['fechNacPer']=$rs->fields['fechNacPer'];
       $info[$id]['persona_idPersona']=$rs->fields['persona_idPersona'];
       $info[$id]['numGrup']=$rs->fields['numGrup'];
+      $info[$id]['idEst']=$rs->fields['idEst'];
+      $info[$id]['nomEst']=$rs->fields['nomEst'];
       //$info[$id]['municipio_idMunic']=$rs->fields['municipio_idMunic'];
       $rs->MoveNext();
       }
