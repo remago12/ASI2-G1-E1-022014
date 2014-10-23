@@ -13,4 +13,39 @@
 	margin-top: 45px;
 	margin-right: 30px;
 	margin-left: 30px;
+
+}
+
+#uno{
+	background-color: #C3006E;
+}
+
+#dos{
+	background-color: #8ADB00;
+}
+#tres{
+	background-color: #03A3B9;
+}
+#cuatro{
+	background-color:#EC0047 ;
+}
+.cos:link  {
+	color: white;
+	text-decoration: none;
+
+}
+
+.box1{
+	padding-bottom: 20px;
+	margin-bottom: 5em;
+	box-shadow: -29px 21px 37px -4px rgba(0,0,0,0.75);
+}
+
+.box2{
+	padding-bottom: 20px;
+	margin-bottom: 5em;
+	box-shadow: 29px 21px 37px -4px rgba(0,0,0,0.75);
+}
+.encabezado{
+	font-family: 'Jura', sans-serif;
 }
