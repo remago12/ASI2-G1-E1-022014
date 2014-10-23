@@ -1,3 +1,42 @@
+<?php
+    //Database
+	require_once '../../model/clases/cInscripcion.php';
+	require_once '../../model/data/dataBase.php';
+     //Objetos
+     $oInscripcion   = new Inscripcion();
+     $idI = base64_decode($_GET['numSolicInsc']);
+
+      try{
+      $inscripcion = $oInscripcion->seleccionar_inscripcion($idI);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($inscripcion!=null)
+        {
+        foreach($inscripcion AS $key => $bl)
+        {
+    
+
+        $nomPer      = $bl['nomPer'];
+        $apelPer       = $bl['apelPer'];
+        $genPer       = $bl['genPer'];
+          if ($bl['genPer'] == "M"){
+        	$genPer= "Masculino";
+        }else{
+        	$genPer= "Femenino";
+        }
+         $fechNacPer =$bl['fechNacPer'];
+        $fecha = time() - strtotime($fechNacPer);
+$edadPer = floor((($fecha / 3600) / 24) / 360);
+$numGrup =$bl['numGrup'];
+        ?>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +46,7 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+  	<script type="text/javascript" src="../../js/inscripcion.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -41,38 +81,28 @@
 			</div>
 			<hr class="line">
 			<div class="col-lg-4">
-				<label>Nombre:</label>
-				Oscar Antonio 
-				<br>
-				<label>Apellidos:</label>
-				Lizama Mejia 
-				<br>
-				<label>DUI:</label>
-				------------- 
-				<br>
-				<label>Ocupación:</label>
-				Estudiante 
-				<br>
-				<label>Fecha de Nacimiento:</label>
-				8/08/1991 
-				<br>
-				<label>Teléfono Celular:</label>
-				78909808 
-				<br>
-				<label>Teléfono de Casa:</label>
-				22345679 
-				<br>
-				<label>Género:</label>
-				Masculino 
-				<br>
-				<label>Dirección:</label>
-				Barrio San Juan, Calle los pinos, pasaje  10 , casa #7 
-				<br>
-				
+			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control"><br>
+			<label>Numero de Solicitud: <?=$idI?></label> <br>
+			<label>Nombre: <?=$nomPer?> </label> <br>
+	<label>Apellido: <?=$apelPer?> </label> <br>
+	<label>Genero: <?=$genPer?> </label> <br>
+	<label>Fecha de Nacimiento: <?=$fechNacPer?> </label> <br>
+	<label>Edad: <?=$edadPer?> </label> <br>
+				<div name="DUI" id="DUI">
+				</div>
+				<div name="fecna" id="fecna">
+				</div>
+				<div name="telcel" id="telcel">
+				</div>
+				<div name="telcasa" id="telcasa">
+				</div>
+				<div name="genero" id="genero">
+				</div>
+			<div name="direccion" id="direccion">
+				</div>
 				</div>
 			<div class="col-lg-4">
-				<label>Grupo Solicitado:</label>
-				8 
+			<label>Numero de Grupo: <?=$numGrup?> </label> <br>
 			</div><br>
 			<div class="col-lg-4">
 				<label>Comprobante de Pago:</label>

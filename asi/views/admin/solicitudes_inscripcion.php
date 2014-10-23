@@ -1,3 +1,10 @@
+<?php
+    //Database
+	require_once '../../model/clases/cInscripcion.php';
+	require_once '../../model/data/dataBase.php';
+     //Objetos
+     $oInscripcion   = new Inscripcion();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -74,53 +81,74 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-10 col-lg-offset-1">
+			<div class="col-lg-8 col-lg-offset-1">
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Nombre Completo</th>
-							<th>Edad</th>
+							<th>Numero de solicitud</th>
+							<th>Nombre</th>
 							<th>Género</th>
-							<th>No. de Grupo</th>
-							<th>DUI</th>
+							<th>Edad</th>
+							<th>Numero de Grupo</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>
-							<a href="solicitud_miembro.html">Oscar Antonio Lizama Mejia</a>
-							</td>
-							<td>
-								20
-							</td>
-							<td>
-								Masculino
-							</td>
-							<td>
-								21
-							</td>
-							<td>
-								09778882-9
-							</td>
-						</tr>
-							<tr>
-							<td>
-							Carlos Antonio Rivas Murcia
-							</td>
-							<td>
-								19
-							</td>
-							<td>
-								Masculino
-							</td>
-							<td>
-								7
-							</td>
-							<td>
-								09998882-9
-							</td>
-						</tr>
+					  <?php 
+      try{
+      $cuadro = $oInscripcion->seleccionar_inscripciones();
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($cuadro!=null)
+        {
+        foreach($cuadro AS $key => $bl)
+        {
+        $numSolicInsc      = $bl['numSolicInsc'];
+        $nomPer       = $bl['nomPer'];
+        $apelPer       = $bl['apelPer'];
+        $genPer ="";
+        if ($bl['genPer'] == "M"){
+        	$genPer= "Masculino";
+        }else{
+        	$genPer= "Femenino";
+        }
+        $fechNacPer =$bl['fechNacPer'];
+        $numGrup    =$bl['numGrup'];
+        $fecha = time() - strtotime($fechNacPer);
+$edad = floor((($fecha / 3600) / 24) / 360);
 
+
+        
+        ?>
+              <tr>
+        <td>
+        <?=$numSolicInsc?>
+        </td>
+        <td>
+        <?=$nomPer." ".$apelPer?>
+        </td>
+        <td>
+        <?=$genPer?>
+        </td>
+        <td>
+        <?=$edad?>
+        </td>
+        <td>
+        <?=$numGrup?>
+        </td>
+        <td>
+         <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>
+        </td>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+        
+        
+        ?> 
 					</tbody>
 				</table>
 			</div>				

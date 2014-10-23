@@ -1,8 +1,8 @@
 <?php
 
-	require "../views/inscripcion_grupo.tpl.php";
-	require "../model/data/dataBase.php";
-	require "../model/clases/cGrupo.php";
+	require_once "../views/inscripcion_grupo.tpl.php";
+	require_once "../model/data/dataBase.php";
+	require_once "../model/clases/cGrupo.php";
 
 	$grupo = new Grupo;
 
@@ -17,7 +17,7 @@
 	$horaReuGrup	        =$_POST['horaReunion'];
 	$limMiemGrup	        =$_POST['limiteMiem'];
 	$callGrup			    =$_POST['calle'];
-	$numCasGrup 	        =$_POST['num_cas'];
+	$numCasGrup 	        =$_POST['numCasa'];
 	$colGrup 			    =$_POST['colonia'];
 	$municipio_idMunic		=$_POST['municipio'];
 	$latGrup			    =$_POST['txt_lat'];
@@ -26,8 +26,12 @@
 	$usuario_nomUsu         ='admin';
 	$telefono               =$_POST['telefono'];
 
+	try{
 
 	$reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$idEst,$usuario_nomUsu, $telefono); 
-    
     $grupo->crearGrupo($reg);
-	
+
+     }catch(Exception $e){
+
+	 }
+	 ?>

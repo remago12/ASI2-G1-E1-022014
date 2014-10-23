@@ -1,6 +1,7 @@
 <?php
 require_once '../data/dataBase.php';
 require_once 'cRegistro.php';
+require_once 'cInscripcion.php';
 
 
 $response =array();
@@ -25,6 +26,27 @@ switch ($_POST['action']) {
 		$response = Registro::seleccionar_grupo2($_POST['IdGrupo']);
 		echo json_encode($response);
 		break;
+		
+		case 'corrnis':
+		$response = Registro::seleccionar_corrnis();
+		echo json_encode($response);
+		break;
+
+		case 'num_inscripcion':
+		$response = Inscripcion::seleccionar_numinscripcion($_POST['year']);
+		echo json_encode($response);
+		break;
+
+		case 'inscripcion':
+		$response = Inscripcion::seleccionar_inscripcion($_POST['idPersona']);
+		echo json_encode($response);
+		break;
+
+		case 'persona':
+		$response = Inscripcion::seleccionar_persona($_POST['idPersona']);
+		echo json_encode($response);
+		break;
+
 }
 }
 	catch(Exception $e){

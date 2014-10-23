@@ -21,7 +21,7 @@
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
-  	<script type="text/javascript" src="../js/nis.js"></script>
+  	<script type="text/javascript" src="../js/auto-gen.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -80,11 +80,11 @@
 			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
-			<select class="combobox form-control" id="departamento" name="departamento">
+			<select class="combobox form-control" id="departamento" name="departamento" required>
 			</select><br>
 			<label>Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" name="municipio">
+			<select class="combobox form-control" id="municipio" name="municipio" required>
 			
 			</select>
 
@@ -111,7 +111,7 @@
 		<label>Pasaporte:</label>
 		<input type="text"  name="pasaporte" id="pasaporte" placeholder="Pasaporte" class="validate[required] medium form-control"><br>
 		<label>No. de grupo:</label><br>
-		<select class="combobox form-control" nombre="grupo" id="grupo">
+		<select class="combobox form-control" name="grupo" id="grupo" required>
 		</select>
 		<br>
 		<br>
