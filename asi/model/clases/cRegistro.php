@@ -69,6 +69,8 @@ elseif (strlen((string)$correlativo) == 5){
 }
 elseif (strlen((string)$correlativo) == 6){
 	$num_insc=$correlativo.$year;
+}elseif (strlen((string)$correlativo) == 0){
+	$num_insc="000001".$year;
 }
 
 $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
@@ -81,16 +83,6 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
             return false;
        }
 
-}elseif($row2 == null){
-	$sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
-                       . " values (?,?,?,'".$num_insc."','000001".$year."')";
-    $save = $this->DATA->Execute($sql,$parametrosReg); 
-          if ($save){
-            return true;
-            echo $year;
-        } else {
-            return false;
-       }
 }
 
     
