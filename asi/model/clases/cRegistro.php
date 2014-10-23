@@ -51,7 +51,6 @@ if ($row2 = mysql_fetch_row($rs2)){
 	$correlativo=substr($correlativo,0,-2);
 	$correlativo= (int)$correlativo + 1;
 $num_insc="";
-
 	if (strlen((string)$correlativo) == 1){
 	$num_insc="00000".$correlativo.$year;
 }
@@ -82,6 +81,16 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
             return false;
        }
 
+}elseif($row2 == null){
+	$sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
+                       . " values (?,?,?,'".$num_insc."','000001".$year."')";
+    $save = $this->DATA->Execute($sql,$parametrosReg); 
+          if ($save){
+            return true;
+            echo $year;
+        } else {
+            return false;
+       }
 }
 
     

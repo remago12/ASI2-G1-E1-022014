@@ -40,7 +40,7 @@ class Inscripcion
 
     function seleccionar_inscripciones()
 {
- $sql= "SELECT p.*,i.*, g.numGrup FROM persona AS p , inscripcion AS i, grupo AS g WHERE g.idGrup = i.grupo_idGrup" ;
+ $sql= "SELECT i.*,p.* from inscripcion as i, persona as p where i.persona_idPersona = p.idPersona" ;
   $rs= $this-> DATA->Execute($sql);
   if($rs->RecordCount()){
     while(!$rs->EOF){
