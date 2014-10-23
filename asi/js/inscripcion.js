@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+/*
 $('#idPersona').change(function(){
 var idPersona=$('#idPersona').val();
 $.post("../../model/clases/ajax.php",{action:"inscripcion",idPersona:idPersona},function(data){

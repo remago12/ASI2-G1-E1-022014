@@ -5,6 +5,37 @@
      //Objetos
      $oInscripcion   = new Inscripcion();
      $idI = base64_decode($_GET['numSolicInsc']);
+
+      try{
+      $inscripcion = $oInscripcion->seleccionar_inscripcion($idI);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($inscripcion!=null)
+        {
+        foreach($inscripcion AS $key => $bl)
+        {
+    
+
+        $nomPer      = $bl['nomPer'];
+        $apelPer       = $bl['apelPer'];
+        $genPer       = $bl['genPer'];
+          if ($bl['genPer'] == "M"){
+        	$genPer= "Masculino";
+        }else{
+        	$genPer= "Femenino";
+        }
+         $fechNacPer =$bl['fechNacPer'];
+        $fecha = time() - strtotime($fechNacPer);
+$edadPer = floor((($fecha / 3600) / 24) / 360);
+$numGrup =$bl['numGrup'];
+        ?>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -50,13 +81,13 @@
 			</div>
 			<hr class="line">
 			<div class="col-lg-4">
-			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control" value="<?=$idI?>"><br>
-			<div name="NIS" id="NIS">
-			</div>
-			<div name='nombre' id="nombre" >
-				</div>
-				<div name="apellido" id="apellido">
-				</div>
+			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control"><br>
+			<label>Numero de Solicitud: <?=$idI?></label> <br>
+			<label>Nombre: <?=$nomPer?> </label> <br>
+	<label>Apellido: <?=$apelPer?> </label> <br>
+	<label>Genero: <?=$genPer?> </label> <br>
+	<label>Fecha de Nacimiento: <?=$fechNacPer?> </label> <br>
+	<label>Edad: <?=$edadPer?> </label> <br>
 				<div name="DUI" id="DUI">
 				</div>
 				<div name="fecna" id="fecna">
@@ -71,8 +102,7 @@
 				</div>
 				</div>
 			<div class="col-lg-4">
-			<div name="numGrup" id="numGrup">
-			</div> 
+			<label>Numero de Grupo: <?=$numGrup?> </label> <br>
 			</div><br>
 			<div class="col-lg-4">
 				<label>Comprobante de Pago:</label>

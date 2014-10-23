@@ -51,6 +51,7 @@ if ($row2 = mysql_fetch_row($rs2)){
 	$correlativo=substr($correlativo,0,-2);
 	$correlativo= (int)$correlativo + 1;
 $num_insc="";
+
 	if (strlen((string)$correlativo) == 1){
 	$num_insc="00000".$correlativo.$year;
 }
@@ -69,8 +70,6 @@ elseif (strlen((string)$correlativo) == 5){
 }
 elseif (strlen((string)$correlativo) == 6){
 	$num_insc=$correlativo.$year;
-}elseif (strlen((string)$correlativo) == 0){
-	$num_insc="000001".$year;
 }
 
 $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"

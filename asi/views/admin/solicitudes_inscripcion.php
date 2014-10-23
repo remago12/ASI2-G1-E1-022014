@@ -50,7 +50,7 @@
 		</div>
 		<br>
 		<div class="row">
-			<div class="col-lg-7 col-lg-offset-1">
+			<div class="col-lg-8 col-lg-offset-1">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -58,7 +58,7 @@
 							<th>Nombre</th>
 							<th>Género</th>
 							<th>Edad</th>
-							<th>DUI</th>
+							<th>Numero de Grupo</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -82,8 +82,10 @@
         	$genPer= "Femenino";
         }
         $fechNacPer =$bl['fechNacPer'];
+        $numGrup    =$bl['numGrup'];
         $fecha = time() - strtotime($fechNacPer);
 $edad = floor((($fecha / 3600) / 24) / 360);
+
 
         
         ?>
@@ -99,6 +101,9 @@ $edad = floor((($fecha / 3600) / 24) / 360);
         </td>
         <td>
         <?=$edad?>
+        </td>
+        <td>
+        <?=$numGrup?>
         </td>
         <td>
          <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>
