@@ -8,13 +8,13 @@
 //variables POST
   $registro = new Registro();
 
-<<<<<<< HEAD
+
   //$NIS       = $_POST['NIS'];
   $nombre     =$_POST['nombre'];
-=======
+
   $NIS          =$_POST['NIS'];
   $nombre       =$_POST['nombre'];
->>>>>>> c67a7b6506454950ff834200addbb8f084e2a037
+
   $apellido     =$_POST['apellido'];
   $fechaNac     =$_POST['fechaNac'];
   $genero       =$_POST['genero'];
@@ -33,38 +33,27 @@
   $grupo        =$_POST['grupo'];
 
  
-try{
-<<<<<<< HEAD
+//try{
+
  
-=======
->>>>>>> c67a7b6506454950ff834200addbb8f084e2a037
+
 //arrays
     $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
   $registro->crear_registro($reg);
-
-<<<<<<< HEAD
-$reg3= array(1,1,$grupo);
-  $registro->crear_inscripcion($reg3);
-
+    $reg3= array(1,1,$grupo);
+  $registro->crear_inscripcion($reg3); 
 
    //var_dump($reg);
   
   //header('Location: inscripcion_m.php ');  
 
-  }catch(Exception $e){
+  //}catch(Exception $e){
 
    //header('Location:  consulta.php'); 
 //echo "$e";
     //var_dump($e);
-=======
-  //$reg2=array($NIS,$NIS,2);
-  //$registro->crear_usuario($reg2);
+ 
 
-  $reg3= array($NIS,1,1,$grupo);
-  $registro->crear_inscripcion($reg3); 
 
-  }catch(Exception $e){
 
->>>>>>> c67a7b6506454950ff834200addbb8f084e2a037
-   }
    ?>
