@@ -57,7 +57,7 @@
 							<th>Numero de solicitud</th>
 							<th>Nombre</th>
 							<th>Género</th>
-							<th>No. de Grupo</th>
+							<th>Edad</th>
 							<th>DUI</th>
 						</tr>
 					</thead>
@@ -81,6 +81,11 @@
         }else{
         	$genPer= "Femenino";
         }
+        $fechNacPer =$bl['fechNacPer'];
+        $fecha = time() - strtotime($fechNacPer);
+$edad = floor((($fecha / 3600) / 24) / 360);
+
+        
         ?>
               <tr>
         <td>
@@ -91,6 +96,9 @@
         </td>
         <td>
         <?=$genPer?>
+        </td>
+        <td>
+        <?=$edad?>
         </td>
         <td>
          <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>

@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+
+/*
 $('#nombre').keyup(function(){
 var nombre= $('#nombre').val().toUpperCase();
 var apellido= $('#apellido').val().toUpperCase();
@@ -75,7 +77,7 @@ $('#NIS').val(NIS);
 //$('#nisp').html(cadena); 
 });
 
-
+*/
 
 });
 

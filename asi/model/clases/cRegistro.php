@@ -15,6 +15,7 @@ class Registro
 
 	function crear_registro($parametrosReg)
     {
+
     $sql="INSERT INTO persona (nomPer,apelPer,fechNacPer,genPer,telPer,celPer,corrPer,duiPer,pasPer,callPer,numCasPer,colPer,municipio_idMunic,fchaCreaPer)"
                             . " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     $save = $this->DATA->Execute($sql, $parametrosReg); 
@@ -37,44 +38,56 @@ class Registro
             return false;
         }
     }
+   
+    function crear_inscripcion($parametrosReg){
 
-    function crear_inscripcion($parametrosReg)
-    {
     	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
-    	if ($row = mysql_fetch_row($rs)) {
+    	$year= date("y");
+    	$rs2= mysql_query("SELECT numSolicInsc from inscripcion where numSolicInsc like '%____".$year."%' order by numSolicInsc desc limit 1 ");
+      	if ($row = mysql_fetch_row($rs)) {
 $id = trim($row[0]);
-$sql="INSERT INTO inscripcion (numSolicInsc,estado_idEst,banco_idBanc,grupo_idGrup,persona_idPersona)"
-                            . " values (?,?,?,?,".$id.")";
-    $save = $this->DATA->Execute($sql, $parametrosReg); 
+if ($row2 = mysql_fetch_row($rs2)){
+	$correlativo = trim($row2[0]);
+	$correlativo=substr($correlativo,0,-2);
+	$correlativo= (int)$correlativo + 1;
+$num_insc="";
+
+	if (strlen((string)$correlativo) == 1){
+	$num_insc="00000".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 2){
+	$num_insc="0000".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 3){
+$num_insc="000".$correlativo.$year;
+
+}
+elseif (strlen((string)$correlativo) == 4){
+	$num_insc="00".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 5){
+	$num_insc="0".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 6){
+	$num_insc=$correlativo.$year;
+}
+
+$sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
+                       . " values (?,?,?,'".$num_insc."',".$id.")";
+    $save = $this->DATA->Execute($sql,$parametrosReg); 
           if ($save){
             return true;
+            echo $year;
         } else {
             return false;
-        }
+       }
 
 }
 
     
     }
-/*
-    function seleccionar_departamento(){
-			$sql = "SELECT * FROM departamento ORDER BY idDep desc";
-  
-		$rs = $this->DATA->Execute($sql);
-				if ( $rs->RecordCount()) {
-				while(!$rs->EOF){
-					$id                 	    = $rs->fields['idDep'];
-					$info[$id]['idDep']		= $rs->fields['idDep'];
-					$info[$id]['nomDep'] 	= $rs->fields['nomDep'];
-		  		    $rs->MoveNext();
-				}
-				$rs->Close();
-				return $info;
-			} else {
-				return false;
-			}
-		}
-*/
+}
+
 		function seleccionar_departamento2(){
 			$result = mysql_query("SELECT * FROM scout.departamento order by idDep ASC");
   $rows=array();
@@ -84,6 +97,7 @@ $sql="INSERT INTO inscripcion (numSolicInsc,estado_idEst,banco_idBanc,grupo_idGr
 				return array('rows'=>$rows);
 				
 		}
+	
 
 			function seleccionar_municipio2($IdDept){
 			$result = mysql_query("select * from municipio where departamento_idDep =".$IdDept); 

@@ -26,9 +26,14 @@ switch ($_POST['action']) {
 		$response = Registro::seleccionar_grupo2($_POST['IdGrupo']);
 		echo json_encode($response);
 		break;
-
+		
 		case 'corrnis':
 		$response = Registro::seleccionar_corrnis();
+		echo json_encode($response);
+		break;
+
+		case 'num_inscripcion':
+		$response = Inscripcion::seleccionar_numinscripcion($_POST['year']);
 		echo json_encode($response);
 		break;
 
@@ -41,6 +46,7 @@ switch ($_POST['action']) {
 		$response = Inscripcion::seleccionar_persona($_POST['idPersona']);
 		echo json_encode($response);
 		break;
+
 }
 }
 	catch(Exception $e){

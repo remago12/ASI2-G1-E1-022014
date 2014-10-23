@@ -21,7 +21,7 @@
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
-  	<script type="text/javascript" src="../js/nis.js"></script>
+  	<script type="text/javascript" src="../js/auto-gen.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>

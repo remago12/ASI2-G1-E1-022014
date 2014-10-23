@@ -28,6 +28,15 @@ class Inscripcion
         return array('rows'=>$rows);
         
     }
+    function seleccionar_numinscripcion($year){
+      $result = mysql_query("SELECT numSolicInsc FROM inscripcion WHERE numSolicInsc LIKE '%______".$year."%' ORDER BY numSolicInsc desc limit 1 ");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+    $rows[]=($row);
+  }
+        return array('rows'=>$rows);
+        
+    }
 
     function seleccionar_inscripciones()
 {
@@ -40,6 +49,7 @@ class Inscripcion
       $info[$id]['nomPer']=$rs->fields['nomPer'];
       $info[$id]['apelPer']=$rs->fields['apelPer'];
       $info[$id]['genPer']=$rs->fields['genPer'];
+      $info[$id]['fechNacPer']=$rs->fields['fechNacPer'];
       $info[$id]['persona_idPersona']=$rs->fields['persona_idPersona'];
       //$info[$id]['municipio_idMunic']=$rs->fields['municipio_idMunic'];
       $rs->MoveNext();
