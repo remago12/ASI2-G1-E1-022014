@@ -1,18 +1,28 @@
 <!DOCTYPE html>
+
+<?php 
+  $link = mysql_connect("localhost", "asi2", "equipo1") or die("Could not connect: " . 
+  mysql_error());
+  mysql_selectdb("scout",$link) or die ("Can't use dbmapserver : " . mysql_error());
+?>
+
 <html lang="es">
 <head>
 	<title>
 	Login
 	</title>
+  <meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
   <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link type="text/css" href="../css/mapLog.css" rel="stylesheet" media="all" />
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  <script type="text/javascript" src="../js/mapLog.js"></script>
-  <meta charset="UTF-8">
+  <script src="http://maps.google.com/maps/api/js?v=3&sensor=false" type="text/javascript"></script>
+  <!--<script type="text/javascript" src="../js/mapLog.js"></script>-->
+
 </head>
+
+
 
 <body>
   
@@ -57,10 +67,6 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
-
-
-
-
 
         
   
@@ -107,5 +113,48 @@
           </div>
         </div>
       </div>
+
+      <script type="text/javascript">
+    var locations = [
+      <?php
+
+      $query = mysql_query("SELECT * FROM grupo");
+           while ($row = mysql_fetch_array($query)){
+             $name=$row['nomGruo'];
+             $lat=$row['latGrup'];
+             $lon=$row['lngGrup'];
+             
+             echo ("['$name',$lat,$lon],");
+           }
+
+      ?>
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 10,
+      center: new google.maps.LatLng(13.692357315058082, -89.21998257812504),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  </script>
   </body>
+
+  
 </html>
