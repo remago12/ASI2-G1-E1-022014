@@ -131,10 +131,8 @@ $nomEst =$bl['nomEst'];
 				Estado de la Solicitud:
 				</label>
 				<br>
-				<select>
+				<select id="estado" name="estado">
 					<option value="<?=$idEst?>"> <?=$nomEst?> </option>
-					<option>Denegado</option>
-					<option>Aceptada</option>
 				</select>
 			</div>
 			

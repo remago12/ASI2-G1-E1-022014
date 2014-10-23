@@ -28,6 +28,7 @@ $('#municipio').html(cadena);
 }},'json');
 });
 
+
 	$('#grupo').ready(function(){
 $.post("../model/clases/ajax.php",{action:"grupo"},function(data){
 var IdGrupo="";
