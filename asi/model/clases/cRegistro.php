@@ -38,7 +38,25 @@ class Registro
             return false;
         }
     }
-   
+
+     function crear_miembro($parametrosReg,$idnumSolicInsc)
+    {
+ $rs= mysql_query("SELECT persona_idPersona,grupo_idGrup from inscripcion where numSolicInsc = 0000114");
+ $idPer="";
+ $idGrup="";
+ if ($row = mysql_fetch_row($rs)) {
+ 	$idPer=$row[0];
+ 	$idGrup=$row[1];
+    $sql="INSERT INTO miembro(nisMiem,estado_idEst, usuario_nomUsu,persona_idPersona, grupo_idGrup)"
+                            . " values (?,?,?,".$idPer.",".$idGrup.")";
+    $save = $this->DATA->Execute($sql,$parametrosReg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
     function crear_inscripcion($parametrosReg){
 
     	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
@@ -130,7 +148,7 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
 		}
 
 		function seleccionar_corrnis(){
-			$result = mysql_query("SELECT (idPersona+1) FROM scout.persona order by idPersona desc limit 1");
+			$result = mysql_query("SELECT nisMiem from scout.miembro");
 			if(mysql_num_rows($result) == null){
 			
 			}

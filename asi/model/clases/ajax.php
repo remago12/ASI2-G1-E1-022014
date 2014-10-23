@@ -43,7 +43,7 @@ switch ($_POST['action']) {
 		break;
 
 		case 'persona':
-		$response = Inscripcion::seleccionar_persona($_POST['idPersona']);
+		$response = Inscripcion::seleccionar_persona($_POST['num_SolicInsc']);
 		echo json_encode($response);
 		break;
 

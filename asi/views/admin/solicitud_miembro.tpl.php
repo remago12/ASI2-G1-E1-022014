@@ -49,6 +49,7 @@ $nomEst =$bl['nomEst'];
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
   	<script type="text/javascript" src="../../js/inscripcion.js"></script>
+  	  	 <script type="text/javascript" src="../../js/auto-gen.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -74,8 +75,9 @@ $nomEst =$bl['nomEst'];
   </div><!-- /.container-fluid -->
 	</nav>
 		<h1 class="text-center">Solicitud de Miembro</h1>
+		<form method="POST" action="../../model/clases/action_crear_miembro.php?idI=<?=base64_encode($idI)?>">
 		<div class="container">
-		
+
 		<div class="row">
 			
 			<div class="col-lg-2"><br/><br/>
@@ -83,7 +85,10 @@ $nomEst =$bl['nomEst'];
 			</div>
 			<hr class="line">
 			<div class="col-lg-4">
-			<input type="text"   name="idPersona" id="idPersona" placeholder="idPersona" class="validate[required] medium form-control"><br>
+				<div id="nisp" nombre="nisp">
+				<input type="text" name="idI" id="idI" value="<?=$idI?>" class="validate[required] medium form-control"><br>
+            <input type="text" name="NIS" id="NIS" placeholder="" class="validate[required] medium form-control"><br>
+			</div>
 			<label>Numero de Solicitud: <?=$idI?></label> <br>
 			<label>Nombre: <?=$nomPer?> </label> <br>
 	<label>Apellido: <?=$apelPer?> </label> <br>
@@ -139,6 +144,7 @@ $nomEst =$bl['nomEst'];
 		</div>	
 
 		</div>
+		</form>
 		<br/><br/><br/><br/>
 </body>
 </html>

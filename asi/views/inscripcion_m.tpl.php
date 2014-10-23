@@ -21,7 +21,6 @@
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
-  	<script type="text/javascript" src="../js/auto-gen.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -63,9 +62,6 @@
 			<label>Apellido:</label>
 			<input type="text"   name="apellido" id="apellido" placeholder="Apellido" class="validate[required] medium form-control"><br>
 			<label>NIS:</label>
-			<div id="nisp" nombre="nisp">
-            <input type="text" name="NIS" id="NIS" placeholder="" class="validate[required] medium form-control"><br>
-			</div>
 			<label>Fecha de Nacimiento:</label>
 			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control">
 			<br>

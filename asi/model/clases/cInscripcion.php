@@ -9,8 +9,8 @@ class Inscripcion
         $this->DATA = $DATA;
     }
 
-    function seleccionar_persona($idPersona){
-			$result = mysql_query("SELECT * FROM scout.persona where idPersona = ".$idPersona);
+    function seleccionar_persona($idI){
+			$result = mysql_query("Select p.* FROM persona as p,inscripcion as i where p.idPersona = i.persona_idPersona and i.numSolicInsc =".$idI);
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
   	$rows[]=($row);
