@@ -14,6 +14,16 @@
     	exit();
   	}
 
+	
+
+
+	try{
+
 	$usuario->ingresoUsuario();
+
+
+     }catch(Exception $e){
+
+	 }
 
 
