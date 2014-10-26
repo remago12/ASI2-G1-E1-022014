@@ -130,6 +130,8 @@
       ?>
     ];
 
+    var img = new google.maps.MarkerImage("../img/scouts.png");
+
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 10,
       center: new google.maps.LatLng(13.692357315058082, -89.21998257812504),
@@ -143,7 +145,8 @@
     for (i = 0; i < locations.length; i++) {  
       marker = new google.maps.Marker({
         position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-        map: map
+        map: map,
+        icon: img
       });
 
       google.maps.event.addListener(marker, 'click', (function(marker, i) {
