@@ -49,9 +49,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Link</a></li>
+        <!--<li><a href="#">Link</a></li>-->
         
-        <li class="dropdown">
+        <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -60,7 +60,7 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
+        </li>-->
         <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
       </ul>
@@ -90,12 +90,12 @@
             <div class="row">
               <div class="col-md-12">
 
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
+                <form method="POST" data-toggle="validator" role="form">
 
                   <label>
                     Usuario:
                   </label>
-                  <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control" required/>
+                  <input type="text" placeholder="Usuario" name="username" id="username" class="form-control" required/>
                   <label>
                     Contraseña:
                   </label>
@@ -104,7 +104,7 @@
 
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_m.tpl.php">Regístrate</a>
+                    <a href="inscripcion_miem.php">Regístrate</a>
                     <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
                 </form>

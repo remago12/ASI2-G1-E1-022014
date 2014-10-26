@@ -39,7 +39,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="#">Inicio</a></li>
-        
+        <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -78,7 +78,7 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
-               <a href="../views/admin/solicitudes_inscripcion.html">Solicitudes</a>
+               <a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
@@ -86,6 +86,9 @@
                   <h2 class="encabezado">Grupos</h2>
               </div>  
               </a>
+              <a href="../controller/nuevo_grupo.php">Inscripcion de Grupo</a>
+              <br>
+              <a href="../views/gruposScout.tpl.php">Grupos Scout</a>
             </div>
           </div>  
         </div>
