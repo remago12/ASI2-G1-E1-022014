@@ -10,25 +10,19 @@ class Usuario{
 
 	function ingreso($paramsUsuario){
 		$sql = "SELECT * FROM usuario as u "
-		. "where u.nomUsu = ? AND u.contraUsu = ?";
+		. "WHERE u.nomUsu = ? AND u.contraUsu = ?";
 		$rs = $this->DATA->Execute($sql, $paramsUsuario);
 
         if ( $rs->RecordCount() > 0 ) {
 			session_start();
 			$usuario            	 = $rs->fields['nomUsu'];
 			$contra             	 = $rs->fields['contraUsu'];
-			//$imagen                = $rs->fields['Usu_Imagen'];
-			//$idAdministrador	     = $rs->fields['IdEmpleado'];
-			//$correo				 = $re->fields['Usu_Correo'];
 			$_SESSION['usuario']     = $usuario;
 			$_SESSION['contra']      = $contra;
-			//$_SESSION['imagen']    = $imagen;
-			//$_SESSION['correo']	 = $correo;
- 			$_SESSION['stat']  		 = "identificado"; 
-			$_SESSION['tipoAdmin']   = "admin"; 
-            return true;
-        }else{
-            return false;
+			
+			header("Location: menu.php");
+	        }else{
+            header("Location: login.php");
         }
     }
 
@@ -74,14 +68,7 @@ class Usuario{
     }
 
 
-    function ingresoUsuario(){
-    	if ( (isset($_POST['username_id'])) && (isset($_POST['password'])) )  {
-		    $user = $_POST['username_id'];
-		    $psw  = $_POST['password'];
-		    //$estado= "Habilitado";
-		    //$tipo  = "Administrador";
-		    //$mPas =   md5($psw);
-		    $paramsUser = array($user, $psw);
+    function ingresoUsuario($paramsUser){
 		    $login = $this->ingreso($paramsUser);
 		 
 		    if ($login){
@@ -93,7 +80,6 @@ class Usuario{
 		    }
 
 		}
-    }
 } 
 
 ?>
