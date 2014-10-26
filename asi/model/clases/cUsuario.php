@@ -9,21 +9,22 @@ class Usuario{
     }
 
 	function ingreso($paramsUsuario){
-		$sql = "SELECT * FROM usuario as u "
-		. "WHERE u.nomUsu = ? AND u.contraUsu = ?";
+		$sql = "SELECT COUNT(*) as cont FROM usuario  WHERE nomUsu = ? AND contraUsu = ?";
 		$rs = $this->DATA->Execute($sql, $paramsUsuario);
+		$count = odbc_fetch_array($rs);
 
-        if ( $rs->RecordCount() > 0 ) {
+
+        if ( $count['cont'] == 1 ) {
 			session_start();
 			$usuario            	 = $rs->fields['nomUsu'];
 			$contra             	 = $rs->fields['contraUsu'];
 			$_SESSION['usuario']     = $usuario;
 			$_SESSION['contra']      = $contra;
 			
-			header("Location: menu.php");
+			header('Location: menu.php');
 	        }else{
-            header("Location: login.php");
-        }
+            header('Location: ../../login.php');
+        
     }
 
     function verSession(){

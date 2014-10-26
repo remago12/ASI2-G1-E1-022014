@@ -41,7 +41,7 @@ class Registro
 
      function crear_miembro($parametrosReg,$idnumSolicInsc)
     {
- $rs= mysql_query("SELECT persona_idPersona,grupo_idGrup from inscripcion where numSolicInsc = 0000114");
+ $rs= mysql_query("SELECT persona_idPersona,grupo_idGrup from inscripcion where numSolicInsc =".$idnumSolicInsc);
  $idPer="";
  $idGrup="";
  if ($row = mysql_fetch_row($rs)) {

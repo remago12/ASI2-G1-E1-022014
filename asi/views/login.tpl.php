@@ -49,9 +49,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Link</a></li>
+        <!--<li><a href="#">Link</a></li>-->
         
-        <li class="dropdown">
+        <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -60,7 +60,7 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
+        </li>-->
         <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
       </ul>
