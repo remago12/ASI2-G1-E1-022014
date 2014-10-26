@@ -61,7 +61,7 @@ class Registro
 
     	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
     	$year= date("y");
-    	$rs2= mysql_query("SELECT numSolicInsc from inscripcion where numSolicInsc like '%____".$year."%' order by numSolicInsc desc limit 1 ");
+    	$rs2= mysql_query("SELECT numSolicInsc from inscripcion where numSolicInsc like '%____".$year."%' order by numSolicInsc desc limit 1");
       	if ($row = mysql_fetch_row($rs)) {
 $id = trim($row[0]);
 if ($row2 = mysql_fetch_row($rs2)){
@@ -95,7 +95,6 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
     $save = $this->DATA->Execute($sql,$parametrosReg); 
           if ($save){
             return true;
-            echo $year;
         } else {
             return false;
        }
@@ -105,6 +104,62 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
     
     }
 }
+
+    function crear_miembro2($parametrosReg,$parametrosReg2,$idnumSolicInsc){
+    	$rs= mysql_query("SELECT p.nomper,p.apelPer,i.persona_idPersona,i.grupo_idGrup from inscripcion as i, persona as p where i.persona_idPersona= p.idPersona and i.numSolicInsc=".$idnumSolicInsc);
+    	$year= date("y");
+    	$rs2= mysql_query("SELECT count(nisMiem) from miembro where nisMiem like '%______".$year."%' order by nisMiem desc limit 1");
+      	if ($row = mysql_fetch_row($rs)) {
+$nombre =trim($row[0]);
+$nombre = substr($nombre,0,1);
+$apellido=trim($row[1]);
+$apellido=substr($apellido,0,1);
+$idPersona=trim($row[2]);
+$idGrupo=trim($row[3]);
+if ($row2 = mysql_fetch_row($rs2)){
+	$correlativo = trim($row2[0]);
+	//$correlativo=substr($correlativo,2,4);
+	$correlativo= (int)$correlativo + 1;
+$nis=$nombre;
+
+	if (strlen((string)$correlativo) == 1){
+	$nis=$nombre.$apellido."000".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 2){
+	$nis=$nombre.$apellido."00".$correlativo.$year;
+}
+elseif (strlen((string)$correlativo) == 3){
+$nis=$nombre.$apellido."0".$correlativo.$year;
+
+}
+elseif (strlen((string)$correlativo) == 4){
+	$nis=$nombre.$apellido.$correlativo.$year;
+}
+
+$sql="INSERT INTO usuario (rol_idRol,nomUsu,contraUsu)"
+                       . " values (?,'".$nis."','".$nis."')";
+    $save = $this->DATA->Execute($sql,$parametrosReg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+      }
+     
+$sql2="INSERT INTO miembro (estado_idEst,persona_idPersona,grupo_idGrup,nisMiem,usuario_nomUsu)"
+                       . " values (2,0048,2,'".$nis."','".$nis."')";
+    $save = $this->DATA->Execute($sql2); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+       }
+
+}
+
+    
+    }
+}
+
 
 		function seleccionar_departamento2(){
 			$result = mysql_query("SELECT * FROM scout.departamento order by idDep ASC");

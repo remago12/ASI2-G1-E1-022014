@@ -7,6 +7,7 @@
  	$idI = base64_decode($_GET['idI']);
  	$idEStado = $_POST['estado'];
  	$NIS = $_POST['NIS'];
+ 	$NIS= $NIS;
  	 echo $idI;
  	 echo "<br>";
  	 echo $idEStado;
@@ -17,6 +18,11 @@ if ($idEStado == 2){
  	  $registro->crear_usuario($reg); 
  	  $reg2=array($NIS,$idEStado,$NIS);
  	  $registro->crear_miembro($reg2,$idI); 
+ 	  
+ 	 /*$reg=array(1);
+ 	  $reg2=array($idEStado);
+ 	  $registro->crear_miembro2($reg,$reg2,$idI);
+*/
  	}
  	else
  	{
