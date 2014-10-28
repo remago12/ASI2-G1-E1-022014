@@ -1,25 +1,30 @@
 <?php
 	
 
-	require "../views/login.tpl.php";
-	require "../model/data/dataBase.php";
-	require "../model/clases/cUsuario.php";
+	require_once "../views/login.tpl.php";
+	require_once "../model/data/dataBase.php";
+	require_once "../model/clases/cUsuario.php";
 
 
 
 	$usuario = new Usuario;
 
-	if ( $usuario->verSession() == true ) {
-    	header("Location: inscripcion_m.php");
-    	exit();
-  	}
+
+	$user = $_POST['username'];
+	$psw  = $_POST['password'];
+
+
+	//if ( $usuario->verSession() == true ) {
+    //	header("Location: inscripcion_m.php");
+    //	exit();
+  	//}
 
 	
 
 
 	try{
-
-	$usuario->ingresoUsuario();
+	$params = array($user,$psw);	
+	$usuario->ingreso($params);
 
 
      }catch(Exception $e){

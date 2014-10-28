@@ -48,6 +48,7 @@ class Inscripcion
         
     }
 */
+    
     function seleccionar_inscripciones()
 {
  $sql= "SELECT i.*,p.*,g.numGrup from inscripcion as i, persona as p , grupo as g where i.persona_idPersona = p.idPersona and i.grupo_idGrup=g.idGrup";

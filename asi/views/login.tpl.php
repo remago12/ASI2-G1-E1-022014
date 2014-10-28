@@ -90,12 +90,12 @@
             <div class="row">
               <div class="col-md-12">
 
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
+                <form method="POST" data-toggle="validator" role="form">
 
                   <label>
                     Usuario:
                   </label>
-                  <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control" required/>
+                  <input type="text" placeholder="Usuario" name="username" id="username" class="form-control" required/>
                   <label>
                     Contraseña:
                   </label>
@@ -104,7 +104,7 @@
 
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_m.tpl.php">Regístrate</a>
+                    <a href="inscripcion_miem.php">Regístrate</a>
                     <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
                 </form>
