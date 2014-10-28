@@ -71,8 +71,8 @@ $banco= new Banco();
     
     <div class="container">
       <div class="row">
+            <h1 class="text-center">Listado de Bancos</h1>
           <div class="col-md-4">
-            <h1>Listado de Bancos</h1>
             <select class="form-control">
               <option>
                 Nuevo Banco
