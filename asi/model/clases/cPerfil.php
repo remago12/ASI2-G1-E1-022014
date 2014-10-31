@@ -61,5 +61,35 @@ class Perfil
 				return false;
 			}
 		}
+	function seleccionar_grupop($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m, grupo as g, municipio as mu, departamento as d where m.nisMiem=? AND p.idPersona=m.persona_idPersona AND m.grupo_idGrup=g.idGrup AND g.municipio_idMunic=mu.idMunic AND mu.departamento_idDep=d.idDep";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['idGrup'];
+					$info[$id]['idGrup'] 		= $rs->fields['idGrup'];
+					$info[$id]['numGrup'] 		= $rs->fields['numGrup'];
+					$info[$id]['nomGruo'] 		= $rs->fields['nomGruo'];
+					$info[$id]['lugReuGrup'] 	= $rs->fields['lugReuGrup'];
+					$info[$id]['diaReuGrup'] 	= $rs->fields['diaReuGrup'];
+					$info[$id]['horaReuGrup'] 	= $rs->fields['horaReuGrup'];
+					$info[$id]['callGrup'] 		= $rs->fields['callGrup'];
+					$info[$id]['numCasGrup'] 	= $rs->fields['numCasGrup'];
+					$info[$id]['colGrup'] 		= $rs->fields['colGrup'];
+					$info[$id]['estado_idEst'] 	= $rs->fields['estado_idEst'];
+					$info[$id]['fchaCreaGrup'] 	= $rs->fields['fchaCreaGrup'];
+					$info[$id]['telgrup'] 		= $rs->fields['telgrup'];
+					$info[$id]['nomMunic'] 		= $rs->fields['nomMunic'];
+					$info[$id]['nomDep'] 		= $rs->fields['nomDep'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}	
 }
 

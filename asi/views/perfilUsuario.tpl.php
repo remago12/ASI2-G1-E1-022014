@@ -3,11 +3,13 @@
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
   require_once '../model/clases/cPerfil.php';
+  require_once '../model/clases/cBancSql.php';
  
   session_start();
     // Objetos
      $oUsuario   = new Usuario();
      $perfil     = new Perfil();
+     $banco      = new Banco();
     // revisando sesiones 
     if ( !$oUsuario->verSession() ) 
     {
@@ -15,7 +17,75 @@
       exit();
     } 
   $usuario  = $_SESSION['usuario'];
-?>
+
+      try{
+      $cuadro = $perfil->seleccionar_datos($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($cuadro!=null)
+        {
+        foreach($cuadro AS $key => $bl)
+        {
+        $nomPer      = $bl['nomPer'];
+        $apelPer     = $bl['apelPer'];
+        $genPer      = $bl['genPer'];
+        $fechNacPer  = $bl['fechNacPer'];
+        $telPer      = $bl['telPer'];
+        $celPer      = $bl['celPer'];
+        $corrPer     = $bl['corrPer'];
+        $fotPer      = $bl['fotPer'];
+        $callPer     = $bl['callPer'];
+        $numCasPer   = $bl['numCasPer'];
+        $colPer      = $bl['colPer'];
+        $municipio_idMunic      = $bl['municipio_idMunic'];
+        $nomMunic    = $bl['nomMunic'];
+        $nomDep      = $bl['nomDep'];
+        $nisMiem     = $bl['nisMiem'];
+        $polizaSegMiem      = $bl['polizaSegMiem'];
+        $certMiem    = $bl['certMiem'];
+        $fotPer      = $bl['fotPer'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+
+       try{
+      $grup = $perfil->seleccionar_grupop($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grup!=null)
+        {
+        foreach($grup AS $key => $bl)
+        {
+        $idGrup      = $bl['idGrup'];
+        $nomMunic1    = $bl['nomMunic'];
+        $nomDep1      = $bl['nomDep'];
+        $numGrup     = $bl['numGrup'];
+        $nomGruo     = $bl['nomGruo'];
+        $lugReuGrup  = $bl['lugReuGrup'];
+        $diaReuGrup  = $bl['diaReuGrup'];
+        $horaReuGrup = $bl['horaReuGrup'];
+        $callGrup    = $bl['callGrup'];
+        $numCasGrup  = $bl['numCasGrup'];
+        $colGrup     = $bl['colGrup'];
+        $telgrup     = $bl['telgrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        } 
+        ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -66,7 +136,7 @@
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href=""><?=$usuario?></a></li>
+        <li><a href="">Bienvenido <?=$nomPer?> <?=$apelPer?></a></li>
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -86,52 +156,6 @@
 		<div class="row">
 			<h1 class="text-center">Perfil de Usuario</h1>
 			<div class="col-md-4">
-      <?php 
-      try{
-      $cuadro = $perfil->seleccionar_datos($usuario);
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($cuadro!=null)
-        {
-        foreach($cuadro AS $key => $bl)
-        {
-        $nomPer      = $bl['nomPer'];
-        $apelPer     = $bl['apelPer'];
-        $genPer      = $bl['genPer'];
-        $fechNacPer  = $bl['fechNacPer'];
-        $telPer      = $bl['telPer'];
-        $celPer      = $bl['celPer'];
-        $corrPer     = $bl['corrPer'];
-        $fotPer      = $bl['fotPer'];
-        $callPer     = $bl['callPer'];
-        $numCasPer   = $bl['numCasPer'];
-        $colPer      = $bl['colPer'];
-        $municipio_idMunic      = $bl['municipio_idMunic'];
-        $nomMunic    = $bl['nomMunic'];
-        $nomDep      = $bl['nomDep'];
-        $nisMiem     = $bl['nisMiem'];
-        $polizaSegMiem      = $bl['polizaSegMiem'];
-        $certMiem    = $bl['certMiem'];
-        $numGrup     = $bl['numGrup'];
-        $nomGruo     = $bl['nomGruo'];
-        $lugReuGrup  = $bl['lugReuGrup'];
-        $diaReuGrup  = $bl['diaReuGrup'];
-        $horaReuGrup = $bl['horaReuGrup'];
-        $callGrup    = $bl['callGrup'];
-        $numCasGrup  = $bl['numCasGrup'];
-        $colGrup     = $bl['colGrup'];
-        $telgrup     = $bl['telgrup'];
-        ?>
-        <tr>
-        </tr>
-        <?php
-        
-        }
-        }else{
-         echo "No hay datos";
-        }
-        ?>
 				<label>
 					Nombre:
 				</label>
@@ -243,6 +267,20 @@
         <br>
           <tr><td><?=$horaReuGrup?></td></tr>      
         <br>
+        </div>
+			<div class="col-md-4">
+      <label>
+          Departamento:
+        </label>
+        <br>
+          <tr><td><?=$nomDep1?></td></tr>      
+        <br>
+        <label>
+          Municipio:
+        </label>
+        <br>
+          <tr><td><?=$nomMunic1?></td></tr>      
+        <br>
         <label>
           Direccion:
         </label>
@@ -260,9 +298,6 @@
         <br>
           <tr><td><?=$telgrup?></td></tr>      
         <br>
-
-			</div>
-			<div class="col-md-4">
 				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
   				 Renovacion
 				</button>
@@ -277,26 +312,43 @@
         <h4 class="modal-title" id="myModalLabel">Renovacion</h4>
       </div>
       <div class="modal-body">
-      <form>
-      	
-      	<label>Imagen del Recibo:</label>
-        <input type="file" form-control>
+      <form method="post" action="../model/clases/action_renovacion.php" enctype="multipart/form-data">
+        
+        <label>Imagen del Recibo:</label>
+        <input type="file" name="imagen">
+        <input type="text" name="numSolRen">
+        <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
+        <input type="hidden" name="idGrup" value="<?=$idGrup?>">
         <label>
-        	Banco:
+          Banco:
         </label>
-        <input type="text" class="form-control">
+        <select id="estilo_select" name="banco_idBanc" class="form-control">
+                                     <?php
+                          
+                          $banc = $banco->seleccionar_banco(); 
+                          if($banc !=null){
+                          foreach ($banc AS $key => $info) {
+                           echo '<option value='.$info["idBanc"].'>'.$info["nomBanc"].'</option>';
+                            } 
+                          }else{
+                           echo '<option value="">No se encontro..</option>';
+                          }
+                                    ?>
+                                    
+                                </select>
         <label>
-        	Numero de Factura:
-        </label>	
-        <input type="text" class="form-control">
+          Numero de Factura:
+        </label>  
+        <input type="text" class="form-control" name="numFactRen">  
         <label>
           Monto:
-        </label>
-        <input type="text" class="form-control">	
+        </label>  
+        <input type="text" class="form-control" name="montoRen"> 
+        <label>Fecha de Pago:</label>
+        <input type="date" name="fchaPagRen" class="form-control"> 
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Guardar</button>
+        <button value="Entrar" class="btn btn-primary">Entrar</button>
       </form>
       </div>
     </div>

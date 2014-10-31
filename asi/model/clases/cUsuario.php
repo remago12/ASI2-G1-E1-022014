@@ -14,10 +14,10 @@ class Usuario
 			$rs = $this->DATA->Execute($sql, $paramsUsuario);
         if ( $rs->RecordCount() > 0 ) {
 				session_start();
-			$usuario              = $rs->fields['nomUsu'];
-			$_SESSION['usuario']       = $usuario;
- 			$_SESSION['stat']  		   = "identificado"; 
-			$_SESSION['tipoAdmin']     = "admin"; 
+			$usuario              		= $rs->fields['nomUsu'];
+			$_SESSION['usuario']       	= $usuario;
+ 			$_SESSION['stat']  		   	= "identificado"; 
+			$_SESSION['tipoAdmin']     	= "admin"; 
 
             return true;
         } else {
