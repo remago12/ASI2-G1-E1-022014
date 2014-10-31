@@ -15,6 +15,7 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+      <script type="text/javascript" src="../../js/script_combo_admin.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -76,19 +77,13 @@
 		<div class="row">
 			<div class="col-md-2 ">
         <label>Numero del Grupo:</label>
-        <select class="form-control">
-          <option>
-            traer de la base Vee xD
-          </option>  
+        <select class="form-control" name="grupo" id="grupo">
         </select>
         
       </div>
       <div class="col-md-2 ">
         <label>Estado:</label>
-          <select class="form-control">
-            <option >
-                traer de la base
-            </option>
+          <select class="form-control" id="estado" name="estado">
           </select>
       </div> 
 		</div>
@@ -97,22 +92,14 @@
         <label>
           Departamento: 
         </label>
-          <select class="form-control">
-        <option >
-          de la Base viene
-            
-        </option>   
+          <select class="form-control" name="departamento" id="departamento">  
           </select>
       </div>
       <div class="col-md-2">
         <label>
           Municipio: 
         </label>
-          <select class="form-control">
-        <option >
-          de la Base viene
-            
-        </option>   
+          <select class="form-control" name="municipio" id="municipio"> 
           </select>
       </div>
       <div class="col-md-2">
@@ -121,9 +108,14 @@
         </label>
           <select class="form-control">
         <option >
-          de la Base viene
-            
+        Selecciona un tipo de solicitud            
         </option>   
+         <option >
+        Inscripcion            
+        </option> 
+         <option >
+        Renovacion            
+        </option> 
           </select>
       </div>
     </div>
