@@ -1,6 +1,6 @@
 <?php 
 require_once '../../model/data/dataBase.php';
-require_once '../../model/clases/cbanco.php';
+require_once '../../model/clases/cBancSql.php';
 
 $banco= new Banco();
  ?>
@@ -104,18 +104,40 @@ $banco= new Banco();
             </tr>
           </thead>
           <tbody>
+              <?php 
+      try{
+      $banc = $banco->seleccionar_banco();
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($banc!=null)
+        {
+        foreach($banc AS $key => $bl)
+        {
+        $nomBanco       = $bl['nomBanc'];
+        $numCuenta      = $bl['numCuentaBanc'];
+        $idBanc         = $bl['idBanc'];
+        ?>
               <tr>
-              
-              <td>
-                Banco Davivienda
-              </td>
-              <td>
-                00909878-8
-              </td>
-              
-              
-            </tr>            
-
+        <td>
+        <?=$nomBanco?>
+        </td>
+                <td>
+        <?=$numCuenta?>
+        </td>
+        <td>
+          <a href="modBanco.tpl.php?id=<?=base64_encode($idBanc)?>">Editar</a>
+        </td>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+        
+        
+        ?> 
           </tbody>
         </table>
             
