@@ -88,18 +88,6 @@
         
       </div>
       <div class="col-md-2 ">
-        <label>Nombre:</label>
-        <input type="text" placeholder="Nombre" class="form-control">
-      </div>
-      <div class="col-md-2 ">
-        <label>Apellido:</label>
-        <input type="text" placeholder="Apellido" class="form-control">
-      </div>
-      <div class="col-md-1 ">
-        <label>Edad:</label>
-        <input type="text" placeholder="Buscar" class="form-control">
-      </div>
-      <div class="col-md-2 ">
         <label>Estado:</label>
           <select class="form-control">
             <option >
