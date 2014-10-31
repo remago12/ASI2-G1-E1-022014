@@ -74,11 +74,59 @@
 		<h2 class="text-center">Solicitudes de Inscripción</h2>
 		<hr class="line">
 		<div class="row">
-			<div class="col-lg-2 col-lg-offset-9">
-				<input type="text" placeholder="Buscar" class="form-control">
-			</div>
-			
+			<div class="col-md-2 ">
+        <label>Numero del Grupo:</label>
+        <select class="form-control">
+          <option>
+            traer de la base Vee xD
+          </option>  
+        </select>
+        
+      </div>
+      <div class="col-md-2 ">
+        <label>Estado:</label>
+          <select class="form-control">
+            <option >
+                traer de la base
+            </option>
+          </select>
+      </div> 
 		</div>
+    <div class="row">
+      <div class="col-md-2">
+        <label>
+          Departamento: 
+        </label>
+          <select class="form-control">
+        <option >
+          de la Base viene
+            
+        </option>   
+          </select>
+      </div>
+      <div class="col-md-2">
+        <label>
+          Municipio: 
+        </label>
+          <select class="form-control">
+        <option >
+          de la Base viene
+            
+        </option>   
+          </select>
+      </div>
+      <div class="col-md-2">
+        <label>
+          Tipo de Solicitud: 
+        </label>
+          <select class="form-control">
+        <option >
+          de la Base viene
+            
+        </option>   
+          </select>
+      </div>
+    </div>
 		<br>
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-1">
