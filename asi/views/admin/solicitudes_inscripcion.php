@@ -75,10 +75,6 @@
 		<hr class="line">
 		<div class="row">
 			<div class="col-md-2 ">
-				<label>Nombre del Grupo:</label>
-        <input type="text" placeholder="Buscar" class="form-control">
-			</div>
-			<div class="col-md-2 ">
         <label>Numero del Grupo:</label>
         <select class="form-control">
           <option>
