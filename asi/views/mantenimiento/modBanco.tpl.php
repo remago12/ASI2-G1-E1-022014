@@ -1,26 +1,48 @@
 <?php
     //Database
-  require_once '../../model/clases/cCuadro_Clinico.php';
   require_once '../../model/data/dataBase.php';
+require_once '../../model/clases/cBancSql.php';
 
-  $cuadroC =new CuadroClinico();
+  $banco =new Banco();
+  $idE = base64_decode($_GET['id']);
   ?>
+  <?php 
+      try{
+      $banc = $banco->seleccionar_banco1($idE);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($banc!=null)
+        {
+        foreach($banc AS $key => $bl)
+        {
+    
+        $nomBanco       = $bl['nomBanc'];
+        $numCuenta      = $bl['numCuentaBanc'];
+        $idBanc         = $bl['idBanc'];
+        ?>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+        
+        
+        ?>
 <!DOCTYPE html>
 <html>
 <head>
-<title>
-    Alergias
-</title>
-	<script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
+	<title>Solicitud de Miembro</title>
+  <script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
+  <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../../css/custom.css">
   <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
 </head>
-<body>
-
-<nav class="navbar navbar-default" role="navigation">
+  <body>
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -48,11 +70,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="manBanco.tpl.php">Banco</a></li>
-            <li><a href="alergias.tpl.php">Alergias</a></li>
-            <li><a href="padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="../mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
             <li class="divider"></li>
-            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
@@ -72,50 +94,65 @@
   </div><!-- /.container-fluid -->
 </nav>
   
-
-  
-<form method="POST" action="../../model/clases/action_alergia.php">
+    
     <div class="container">
-      <div class="row">          
-            <h1 class="text-center">Listado de Alergias</h1>
-            <hr class="line">
-            <br><br>
-            <div class="col-md-4">            
-            <label>
-              Nombre:
-            </label> 
-            <input type="text" class="form-control" name="nomAlergia">
-            <br>
-            <button class="btn btn-success" >Nuevo</button>
-          </div>
-          </form>
+      <div class="row">
+            <h1 class="text-center">Listado de Bancos</h1>
           <div class="col-md-4">
-          <table class="table table-hover">
+            <select class="form-control">
+              <option>
+                Nuevo Banco
+              </option>
+              <option>
+                Banco Davivienda
+              </option>
+            </select><br>
+          <form action="../../model/clases/acModBanco.php" method="POST">
+              <label>
+                Nombre:
+              </label> 
+              <input type="text" class="form-control" name="nomBanco" value="<?=$nomBanco?>">
+              <label>
+                Número de Cuenta:
+              </label>
+              <input type="text" class="form-control" name="numCuenta" value="<?=$numCuenta?>">
+              <input type="hidden" name="idAlerg" value="<?=$idAlergia?>">
+              <br>
+              <button class="btn btn-success" >Guardar</button>
+          </form>  
+          </div>
+          <div class="col-md-4">
+            <table class="table table-hover">
               <thead>
             <tr>
-              <th>Nombre de Alergia</th>
+              <th>Nombre de Banco</th>
+              <th>Numero De Cuenta</th>
             </tr>
           </thead>
           <tbody>
-          <?php 
+              <?php 
       try{
-      $cuadro = $cuadroC->seleccionar_alergia();
+      $banc = $banco->seleccionar_banco();
       }catch(Exception $e){
         echo "Ha ocurrido un error";
       }
-      if($cuadro!=null)
+      if($banc!=null)
         {
-        foreach($cuadro AS $key => $bl)
+        foreach($banc AS $key => $bl)
         {
-        $nomAlergia      = $bl['nomAlerg'];
-        $idAlergia       = $bl['idAlerg'];
+        $nomBanco       = $bl['nomBanc'];
+        $numCuenta      = $bl['numCuentaBanc'];
+        $idBanc         = $bl['idBanc'];
         ?>
               <tr>
         <td>
-        <?=$nomAlergia?>
+        <?=$nomBanco?>
+        </td>
+                <td>
+        <?=$numCuenta?>
         </td>
         <td>
-          <a href="mod_alergia.php?id=<?=base64_encode($idAlergia)?>">Editar</a>
+          <a href="modBanco.tpl.php?id=<?=base64_encode($idBanc)?>">Editar</a>
         </td>
         </tr>
         <?php
@@ -124,9 +161,12 @@
         }else{
          echo "No hay datos";
         }
-        ?>           
+        
+        
+        ?> 
           </tbody>
-        </table>            
+        </table>
+            
           </div>        
       </div>
     </div>

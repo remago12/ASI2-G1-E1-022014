@@ -1,5 +1,30 @@
-<!DOCTYPE html>
+<?php
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+  
+  $oUsuario = new Usuario();
+  
+  if ( $oUsuario->verSession() == true ) {
+    header("Location: perfilUsuario.tpl.php");
+    exit();
+  }
+  
+  if ( (isset($_POST['username'])) && (isset($_POST['password'])) ) 
+  {
+    $user = $_POST['username'];
+    $psw  = $_POST['password'];
+    $paramsUser = array($user, $psw);
+    $login = $oUsuario->ingreso($paramsUser);
+ 
+    if ($login){
+      header("Location: perfilUsuario.tpl.php");
+    }else {
+      header("Location: login.tpl.php");
+    }
 
+  }
+?>
+<!DOCTYPE html>
 <?php 
   $link = mysql_connect("localhost", "asi2", "equipo1") or die("Could not connect: " . 
   mysql_error());
