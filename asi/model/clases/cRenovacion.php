@@ -38,7 +38,7 @@ elseif (strlen((string)$correlativo) == 5){
 elseif (strlen((string)$correlativo) == 6){
 	$num_insc=$correlativo.$year;
 }
-		$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgcomprobante)"
+		$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgRen)"
 		."values('".$num_insc."',?,?,?,?,?,?,?,?,?,?)";
 		$save = $this->DATA->Execute($sql, $renovacion);
 		if($save){
