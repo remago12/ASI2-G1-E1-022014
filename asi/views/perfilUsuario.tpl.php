@@ -27,6 +27,7 @@
         {
         foreach($cuadro AS $key => $bl)
         {
+        $idPer       = $bl['idPersona'];  
         $nomPer      = $bl['nomPer'];
         $apelPer     = $bl['apelPer'];
         $genPer      = $bl['genPer'];
@@ -319,7 +320,7 @@
         
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
-        <input type="text" name="numSolRen">
+        <input type="hidden" name="idPer" value="<?=$idPer?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
         <label>

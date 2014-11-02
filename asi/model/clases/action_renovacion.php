@@ -5,7 +5,7 @@ require_once 'cRenovacion.php';
 //variables POST
   $renovacion =new Renovacion();
 
-  $numSolRen           =$_POST['numSolRen'];
+  $idPersona           =$_POST['idPer'];
   $fchaRen             =date('y-m-d');
   $estado_idEst        =4;
   $exeRen              ="N";
@@ -18,15 +18,16 @@ require_once 'cRenovacion.php';
 
 try{
   //subida de imagen
-  $ruta="../../";
+  $ruta_carpeta="../../";
+  $ruta_DB="../";
 $archivo=$_FILES['imagen']['tmp_name'];
 $nombreArchivo=$_FILES['imagen']['name'];
-move_uploaded_file($archivo,$ruta."imagenes/".$nombreArchivo);
+move_uploaded_file($archivo,$ruta_carpeta."imagenes/".$nombreArchivo);
 
-$ruta=$ruta."imagenes/".$nombreArchivo;
+$rutag=$ruta_DB."imagenes/".$nombreArchivo;
 //arrays
-    $reg=array($numSolRen,$fchaRen,$estado_idEst,$exeRen,$numFactRen,$fchaPagRen,$montoRen,$banco_idBanc,$miembro_nisMiem,$grupo_idGrup,$ruta);   
-  $renovacion->crear_renovacion($reg);  
+    $reg=array($fchaRen,$estado_idEst,$exeRen,$numFactRen,$fchaPagRen,$montoRen,$banco_idBanc,$miembro_nisMiem,$grupo_idGrup,$rutag);   
+  $renovacion->crear_renovacion($reg,$idPersona);  
   header('Location: ../../views/perfilUsuario.tpl.php');  
 
    }catch(Exception $e){
