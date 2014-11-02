@@ -38,7 +38,7 @@ if (GenPer == "M"){
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td><a>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -84,7 +84,7 @@ if (GenPer == "M"){
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td><a>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -130,7 +130,7 @@ if (GenPer == "M"){
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td><a>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -176,7 +176,7 @@ if (GenPer == "M"){
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td><a>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
