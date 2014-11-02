@@ -16,6 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
       <script type="text/javascript" src="../../js/script_combo_admin.js"></script>
+      <script type="text/javascript" src="../../js/solicitudes.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -132,7 +133,7 @@
 							<th>Numero de Grupo</th>
 						</tr>
 					</thead>
-					<tbody>
+					<tbody name="loop" id="loop">
 					  <?php 
       try{
       $cuadro = $oInscripcion->seleccionar_inscripciones();
