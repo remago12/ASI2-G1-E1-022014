@@ -135,7 +135,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-        <li><a href=""><img src="..."></a> </li>
+        <li><a href=""><img src="<?=$fotPer?>"></a> </li>
         <li><a href="">Bienvenido <?=$nomPer?> <?=$apelPer?></a></li>
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
@@ -156,6 +156,9 @@
 		<div class="row">
 			<h1 class="text-center">Perfil de Usuario</h1>
 			<div class="col-md-4">
+      <br>
+          <tr><td><img src="<?=$fotPer?>"></td></tr>       
+        <br>
 				<label>
 					Nombre:
 				</label>
