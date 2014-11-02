@@ -17,7 +17,7 @@ $('#departamento').html(cadena);
 var IdDept=$('#departamento').val();
 var IdMUn="";
 var NomMUn ="";
-var cadena="<option>Seleccione un municipio</option>";
+var cadena="<option value='%' >Seleccione un municipio</option>";
 $.post("../../model/clases/ajax.php",{action:"municipio",IdDept:IdDept},function(data){
 
 for(i= 0; i < data.rows.length;i++){
