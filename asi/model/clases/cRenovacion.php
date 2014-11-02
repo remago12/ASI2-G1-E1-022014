@@ -8,6 +8,7 @@ class Renovacion
 		$this->DATA = $DATA;
 	}
 	function crear_renovacion($renovacion){
+		
 		$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgcomprobante)"
 		."values(?,?,?,?,?,?,?,?,?,?,?)";
 		$save = $this->DATA->Execute($sql, $renovacion);
