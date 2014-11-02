@@ -2,6 +2,7 @@
 require_once '../data/dataBase.php';
 require_once 'cRegistro.php';
 require_once 'cInscripcion.php';
+require_once 'cSolicitudes.php';
 
 
 $response =array();
@@ -52,6 +53,11 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+		case 'solic_inscripciones':
+		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep']);
+		echo json_encode($response);
+		break;
+		
 
 }
 }
