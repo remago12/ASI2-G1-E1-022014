@@ -100,7 +100,8 @@
         <label>
           Municipio: 
         </label>
-          <select class="form-control" name="municipio" id="municipio"> 
+          <select class="form-control" name="municipio" id="municipio">
+          <option value="%" >Selecciona un municipio</option> 
           </select>
       </div>
       <div class="col-md-2">
