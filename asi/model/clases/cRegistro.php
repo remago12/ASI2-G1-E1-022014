@@ -58,7 +58,7 @@ class Registro
     }
 }
 
-function estado_inscripcion($parametrosReg)
+/*function estado_inscripcion($parametrosReg)
     {
     $sql="UPDATE inscripcion SET estado_idEst =? where numSolicInsc=?";
                             . " values (?,?,?)";
@@ -69,7 +69,7 @@ function estado_inscripcion($parametrosReg)
             return false;
         }
     }
-
+*/
     function crear_inscripcion($parametrosReg){
     	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
     	$year= date("y");
