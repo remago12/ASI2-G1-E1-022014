@@ -36,7 +36,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/index.html">Inicio</a></li>
+        <li><a href="../views/indexJefe.php">Inicio</a></li>
         <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
