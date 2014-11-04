@@ -58,7 +58,6 @@ class Registro
     }
 }
     function crear_inscripcion($parametrosReg){
-
     	$rs= mysql_query("SELECT  idPersona FROM scout.persona order by idPersona desc limit 1");
     	$year= date("y");
     	$rs2= mysql_query("SELECT numSolicInsc from inscripcion where numSolicInsc like '%____".$year."%' order by numSolicInsc desc limit 1");
@@ -90,6 +89,12 @@ elseif (strlen((string)$correlativo) == 6){
 	$num_insc=$correlativo.$year;
 }
 
+}
+if($num_insc == ""){
+$num_insc="000001".$year;	
+}
+
+
 $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
                        . " values (?,?,?,'".$num_insc."',".$id.")";
     $save = $this->DATA->Execute($sql,$parametrosReg); 
@@ -99,11 +104,13 @@ $sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicIn
             return false;
        }
 
+
 }
+
 
     
     }
-}
+
 
     function crear_miembro2($parametrosReg,$parametrosReg2,$idnumSolicInsc){
     	$rs= mysql_query("SELECT p.nomper,p.apelPer,i.persona_idPersona,i.grupo_idGrup from inscripcion as i, persona as p where i.persona_idPersona= p.idPersona and i.numSolicInsc=".$idnumSolicInsc);

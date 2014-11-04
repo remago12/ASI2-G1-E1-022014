@@ -134,63 +134,7 @@
 							<th>Numero de Grupo</th>
 						</tr>
 					</thead>
-					<tbody name="loop" id="loop">
-					  <?php 
-      try{
-      $cuadro = $oInscripcion->seleccionar_inscripciones();
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($cuadro!=null)
-        {
-        foreach($cuadro AS $key => $bl)
-        {
-        $numSolicInsc      = $bl['numSolicInsc'];
-        $nomPer       = $bl['nomPer'];
-        $apelPer       = $bl['apelPer'];
-        $genPer ="";
-        if ($bl['genPer'] == "M"){
-        	$genPer= "Masculino";
-        }else{
-        	$genPer= "Femenino";
-        }
-        $fechNacPer =$bl['fechNacPer'];
-        $numGrup    =$bl['numGrup'];
-        $fecha = time() - strtotime($fechNacPer);
-$edad = floor((($fecha / 3600) / 24) / 360);
-
-
-        
-        ?>
-              <tr>
-        <td>
-        <?=$numSolicInsc?>
-        </td>
-        <td>
-        <?=$nomPer." ".$apelPer?>
-        </td>
-        <td>
-        <?=$genPer?>
-        </td>
-        <td>
-        <?=$edad?>
-        </td>
-        <td>
-        <?=$numGrup?>
-        </td>
-        <td>
-         <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>
-        </td>
-        </tr>
-        <?php
-        
-        }
-        }else{
-         echo "No hay datos";
-        }
-        
-        
-        ?> 
+					<tbody name="loop" id="loop"> 
 					</tbody>
 				</table>
 			</div>				
