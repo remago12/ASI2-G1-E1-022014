@@ -35,10 +35,17 @@
  
 //try{
 
- 
+ //subida de imagen
+  $ruta_carpeta="../";
+  $ruta_DB="../";
+$archivo=$_FILES['imagen']['tmp_name'];
+$nombreArchivo=$_FILES['imagen']['name'];
+move_uploaded_file($archivo,$ruta_carpeta."fotos/".$nombreArchivo);
+
+$rutag=$ruta_DB."fotos/".$nombreArchivo;
 
 //arrays
-    $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
+    $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$rutag,$calle,$casa,$colonia,$municipio,$fecha); 
   $registro->crear_registro($reg);
     $reg3= array(1,1,$grupo);
   $registro->crear_inscripcion($reg3); 
