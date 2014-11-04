@@ -37,12 +37,14 @@ Fechna=data.rows[i]["3"];
 Fechna = new Date(Fechna);
 Edad = Math.trunc((Date.now() - Fechna)/(31557600000));
 Numgrup =data.rows[i]["8"];
+Dept= data.rows[i]["4"];
+Munic= data.rows[i]["5"];
 if (GenPer == "M"){
 	GenPer = "Masculino"
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -87,12 +89,14 @@ Fechna=data.rows[i]["3"];
 Fechna = new Date(Fechna);
 Edad = Math.trunc((Date.now() - Fechna)/(31557600000));
 Numgrup =data.rows[i]["8"];
+Dept= data.rows[i]["4"];
+Munic= data.rows[i]["5"];
 if (GenPer == "M"){
 	GenPer = "Masculino"
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -137,12 +141,14 @@ Fechna=data.rows[i]["3"];
 Fechna = new Date(Fechna);
 Edad = Math.trunc((Date.now() - Fechna)/(31557600000));
 Numgrup =data.rows[i]["8"];
+Dept= data.rows[i]["4"];
+Munic= data.rows[i]["5"];
 if (GenPer == "M"){
 	GenPer = "Masculino"
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 
@@ -187,12 +193,14 @@ Fechna=data.rows[i]["3"];
 Fechna = new Date(Fechna);
 Edad = Math.trunc((Date.now() - Fechna)/(31557600000));
 Numgrup =data.rows[i]["8"];
+Dept= data.rows[i]["4"];
+Munic= data.rows[i]["5"];
 if (GenPer == "M"){
 	GenPer = "Masculino"
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
 
 $('#loop').html(cadena);
 } 

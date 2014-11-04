@@ -123,7 +123,7 @@
     </div>
 		<br>
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-1">
+			<div class="col-lg-11 col-lg-offset-1">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -132,6 +132,8 @@
 							<th>Género</th>
 							<th>Edad</th>
 							<th>Numero de Grupo</th>
+              <th>Departamento</th>
+              <th>Municipio</th>
 						</tr>
 					</thead>
 					<tbody name="loop" id="loop"> 
