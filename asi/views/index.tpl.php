@@ -86,7 +86,7 @@
                   <h2 class="encabezado">Grupos</h2>
               </div>  
               </a>
-              <a href="../controller/nuevo_grupo.php">Inscripcion de Grupo</a>
+              <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
               <br>
               <a href="../views/gruposScout.tpl.php">Grupos Scout</a>
             </div>

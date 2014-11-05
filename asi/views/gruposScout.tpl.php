@@ -67,7 +67,8 @@
 <div class="container">
     <div class="row">
     <form> 
-      <h1 class="text-center">Busqueda de Grupo</h1>         
+      <h1 class="text-center">Búsqueda de Grupo</h1> 
+      <br>        
       <div class="col-md-4">
         <select class="form-control">
           <option>Municipio</option>
@@ -89,9 +90,11 @@
       </div>
     </form>
     </div>
+    <br><br>
     <div class="row">
       <div class="col-md-6">
         <h1 class="text-center">Datos del Grupo</h1>
+        <br>
         <label>
           Nombre del Grupo:
         </label>
@@ -120,7 +123,8 @@
         </label>
       </div>
       <div class="col-md-6">
-        <h1 class="text-center">Ubicacion</h1>
+        <h1 class="text-center">Ubicación</h1>
+        <br>
           <div id="map" >
         
           </div>
@@ -130,6 +134,7 @@
       </div>
 
     </div>
+    <br><br>
     <div class="row">
       <div class="col-md-12">
         <table class="table table-striped">

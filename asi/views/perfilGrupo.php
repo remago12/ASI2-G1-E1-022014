@@ -68,38 +68,41 @@
     <div class="row">
       <h1 class="text-center">Perfil de Grupo</h1>
     </div>
+    <hr class="line"><br>
     <div class="row">
       <div class="col-md-6">
         <h1 class="text-center">Datos del Grupo</h1>
+        <br>
         <label>
           Nombre del Grupo:
         </label>
         <label> San Antonio</label>
         <br>
         <label>
-          Fecha de Fundacion:
+          Fecha de Fundación:
         </label>
         <label>
           3/10/2014
         </label>
         <br>
         <label>
-          Dia de Reunion:
+          Dia de Reunión:
         </label>
 
         <label>
-          Sabado
+          Sábado
         </label>
         <br>
         <label>
-          Direccion:
+          Dirección:
         </label>
         <label>
           Br el Carmen Parque Municipal Mejicanos.
         </label>
       </div>
       <div class="col-md-6">
-        <h1 class="text-center">Ubicacion</h1>
+        <h1 class="text-center">Ubicación</h1>
+        <br>
           <div id="map" >
         
           </div>
@@ -109,6 +112,7 @@
       </div>
 
     </div>
+    <br><br>
     <div class="row">
       <div class="col-md-12">
         <table class="table table-striped">
@@ -169,7 +173,7 @@
     </div>
 </div>
 
-
+<br><br>
 
 </body>
 </hmtl>  

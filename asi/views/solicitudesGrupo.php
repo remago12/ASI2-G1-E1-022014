@@ -55,8 +55,9 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="container">
-		<h2 class="text-center">Solicitudes </h2>
+		<h2 class="text-center">Solicitudes de Grupo </h2>
 		<hr class="line">
+    <br>
 		<div class="row">
       <div class="col-md-2 ">
         <label>Estado:</label>
@@ -87,25 +88,25 @@
         Selecciona un tipo de solicitud            
         </option>   
          <option >
-        Inscripcion            
+        Inscripción            
         </option> 
          <option >
-        Renovacion            
+        Renovación            
         </option> 
           </select>
       </div>
     </div>
-		<br>
+		<br><br>
 		<div class="row">
 			<div class="col-lg-8 col-lg-offset-1">
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Numero de solicitud</th>
+							<th>Número de solicitud</th>
 							<th>Nombre</th>
 							<th>Género</th>
 							<th>Edad</th>
-							<th>Numero de Grupo</th>
+							<th>Número de Grupo</th>
 						</tr>
 					</thead>
 					<tbody name="loop" id="loop">
