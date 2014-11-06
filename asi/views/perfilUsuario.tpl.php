@@ -124,6 +124,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
+        <li><a href=""><img id="user" src="<?=$fotPer?>"></a> </li>
         <li><a href="../index.html">Inicio</a></li>
         
         <li class="dropdown">
@@ -136,7 +137,6 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-        <li><a href=""><img src="<?=$fotPer?>"></a> </li>
         <li><a href="">Bienvenido <?=$nomPer?> <?=$apelPer?></a></li>
       	<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
