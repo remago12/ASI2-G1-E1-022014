@@ -16,9 +16,10 @@
 if ($idEStado == 2){
  	 $reg=array($NIS,$NIS,1);
  	  $registro->crear_usuario($reg); 
- 	  $reg2=array($NIS,$idEStado,$NIS);
+ 	  $reg2=array($NIS,7,$NIS);
  	  $registro->crear_miembro($reg2,$idI);
- 	   
+ 	   $reg3=array($idEStado,$idI);
+ 	   $registro->estado_inscripcion($reg3);
  	  
  	 /*$reg=array(1);
  	  $reg2=array($idEStado);
@@ -27,7 +28,7 @@ if ($idEStado == 2){
  	}
  	else
  	{
- 		echo "<br>";
- 		echo "hola";
+ 		
  	}
+ 	header('Location:../../views/admin/solicitudes_inscripcion.php');
 ?>

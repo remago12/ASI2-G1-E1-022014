@@ -17,6 +17,7 @@ if (IdMun =="Selecciona un municipio" || IdMun==""){
 if (IdEst =="Seleccione un estado" || IdEst==""){
 	IdEst ="%";
 }
+
 $.post("../../model/clases/ajax.php",{action:"solic_inscripciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst},function(data){
 var Num_Solic ="";
 var NomPer="";

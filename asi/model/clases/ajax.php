@@ -57,7 +57,12 @@ switch ($_POST['action']) {
 		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst']);
 		echo json_encode($response);
 		break;
-		
+
+		case'contar_inscripciones':
+		$response = Solicitud::contar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst']);
+		echo json_encode($response);
+		break;
+
 
 }
 }

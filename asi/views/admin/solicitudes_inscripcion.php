@@ -138,11 +138,14 @@
 					</thead>
 					<tbody name="loop" id="loop"> 
 					</tbody>
-				</table>
-			</div>				
-		</div>
+				</table>          
+        </div>
+			</div>
+      <div name="paginacion" id="paginacion">
+        
+      </div>
 
-	</div>
+		</div>
 
 </body>
 </html>
