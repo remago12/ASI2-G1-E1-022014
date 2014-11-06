@@ -17,7 +17,7 @@
     $login = $oUsuario->ingreso($paramsUser);
  
     if ($login){
-      header("Location: perfilUsuario.php");
+      header("Location: perfilUsuario.tpl.php");
     }else {
       header("Location: login.tpl.php");
     }

@@ -38,7 +38,12 @@ elseif (strlen((string)$correlativo) == 5){
 elseif (strlen((string)$correlativo) == 6){
 	$num_insc=$correlativo.$year;
 }
-		$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgRen)"
+		
+	}if ($num_insc ==""){
+		$num_insc="000001".$year;
+	}
+
+	$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgRen)"
 		."values('".$num_insc."',?,?,?,?,?,?,?,?,?,?)";
 		$save = $this->DATA->Execute($sql, $renovacion);
 		if($save){
@@ -46,7 +51,6 @@ elseif (strlen((string)$correlativo) == 6){
 		}else{
 			return false;
 		}
-	}
  }
 }
 }
