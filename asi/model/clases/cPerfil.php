@@ -91,5 +91,41 @@ class Perfil
 				return false;
 			}
 		}	
+	function seleccionar_estado($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m where m.nisMiem=? AND p.idPersona=m.persona_idPersona";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['nisMiem'];
+					$info[$id]['nisMiem'] 		= $rs->fields['nisMiem'];
+					$info[$id]['estado_idEst'] 		= $rs->fields['estado_idEst'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+	function seleccionar_inscripcion($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m, inscripcion as i where m.nisMiem=? AND p.idPersona=m.persona_idPersona AND i.persona_idPersona=p.idPersona";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['nisMiem'];
+					$info[$id]['nisMiem'] 		= $rs->fields['nisMiem'];
+					$info[$id]['numSolicInsc'] 		= $rs->fields['numSolicInsc'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}		
 }
 

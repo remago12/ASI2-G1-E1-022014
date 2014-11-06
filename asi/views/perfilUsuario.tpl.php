@@ -10,6 +10,7 @@
      $oUsuario   = new Usuario();
      $perfil     = new Perfil();
      $banco      = new Banco();
+     $url= "";
     // revisando sesiones 
     if ( !$oUsuario->verSession() ) 
     {
@@ -46,6 +47,7 @@
         $polizaSegMiem      = $bl['polizaSegMiem'];
         $certMiem    = $bl['certMiem'];
         $fotPer      = $bl['fotPer'];
+        $estado =$bl['estado_idESt'];
         ?>
         <tr>
         </tr>
@@ -77,6 +79,46 @@
         $numCasGrup  = $bl['numCasGrup'];
         $colGrup     = $bl['colGrup'];
         $telgrup     = $bl['telgrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+
+        try{
+      $estado = $perfil->seleccionar_estado($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($estado!=null)
+        {
+        foreach($estado AS $key => $bl)
+        {
+        $estado      = $bl['estado_idEst'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        } 
+
+         try{
+      $ins = $perfil->seleccionar_inscripcion($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($ins!=null)
+        {
+        foreach($ins AS $key => $bl)
+        {
+        $inscripcion      = $bl['numSolicInsc'];
         ?>
         <tr>
         </tr>
@@ -302,9 +344,26 @@
         <br>
           <tr><td><?=$telgrup?></td></tr>      
         <br>
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-  				 Renovacion
-				</button>
+        <?php 
+         if ($estado == 8){
+           echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
+           echo 'Validar Renovacion';
+       echo '</button>';
+       $url="../model/clases/action_varenovacion.php";
+        }elseif($estado == 7){
+           echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
+          echo 'Validar Inscripcion';
+        echo '</button>';
+        $url="../model/clases/action_vainscripcion.php";
+        }elseif ($estado ==5){
+            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
+          echo 'Solicitar Renovacion';
+        echo '</button>';
+        $url="../model/clases/action_renovacion.php";
+        }else{
+
+        }
+        ?>
 			</div>
 		</div>	
 	</div>
@@ -316,11 +375,12 @@
         <h4 class="modal-title" id="myModalLabel">Renovacion</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="../model/clases/action_renovacion.php" enctype="multipart/form-data">
+      <form method="post" action="<?=$url?>" enctype="multipart/form-data">
         
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
+        <input type="hidden" name="idInsc" value="<?=$inscripcion?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
         <label>

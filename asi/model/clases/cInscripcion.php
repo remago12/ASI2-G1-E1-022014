@@ -102,7 +102,19 @@ class Inscripcion
     return false;
     }
   
-  }   
+  }  
+
+  function pago_inscripcion($parametrosReg){
+     $sql="UPDATE inscripcion SET exePagIns=?,estado_idEst=?,numFactIns=?,fchaPagIns=?,montoIns=?,banco_idBanc=?,img_Ins=? where numSolicInsc=?";
+    $save = $this->DATA->Execute($sql, $parametrosReg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+
+
+  }
 
 
 }
