@@ -15,6 +15,10 @@ $('#departamento').html(cadena);
 
 	$('#departamento').change(function(){
 var IdDept=$('#departamento').val();
+if (IdDept== "Seleccione un departamento"){
+var cadena="<option value='%' >Seleccione un municipio</option>";
+	$('#municipio').html(cadena);
+}else{
 var IdMUn="";
 var NomMUn ="";
 var cadena="<option value='%' >Seleccione un municipio</option>";
@@ -26,7 +30,7 @@ NomMUn=data.rows[i]["1"];
 cadena=cadena + "<option value='"+IdMUn+"'>"+NomMUn+"</option>";
 $('#municipio').html(cadena); 
 }},'json');
-});
+}});
 
 
 	$('#grupo').ready(function(){

@@ -79,14 +79,8 @@
 
 
 
-
-
-
-
-
-
 	<h2 class="text-center">Inscripción de Miembro</h2>
-	<form method="POST" >
+	<form method="POST" enctype="multipart/form-data">
 	<div class="container">
 	<hr class="line">
 		<div class="col-lg-6"><br><br>
@@ -95,7 +89,7 @@
 			<label>
 			Cargar Imagen:	
 			</label>
-			<input type="file" name="file" id="file"  class=""><br>
+			<input type="file" name="imagen" id="imagen"><br>
 			<label>Nombre:</label>
 			<input type="text"  name="nombre" id="nombre" placeholder="Nombre" class="validate[required] medium form-control" required/><br>
 			<div class="help-block with-errors"></div>

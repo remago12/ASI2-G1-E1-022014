@@ -3,16 +3,15 @@
 <head>
 
 	<title>
-	Inicio
+		
 	</title>
   <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/jquery-ui.js"></script>
-  <script type="text/javascript" src="../js/indexefe.js"></script>
+  <script type="text/javascript" src="../js/confirm.js"> </script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
-  <link href='http://fonts.googleapis.com/css?family=Jura:400,500' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
+
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -38,18 +37,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Inicio</a></li>
-        <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a> </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
-            <li class="divider"></li>
-            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
-          </ul>
-        </li>
+        <li><a href="../views/indexJefe.php">Inicio</a></li>
+        <li><a href="../views/solicitudesGrupo.php">Solicitudes</a> </li>
+        <li><a href="../views/miembrosGrupo.php">Miembros</a></li>
+        <li><a href="../views/perfilGrupo.php">Grupo</a></li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
         <li class="dropdown">
@@ -66,9 +57,7 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-
-
-  <div class="container">
+<div class="container">
     <div class="row ">
         <div class="col-md-6 col-sm-12  col-xs-12">
           <div class="row">
@@ -78,17 +67,17 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
-               <a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a>
+               <a href="../views/solicitudesGrupo.php">Solicitudes</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
               <div id="dos" class="row borde box3">
-                  <h2 class="encabezado">Grupos</h2>
+                  <h2 class="encabezado">Grupo</h2>
               </div>  
               </a>
-              <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
+              
               <br>
-              <a href="../views/gruposScout.tpl.php">Grupos Scout</a>
+              <a href="../views/perfilGrupo.php">Grupo</a>
             </div>
           </div>  
         </div>
@@ -100,6 +89,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
+              <a href="../views/miembrosGrupo.php">Miembros de Grupo</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
@@ -107,17 +97,22 @@
                 <h2 class="encabezado">Mantenimiento</h2>
               </div>
               </a>
-              <a href="mantenimiento/manBanco.tpl.php">Banco</a>
+              
               <br>
               <a href="../views/mantenimiento/padecimiento.tpl.php">Padecimiento</a>
               <br>
               <a href="../views/mantenimiento/alergias.tpl.php">Alergia</a>
               <br>
-              <a href="../views/mantenimiento/estado.tpl.php">Estados</a>
+              
             </div>
           </div>
         </div>
     </div>
-  </div>      
+  </div>
+
+
+
+
+
 </body>
 </html>

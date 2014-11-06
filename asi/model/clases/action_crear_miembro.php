@@ -17,7 +17,8 @@ if ($idEStado == 2){
  	 $reg=array($NIS,$NIS,1);
  	  $registro->crear_usuario($reg); 
  	  $reg2=array($NIS,$idEStado,$NIS);
- 	  $registro->crear_miembro($reg2,$idI); 
+ 	  $registro->crear_miembro($reg2,$idI);
+ 	   
  	  
  	 /*$reg=array(1);
  	  $reg2=array($idEStado);
