@@ -54,7 +54,7 @@ switch ($_POST['action']) {
 		break;
 
 		case 'solic_inscripciones':
-		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst']);
+		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst'],$_POST['Inicio'],$_POST['Limite']);
 		echo json_encode($response);
 		break;
 

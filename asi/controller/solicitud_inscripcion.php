@@ -2,7 +2,6 @@
    require_once '../views/admin/solicitud_miembro.tpl.php';
    //require_once '../model/clases/cInscripcion.php';
    //require_once '../model/data/dataBase.php';
-echo "hola";
      //Objetos
      $oInscripcion   = new Inscripcion();
      $idI = base64_decode($_GET['numSolicInsc']);
