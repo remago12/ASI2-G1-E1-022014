@@ -1,9 +1,10 @@
 <?php
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
-  
+  session_start();
   $oUsuario = new Usuario();
   
+    
   if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];

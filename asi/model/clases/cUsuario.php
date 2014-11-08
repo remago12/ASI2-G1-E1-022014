@@ -34,12 +34,13 @@ class Usuario
 				$tipo = $_SESSION['rol'];
            if ($estado == "identificado") {
 					if ($tipo=="1"){
-						return 1; 	
-					}elseif($tipo=="2"){
-						return 2;
-					}elseif($tipo=="3"){
-						return 3;
+						return true;
+					}elseif ($tipo=="2") {
+						return true;
+					}elseif ($tipo=="3") {
+						return true;
 					}
+		
 			else{
 			return false;
 			}

@@ -12,11 +12,25 @@
      $banco      = new Banco();
      $url= "";
     // revisando sesiones 
-    if ( !$oUsuario->verSession() ) 
-    {
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "3") {   
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.tpl.php");
+          exit();
+        }
+    }else{
       header("Location: login.tpl.php");
-      exit();
-    } 
+          exit();
+    }
+   
+    
   $usuario  = $_SESSION['usuario'];
 
       try{
