@@ -55,6 +55,7 @@
 .encabezado{
 	font-family: 'Jura', sans-serif;
 }
+<<<<<<< HEAD
 
 
 .paginacion ul
@@ -82,5 +83,11 @@
 .bancoimg{
 	height: 250px;
 	margin-top: 2px;
+=======
+.pendiente{
+	background: #E51222;
+	border-radius: 0.2em;
+	color:white ;
+>>>>>>> 54eb67599e3344b138c848a477308bf8e627649e
 
 }

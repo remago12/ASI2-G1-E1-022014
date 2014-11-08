@@ -81,7 +81,7 @@ $banco= new Banco();
                 Banco Davivienda
               </option>
             </select><br>
-          <form action="../../model/clases/acBanco.php" method="POST">
+          <form action="../../model/action/acBanco.php" method="POST">
               <label>
                 Nombre:
               </label> 

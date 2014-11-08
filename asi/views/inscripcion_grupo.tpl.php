@@ -73,7 +73,7 @@
 </nav>
 
 	<div class="container">
-		<form method="POST" data-toggle="validator" role="form">
+		<form method="POST" action="../model/action/action_nuevo_grupo.php" data-toggle="validator" role="form">
 			
 		<div class="row">
 			<h2 class="text-center">Inscripción de Grupo</h2>

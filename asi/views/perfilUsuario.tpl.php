@@ -11,12 +11,27 @@
      $perfil     = new Perfil();
      $banco      = new Banco();
      $url= "";
+     $year= date("y");
     // revisando sesiones 
-    if ( !$oUsuario->verSession() ) 
-    {
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "3") {   
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.tpl.php");
+          exit();
+        }
+    }else{
       header("Location: login.tpl.php");
-      exit();
-    } 
+          exit();
+    }
+   
+    
   $usuario  = $_SESSION['usuario'];
 
       try{
@@ -47,7 +62,7 @@
         $polizaSegMiem      = $bl['polizaSegMiem'];
         $certMiem    = $bl['certMiem'];
         $fotPer      = $bl['fotPer'];
-        $estado =$bl['estado_idESt'];
+        
         ?>
         <tr>
         </tr>
@@ -180,16 +195,7 @@
           </ul>
         </li>
         <li><a href="">Bienvenido <?=$nomPer?> <?=$apelPer?></a></li>
-      	<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Banco</a></li>
-            <li><a href="#">Alergias</a></li>
-            <li><a href="#">Padecimiento</a></li>
-            <li class="divider"></li>
-            <li><a href="exit.php">Salir</a></li>
-          </ul>
-        </li>
+      	<li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -344,39 +350,33 @@
         <br>
           <tr><td><?=$telgrup?></td></tr>      
         <br>
-<<<<<<< HEAD
         <?php 
          if ($estado == 8){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
            echo 'Validar Renovacion';
        echo '</button>';
-       $url="../model/clases/action_varenovacion.php";
+       $url="../model/action/action_renovacion.php";
         }elseif($estado == 7){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
           echo 'Validar Inscripcion';
         echo '</button>';
-        $url="../model/clases/action_vainscripcion.php";
+        $url="../model/action/action_vainscripcion.php";
         }elseif ($estado ==5){
-            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
+          echo'<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2"> ';
           echo 'Solicitar Renovacion';
-        echo '</button>';
-        $url="../model/clases/action_renovacion.php";
+          echo'</button>';
+        $url="../model/action/action_solrenovacion.php";
+        
         }else{
-
+          echo "<label class='pendiente'>Pendiente de Aprobacion</label>";
         }
         ?>
-=======
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contacto">
-  				 Renovacion
-				</button>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Contacto de Emergencia
-        </button>
->>>>>>> 6b812068adc542b2dff0f4d6e67e25454bb4e35d
-			</div>
-		</div>	
-	</div>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        
+      </div>
+    </div>  
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -389,7 +389,6 @@
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
-        <input type="hidden" name="idInsc" value="<?=$inscripcion?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
         <label>
@@ -423,36 +422,57 @@
       <div class="modal-footer">
         <button value="Entrar" class="btn btn-primary">Entrar</button>
       </form>
-          <!-- Modal -->
-<div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- Button trigger modal -->
+
+
+<!-- Modal este es el modal dos -->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Contactos</h4>
+        <h4 class="modal-title" id="myModalLabel">Solicitar Renovacion</h4>
       </div>
+      <form action="<?=$url?>" method="POST" >
+        
       <div class="modal-body">
-        <form>
-          <label>Nombre:</label>
-          <input type="text" name="nombre">
-          <label>Apellido:</label>
-          <input type="text" name="apellido">
-          <label>Parentesco:</label>
-          <input type="text" name="parentesco">
-
-        </form>
-
+        <input type="hidden" name="idPer" value="<?=$idPer?>">
+        <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
+        <input type="hidden" name="idGrup" value="<?=$idGrup?>">
+        <label>
+          Fecha de Vencimiento: Marzo/<?=$year?>
+        </label>
+        <br>
+        <label>
+          NIS: <?=$nisMiem?>
+        </label>
+        <br>
+        <label>
+          Nombre: <?=$nomPer?> <?=$apelPer?>
+        </label>
+        <br>
+        <label>Nombre de Grupo: <?=$nomGruo?>
+        </label>
+        <br>
+        <label>Grupo: <?=$numGrup?>
+        </label>
+        <br>
+        <label>
+          <?php $date =date("y-m-d"); ?>
+          Fecha de Solicitud: <?=$date?>
+        </label>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button class="btn btn-primary">Solicitar</button>
+      </form>
       </div>
     </div>
   </div>
-</div>
-      </div>
-    </div>
-  </div>
-</div>	
+</div>  
 </body>
 </html>

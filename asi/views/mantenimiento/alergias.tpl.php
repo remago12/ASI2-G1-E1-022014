@@ -74,7 +74,7 @@
   
 
   
-<form method="POST" action="../../model/clases/action_alergia.php">
+<form method="POST" action="../../model/action/action_alergia.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Alergias</h1>
