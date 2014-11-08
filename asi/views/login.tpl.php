@@ -5,9 +5,23 @@
   $oUsuario = new Usuario();
   
   if ( $oUsuario->verSession() == true ) {
-    header("Location: perfilUsuario.tpl.php");
-    exit();
-  }
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {
+             header("Location: index.tpl.php");
+            exit();
+          }elseif ($rol== "2") {
+             header("Location: indexjefe  .tpl.php");
+             exit();
+          }elseif ($rol== "3") {
+             header("Location: perfilUsuario.tpl.php");
+            exit();
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }
+    }
   
   if ( (isset($_POST['username'])) && (isset($_POST['password'])) ) 
   {
@@ -17,7 +31,22 @@
     $login = $oUsuario->ingreso($paramsUser);
  
     if ($login){
-      header("Location: perfilUsuario.tpl.php");
+      if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {
+             header("Location: index.tpl.php");
+            exit();
+          }elseif ($rol== "2") {
+             header("Location: indexjefe.tpl.php");
+             exit();
+          }elseif ($rol== "3") {
+             header("Location: perfilUsuario.tpl.php");
+            exit();
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }
     }else {
       header("Location: login.tpl.php");
     }

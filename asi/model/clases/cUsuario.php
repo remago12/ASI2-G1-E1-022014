@@ -15,7 +15,9 @@ class Usuario
         if ( $rs->RecordCount() > 0 ) {
 				session_start();
 			$usuario              		= $rs->fields['nomUsu'];
+			$rol 						= $rs->fields['rol_idRol'];
 			$_SESSION['usuario']       	= $usuario;
+			$_SESSION['rol']			= $rol;
  			$_SESSION['stat']  		   	= "identificado"; 
 			$_SESSION['tipoAdmin']     	= "admin"; 
 
@@ -29,15 +31,16 @@ class Usuario
 		
 			if (isset($_SESSION['stat'])) {
 				$estado = $_SESSION['stat'];
-				$tipo = $_SESSION['tipoAdmin'];
-           if ($estado == "identificado") 
-			{
-					if ($tipo=="admin")
-			{
-			return true;
-			}
-			else
-			{
+				$tipo = $_SESSION['rol'];
+           if ($estado == "identificado") {
+					if ($tipo=="1"){
+						return 1; 	
+					}elseif($tipo=="2"){
+						return 2;
+					}elseif($tipo=="3"){
+						return 3;
+					}
+			else{
 			return false;
 			}
             } else {
