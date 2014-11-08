@@ -76,27 +76,35 @@
 		<h2 class="text-center">Solicitudes de Inscripción</h2>
 		<hr class="line">
 		<div class="row">
-			<div class="col-md-2 ">
+			<div class="col-md-3 ">
         <label>Numero del Grupo:</label>
         <select class="form-control" name="grupo" id="grupo">
+        <option >
+        Seleccione un grupo            
+        </option>
         </select>
         
       </div>
-      <div class="col-md-2 ">
+      <div class="col-md-3 ">
         <label>Estado:</label>
           <select class="form-control" id="estado" name="estado">
+          <option >
+        Seleccione un estado            
+        </option>
           </select>
       </div> 
-		</div>
-    <div class="row">
-      <div class="col-md-2">
+		
+      <div class="col-md-3">
         <label>
           Departamento: 
         </label>
-          <select class="form-control" name="departamento" id="departamento">  
+          <select class="form-control" name="departamento" id="departamento"> 
+            <option >
+        Seleccione un departamento            
+        </option> 
           </select>
       </div>
-      <div class="col-md-2">
+      <div class="col-md-3">
         <label>
           Municipio: 
         </label>
@@ -104,26 +112,11 @@
           <option value="%" >Selecciona un municipio</option> 
           </select>
       </div>
-      <div class="col-md-2">
-        <label>
-          Tipo de Solicitud: 
-        </label>
-          <select class="form-control">
-        <option >
-        Selecciona un tipo de solicitud            
-        </option>   
-         <option >
-        Inscripcion            
-        </option> 
-         <option >
-        Renovacion            
-        </option> 
-          </select>
-      </div>
+      
     </div>
 		<br>
 		<div class="row">
-			<div class="col-lg-11 col-lg-offset-1">
+			<div class="col-lg-12 ">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -139,7 +132,7 @@
 					<tbody name="loop" id="loop"> 
 					</tbody>
 				</table> 
-          <ul class="paginacion">
+          <ul class="paginacion text-center" >
           </ul>         
         </div>
 			</div>  

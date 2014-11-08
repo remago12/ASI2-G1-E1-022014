@@ -55,3 +55,32 @@
 .encabezado{
 	font-family: 'Jura', sans-serif;
 }
+
+
+.paginacion ul
+{
+   
+   padding-right:2px;
+   padding-left: 0px;
+   padding-bottom: 0px;
+   padding-top: 0px;
+   margin: 0px;
+
+}
+
+.paginacion li
+{
+   list-style-type: none;
+   display: inline;
+   padding-right: 5px;
+}
+
+.pag:hover{
+	background: white !important;
+}
+
+.bancoimg{
+	height: 250px;
+	margin-top: 2px;
+
+}

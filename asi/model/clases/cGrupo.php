@@ -21,6 +21,32 @@
         	}
     	}
 
-
+function seleccionar_grupo($IdGrupo)
+{
+ $sql= "SELECT * from grupo where idGrup =".$IdGrupo;
+  $rs= $this-> DATA->Execute($sql);
+  if($rs->RecordCount()){
+    while(!$rs->EOF){
+      $id= $rs->fields['idGrup'];
+      $info[$id]['idGrup']=$rs->fields['idGrup'];
+      $info[$id]['numGrup']=$rs->fields['numGrup'];
+      $info[$id]['nomGruo']=$rs->fields['nomGruo'];
+      $info[$id]['exclGrup']=$rs->fields['exclGrup'];
+      $info[$id]['lugReuGrup']=$rs->fields['lugReuGrup'];
+      $info[$id]['proLugGrup']=$rs->fields['proLugGrup'];
+      $info[$id]['fchaFundGrup']=$rs->fields['fchaFundGrup'];
+      $info[$id]['idEst']=$rs->fields['idEst'];
+      $info[$id]['nomEst']=$rs->fields['nomEst'];
+      //$info[$id]['municipio_idMunic']=$rs->fields['municipio_idMunic'];
+      $rs->MoveNext();
+      }
+      $rs->Close();
+      return $info;
+  }
+  else{
+    return false;
+    }
+  
+  }  
 
 	}
