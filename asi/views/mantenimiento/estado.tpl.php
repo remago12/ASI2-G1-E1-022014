@@ -69,7 +69,7 @@
 </nav>
   
 
-    <form method="POST" action="../../model/clases/action_estado.php">
+    <form method="POST" action="../../model/action/action_estado.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Estados</h1>

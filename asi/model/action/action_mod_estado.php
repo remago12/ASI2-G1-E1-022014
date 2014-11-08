@@ -1,26 +1,26 @@
 <?php
 
 require_once '../data/dataBase.php';
-require_once 'cCuadro_Clinico.php';
+require_once '../clases/cCuadro_Clinico.php';
 
 
 
 //variables POST
   $registro =new CuadroClinico();
 
-  $nombre                =$_POST['nomPad'];
-  $id                    =$_POST['idPad'];
+  $nombre                =$_POST['nomEst'];
+  $id                    =$_POST['idEst'];
 try{
  
 //arrays
  
     $reg=array($nombre, $id); 
-  $registro->mod_padecimiento($reg);
+  $registro->mod_estado($reg);
   
 
    //var_dump($reg);
   
-  header('Location: ../../views/mantenimiento/padecimiento.tpl.php ');  
+  header('Location: ../../views/mantenimiento/estado.tpl.php ');  
 
    }catch(Exception $e){
 

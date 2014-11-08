@@ -73,7 +73,7 @@
 </nav>
 
   
-    <form method="POST" action="../../model/clases/action_Pad.php">
+    <form method="POST" action="../../model/action/action_Pad.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Padecimientos</h1>

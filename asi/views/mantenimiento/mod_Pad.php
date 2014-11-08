@@ -82,7 +82,7 @@
   </div><!-- /.container-fluid -->
 </nav>
   
-    <form method="POST" action="../../model/clases/action_mod_pad.php">
+    <form method="POST" action="../../model/action/action_mod_pad.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Padecimientos</h1>

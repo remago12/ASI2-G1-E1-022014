@@ -55,3 +55,9 @@
 .encabezado{
 	font-family: 'Jura', sans-serif;
 }
+.pendiente{
+	background: #E51222;
+	border-radius: 0.2em;
+	color:white ;
+
+}

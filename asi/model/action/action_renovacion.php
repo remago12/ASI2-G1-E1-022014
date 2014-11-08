@@ -1,14 +1,11 @@
 <?php
 require_once '../data/dataBase.php';
-require_once 'cRenovacion.php';
+require_once '../clases/cRenovacion.php';
 
 //variables POST
   $renovacion =new Renovacion();
 
-  $idPersona           =$_POST['idPer'];
-  $fchaRen             =date('y-m-d');
-  $estado_idEst        =4;
-  $exeRen              ="N";
+  $estado_idEst        =2;
   $numFactRen          =$_POST['numFactRen'];
   $fchaPagRen          =$_POST['fchaPagRen'];
   $montoRen            =$_POST['montoRen'];
@@ -26,8 +23,11 @@ move_uploaded_file($archivo,$ruta_carpeta."imagenes/".$nombreArchivo);
 
 $rutag=$ruta_DB."imagenes/".$nombreArchivo;
 //arrays
-    $reg=array($fchaRen,$estado_idEst,$exeRen,$numFactRen,$fchaPagRen,$montoRen,$banco_idBanc,$miembro_nisMiem,$grupo_idGrup,$rutag);   
-  $renovacion->crear_renovacion($reg,$idPersona);  
+    $reg=array($estado_idEst,$numFactRen,$fchaPagRen,$montoRen,$banco_idBanc,$rutag,$miembro_nisMiem);   
+  $renovacion->actualizar_renovacion($reg);  
+
+  $estado= array($estado_idEst, $miembro_nisMiem);
+  $renovacion->actualizar_estadoMiem($estado);
   header('Location: ../../views/perfilUsuario.tpl.php');  
 
    }catch(Exception $e){

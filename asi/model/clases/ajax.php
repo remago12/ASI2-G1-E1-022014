@@ -49,7 +49,7 @@ switch ($_POST['action']) {
 		break;
 
 		case 'estado':
-		$response = Inscripcion::seleccionar_estado($_POST['estado']);
+		$response = Inscripcion::seleccionar_estado();
 		echo json_encode($response);
 		break;
 
