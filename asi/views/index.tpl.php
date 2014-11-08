@@ -1,3 +1,32 @@
+<?php
+    //Database
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+ 
+  session_start();
+    // Objetos
+     $oUsuario   = new Usuario();
+    // revisando sesiones 
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.tpl.php");
+          exit();
+        }
+    }else{
+      header("Location: login.tpl.php");
+          exit();
+    }
+    
+  $usuario  = $_SESSION['usuario'];
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,17 +80,8 @@
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="">Oscar Lizama</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><a href=""><?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

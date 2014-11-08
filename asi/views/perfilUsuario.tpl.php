@@ -12,11 +12,25 @@
      $banco      = new Banco();
      $url= "";
     // revisando sesiones 
-    if ( !$oUsuario->verSession() ) 
-    {
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "3") {   
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.tpl.php");
+          exit();
+        }
+    }else{
       header("Location: login.tpl.php");
-      exit();
-    } 
+          exit();
+    }
+   
+    
   $usuario  = $_SESSION['usuario'];
 
       try{
@@ -47,7 +61,7 @@
         $polizaSegMiem      = $bl['polizaSegMiem'];
         $certMiem    = $bl['certMiem'];
         $fotPer      = $bl['fotPer'];
-        $estado =$bl['estado_idESt'];
+        
         ?>
         <tr>
         </tr>
@@ -344,7 +358,6 @@
         <br>
           <tr><td><?=$telgrup?></td></tr>      
         <br>
-<<<<<<< HEAD
         <?php 
          if ($estado == 8){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
@@ -365,18 +378,10 @@
 
         }
         ?>
-=======
-				<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#contacto">
-  				 Renovacion
-				</button>
-        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-          Contacto de Emergencia
-        </button>
->>>>>>> 6b812068adc542b2dff0f4d6e67e25454bb4e35d
-			</div>
-		</div>	
-	</div>
-	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      </div>
+    </div>  
+  </div>
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -384,12 +389,11 @@
         <h4 class="modal-title" id="myModalLabel">Renovacion</h4>
       </div>
       <div class="modal-body">
-      <form method="post" action="<?=$url?>" enctype="multipart/form-data">
+      <form method="post" action="../model/clases/action_renovacion.php" enctype="multipart/form-data">
         
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
-        <input type="hidden" name="idInsc" value="<?=$inscripcion?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
         <label>
@@ -423,36 +427,9 @@
       <div class="modal-footer">
         <button value="Entrar" class="btn btn-primary">Entrar</button>
       </form>
-          <!-- Modal -->
-<div class="modal fade" id="contacto" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Contactos</h4>
-      </div>
-      <div class="modal-body">
-        <form>
-          <label>Nombre:</label>
-          <input type="text" name="nombre">
-          <label>Apellido:</label>
-          <input type="text" name="apellido">
-          <label>Parentesco:</label>
-          <input type="text" name="parentesco">
-
-        </form>
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>
-</div>
-      </div>
-    </div>
-  </div>
-</div>	
+</div>  
 </body>
 </html>

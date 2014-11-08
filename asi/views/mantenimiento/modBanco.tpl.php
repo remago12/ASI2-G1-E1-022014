@@ -107,7 +107,7 @@ require_once '../../model/clases/cBancSql.php';
                 Banco Davivienda
               </option>
             </select><br>
-          <form action="../../model/clases/acModBanco.php" method="POST">
+          <form action="../../model/action/acModBanco.php" method="POST">
               <label>
                 Nombre:
               </label> 
@@ -116,7 +116,7 @@ require_once '../../model/clases/cBancSql.php';
                 Número de Cuenta:
               </label>
               <input type="text" class="form-control" name="numCuenta" value="<?=$numCuenta?>">
-              <input type="hidden" name="idAlerg" value="<?=$idAlergia?>">
+              <input type="hidden" name="idBanc" value="<?=$idBanc?>">
               <br>
               <button class="btn btn-success" >Guardar</button>
           </form>  
