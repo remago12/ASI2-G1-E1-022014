@@ -59,8 +59,68 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-			<div class="col-lg-8 col-lg-offset-1">
-				<table class="table table-striped">
+			
+      <div class="col-lg-8 col-lg-offset-1">
+				<div class="row">
+
+          <div class="col-lg-1">
+            <label>NISS:</label>
+            <input type="text" id="niss" class="form-control">
+          </div>
+         <div class="col-lg-3">
+            <label> Departamente:</label>
+            <select class="form-control">
+              <option>
+              </option>      
+            </select>
+
+          </div>
+          <div class="col-lg-3">
+            <label>Municipio:</label>
+            <select class="form-control">
+              <option>
+              </option>      
+            </select>
+          </div>
+
+          
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+            <label>Numero de Grupo:</label>
+            <select class="form-control">
+              <option>
+                
+              </option>  
+            </select>  
+
+          </div>
+          <div class="col-lg-2">
+            <label>Genero:</label>
+            <select class="form-control">
+              <option>
+                
+              </option>  
+            </select>
+
+  
+          </div>
+          <div class="col-lg-1">
+            <label>
+              Edad:
+            </label>
+            <input  type="text" class="form-control">
+          </div>
+           <div class="col-lg-3">
+            <label>Nombre:</label>
+            <input type="text" class="form-control">    
+          </div> 
+          <div class="col-lg-3">
+            <label>Apellido:</label>
+            <input type="text" class="form-control">    
+          </div>               
+        </div>
+        <table class="table table-striped">
 					<thead>
 						<tr>
 							<th>NIS</th>

@@ -19,6 +19,16 @@
         $numGrup       = $bl['numGrup'];
         $fchaFundGrup       = $bl['fchaFundGrup'];
         $exclGrup       = $bl['exclGrup'];
+        $lugReuGrup       = $bl['lugReuGrup'];
+        $proLugGrup       = $bl['proLugGrup'];
+        $telgrup       = $bl['telgrup'];
+        $nomDep       = $bl['nomDep'];
+        $nomMunic       = $bl['nomMunic'];
+         $callGrup       = $bl['callGrup'];
+          $numCasGrup       = $bl['numCasGrup'];
+          $colGrup       = $bl['colGrup'];
+          $latGrup       = $bl['latGrup'];
+          $lngGrup       = $bl['lngGrup'];
          
         ?>
         <?php
@@ -87,43 +97,39 @@
 				<br>
 				<label>
 				Si	
-				<input type="radio"  name="exclusivo">	
+				<input type="radio" name="exclusivo" <?php echo ($exclGrup=='S')?'checked':''?> >	
 				</label>&nbsp;&nbsp;&nbsp;
 				<label>No</label>
-				<input type="radio"  name="exclusivo"><br><br>
+				<input type="radio"  name="exclusivo" <?php echo ($exclGrup=='N')?'checked':''?> ><br><br>
 				<label>Lugar de Reunión:</label>
-				<input type="text" name="lugarReunion" class="form-control" value="<?=$exclGrup?>"><br>	
+				<input type="text" name="lugarReunion" class="form-control" value="<?=$lugReuGrup?>"><br>	
 				<label>Propietario del Lugar:</label>
-				<input type="text" name="propLugar" class="form-control"><br>	
+				<input type="text" name="propLugar" class="form-control" value="<?=$proLugGrup?>"><br>	
 				<label>Teléfono:</label>
-				<input type="text" name="telefono" class="form-control">	
+				<input type="text" name="telefono" class="form-control" value="<?=$telgrup?>">	
 			</div>	
 			<div class="col-lg-4"> 
 				<label>Departamento:</label>
 					<select class="form-control">
-						<option>San Salvador</option>
-						<option>La Libertad</option>
+						<option><?=$nomDep?></option>
 					</select>
 				<br>
 				<label>Municipio:</label>
 				<select class="form-control">
 					<option>
-						San Marcos
-					</option>
-					<option>
-						San Salvador
+						<?=$nomMunic?>
 					</option>
 						
 				</select>
 				<br>	
 				<label>Calle:</label>
-				<input type="text" name="calle" class="form-control">
+				<input type="text" name="calle" class="form-control" value="<?=$callGrup?>">
 				<br>	
 				<label>Número de Casa:</label>
-				<input type="text" name="numCasa" class="form-control">
+				<input type="text" name="numCasa" class="form-control" value="<?=$numCasGrup?>">
 				<br>
 				<label>Colonia:</label>
-				<input type="text" name="colonia" class="form-control">
+				<input type="text" name="colonia" class="form-control" value="<?=$colGrup?>">
 				<br>
 				
 				<br>
@@ -132,8 +138,8 @@
 					<div id="map" >
 				
 					</div>
-					<input type="hidden" name="txt_lat" id="txt_lat" class="form-control">
-					<input type="hidden" name="txt_lng" id="txt_lng" class="form-control">
+					<input type="hidden" name="txt_lat" id="txt_lat" class="form-control" value="<?=$latGrup?>">
+					<input type="hidden" name="txt_lng" id="txt_lng" class="form-control" value="<?=$lngGrup?>">
 					<br>
 					<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Cancelar</a>
 					<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Guardar</a>

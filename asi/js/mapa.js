@@ -1,19 +1,22 @@
 function initialize() {
-
+ var lat = document.getElementById('txt_lat').value;
+ var lng = document.getElementById('txt_lng').value; 
   var mapOptions = {
-    zoom: 10,
-    center: new google.maps.LatLng(13.692357315058082, -89.21998257812504),
+    zoom: 16,
+    center: new google.maps.LatLng(lat,lng),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
   var map = new google.maps.Map(document.getElementById('map'),
       mapOptions);
+  var img = new google.maps.MarkerImage("../img/scouts.png");
 
   var marker = new google.maps.Marker({
     position: map.getCenter(),
     map: map,
     title: 'Click to zoom',
-    draggable:true
+    draggable:true,
+    icon:img
 
   });
 
