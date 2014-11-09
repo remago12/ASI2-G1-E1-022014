@@ -17,6 +17,7 @@
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
+  	<script type="text/javascript" src="../js/validar.js"></script>
   	<script type="text/javascript" src="../js/mapa.js"></script>
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
@@ -77,8 +78,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-
-
 	<h2 class="text-center">Inscripción de Miembro</h2>
 	<form method="POST" enctype="multipart/form-data" action="../model/action/action_inscripcion_m.php">
 	<!-- Button trigger modal -->
@@ -91,83 +90,65 @@
 			Cargar Imagen:	
 			</label>
 			<input type="file" name="imagen" id="imagen"><br>
-			<label>Primer Nombre:</label>
+			<label>* Primer Nombre:</label>
 			<input type="text"  name="nombre" id="nombre" placeholder="Primer Nombre" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
 			<label>Segundo Nombre:</label>
-			<input type="text"  name="nombre" id="nombre" placeholder="Segundo Nombre" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30"><br>
-			<label>Primer Apellido:</label>
-			<input type="text" name="apellido" id="apellido" placeholder="Primer Apellido" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
+			<input type="text"  name="nombre" id="nombre" placeholder="Segundo Nombre" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
+			<label>* Primer Apellido:</label>
+			<input type="text" name="apellido" id="apellido" placeholder="Primer Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
 			<label>Segundo Apellido:</label>
-			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30"><br>
-			<label>Fecha de Nacimiento:</label>
-			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required>
+			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
+			<label>* Fecha de Nacimiento:</label>
+			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
 			<br>
 			<label>Género:</label>
 			<label>Masculino
 			<input type="radio" name="genero" checked="true" value="M">	
 			</label>&nbsp;&nbsp;&nbsp;
 			<label>Femenino</label>
-			<input type="radio" name="genero" value="F">
-			<br><br>
+			<input type="radio" name="genero" value="F"><br><br>			
 			<div class="well well-lg">
-			<h2>Dirección</h2>
-			<br>
-			<label>Departamento</label>
+			<h2>Dirección</h2><br>
+			<label>* Departamento</label>
 			<select class="combobox form-control" id="departamento" name="departamento">
 			</select><br>
-			<label>Municipio</label>
+			<label>* Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" name="municipio">
-			
-			</select>
-
-			<br>
-			<label>Calle:</label>
-			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{5,20}" maxlength="20" required/><br>
+			<select class="combobox form-control" id="municipio" name="municipio">			
+			</select><br>			
+			<label>* Calle:</label>
+			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{5,20}" maxlength="20" required/><br>
 			<label>Colonia:</label>
-			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{3,20}" maxlength="20"><br>
-			<label>No. Casa:</label>
-			<input type="text" name="casa" id="casa" placeholder="Número de casa" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{1,4}" maxlength="4" required/><br>
+			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{3,20}" maxlength="20"><br>
+			<label>* No. Casa:</label>
+			<input type="text" name="casa" id="casa" placeholder="Número de casa" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{1,4}" maxlength="4" required/><br>
 		</div>
-		</div>
-		<div class="col-lg-6">
-		<br>	
-		<br>
+		</div><br>
+		<h4>* Campos Obligatorios</h4>
+		<div class="col-lg-6"><br><br>
 		<label>Teléfono Casa:</label>
-		<input type="text"  name="telcasa" id="telcasa" placeholder="Teléfono de casa" class="validate[required] medium form-control" pattern="2[0-9]{8}" maxlength="8" required/><br>
+		<input type="text"  name="telcasa" id="telcasa" placeholder="Teléfono de casa" class="validate[required] medium form-control" pattern="[0-9]{8}" maxlength="8"><br>
 		<label>Teléfono Celular:</label>
 		<input type="text"  name="telcel" id="telcel" placeholder="Teléfono celular" class="validate[required] medium form-control" pattern="[0-9]{8}" maxlength="8"><br>
-		<label>Correo:</label>
-		<input type="email" name="email" id="email" placeholder="Correo" class="validate[required] medium form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,30}" maxlength="30"><br>
+		<label>* Correo:</label>
+		<input type="email" name="email" id="email" placeholder="Correo" class="validate[required] medium form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,30}" maxlength="30" required/><br>
 		<label>DUI:</label>
-		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control" pattern="[0-9]{8}[-][0-9]{1}" maxlength="10" required/><br>
+		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control" pattern="[0-9]{8}[-][0-9]{1}" maxlength="10"><br>
 		<label>Pasaporte:</label>
 		<input type="text"  name="pasaporte" id="pasaporte" placeholder="Pasaporte" class="validate[required] medium form-control"><br>
-		<label>No. de grupo:</label><br>
+		<label>* No. de grupo:</label><br>
 		<select class="combobox form-control" name="grupo" id="grupo">
-		</select>
-		<br>
-		<br>
+		</select><br><br>
 		<div id="mapa">
-		
-		</div>
-		<br>
-		<br>
+		</div><br><br>
 			<button class="btn btn-danger">
 				Cancelar
 			</button>
-			<button class="btn btn-success" type="submit" value="Enviar" onclick="insertBR()">
+			<button class="btn btn-success" type="submit" name="Guardar "id="Guardar" value="Enviar" onclick="insertBR()">
 				Guardar
-			</button>
-		<br>
-		<br>
-		<br>
-
+			</button><br><br><br>
 		</div>
-
 	</div>
-
-	</form>
-		<br><br>
+	</form><br><br>
 </body>
 </html>
