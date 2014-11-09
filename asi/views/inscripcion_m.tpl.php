@@ -100,7 +100,7 @@
 			<label>Segundo Apellido:</label>
 			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30"><br>
 			<label>Fecha de Nacimiento:</label>
-			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required>
+			<input type="date" name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required>
 			<br>
 			<label>Género:</label>
 			<label>Masculino
@@ -113,11 +113,11 @@
 			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
-			<select class="combobox form-control" id="departamento" name="departamento">
+			<select class="combobox form-control" id="departamento" name="departamento" required/>
 			</select><br>
 			<label>Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" name="municipio">
+			<select class="combobox form-control" id="municipio" name="municipio" required/>
 			
 			</select>
 
