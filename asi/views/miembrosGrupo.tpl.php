@@ -69,17 +69,18 @@
           </div>
          <div class="col-lg-3">
             <label> Departamente:</label>
-            <option>
-              <select>
-                
-              </select>
-            </option>
+            <select class="form-control">
+              <option>
+              </option>      
+            </select>
+
           </div>
           <div class="col-lg-3">
             <label>Municipio:</label>
-            <option>
-              <select></select>
-            </option>
+            <select class="form-control">
+              <option>
+              </option>      
+            </select>
           </div>
 
           
