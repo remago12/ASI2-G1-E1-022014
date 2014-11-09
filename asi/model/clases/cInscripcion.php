@@ -20,7 +20,7 @@ class Inscripcion
 		}
 
       function seleccionar_estado(){
-     $result = mysql_query("SELECT * FROM scout.estado");
+     $result = mysql_query("SELECT * FROM scout.estado where idESt between 1 and 4");
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
     $rows[]=($row);
@@ -28,6 +28,7 @@ class Inscripcion
         return array('rows'=>$rows);
         
     }
+
 
     /* function seleccionar_inscripcion($idPersona){
       $result = mysql_query("SELECT i.*, g.numGrup FROM inscripcion AS i, grupo AS g WHERE g.idGrup = i.grupo_idGrup and i.persona_idPersona =".$idPersona);
@@ -48,6 +49,7 @@ class Inscripcion
         
     }
 */
+    
     function seleccionar_inscripciones()
 {
  $sql= "SELECT i.*,p.*,g.numGrup from inscripcion as i, persona as p , grupo as g where i.persona_idPersona = p.idPersona and i.grupo_idGrup=g.idGrup";
@@ -100,7 +102,19 @@ class Inscripcion
     return false;
     }
   
-  }   
+  }  
+
+  function pago_inscripcion($parametrosReg){
+     $sql="UPDATE inscripcion SET exePagIns=?,estado_idEst=?,numFactIns=?,fchaPagIns=?,montoIns=?,banco_idBanc=?,img_Ins=? where numSolicInsc=?";
+    $save = $this->DATA->Execute($sql, $parametrosReg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+
+
+  }
 
 
 }

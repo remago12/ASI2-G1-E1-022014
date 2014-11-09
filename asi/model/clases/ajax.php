@@ -2,7 +2,8 @@
 require_once '../data/dataBase.php';
 require_once 'cRegistro.php';
 require_once 'cInscripcion.php';
-
+require_once 'cSolicitudes.php';
+require_once 'cGrupos.php';
 
 $response =array();
 try{
@@ -48,11 +49,29 @@ switch ($_POST['action']) {
 		break;
 
 		case 'estado':
-		$response = Inscripcion::seleccionar_estado($_POST['estado']);
+		$response = Inscripcion::seleccionar_estado();
 		echo json_encode($response);
 		break;
 
+		case 'solic_inscripciones':
+		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst'],$_POST['Inicio'],$_POST['Limite']);
+		echo json_encode($response);
+		break;
 
+		case'contar_inscripciones':
+		$response = Solicitud::contar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst']);
+		echo json_encode($response);
+		break;
+
+		case 'grupos':
+		$response = Grupos::seleccionar_grupos($_POST['IdDep'],$_POST['IdMun'],$_POST['Inicio'],$_POST['Limite']);
+		echo json_encode($response);
+		break;
+
+		case'contar_grupos':
+		$response = Grupos::contar_grupos($_POST['IdDep'],$_POST['IdMun']);
+		echo json_encode($response);
+		break;	
 }
 }
 	catch(Exception $e){

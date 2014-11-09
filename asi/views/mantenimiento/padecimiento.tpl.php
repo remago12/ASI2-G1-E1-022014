@@ -18,7 +18,9 @@
   <meta charset="UTF-8">
 </head>
   <body>
-    <nav class="navbar navbar-default" role="navigation">
+
+
+<nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -41,10 +43,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Link</a></li>
-        
+        <li><a href="../../views/index.html">Inicio</a></li>
+        <li><a href="../../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="manBanco.tpl.php">Banco</a></li>
+            <li><a href="alergias.tpl.php">Alergias</a></li>
+            <li><a href="padecimiento.tpl.php">Padecimientos</a></li>
+            <li class="divider"></li>
+            <li><a href="estado.tpl.php">Estado</a></li>
+          </ul>
+        </li>
+        <li><a href=""><img src="..."></a> </li>
+        <li><a href="">Oscar Lizama</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -59,7 +73,7 @@
 </nav>
 
   
-    <form method="POST" action="../../model/clases/action_Pad.php">
+    <form method="POST" action="../../model/action/action_Pad.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Padecimientos</h1>

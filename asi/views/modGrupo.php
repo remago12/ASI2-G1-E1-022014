@@ -1,3 +1,33 @@
+<?php
+    //Database
+	require_once '../model/clases/cGrupo.php';
+	require_once '../model/data/dataBase.php';
+     //Objetos
+     $oGrupo   = new Grupo();
+     $IdGrup = base64_decode($_GET['IdGrup']);
+
+      try{
+      $Grupo = $oGrupo->seleccionar_grupo($IdGrup);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($Grupo!=null)
+        {
+        foreach($Grupo AS $key => $bl)
+        {
+        $nomGrup      = $bl['nomGruo'];
+        $numGrup       = $bl['numGrup'];
+        $fchaFundGrup       = $bl['fchaFundGrup'];
+        $exclGrup       = $bl['exclGrup'];
+         
+        ?>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+?>
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -48,21 +78,21 @@
 			<hr class="line"><br>
 			<div class="col-lg-3">
 				<label>Nombre de Grupo:</label>
-				<input type="text" name="nomGrupo" class="form-control"><br>
+				<input type="text" name="nomGrupo" class="form-control" value="<?=$nomGrup?>"><br>
 				<label>Número de Grupo:</label>
-				<input type="text" name="numGrupo" class="form-control"><br>
+				<input type="text" name="numGrupo" class="form-control" value="<?=$numGrup?>"><br>
 				<label>Fecha de Fundación:</label>
-				<input type="date" name="fechFundacion" class="form-control"><br>
+				<input type="date" name="fechFundacion" class="form-control" value="<?=$fchaFundGrup?>"><br>
 				<label>Exclusivo:</label>
 				<br>
 				<label>
 				Si	
-				<input type="radio" checked="false" name="exclusivo">	
+				<input type="radio"  name="exclusivo">	
 				</label>&nbsp;&nbsp;&nbsp;
 				<label>No</label>
-				<input type="radio" checked="true" name="exclusivo"><br><br>
+				<input type="radio"  name="exclusivo"><br><br>
 				<label>Lugar de Reunión:</label>
-				<input type="text" name="lugarReunion" class="form-control"><br>	
+				<input type="text" name="lugarReunion" class="form-control" value="<?=$exclGrup?>"><br>	
 				<label>Propietario del Lugar:</label>
 				<input type="text" name="propLugar" class="form-control"><br>	
 				<label>Teléfono:</label>
@@ -118,6 +148,6 @@
 		</form>
 
 	</div>
-
+<br><br>
 	</body>
 	</html>

@@ -15,6 +15,8 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+      <script type="text/javascript" src="../../js/script_combo_admin.js"></script>
+      <script type="text/javascript" src="../../js/solicitudes.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -42,15 +44,15 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../index.html">Inicio</a></li>
-        
+        <li> <a href="#">Solicitudes</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Banco</a></li>
-            <li><a href="#">Alergias</a></li>
-            <li><a href="#">Padecimiento</a></li>
+            <li><a href="../mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../mantenimiento/padecimiento.tpl.php">Padecimiento</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="../mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
@@ -74,14 +76,47 @@
 		<h2 class="text-center">Solicitudes de Inscripción</h2>
 		<hr class="line">
 		<div class="row">
-			<div class="col-lg-2 col-lg-offset-9">
-				<input type="text" placeholder="Buscar" class="form-control">
-			</div>
-			
-		</div>
+			<div class="col-md-3 ">
+        <label>Numero del Grupo:</label>
+        <select class="form-control" name="grupo" id="grupo">
+        <option >
+        Seleccione un grupo            
+        </option>
+        </select>
+        
+      </div>
+      <div class="col-md-3 ">
+        <label>Estado:</label>
+          <select class="form-control" id="estado" name="estado">
+          <option >
+        Seleccione un estado            
+        </option>
+          </select>
+      </div> 
+		
+      <div class="col-md-3">
+        <label>
+          Departamento: 
+        </label>
+          <select class="form-control" name="departamento" id="departamento"> 
+            <option >
+        Seleccione un departamento            
+        </option> 
+          </select>
+      </div>
+      <div class="col-md-3">
+        <label>
+          Municipio: 
+        </label>
+          <select class="form-control" name="municipio" id="municipio">
+          <option value="%" >Selecciona un municipio</option> 
+          </select>
+      </div>
+      
+    </div>
 		<br>
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-1">
+			<div class="col-lg-12 ">
 				<table class="table table-striped">
 					<thead>
 						<tr>
@@ -90,71 +125,19 @@
 							<th>Género</th>
 							<th>Edad</th>
 							<th>Numero de Grupo</th>
+              <th>Departamento</th>
+              <th>Municipio</th>
 						</tr>
 					</thead>
-					<tbody>
-					  <?php 
-      try{
-      $cuadro = $oInscripcion->seleccionar_inscripciones();
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($cuadro!=null)
-        {
-        foreach($cuadro AS $key => $bl)
-        {
-        $numSolicInsc      = $bl['numSolicInsc'];
-        $nomPer       = $bl['nomPer'];
-        $apelPer       = $bl['apelPer'];
-        $genPer ="";
-        if ($bl['genPer'] == "M"){
-        	$genPer= "Masculino";
-        }else{
-        	$genPer= "Femenino";
-        }
-        $fechNacPer =$bl['fechNacPer'];
-        $numGrup    =$bl['numGrup'];
-        $fecha = time() - strtotime($fechNacPer);
-$edad = floor((($fecha / 3600) / 24) / 360);
-
-
-        
-        ?>
-              <tr>
-        <td>
-        <?=$numSolicInsc?>
-        </td>
-        <td>
-        <?=$nomPer." ".$apelPer?>
-        </td>
-        <td>
-        <?=$genPer?>
-        </td>
-        <td>
-        <?=$edad?>
-        </td>
-        <td>
-        <?=$numGrup?>
-        </td>
-        <td>
-         <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>
-        </td>
-        </tr>
-        <?php
-        
-        }
-        }else{
-         echo "No hay datos";
-        }
-        
-        
-        ?> 
+					<tbody name="loop" id="loop"> 
 					</tbody>
-				</table>
-			</div>				
+				</table> 
+          <ul class="paginacion text-center" >
+          </ul>         
+        </div>
+			</div>  
+      </div>
+
 		</div>
-
-	</div>
-
 </body>
 </html>

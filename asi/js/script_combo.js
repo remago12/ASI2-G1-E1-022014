@@ -15,9 +15,13 @@ $('#departamento').html(cadena);
 
 	$('#departamento').change(function(){
 var IdDept=$('#departamento').val();
+if (IdDept== "Seleccione un departamento"){
+var cadena="<option value='%' >Selecciona un municipio</option>";
+  $('#municipio').html(cadena);
+}else{
 var IdMUn="";
 var NomMUn ="";
-var cadena="<option>Seleccione un municipio</option>";
+var cadena="<option>Selecciona un municipio</option>";
 $.post("../model/clases/ajax.php",{action:"municipio",IdDept:IdDept},function(data){
 
 for(i= 0; i < data.rows.length;i++){
@@ -26,7 +30,7 @@ NomMUn=data.rows[i]["1"];
 cadena=cadena + "<option value='"+IdMUn+"'>"+NomMUn+"</option>";
 $('#municipio').html(cadena); 
 }},'json');
-});
+}});
 
 
 	$('#grupo').ready(function(){
@@ -39,6 +43,21 @@ IdGrupo=data.rows[i]["0"];
 NumGrupo=data.rows[i]["1"];
 NomGrupo=data.rows[i]["2"];
 cadena= cadena + "<option value='"+IdGrupo+"'>"+NumGrupo+"  "+NomGrupo+"</option>";
+$('#grupo').html(cadena); 
+
+}},'json');
+}); 
+
+    $('#grupo2').ready(function(){
+$.post("../model/clases/ajax.php",{action:"grupo"},function(data){
+var IdGrupo="";
+var NomGrupo ="";
+var cadena="<option>Seleccione un grupo</option>";
+for(i=0; i < data.rows.length;i++){
+IdGrupo=data.rows[i]["0"];
+NumGrupo=data.rows[i]["1"];
+NomGrupo=data.rows[i]["2"];
+cadena= cadena + "<option value='"+NumGrupo+"'>"+NumGrupo+"  "+NomGrupo+"</option>";
 $('#grupo').html(cadena); 
 
 }},'json');

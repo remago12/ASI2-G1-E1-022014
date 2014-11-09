@@ -1,5 +1,60 @@
-<!DOCTYPE html>
+<?php
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+  session_start();
+  $oUsuario = new Usuario();
+  
+    
+  if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {
+             header("Location: index.tpl.php");
+            exit();
+          }elseif ($rol== "2") {
+             header("Location: indexjefe  .tpl.php");
+             exit();
+          }elseif ($rol== "3") {
+             header("Location: perfilUsuario.tpl.php");
+            exit();
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }
+    }
+  
+  if ( (isset($_POST['username'])) && (isset($_POST['password'])) ) 
+  {
+    $user = $_POST['username'];
+    $psw  = $_POST['password'];
+    $paramsUser = array($user, $psw);
+    $login = $oUsuario->ingreso($paramsUser);
+ 
+    if ($login){
+      if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {
+             header("Location: index.tpl.php");
+            exit();
+          }elseif ($rol== "2") {
+             header("Location: indexjefe.tpl.php");
+             exit();
+          }elseif ($rol== "3") {
+             header("Location: perfilUsuario.tpl.php");
+            exit();
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }
+    }else {
+      header("Location: login.tpl.php");
+    }
 
+  }
+?>
+<!DOCTYPE html>
 <?php 
   $link = mysql_connect("localhost", "asi2", "equipo1") or die("Could not connect: " . 
   mysql_error());
@@ -18,6 +73,7 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link type="text/css" href="../css/mapLog.css" rel="stylesheet" media="all" />
   <script src="http://maps.google.com/maps/api/js?v=3&sensor=false" type="text/javascript"></script>
+  <script type="text/javascript" src="../js/script_combo.js"></script>
   <!--<script type="text/javascript" src="../js/mapLog.js"></script>-->
 
 </head>
@@ -49,9 +105,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Link</a></li>
+        <!--<li><a href="#">Link</a></li>-->
         
-        <li class="dropdown">
+        <!--<li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
@@ -60,7 +116,7 @@
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
           </ul>
-        </li>
+        </li>-->
         <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
       </ul>
@@ -71,7 +127,27 @@
         
   
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">Buscar por:</div>
+          <div class="panel-body">
+            <form>
+              <label>
+                Departamento:
+              </label>
+              <select class="combobox form-control" id="departamento" name="departamento" required/>
+                <option>Elige tu departamento</option>
+              </select><br>
+              <label>Municipio:</label>
+              <select class="combobox form-control" id="municipio" name="municipio" required/>
+                <option>Elige tu municipio</option>
+              </select>
+              
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-10">
         <div id="map" >
         </div>
         <input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
@@ -90,12 +166,12 @@
             <div class="row">
               <div class="col-md-12">
 
-                <form method="POST" name="formLogin"  id="formLogin" class="form-horizontal" data-toggle="validator" role="form">
+                <form method="POST" data-toggle="validator" role="form">
 
                   <label>
                     Usuario:
                   </label>
-                  <input type="text" placeholder="Usuario" name="username_id" id="username_id" class="form-control" required/>
+                  <input type="text" placeholder="Usuario" name="username" id="username" class="form-control" required/>
                   <label>
                     Contraseña:
                   </label>
@@ -104,7 +180,7 @@
 
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_m.tpl.php">Regístrate</a>
+                    <a href="inscripcion_miem.php">Regístrate</a>
                     <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
                 </form>

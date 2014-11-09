@@ -1,6 +1,6 @@
 <?php 
 require_once '../../model/data/dataBase.php';
-require_once '../../model/clases/cbanco.php';
+require_once '../../model/clases/cBancSql.php';
 
 $banco= new Banco();
  ?>
@@ -16,8 +16,7 @@ $banco= new Banco();
   <meta charset="UTF-8">
 </head>
   <body>
-
-    <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -40,10 +39,22 @@ $banco= new Banco();
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="#">Link</a></li>
-        
+        <li><a href="../../views/index.html">Inicio</a></li>
+        <li><a href="../../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li class="divider"></li>
+            <li><a href="../mantenimiento/estado.tpl.php">Estado</a></li>
+          </ul>
+        </li>
+        <li><a href=""><img src="..."></a> </li>
+        <li><a href="">Oscar Lizama</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Action</a></li>
             <li><a href="#">Another action</a></li>
@@ -56,10 +67,12 @@ $banco= new Banco();
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+  
+    
     <div class="container">
       <div class="row">
+            <h1 class="text-center">Listado de Bancos</h1>
           <div class="col-md-4">
-            <h1>Listado de Bancos</h1>
             <select class="form-control">
               <option>
                 Nuevo Banco
@@ -68,7 +81,7 @@ $banco= new Banco();
                 Banco Davivienda
               </option>
             </select><br>
-          <form action="../../model/clases/acBanco.php" method="POST">
+          <form action="../../model/action/acBanco.php" method="POST">
               <label>
                 Nombre:
               </label> 
@@ -91,18 +104,40 @@ $banco= new Banco();
             </tr>
           </thead>
           <tbody>
+              <?php 
+      try{
+      $banc = $banco->seleccionar_banco();
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($banc!=null)
+        {
+        foreach($banc AS $key => $bl)
+        {
+        $nomBanco       = $bl['nomBanc'];
+        $numCuenta      = $bl['numCuentaBanc'];
+        $idBanc         = $bl['idBanc'];
+        ?>
               <tr>
-              
-              <td>
-                Banco Davivienda
-              </td>
-              <td>
-                00909878-8
-              </td>
-              
-              
-            </tr>            
-
+        <td>
+        <?=$nomBanco?>
+        </td>
+                <td>
+        <?=$numCuenta?>
+        </td>
+        <td>
+          <a href="modBanco.tpl.php?id=<?=base64_encode($idBanc)?>">Editar</a>
+        </td>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+        
+        
+        ?> 
           </tbody>
         </table>
             
