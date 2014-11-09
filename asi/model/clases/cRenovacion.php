@@ -7,6 +7,26 @@ class Renovacion
 		global $DATA;
 		$this->DATA = $DATA;
 	}
+	function actualizar_estadoMiem($reg)
+    {
+    $sql="UPDATE miembro SET estado_idEst=? where nisMiem=? ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function actualizar_renovacion($reg)
+    {
+    $sql="UPDATE renovacion SET estado_idEst=?, numFactRen=?, fchaPagRen=?, montoRen=?, banco_idBanc=?, imgRen=?  where miembro_nisMiem=? ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
 	function crear_renovacion($renovacion,$idPer){
 		$rs= mysql_query("SELECT  idPersona FROM scout.persona where idPersona='".$idPer."'");
     	$year= date("y");
@@ -43,8 +63,8 @@ elseif (strlen((string)$correlativo) == 6){
 		$num_insc="000001".$year;
 	}
 
-	$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,numFactRen,fchaPagRen,montoRen,banco_idBanc,miembro_nisMiem,grupo_idGrup,imgRen)"
-		."values('".$num_insc."',?,?,?,?,?,?,?,?,?,?)";
+	$sql="INSERT INTO renovacion(numSolRen,fchaRen,estado_idEst,exeRen,miembro_nisMiem,grupo_idGrup)"
+		."values('".$num_insc."',?,?,?,?,?)";
 		$save = $this->DATA->Execute($sql, $renovacion);
 		if($save){
 			return true;

@@ -1,7 +1,7 @@
 <?php
 
 require_once '../data/dataBase.php';
-require_once 'cCuadro_Clinico.php';
+require_once '../clases/cCuadro_Clinico.php';
 
 
 

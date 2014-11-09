@@ -114,7 +114,7 @@ $nomEst =$bl['nomEst'];
 			<div class="col-lg-4">
 				<label>Comprobante de Pago:</label>
 				<br>
-				<img src="../../img/Davivienda.jpg" class="img-responsive">
+				<img src="../../img/Davivienda.jpg" class="img-responsive bancoimg">
 				<br>
 			<button class="btn btn-success">Guardar</button>	
 			</div>

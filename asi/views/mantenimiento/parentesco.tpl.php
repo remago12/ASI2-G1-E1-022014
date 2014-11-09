@@ -42,7 +42,7 @@
 
     </div><!-- /.container-fluid -->
   	</nav>
-    <form method="POST" action="../../model/clases/action_Par.php">
+    <form method="POST" action="../../model/action/action_Par.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Parentescos</h1>

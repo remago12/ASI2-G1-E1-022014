@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
+  	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/grupos.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -44,64 +46,41 @@
 			</div>
 		</div><br>
 		<div class="row">
+			<div class="col-lg-4">
+				<select class="form-control" name="departamento" id="departamento">
+					<option>
+						Seleccione un departamento
+					</option>
+				</select>
+			</div>
+			<div class="col-lg-4">
+				<select class="form-control" name="municipio" id="municipio">
+					<option>
+						Selecciona un municipio
+					</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-lg-12">
 				<table class="table table-striped">
 					<thead>
 						<tr>
+							<th>No.Grupo</th>
 							<th>Nombre de Grupo</th>
-							<th>No. Grupo</th>
-							<th>Lugar de Reunión</th>
-							<th>Jefe de Grupo</th>
-							<th>Día de Reunión</th>
-							<th>Hora</th>
+							<th>Departamento</th>
+							<th>Municipio</th>
+							<th>Lugar de reunion</th>
+							<th>Dia de Reunion</th>
+							<th>Hora de Reunion</th>
 							
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>
-								<a href="perfil_grupo.html">San Jorge</a>
-							</td>
-							<td>
-								8
-							</td>
-							<td>
-								Parque Bicentenario
-							</td>
-							<td>
-								Oscar Antonio Lizama Mejia
-							</td>
-							<td>
-								Sabado
-							</td>
-							<td>
-								3:00 pm
-							</td>
-							
-						</tr>
-						<tr>
-							<td>
-								La Perla
-							</td>
-							<td>
-								4
-							</td>
-							<td>
-								Las Virginias
-							</td>
-							<td>
-								Leslie Esmeralda Lizama Mejia
-							</td>
-							<td>
-								Domingo
-							</td>
-							<td>
-								8:00 am
-							</td>
-							
-						</tr>	
+					<tbody name="loop" id="loop">	
 					</tbody>
 				</table>
+				<ul class="paginacion text-center" >
+          </ul> 
 			</div>
 		</div>	
 	</div>

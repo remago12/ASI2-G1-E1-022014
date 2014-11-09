@@ -80,7 +80,7 @@
 
 
 	<h2 class="text-center">Inscripción de Miembro</h2>
-	<form method="POST" enctype="multipart/form-data">
+	<form method="POST" enctype="multipart/form-data" action="../model/action/action_inscripcion_m.php">
 	<!-- Button trigger modal -->
 	<div class="container">
 	<hr class="line">
