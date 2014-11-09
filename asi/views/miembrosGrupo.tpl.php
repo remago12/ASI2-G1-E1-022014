@@ -67,8 +67,20 @@
             <label>NISS:</label>
             <input type="text" id="niss" class="form-control">
           </div>
-         
-          
+         <div class="col-lg-3">
+            <label> Departamente:</label>
+            <option>
+              <select>
+                
+              </select>
+            </option>
+          </div>
+          <div class="col-lg-3">
+            <label>Municipio:</label>
+            <option>
+              <select></select>
+            </option>
+          </div>
 
           
           </div>
