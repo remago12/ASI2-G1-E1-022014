@@ -24,11 +24,11 @@
         $telgrup       = $bl['telgrup'];
         $nomDep       = $bl['nomDep'];
         $nomMunic       = $bl['nomMunic'];
-         $callGrup       = $bl['callGrup'];
-          $numCasGrup       = $bl['numCasGrup'];
-          $colGrup       = $bl['colGrup'];
-          $latGrup       = $bl['latGrup'];
-          $lngGrup       = $bl['lngGrup'];
+        $callGrup       = $bl['callGrup'];
+        $numCasGrup       = $bl['numCasGrup'];
+        $colGrup       = $bl['colGrup'];
+        $latGrup       = $bl['latGrup'];
+        $lngGrup       = $bl['lngGrup'];
          
         ?>
         <?php
