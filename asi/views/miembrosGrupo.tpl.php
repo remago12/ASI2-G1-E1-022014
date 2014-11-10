@@ -9,6 +9,7 @@
   <script type="text/javascript" src="../js/confirm.js"> </script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <script type="text/javascript" src="../js/script_combo.js"></script>
   <meta charset="UTF-8">
 
 
@@ -65,20 +66,22 @@
 
           <div class="col-lg-1">
             <label>NISS:</label>
-            <input type="text" id="niss" class="form-control">
+            <input type="text" id="nis" class="form-control">
           </div>
          <div class="col-lg-3">
-            <label> Departamente:</label>
-            <select class="form-control">
+            <label> Departamento:</label>
+            <select class="form-control" name="departamento" id="departamento">
               <option>
+              Seleccione un departamento
               </option>      
             </select>
 
           </div>
           <div class="col-lg-3">
             <label>Municipio:</label>
-            <select class="form-control">
+            <select class="form-control" name="municipio" id="municipio">
               <option>
+              Selecciona un municipio
               </option>      
             </select>
           </div>
@@ -88,9 +91,9 @@
           <div class="row">
             <div class="col-lg-3">
             <label>Numero de Grupo:</label>
-            <select class="form-control">
+            <select class="form-control" name="grupo" id="grupo">
               <option>
-                
+                Seleccione un grupo
               </option>  
             </select>  
 
