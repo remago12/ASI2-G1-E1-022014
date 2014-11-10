@@ -40,7 +40,7 @@
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../views/indexJefe.php">Inicio</a></li>
         <li><a href="../views/solicitudesGrupo.php">Solicitudes</a> </li>
-        <li><a href="../views/miembrosGrupo.php">Miembros</a></li>
+        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
         <li><a href="">Grupo</a></li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>

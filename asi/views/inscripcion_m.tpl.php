@@ -21,6 +21,7 @@
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/confirm.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -46,8 +47,8 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <!--solo tienen que   copiar la siguiente linea para generar mas items -->
+      <!--<ul class="nav navbar-nav navbar-right">
+        solo tienen que   copiar la siguiente linea para generar mas items 
         <li><a href="#">Inicio</a></li>
         
         <li class="dropdown">
@@ -72,7 +73,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-      </ul>
+      </ul>-->	
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -153,10 +154,10 @@
 		</div>
 		<br>
 		<br>
-			<button class="btn btn-danger">
-				Cancelar
-			</button>
-			<button class="btn btn-success" type="submit" value="Enviar" onclick="insertBR()">
+			
+			<a class="btn btn-primary" href="login.tpl.php" role="button">Cancelar
+			</a>
+			<button class="btn btn-success"  type="submit" value="Enviar" onclick="insertBR()">
 				Guardar
 			</button>
 		<br>
