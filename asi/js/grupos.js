@@ -96,7 +96,9 @@ Municipio=data.rows[i]["6"];
 Lugarreu=data.rows[i]["3"];
 Diareu = data.rows[i]["4"];
 Horareu =data.rows[i]["5"];
-cadena= cadena +"<tr><td>"+ Numgrup +"</td><td>"+Nomgrup + "</td><td>" + Departamento +"</td><td>"+Municipio+"</td><td>"+Lugarreu+"</td><td>"+Diareu+"</td><td>"+Horareu+"</td><td><a href='modGrup.php?Idgrup="+btoa(Idgrup)+"'>Editar</a></td></tr>";
+latitud= data.rows[i]["8"];
+longitud = data.rows[i]["9"];
+cadena= cadena +"<tr><td>"+Numgrup +"</td><td>"+Nomgrup +"</td><td>" + Departamento +"</td><td>"+Municipio+"</td><td>"+Lugarreu+"</td><td>"+Diareu+"</td><td>"+Horareu+"</td><td><a class='btn btn-primary btn-lg' data-toggle='modal' data-target='#myModal' data-latitud='"+latitud+"' data-longitud='"+longitud+"'>mapa</a></td><td><a class='btn btn-primary btn-lg' href='modGrupo.php?IdGrup="+btoa(Idgrup)+"'>Editar</a></td></tr>";
 $('#loop').html(cadena);
 } 
 }
