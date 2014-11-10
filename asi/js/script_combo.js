@@ -48,20 +48,6 @@ $('#grupo').html(cadena);
 }},'json');
 }); 
 
-    $('#grupo2').ready(function(){
-$.post("../model/clases/ajax.php",{action:"grupo"},function(data){
-var IdGrupo="";
-var NomGrupo ="";
-var cadena="<option>Seleccione un grupo</option>";
-for(i=0; i < data.rows.length;i++){
-IdGrupo=data.rows[i]["0"];
-NumGrupo=data.rows[i]["1"];
-NomGrupo=data.rows[i]["2"];
-cadena= cadena + "<option value='"+NumGrupo+"'>"+NumGrupo+"  "+NomGrupo+"</option>";
-$('#grupo').html(cadena); 
-
-}},'json');
-}); 
 
 		$('#grupo').change(function(){
 var IdGrupo=$('#grupo').val();

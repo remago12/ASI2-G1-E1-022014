@@ -23,7 +23,7 @@
 
 function seleccionar_grupo($IdGrupo)
 {
- $sql= "SELECT * from grupo where idGrup =".$IdGrupo;
+ $sql= "SELECT g.*, d.nomDep , m.nomMunic FROM grupo as g, departamento as d, municipio as m where g.municipio_idMunic= m.idMunic and m.departamento_idDep = d.idDep and g.idGrup =".$IdGrupo;
   $rs= $this-> DATA->Execute($sql);
   if($rs->RecordCount()){
     while(!$rs->EOF){
@@ -34,10 +34,16 @@ function seleccionar_grupo($IdGrupo)
       $info[$id]['exclGrup']=$rs->fields['exclGrup'];
       $info[$id]['lugReuGrup']=$rs->fields['lugReuGrup'];
       $info[$id]['proLugGrup']=$rs->fields['proLugGrup'];
-      $info[$id]['fchaFundGrup']=$rs->fields['fchaFundGrup'];
-      $info[$id]['idEst']=$rs->fields['idEst'];
-      $info[$id]['nomEst']=$rs->fields['nomEst'];
-      //$info[$id]['municipio_idMunic']=$rs->fields['municipio_idMunic'];
+      $info[$id]['telgrup']=$rs->fields['telgrup'];
+      $info[$id]['nomDep']=$rs->fields['nomDep'];
+      $info[$id]['nomMunic']=$rs->fields['nomMunic'];
+       $info[$id]['callGrup']=$rs->fields['callGrup'];
+        $info[$id]['numCasGrup']=$rs->fields['numCasGrup'];
+        $info[$id]['colGrup']=$rs->fields['colGrup'];
+        $info[$id]['latGrup']=$rs->fields['latGrup'];
+        $info[$id]['lngGrup']=$rs->fields['lngGrup'];
+
+
       $rs->MoveNext();
       }
       $rs->Close();
