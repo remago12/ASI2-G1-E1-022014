@@ -2,8 +2,34 @@
     //Database
   require_once '../../model/clases/cCuadro_Clinico.php';
   require_once '../../model/data/dataBase.php';
+  require_once '../../model/clases/cUsuario.php';
+  require_once '../../model/clases/cPerfil.php';
 
-  $cuadroC =new CuadroClinico();
+  session_start();
+    // Objetos
+     $oUsuario    = new Usuario();
+     $perfil      = new Perfil();
+     $cuadroC     =new CuadroClinico();
+  // revisando sesiones
+     if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }elseif($rol =="2"){
+ 
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
   ?>
 <!DOCTYPE html>
 <html>

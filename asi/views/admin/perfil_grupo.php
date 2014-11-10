@@ -1,3 +1,35 @@
+<?php
+    //Database
+  require_once '../../model/data/dataBase.php';
+  require_once '../../model/clases/cUsuario.php';
+  require_once '../../model/clases/cPerfil.php';
+ 
+  session_start();
+    // Objetos
+     $oUsuario   = new Usuario();
+     $perfil     = new Perfil();
+    // revisando sesiones 
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }elseif($rol =="2"){
+ 
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
+        ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,8 +57,8 @@
         <li><a href="../indexJefe.php">Inicio</a></li>
         <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
         <li><a href="solicitudes_renovacion.html">Renovación</a></li>
-        <li><a href="../grupos_scout.html">Grupos Scout</a></li>
-        <li><a href="../miembros_scout.html">Miembros Scout</a></li>
+        <li><a href="">Bienvenido <?=$usuario?></a></li>
+      	<li><a href="../exit.php">Cerrar Sesion</a></li>
         <img id="logo2" src="../../img/logo1.png" class="img-responsive" alt="Responsive image">
       </ul>
     	</div><!-- /.navbar-collapse -->

@@ -1,12 +1,36 @@
 <?php
-    //Database
-  require_once '../../model/data/dataBase.php';
+   //Database
+require_once '../../model/clases/cUsuario.php';
+require_once '../../model/clases/cPerfil.php';
+require_once '../../model/data/dataBase.php';
 require_once '../../model/clases/cBancSql.php';
 
-  $banco =new Banco();
+session_start();
+    // Objetos
+    $oUsuario   = new Usuario();
+    $perfil     = new Perfil();
+    $banco      = new Banco();
+  
+  // revisando sesiones 
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
+
   $idE = base64_decode($_GET['id']);
-  ?>
-  <?php 
       try{
       $banc = $banco->seleccionar_banco1($idE);
       }catch(Exception $e){
@@ -19,16 +43,11 @@ require_once '../../model/clases/cBancSql.php';
     
         $nomBanco       = $bl['nomBanc'];
         $numCuenta      = $bl['numCuentaBanc'];
-        $idBanc         = $bl['idBanc'];
-        ?>
-        <?php
-        
+        $idBanc         = $bl['idBanc']; 
         }
         }else{
          echo "No hay datos";
         }
-        
-        
         ?>
 <!DOCTYPE html>
 <html>
