@@ -44,12 +44,12 @@ $rutag=$ruta_DB."fotos/".$nombreArchivo;
     $registro->crear_registro($reg);
     $nombreCompleto = $nombre." ".$apellido;
     $body = "Estimado".$nombreCompleto."su solicitud ha sido procesada se le notificara la decision posteriormente";
-    $correo->enviarCorreo($email, $nombreCompleto, "Inscripcion procesada", $body )
+    $correo->enviarCorreo($email, $nombreCompleto, "Inscripcion procesada", $body );
     
     $reg3= array(1,1,$grupo);
     $registro->crear_inscripcion($reg3); 
   
-  header('Location: ../../views/inscripcion_m.tpl.php ');  
+  header('Location: inscripcion_miem.php');  
 
   }catch(Exception $e){
 

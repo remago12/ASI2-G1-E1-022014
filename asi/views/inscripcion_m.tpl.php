@@ -94,13 +94,13 @@
 			<label>* Primer Nombre:</label>
 			<input type="text"  name="nombre" id="nombre" placeholder="Primer Nombre" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
 			<label>Segundo Nombre:</label>
-			<input type="text"  name="nombre" id="nombre" placeholder="Segundo Nombre" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
+			<input type="text"  name="nombre2" id="nombre2" placeholder="Segundo Nombre" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
 			<label>* Primer Apellido:</label>
 			<input type="text" name="apellido" id="apellido" placeholder="Primer Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
 			<label>Segundo Apellido:</label>
-			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30"><br>
-			<label>Fecha de Nacimiento:</label>
-			<input type="date" name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
+			<input type="text" name="apellido2" id="apellido2" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
+			<label>* Fecha de Nacimiento:</label>
+			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
 			<br>
 			<label>Género:</label>
 			<label>Masculino
