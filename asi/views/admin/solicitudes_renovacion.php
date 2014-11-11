@@ -67,10 +67,7 @@
 		<h2 class="text-center">Solicitudes de Renovación</h2>
 		<hr class="line">
 		<div class="row">
-			<div class="col-lg-2">
-				<input type="text" placeholder="Buscar" class="form-control">
-			</div>
-			<div class="col-log-2">
+			<div class="col-md-2">
 				<label>
 					Numero de Grupo
 				</label>
@@ -80,7 +77,7 @@
 					</option>
 				</select>
 			</div>
-			<div class="col-log-3">
+			<div class="col-md-3">
 				<label>
 					Estado
 				</label>
@@ -90,7 +87,7 @@
 					</option>
 				</select>
 			</div>
-			<div class="col-log-2">
+			<div class="col-md-2">
 				<label>
 					Departamento
 				</label>
@@ -100,7 +97,7 @@
 					</option>
 				</select>
 			</div>
-			<div class="col-log-2">
+			<div class="col-md-2">
 				<label>
 					Municipio
 				</label>
