@@ -39,6 +39,8 @@
 	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
+  	<script type="text/javascript" src="../../js/script_combo_admin.js"></script>
+  	 	<script type="text/javascript" src="../../js/renovaciones.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -71,9 +73,9 @@
 				<label>
 					Numero de Grupo
 				</label>
-				<select class="form-control">
+				<select class="form-control" name="grupo" id="grupo">
 					<option>
-						
+						Seleccione un grupo
 					</option>
 				</select>
 			</div>
@@ -81,9 +83,9 @@
 				<label>
 					Estado
 				</label>
-				<select class="form-control">
+				<select class="form-control" id="estado" name="estado">
 					<option>
-						
+						Seleccione un estado
 					</option>
 				</select>
 			</div>
@@ -91,9 +93,9 @@
 				<label>
 					Departamento
 				</label>
-				<select class="form-control">
+				<select class="form-control" name="departamento" id="departamento">
 					<option>
-						
+						Seleccione un departamento
 					</option>
 				</select>
 			</div>
@@ -101,9 +103,9 @@
 				<label>
 					Municipio
 				</label>
-				<select class="form-control">
+				<select class="form-control" name="municipio" id="municipio">
 					<option>
-						
+						Seleccione un municipio
 					</option>
 				</select>
 			</div>		
@@ -122,50 +124,12 @@
 							<th>Cargo Nacional</th>
 						</tr>
 					</thead>
-					<tbody>
-						<tr>
-							<td>
-							<a href="renovacion.html">Oscar Antonio Lizama Mejía</a>
-							</td>
-							<td>
-								20
-							</td>
-							<td>
-								Masculino
-							</td>
-							<td>
-								LM000114
-							</td>
-							<td>
-								21
-							</td>
-							<td>
-								Lobato
-							</td>
-							<td>
-								----
-							</td>
-						</tr>
-							<tr>
-							<td>
-							Carlos Antonio Rivas Murcia
-							</td>
-							<td>
-								19
-							</td>
-							<td>
-								Masculino
-							</td>
-							<td>
-								7
-							</td>
-							<td>
-								09998882-9
-							</td>
-						</tr>
+					<tbody name="loop" id="loop">
 
 					</tbody>
 				</table>
+				<ul class="paginacion text-center" >
+          </ul>
 			</div>				
 		</div>
 

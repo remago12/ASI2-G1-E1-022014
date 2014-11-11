@@ -64,6 +64,16 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+		case 'solic_renovaciones':
+		$response = Solicitud::seleccionar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst'],$_POST['Inicio'],$_POST['Limite']);
+		echo json_encode($response);
+		break;
+
+		case'contar_renovaciones':
+		$response = Solicitud::contar_inscripciones($_POST['IdGrup'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdEst']);
+		echo json_encode($response);
+		break;
+
 		case 'grupos':
 		$response = Grupos::seleccionar_grupos($_POST['IdDep'],$_POST['IdMun'],$_POST['Nomgrup'],$_POST['IdGrup'],$_POST['Inicio'],$_POST['Limite']);
 		echo json_encode($response);

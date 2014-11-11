@@ -29,4 +29,26 @@ class Solicitud
     }
   }
 
+  function seleccionar_renovaciones(){
+      $result = mysql_query("SELECT r.numSolRen,mi.nisMiem,p.nomPer,p.apelPer,p.genPer,p.fechNacPer,d.nomDep,m.nomMunic,g.numGrup FROM renovacion as r, miembro as mi, persona as p,departamento as d,municipio as m,grupo as g where r.miembro_nisMiem = mi.nisMiem and mi.persona_idPersona=p.idPersona and p.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and mi.grupo_idGrup=g.idGrup and g.idGrup like '%' and d.idDep like '%' and m.idMunic like '%' ");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+    $rows[]=($row);
+  }
+        return array('rows'=>$rows);
+        
+    }
+
+    function contar_renovaciones(){
+    $result = mysql_query("SELECT count(r.numSolRen) FROM renovacion as r, miembro as mi, persona as p,departamento as d,municipio as m,grupo as g where r.miembro_nisMiem = mi.nisMiem and mi.persona_idPersona=p.idPersona and p.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and mi.grupo_idGrup=g.idGrup and g.idGrup like '%' and d.idDep like '%' and m.idMunic like '%'");
+    $rows=array();
+    while($row=mysql_fetch_array($result,MYSQL_BOTH))
+    {
+      $rows[]=($row);
+    }
+    return array('rows'=>$rows);
+
+    }
+  }
+
 ?>
