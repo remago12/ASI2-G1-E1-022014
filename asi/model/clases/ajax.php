@@ -70,7 +70,7 @@ switch ($_POST['action']) {
 		break;
 
 		case'contar_grupos':
-		$response = Grupos::contar_grupos($_POST['IdDep'],$_POST['IdMun']);
+		$response = Grupos::contar_grupos($_POST['IdDep'],$_POST['IdMun'],$_POST['Nomgrup']);
 		echo json_encode($response);
 		break;	
 
