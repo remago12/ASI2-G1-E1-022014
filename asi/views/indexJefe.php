@@ -110,7 +110,6 @@
                   <h2 class="encabezado">Grupo</h2>
               </div>  
               </a>
-              
               <br>
               <a href="../controller/perfilGrupo.php">Grupo</a>
             </div>
