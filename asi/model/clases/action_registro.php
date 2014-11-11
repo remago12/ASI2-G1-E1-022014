@@ -34,6 +34,7 @@ try{
     $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$calle,$casa,$colonia,$municipio,$fecha); 
 	$registro->crear_registro($reg);
   
+  
   $reg2=array($NIS,$NIS,2);
   $registro->crear_usuario($reg2);
 
