@@ -100,12 +100,19 @@ for(i=0; i < data.rows.length;i++){
 nis=data.rows[i]["0"];
 NomPer = data.rows[i]["2"];
 ApelPer= data.rows[i]["3"];
+Genero=data.rows[i]["4"];
+if(Genero == "M"){
+	Genero ="Masculino";
+}else if (Genero == "F"){
+	Genero ="Femenino";
+}
+Fechna = data.rows[i]["5"];
+Fechna = new Date(Fechna);
+Edad = Math.floor((Date.now() - Fechna)/(31557600000));
+grupo = data.rows[i]["1"];
 Departamento=data.rows[i]["6"];
 Municipio=data.rows[i]["7"];
-Lugarreu=data.rows[i]["3"];
-Diareu = data.rows[i]["4"];
-Horareu =data.rows[i]["5"];
-cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Municipio+"</td><td>"+Lugarreu+"</td><td>"+Diareu+"</td><td>"+Horareu+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
 $('#loop').html(cadena);
 } 
 }
@@ -125,6 +132,7 @@ var IdGrup=$('#grupo').val();
 var Gen= $('#Genero').val();
 var nombre =$('#nombre').val();
 var apellido =$('#apellido').val();
+
 if (nis==" "){
 	nis ="%";
 }else{
@@ -181,12 +189,19 @@ for(i=0; i < data.rows.length;i++){
 nis=data.rows[i]["0"];
 NomPer = data.rows[i]["2"];
 ApelPer= data.rows[i]["3"];
+Genero=data.rows[i]["4"];
+if(Genero == "M"){
+	Genero ="Masculino";
+}else if (Genero == "F"){
+	Genero ="Femenino";
+}
+Fechna = data.rows[i]["5"];
+Fechna = new Date(Fechna);
+Edad = Math.floor((Date.now() - Fechna)/(31557600000));
+grupo = data.rows[i]["1"];
 Departamento=data.rows[i]["6"];
 Municipio=data.rows[i]["7"];
-Lugarreu=data.rows[i]["3"];
-Diareu = data.rows[i]["4"];
-Horareu =data.rows[i]["5"];
-cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Municipio+"</td><td>"+Lugarreu+"</td><td>"+Diareu+"</td><td>"+Horareu+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
 $('#loop').html(cadena);
 } 
 for(p=1; p <= pags;p++){

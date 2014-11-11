@@ -133,6 +133,8 @@
 							<th>Apellido</th>
 							<th>Género</th>
 							<th>Edad</th>
+                <th>Departamento</th>
+                  <th>Municipio</th>
 							<th>Número de Grupo</th>
 							<th>Ver Perfil</th>
 						</tr>
