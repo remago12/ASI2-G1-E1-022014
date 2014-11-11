@@ -67,10 +67,46 @@
 		<h2 class="text-center">Solicitudes de Renovación</h2>
 		<hr class="line">
 		<div class="row">
-			<div class="col-lg-2 col-lg-offset-9">
-				<input type="text" placeholder="Buscar" class="form-control">
+			<div class="col-md-2">
+				<label>
+					Numero de Grupo
+				</label>
+				<select class="form-control">
+					<option>
+						
+					</option>
+				</select>
 			</div>
-			
+			<div class="col-md-3">
+				<label>
+					Estado
+				</label>
+				<select class="form-control">
+					<option>
+						
+					</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label>
+					Departamento
+				</label>
+				<select class="form-control">
+					<option>
+						
+					</option>
+				</select>
+			</div>
+			<div class="col-md-2">
+				<label>
+					Municipio
+				</label>
+				<select class="form-control">
+					<option>
+						
+					</option>
+				</select>
+			</div>		
 		</div><br>
 		<div class="row">
 			<div class="col-lg-10 col-lg-offset-1">
