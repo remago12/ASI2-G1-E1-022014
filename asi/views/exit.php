@@ -6,7 +6,7 @@ session_start();
 if(@$_SESSION['UserID']>0){
 	;
 }else{
-	header ("Location: login.tpl.php");
+	header ("Location: ../controller/login.php");
 	
 }
 

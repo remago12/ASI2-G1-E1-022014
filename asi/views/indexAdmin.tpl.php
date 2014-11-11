@@ -120,6 +120,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
+              <a href="">Miembros </a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
