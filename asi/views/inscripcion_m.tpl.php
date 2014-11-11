@@ -79,7 +79,7 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-	<h2 class="text-center">Inscripción de Miembro</h2>
+	<h1 class="text-center">Inscripción de Miembro</h1>
 	<form method="POST" enctype="multipart/form-data" action="../model/action/action_inscripcion_m.php">
 	<!-- Button trigger modal -->
 	<div class="container">
@@ -98,15 +98,9 @@
 			<label>* Primer Apellido:</label>
 			<input type="text" name="apellido" id="apellido" placeholder="Primer Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30" required/><br>
 			<label>Segundo Apellido:</label>
-<<<<<<< HEAD
 			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" autofocus pattern="[A-Za-z]{3,30}" maxlength="30"><br>
 			<label>Fecha de Nacimiento:</label>
-			<input type="date" name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required>
-=======
-			<input type="text" name="apellido" id="apellido" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
-			<label>* Fecha de Nacimiento:</label>
-			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
->>>>>>> c709bd87847e8b55bb07986aade071ce2dd4f262
+			<input type="date" name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
 			<br>
 			<label>Género:</label>
 			<label>Masculino
@@ -115,20 +109,13 @@
 			<label>Femenino</label>
 			<input type="radio" name="genero" value="F"><br><br>			
 			<div class="well well-lg">
-<<<<<<< HEAD
 			<h2>Dirección</h2>
 			<br>
 			<label>Departamento</label>
 			<select class="combobox form-control" id="departamento" name="departamento" required/>
-=======
-			<h2>Dirección</h2><br>
-			<label>* Departamento</label>
-			<select class="combobox form-control" id="departamento" name="departamento">
->>>>>>> c709bd87847e8b55bb07986aade071ce2dd4f262
 			</select><br>
 			<label>* Municipio</label>
 			</label>
-<<<<<<< HEAD
 			<select class="combobox form-control" id="municipio" name="municipio" required/>
 			
 			</select>
@@ -136,12 +123,6 @@
 			<br>
 			<label>Calle:</label>
 			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{5,20}" maxlength="20" required/><br>
-=======
-			<select class="combobox form-control" id="municipio" name="municipio">			
-			</select><br>			
-			<label>* Calle:</label>
-			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{5,20}" maxlength="20" required/><br>
->>>>>>> c709bd87847e8b55bb07986aade071ce2dd4f262
 			<label>Colonia:</label>
 			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{3,20}" maxlength="20"><br>
 			<label>* No. Casa:</label>

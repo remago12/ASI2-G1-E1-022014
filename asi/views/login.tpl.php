@@ -117,7 +117,7 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>-->
-        <li class="nohov"><a href="inscripcion_m.tpl.php"> <button class="btn btn-default">Regístrate</button></a></li>
+        <li class="nohov"><a href="../controller/inscripcion_miem.php"> <button class="btn btn-default">Regístrate</button></a></li>
         <li class="nohov"> <a href="" data-toggle="modal" data-target="#myModal"><button class="btn btn-default">Ingresar</button></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -160,7 +160,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-            <h4 class="modal-title" id="myModalLabel">Iniciar Sesión</h4>
+            <h3 class="modal-title" id="myModalLabel">Iniciar Sesión</h3>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -180,7 +180,7 @@
 
                     <button class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button value="Entrar" class="btn btn-primary">Entrar</button>
-                    <a href="inscripcion_miem.php">Regístrate</a>
+                    <a href="../controller/inscripcion_miem.php">Regístrate</a>
                     <p><p><a href="#">¿Has olvidado tu contraseña?</a>
                   </div>
                 </form>

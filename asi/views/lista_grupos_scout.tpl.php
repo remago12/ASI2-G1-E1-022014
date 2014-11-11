@@ -10,7 +10,7 @@
   	  	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
 	  	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>	
-  	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
+  	
   	<script type="text/javascript" src="../js/script_combo.js"></script>
   	<script type="text/javascript" src="../js/grupos.js"></script>
   	<meta charset="UTF-8">
