@@ -65,7 +65,7 @@ switch ($_POST['action']) {
 		break;
 
 		case 'grupos':
-		$response = Grupos::seleccionar_grupos($_POST['IdDep'],$_POST['IdMun'],$_POST['Inicio'],$_POST['Limite']);
+		$response = Grupos::seleccionar_grupos($_POST['IdDep'],$_POST['IdMun'],$_POST['Nomgrup'],$_POST['Inicio'],$_POST['Limite']);
 		echo json_encode($response);
 		break;
 

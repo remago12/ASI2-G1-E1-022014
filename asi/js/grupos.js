@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
-$('#').keyup(function(){
+$('#nomgrup').keyup(function(){
 
-miembros();
+grupos();
 
 });
 
