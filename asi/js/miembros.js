@@ -6,6 +6,18 @@ miembros();
 
 });
 
+$('#nombre').keyup(function(){
+
+miembros();
+
+});
+
+$('#apellido').keyup(function(){
+
+miembros();
+
+});
+
 $('#departamento').change(function(){
 miembros();
 }); 
@@ -14,6 +26,15 @@ $('#municipio').change(function(){
 miembros();
 });
 
+$('#grupo').change(function(){
+miembros();
+
+});
+
+$('#Genero').change(function(){
+miembros();
+
+});
 
 $("ul.paginacion").on("click","li", function(){
     // alert($(this).find("span.pag").text());
@@ -21,24 +42,54 @@ $("ul.paginacion").on("click","li", function(){
 var nis = $('#nis').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
+var IdGrup= $('#grupo').val();
+var Gen= $('#Genero').val();
+var nombre =$('#nombre').val();
+var apellido =$('#apellido').val();
 if (nis==" "){
 	nis ="%";
 }else{
 	nis=nis+"%";
 }
 
-//var IdEst = $('#estado').val();
 if (IdDep== "Seleccione un departamento" || IdDep==""){
 	IdDep ="%";
 }
-if (IdMun =="Selecciona un municipio" || IdMun==""){
+
+if (IdMun =="Selecciona un municipio" || IdMun==" "){
 	IdMun ="%";
 }
+
+if (IdGrup =="Seleccione un grupo" || IdGrup==""){
+  IdGrup ="%";
+}
+
+if (Gen =="Elija Genero" || Gen==""){
+  Gen ="%";
+}
+ if(Gen =="Masculino"){
+	Gen = "M";
+}else if(Gen =="Femenino"){
+	Gen ="F";
+}
+
+if (nombre==" "){
+	nombre ="%";
+}else{
+	nombre=nombre+"%";
+}
+
+if (apellido==" "){
+	apellido = "%";
+}else{
+	apellido=apellido+"%";
+}
+
 var Limite = 5;
 var pags = $(this).find("span.pag").text();
 var Inicio = (parseInt(pags)*parseInt(Limite))-parseInt(Limite);
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"miembros",nis:nis},function(data){
+$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido},function(data){
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
 var cadena="";
@@ -70,6 +121,10 @@ function miembros(){
 var nis = $('#nis').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
+var IdGrup=$('#grupo').val();
+var Gen= $('#Genero').val();
+var nombre =$('#nombre').val();
+var apellido =$('#apellido').val();
 if (nis==" "){
 	nis ="%";
 }else{
@@ -84,13 +139,38 @@ if (IdMun =="Selecciona un municipio" || IdMun==" "){
 	IdMun ="%";
 }
 
-$.post("../model/clases/ajax.php",{action:"contar_miembros",nis:nis},function(data){
+if (IdGrup =="Seleccione un grupo" || IdGrup==""){
+  IdGrup ="%";
+}
+
+if (Gen =="Elija Genero" || Gen==""){
+  Gen ="%";
+}
+ if(Gen =="Masculino"){
+	Gen = "M";
+}else if(Gen =="Femenino"){
+	Gen ="F";
+}
+
+if (nombre==" "){
+	nombre ="%";
+}else{
+	nombre=nombre+"%";
+}
+
+if (apellido==" "){
+	apellido = "%";
+}else{
+	apellido=apellido+"%";
+}
+
+$.post("../model/clases/ajax.php",{action:"contar_miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido},function(data){
 var Limite = 5;
 var rows = data.rows[0]["0"];
 var pags = Math.ceil((parseInt(rows)/parseInt(Limite)));
 var Inicio = 0;
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"miembros",nis:nis},function(data){
+$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido},function(data){
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
 var cadena="";

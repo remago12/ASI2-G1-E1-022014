@@ -101,27 +101,28 @@
           </div>
           <div class="col-lg-2">
             <label>Genero:</label>
-            <select class="form-control">
+            <select class="form-control" name="Genero" id="Genero">
+            <option>
+                Elija Genero
+              </option>
               <option>
-                
-              </option>  
+                Masculino
+              </option>
+               <option>
+                Femenino
+              </option>   
             </select>
 
   
           </div>
-          <div class="col-lg-1">
-            <label>
-              Edad:
-            </label>
-            <input  type="text" class="form-control">
-          </div>
+          
            <div class="col-lg-3">
             <label>Nombre:</label>
-            <input type="text" class="form-control">    
+            <input type="text" class="form-control" name="nombre" id="nombre">    
           </div> 
           <div class="col-lg-3">
             <label>Apellido:</label>
-            <input type="text" class="form-control">    
+            <input type="text" class="form-control" name="apellido" id="apellido">    
           </div>               
         </div>
         <table class="table table-striped">

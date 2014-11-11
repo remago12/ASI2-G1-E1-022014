@@ -75,12 +75,12 @@ switch ($_POST['action']) {
 		break;	
 
 		case 'miembros':
-		$response = Miembros::seleccionar_miembros($_POST['nis']);
+		$response = Miembros::seleccionar_miembros($_POST['nis'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdGrup'],$_POST['Gen'],$_POST['nombre'],$_POST['apellido']);
 		echo json_encode($response);
 		break;
 
 		case'contar_miembros':
-		$response = Miembros::contar_miembros($_POST['nis']);
+		$response = Miembros::contar_miembros($_POST['nis'],$_POST['IdDep'],$_POST['IdMun'],$_POST['IdGrup'],$_POST['Gen'],$_POST['nombre'],$_POST['apellido']);
 		echo json_encode($response);
 		break;
 

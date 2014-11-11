@@ -93,6 +93,8 @@ if (IdGrup =="Seleccione un grupo" || IdGrup==""){
   IdGrup ="%";
 }
 
+
+
 if (nomgruo==" "){
   nomgruo ="%";
 }else{
@@ -139,6 +141,7 @@ var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
 var IdGrup=$('#grupo').val();
 var nomgruo= $('#nomgrup').val();
+
 if (IdDep== "Seleccione un departamento" || IdDep==" "){
 	IdDep ="%";
 }
@@ -149,6 +152,7 @@ if (IdMun =="Selecciona un municipio" || IdMun==" "){
 if (IdGrup =="Seleccione un grupo" || IdGrup==""){
   IdGrup ="%";
 }
+
 
 if (nomgruo==" "){
   nomgruo ="%";
