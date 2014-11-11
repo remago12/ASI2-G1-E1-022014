@@ -49,7 +49,7 @@ $rutag=$ruta_DB."fotos/".$nombreArchivo;
     $reg3= array(1,1,$grupo);
     $registro->crear_inscripcion($reg3); 
   
-  header('Location: ../../views/inscripcion_m.tpl.php ');  
+  header('Location: inscripcion_miem.php');  
 
   }catch(Exception $e){
 
