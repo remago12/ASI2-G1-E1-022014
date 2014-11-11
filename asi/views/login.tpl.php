@@ -9,10 +9,10 @@
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
            if ($rol == "1") {
-             header("Location: ../controller/index.php");
+             header("Location: ../controller/indexAdmin.tpl.php");
             exit();
           }elseif ($rol== "2") {
-             header("Location: ../controller/admin/perfil_grupo.php");
+             header("Location: ../controller/indexJefe.php");
              exit();
           }elseif ($rol== "3") {
              header("Location: ../controller/perfilUsuario.php");
@@ -35,10 +35,10 @@
       if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
            if ($rol == "1") {
-             header("Location: ../controller/index.php");
+             header("Location: ../controller/indexAdmin.tpl.php");
             exit();
           }elseif ($rol== "2") {
-             header("Location: ../controller/admin/perfil_grupo.php");
+             header("Location: ../controller/indexJefe.php");
              exit();
           }elseif ($rol== "3") {
              header("Location: ../controller/perfilUsuario.php");
