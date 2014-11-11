@@ -2,10 +2,12 @@
 
   require_once '../clases/cRegistro.php';
   require_once '../data/dataBase.php';
+  require_once '../clases/cCorreo.php';
 
 
 //variables POST
   $registro = new Registro();
+  $correo = new Correo();
 
   $nombre       =$_POST['nombre'];
   $NIS          =$_POST['NIS'];
@@ -40,6 +42,9 @@ $rutag=$ruta_DB."fotos/".$nombreArchivo;
 //arrays
     $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$rutag,$calle,$casa,$colonia,$municipio,$fecha); 
     $registro->crear_registro($reg);
+    $nombreCompleto = $nombre." ".$apellido;
+    $body = "Estimado".$nombreCompleto."su solicitud ha sido procesada se le notificara la decision posteriormente";
+    $correo->enviarCorreo($email, $nombreCompleto, "Inscripcion procesada", $body )
     
     $reg3= array(1,1,$grupo);
     $registro->crear_inscripcion($reg3); 
