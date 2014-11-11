@@ -2,46 +2,46 @@
     //Database
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
-  require_once '../model/clases/cPerfil.php';
  
   session_start();
     // Objetos
      $oUsuario   = new Usuario();
-     $perfil     = new Perfil();
     // revisando sesiones 
     
     if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
-           if ($rol == "2") {   
+           if ($rol == "1") {   
           }else{
-             header("Location: ../controller/login.php");
+             header("Location: login.tpl.php");
             exit(); 
           }
         }else{
-          header("Location: ../controller/login.php");
+          header("Location: login.tpl.php");
           exit();
         }
     }else{
-      header("Location: ../controller/login.php");
+      header("Location: login.tpl.php");
           exit();
-    }  
+    }
+    
   $usuario  = $_SESSION['usuario'];
-        ?>
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
 
 	<title>
-		
+	Inicio
 	</title>
   <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="../js/confirm.js"> </script>
+  <script type="text/javascript" src="../js/jquery-ui.js"></script>
+  <script type="text/javascript" src="../js/indexefe.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <link href='http://fonts.googleapis.com/css?family=Jura:400,500' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
-
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
@@ -67,31 +67,28 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/indexJefe.php">Inicio</a></li>
-        
+        <li><a href="#">Inicio</a></li>
+        <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a> </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="#">Renovacion</a></li>
+            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li class="divider"></li>
+            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="../controller/admin/solicitudes_inscripcion.php">Padecimiento</a></li>
-            <li><a href="#">Alergias</a></li>
-          </ul>
-        </li>
-        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
+        <li><a href=""><?=$usuario?></a></li>
         <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
+
+
+  <div class="container">
     <div class="row ">
         <div class="col-md-6 col-sm-12  col-xs-12">
           <div class="row">
@@ -101,18 +98,17 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
-               <a href="../views/solicitudesGrupo.php">Inscripcion</a>
-               <br><a href="../views/solicitudesGrupo.php">Renovacion</a>
+               <a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
               <div id="dos" class="row borde box3">
-                  <h2 class="encabezado">Grupo</h2>
+                  <h2 class="encabezado">Grupos</h2>
               </div>  
               </a>
-              
+              <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
               <br>
-              <a href="../controller/perfilGrupo.php">Grupo</a>
+              <a href="../views/gruposScout.tpl.php">Grupos Scout</a>
             </div>
           </div>  
         </div>
@@ -124,7 +120,6 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="../controller/miembros_grupo.php">Miembros de Grupo</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
@@ -132,22 +127,17 @@
                 <h2 class="encabezado">Mantenimiento</h2>
               </div>
               </a>
-              
+              <a href="mantenimiento/manBanco.tpl.php">Banco</a>
               <br>
-              <a href="../controller/mantenimiento/padecimiento.php">Padecimiento</a>
+              <a href="../views/mantenimiento/padecimiento.tpl.php">Padecimiento</a>
               <br>
-              <a href="../controller/mantenimiento/alergias.php">Alergia</a>
+              <a href="../views/mantenimiento/alergias.tpl.php">Alergia</a>
               <br>
-              
+              <a href="../views/mantenimiento/estado.tpl.php">Estados</a>
             </div>
           </div>
         </div>
     </div>
-  </div>
-
-
-
-
-
+  </div>      
 </body>
 </html>
