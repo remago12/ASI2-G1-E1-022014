@@ -7,6 +7,9 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+  	  	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
+	  	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
+  	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>	
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
   	<script type="text/javascript" src="../js/grupos.js"></script>
@@ -30,7 +33,6 @@
       <br>
       <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
       
-
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -38,24 +40,16 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../views/index.tpl.php">Inicio</a></li>
-        
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="alergias.tpl.php">Inscripcion</a></li>
-            <li><a href="manBanco.tpl.php">Renovacion</a></li>
+            <li><a href="../mantenimiento/manBanco.tpl.php">Inscripcion</a></li>
+            <li><a href="../mantenimiento/alergias.tpl.php">Renovacion</a></li>
+
           </ul>
         </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="manBanco.tpl.php">Banco</a></li>
-            <li><a href="alergias.tpl.php">Alergias</a></li>
-            <li><a href="padecimiento.tpl.php">Padecimientos</a></li>
-            <li class="divider"></li>
-            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
-          </ul>
-        </li>
+        
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
         <li class="dropdown">
@@ -73,15 +67,13 @@
   </div><!-- /.container-fluid -->
 </nav>
 	<div class="container">
-		<h2 class="text-center">Grupos Scout</h2>
+		<h1 class="text-center">Grupos Scout</h1>
 		<hr class="line"><br>		
 		<div class="row">
 			<div class="col-lg-4">
 				<a href="inscripcion_de_grupo.html" class="btn btn-primary btn-lg" role="button">Agregar un Nuevo Grupo</a>
 			</div>
-			<div class="col-lg-4 col-lg-offset-4">
-				<input type="text" class="form-control" placeholder="Búsqueda">
-			</div>
+			
 		</div><br>
 		<div class="row">
 			<div class="col-lg-4">
@@ -98,7 +90,19 @@
 					</option>
 				</select>
 			</div>
+			<div class="col-lg-2">
+				<input type="text" class="form-control" placeholder="Nombre de grupo" name="nomgrup" id="nomgrup" value="">
+			</div>
+			<div class="col-lg-2">
+				<select class="form-control" name="grupo" id="grupo">
+					<option>
+						Seleccione un grupo
+					</option>
+				</select>
+			</div>
 		</div>
+		<br>
+		<br>
 		<div class="row">
 			<div class="col-lg-12">
 				<table class="table table-striped">
@@ -130,10 +134,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <h1 class="modal-title" id="myModalLabel">Ubicacion</h1>
       </div>
       <div class="modal-body">
-        
+       <input type="hidden" name="txt_lat" id="txt_lat" class="form-control" value="">
+					<input type="hidden" name="txt_lng" id="txt_lng" class="form-control" value="">	
+					<div id="map" name="map">
+						
+					</div>		
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

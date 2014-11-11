@@ -1,8 +1,33 @@
 <?php 
+//Database
+require_once '../../model/clases/cUsuario.php';
+require_once '../../model/clases/cPerfil.php';
 require_once '../../model/data/dataBase.php';
 require_once '../../model/clases/cBancSql.php';
 
-$banco= new Banco();
+session_start();
+    // Objetos
+    $oUsuario   = new Usuario();
+    $perfil     = new Perfil();
+    $banco      = new Banco();
+// revisando sesiones 
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
  ?>
 <!DOCTYPE html>
 <html>

@@ -7,8 +7,8 @@ class Grupos
         
         $this->DATA = $DATA;
     }
- function seleccionar_grupos($IdDep,$IdMun,$Inicio,$Limite){
-			$result = mysql_query("SELECT g.idGrup,g.numgrup,g.nomGruo,g.lugReuGrup,g.diaReuGrup,g.horaReuGrup,d.nomDep,m.nomMunic from grupo as g,departamento as d, municipio as m where g.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and d.idDep like '".$IdDep."' and m.idMunic like '".$IdMun."' order by g.numGrup asc limit ".$Inicio.",".$Limite."");
+ function seleccionar_grupos($IdDep,$IdMun,$Nomgrup,$Inicio,$Limite){
+			$result = mysql_query("SELECT g.idGrup,g.numgrup,g.nomGruo,g.lugReuGrup,g.diaReuGrup,g.horaReuGrup,d.nomDep,m.nomMunic,g.latGrup,g.lngGrup from grupo as g,departamento as d, municipio as m where g.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and d.idDep like '".$IdDep."' and m.idMunic like '".$IdMun."' and g.nomGruo like '".$Nomgrup."' and g.numgrup like '%' order by g.numGrup asc limit ".$Inicio.",".$Limite."");
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
   	$rows[]=($row);
@@ -17,8 +17,8 @@ class Grupos
 				
 		}
 
-    function contar_grupos($IdDep,$IdMun){
-    $result = mysql_query("SELECT count(g.idGrup) from grupo as g,departamento as d, municipio as m where g.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and d.idDep like '".$IdDep."' and m.idMunic like '".$IdMun."'");
+    function contar_grupos($IdDep,$IdMun,$Nomgrup){
+    $result = mysql_query("SELECT count(g.idGrup) from grupo as g,departamento as d, municipio as m where g.municipio_idMunic=m.idMunic and m.departamento_idDep=d.idDep and d.idDep like '".$IdDep."' and m.idMunic like '".$IdMun."' and g.nomGruo like '".$Nomgrup."' and g.numgrup like '%'");
     $rows=array();
     while($row=mysql_fetch_array($result,MYSQL_BOTH))
     {
