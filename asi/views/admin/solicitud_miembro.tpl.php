@@ -17,20 +17,20 @@
         {
     
 
-        $nomPer      = $bl['nomPer'];
-        $apelPer       = $bl['apelPer'];
-        $genPer       = $bl['genPer'];
+        $nomPer     = $bl['nomPer'];
+        $apelPer    = $bl['apelPer'];
+        $genPer     = $bl['genPer'];
           if ($bl['genPer'] == "M"){
         	$genPer= "Masculino";
         }else{
         	$genPer= "Femenino";
         }
-         $fechNacPer =$bl['fechNacPer'];
-        $fecha = time() - strtotime($fechNacPer);
-$edadPer = floor((($fecha / 3600) / 24) / 360);
-$numGrup =$bl['numGrup'];
-$idEst =$bl['idEst'];
-$nomEst =$bl['nomEst'];
+        $fechNacPer =$bl['fechNacPer'];
+        $fecha 		= time() - strtotime($fechNacPer);
+		$edadPer 	= floor((($fecha / 3600) / 24) / 360);
+		$numGrup 	=$bl['numGrup'];
+		$idEst 		=$bl['idEst'];
+		$nomEst 	=$bl['nomEst'];
         ?>
         <?php
         

@@ -1,12 +1,37 @@
 <?php
     //Database
+  require_once '../../model/clases/cUsuario.php';
+  require_once '../../model/clases/cPerfil.php';
   require_once '../../model/clases/cCuadro_Clinico.php';
   require_once '../../model/data/dataBase.php';
 
-  $cuadroC =new CuadroClinico();
-  $idE = base64_decode($_GET['id']);
-  ?>
-  <?php 
+  session_start();
+    // Objetos
+    $oUsuario   = new Usuario();
+    $perfil     = new Perfil();
+    $cuadroC    =new CuadroClinico();
+    // revisando sesiones
+     if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }elseif($rol =="2"){
+ 
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
+
+    $idE = base64_decode($_GET['id']); 
       try{
       $cuadro = $cuadroC->seleccionar_padecimiento1($idE);
       }catch(Exception $e){
@@ -16,19 +41,12 @@
         {
         foreach($cuadro AS $key => $bl)
         {
-    
-
         $nomPad      = $bl['nomPad'];
         $idPad       = $bl['idPad'];
-        ?>
-        <?php
-        
         }
         }else{
          echo "No hay datos";
         }
-        
-        
         ?>
 <!DOCTYPE html>
 <html>
