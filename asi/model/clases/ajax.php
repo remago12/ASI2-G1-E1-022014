@@ -4,6 +4,7 @@ require_once 'cRegistro.php';
 require_once 'cInscripcion.php';
 require_once 'cSolicitudes.php';
 require_once 'cGrupos.php';
+require_once 'cMiembros.php';
 
 $response =array();
 try{
@@ -72,6 +73,18 @@ switch ($_POST['action']) {
 		$response = Grupos::contar_grupos($_POST['IdDep'],$_POST['IdMun']);
 		echo json_encode($response);
 		break;	
+
+		case 'miembros':
+		$response = Miembros::seleccionar_miembros($_POST['nis']);
+		echo json_encode($response);
+		break;
+
+		case'contar_miembros':
+		$response = Miembros::contar_miembros($_POST['nis']);
+		echo json_encode($response);
+		break;
+
+
 }
 }
 	catch(Exception $e){

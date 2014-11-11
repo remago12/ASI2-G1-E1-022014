@@ -2,8 +2,32 @@
     //Database
 	require_once '../../model/clases/cInscripcion.php';
 	require_once '../../model/data/dataBase.php';
+  require_once '../../model/clases/cUsuario.php';
+  require_once '../../model/clases/cPerfil.php';
+     session_start();
      //Objetos
      $oInscripcion   = new Inscripcion();
+     $oUsuario   = new Usuario();
+     $perfil     = new Perfil();
+
+     // revisando sesiones 
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
 ?>
 <!DOCTYPE html>
 <html>

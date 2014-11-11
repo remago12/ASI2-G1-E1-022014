@@ -5,6 +5,8 @@
 	<title>
 		Inscripción de Grupo
 	</title>
+	
+
 	<meta charset="UTF-8">
 	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
@@ -15,6 +17,7 @@
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
   	<script type="text/javascript" src="../js/mapa.js"></script>
+  	<script type="text/javascript" src="../js/validar.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	
@@ -73,35 +76,34 @@
 </nav>
 
 	<div class="container">
-		<form method="POST" action="../model/action/action_nuevo_grupo.php" data-toggle="validator" role="form">
-			
+		<form name="formulario" method="POST" action="../model/action/action_nuevo_grupo.php" data-toggle="validator" role="form">			
 		<div class="row">
 			<h2 class="text-center">Inscripción de Grupo</h2>
-			<hr class="line"><br><br>
+			<hr class="line"><br>
+			<h4>* Campos Obligatorios</h4><br>
 			<div class="col-lg-3">
-				<label>Nombre de Grupo:</label>
-				<input type="text" name="nomGrupo" class="form-control" placeholder="Nombre de Grupo" required/><br>
-				<!-- <div class="help-block with-errors">Escribe el nombre de tu nuevo grupo scout</div> -->
-				<label>Número de Grupo:</label>
-				<input type="number" name="numGrupo" class="form-control" placeholder="Número de Grupo" required/><br>
-				<label>Fecha de Fundación:</label>
+				<label>* Nombre de Grupo:</label>
+				<input type="text" name="nomGrupo" id="nomGrupo" class="form-control" placeholder="Nombre de Grupo" pattern="[a-zA-Z0-9 ]{5,30}" maxlength="30" required/><br>
+				<label>* Número de Grupo:</label>
+				<input type="number" name="numGrupo" class="form-control" placeholder="Número de Grupo" pattern="[0-9]{1}" maxlength="4" required/><br>
+				<label>* Fecha de Fundación:</label>
 				<input type="date" name="fechFundacion" class="form-control" required/><br>
 				<label>Exclusivo:</label>
 				<p>
 				<label>Si</label>
-				<input type="radio" name="exclusivo" value="S" required/>	
+				<input type="radio" name="exclusivo" value="S">	
 				&nbsp;&nbsp;&nbsp;
 				<label>No</label>
-				<input type="radio" checked="true" name="exclusivo" value="N" required/>
+				<input type="radio" checked="true" name="exclusivo" value="N">
 				<br><br>
-				<label>Lugar de Fundación:</label>
-				<input type="text" name="LugarFundacion" class="form-control" placeholder="Lugar de Fundación" required/><br>
-				<label>Lugar de Reunión:</label>
-				<input type="text" name="lugarReunion" class="form-control" placeholder="Lugar de reunión" required/><br>
+				<label>* Lugar de Fundación:</label>
+				<input type="text" name="LugarFundacion" id="LugarFundacion" class="form-control" placeholder="Lugar de Fundación" pattern="[a-zA-Z ]{5,30}" maxlength="30" required/><br>
+				<label>* Lugar de Reunión:</label>
+				<input type="text" name="lugarReunion" id="lugarReunion" class="form-control" placeholder="Lugar de reunión" pattern="[a-zA-Z ]{5,30}" maxlength="30" required/><br>
 				<label>
-				Dia de Reunión:
+				* Día de Reunión:
 				</label>
-				<select class="form-control" name="dia_reu">
+				<select class="form-control" name="dia_reu" required/>
 					<option>
 						Lunes
 					</option>
@@ -109,7 +111,7 @@
 						Martes
 					</option>
 					<option>
-						Miercoles
+						Miércoles
 					</option>
 					<option>
 						Jueves
@@ -125,36 +127,36 @@
 					</option>
 				</select><br>
 				<label>
-				Hora de Reunión:
+				* Hora de Reunión:
 				</label>
 				<input type="time" name="horaReunion" class="form-control" required/><br>		
-				<label>Propietario Lugar:</label>
-				<input type="text" name="propLugar" class="form-control" placeholder="Propietario del lugar" required/><br>	
+				<label>* Propietario Lugar:</label>
+				<input type="text" name="propLugar" class="form-control" placeholder="Propietario del lugar" pattern="[a-zA-Z ]{3,30}" maxlength="30" required/><br>	
 				<label>Teléfono:</label>
-				<input type="text" name="telefono" class="form-control" placeholder="Teléfono" required/>	
-			</div>	
+				<input type="text" name="telefono" class="form-control" placeholder="Teléfono" pattern="[0-9]{8}" maxlength="8">	
+			</div>
 			<div class="col-lg-4"> 
 				<label>
-					Límite de Miembros:
+				* Límite de Miembros:
 				</label>
 				<input type="number" name="limiteMiem" class="form-control" required pattern="[1]{4}" placeholder="Límite de Miembros" required/><br>
-				<label>Departamento</label>
+				<label>* Departamento</label>
 				<select class="combobox form-control" id="departamento" name="departamento" required/>
 				<option>Elige tu departamento</option>
 				</select><br>
-				<label>Municipio</label>
+				<label>* Municipio</label>
 				<select class="combobox form-control" id="municipio" name="municipio" required/>
 				<option>Elige tu municipio</option>
 				</select>
 				<br>	
-				<label>Calle:</label>
-				<input type="text" name="calle" class="form-control" placeholder="Calle" required/>
+				<label>* Calle:</label>
+				<input type="text" name="calle" id="calle" class="form-control" placeholder="Calle" pattern="[a-zA-Z0-9 ]{5,20}" maxlength="20" required/>
 				<br>	
-				<label>Colonia:</label>
-				<input type="text" name="colonia" class="form-control" placeholder="Colonia" required/>
+				<label>* Colonia:</label>
+				<input type="text" name="colonia" id="colonia" class="form-control" placeholder="Colonia" pattern="[a-zA-Z0-9 ]{3,20}" maxlength="20" required/>
 				<br>
-				<label>Número de Casa:</label>
-				<input type="text" name="numCasa" class="form-control" placeholder="Número de Casa" required/>
+				<label>* Número de Casa:</label>
+				<input type="text" name="numCasa" class="form-control" placeholder="Número de Casa" pattern="[a-zA-Z0-9 ]{1,4}" maxlength="4" required/>
 				<br>
 				
 				<br>
@@ -167,7 +169,7 @@
 					<input type="hidden" name="txt_lng" id="txt_lng" class="form-control">
 					<br>
 					<a href="grupos_scout.html" class="btn btn-primary btn-lg" role="button">Cancelar</a>
-					<button value="Guardar" class="btn btn-primary">Guardar</button>
+					<button value="Guardar" name="Guardar" id="Guardar" class="btn btn-primary">Guardar</button>
 					<br>
 					<br>
 			</div>

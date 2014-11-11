@@ -9,6 +9,8 @@
   <script type="text/javascript" src="../js/confirm.js"> </script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
+  <script type="text/javascript" src="../js/script_combo.js"></script>
+  <script type="text/javascript" src="../js/miembros.js"></script>
   <meta charset="UTF-8">
 
 
@@ -59,8 +61,70 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-			<div class="col-lg-8 col-lg-offset-1">
-				<table class="table table-striped">
+			
+      <div class="col-lg-8 col-lg-offset-1">
+				<div class="row">
+
+          <div class="col-lg-1">
+            <label>NIS:</label>
+            <input type="text" id="nis" name="nis" class="form-control">
+          </div>
+         <div class="col-lg-3">
+            <label> Departamento:</label>
+            <select class="form-control" name="departamento" id="departamento">
+              <option>
+              Seleccione un departamento
+              </option>      
+            </select>
+
+          </div>
+          <div class="col-lg-3">
+            <label>Municipio:</label>
+            <select class="form-control" name="municipio" id="municipio">
+              <option>
+              Selecciona un municipio
+              </option>      
+            </select>
+          </div>
+
+          
+          </div>
+          <div class="row">
+            <div class="col-lg-3">
+            <label>Numero de Grupo:</label>
+            <select class="form-control" name="grupo" id="grupo">
+              <option>
+                Seleccione un grupo
+              </option>  
+            </select>  
+
+          </div>
+          <div class="col-lg-2">
+            <label>Genero:</label>
+            <select class="form-control">
+              <option>
+                
+              </option>  
+            </select>
+
+  
+          </div>
+          <div class="col-lg-1">
+            <label>
+              Edad:
+            </label>
+            <input  type="text" class="form-control">
+          </div>
+           <div class="col-lg-3">
+            <label>Nombre:</label>
+            <input type="text" class="form-control">    
+          </div> 
+          <div class="col-lg-3">
+            <label>Apellido:</label>
+            <input type="text" class="form-control">    
+          </div>               
+        </div>
+        <table class="table table-striped">
 					<thead>
 						<tr>
 							<th>NIS</th>
@@ -73,67 +137,10 @@
 						</tr>
 					</thead>
 					<tbody name="loop" id="loop">
-					  <?php 
-      try{
-      $cuadro = $oInscripcion->seleccionar_inscripciones();
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($cuadro!=null)
-        {
-        foreach($cuadro AS $key => $bl)
-        {
-        $numSolicInsc      = $bl['numSolicInsc'];
-        $nomPer       = $bl['nomPer'];
-        $apelPer       = $bl['apelPer'];
-        $genPer ="";
-        if ($bl['genPer'] == "M"){
-        	$genPer= "Masculino";
-        }else{
-        	$genPer= "Femenino";
-        }
-        $fechNacPer =$bl['fechNacPer'];
-        $numGrup    =$bl['numGrup'];
-        $fecha = time() - strtotime($fechNacPer);
-$edad = floor((($fecha / 3600) / 24) / 360);
-
-
-        
-        ?>
-        <tr>
-        <td>
-        Pone el niss
-        </td>
-        <td>
-        <?=$nomPer." ".$apelPer?>
-        </td>
-        <td>
-        <?=$genPer?>
-        </td>
-        <td>
-        <?=$edad?>
-        </td>
-        <td>
-        <?=$numGrup?>
-        </td>
-        <td>
-         <a href="solicitud_miembro.tpl.php?numSolicInsc=<?=base64_encode($numSolicInsc)?>">Editar</a>
-        </td>
-        <td>
-        <a href="">Redireccion al perfil</a>
-        </td>
-        </tr>
-        <?php
-        
-        }
-        }else{
-         echo "No hay datos";
-        }
-        
-        
-        ?> 
 					</tbody>
 				</table>
+         <ul class="paginacion text-center" >
+          </ul>
 			</div>
 
 
