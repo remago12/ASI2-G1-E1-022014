@@ -22,6 +22,7 @@
   	<script type="text/javascript" src="../js/mapLog.js"></script>
   	<script type="text/javascript" src="../js/mapIns.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	<script type="text/javascript" src="../js/confirm.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -47,8 +48,8 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <!--solo tienen que   copiar la siguiente linea para generar mas items -->
+      <!--<ul class="nav navbar-nav navbar-right">
+        solo tienen que   copiar la siguiente linea para generar mas items 
         <li><a href="#">Inicio</a></li>
         
         <li class="dropdown">
@@ -73,12 +74,12 @@
             <li><a href="#">Separated link</a></li>
           </ul>
         </li>
-      </ul>
+      </ul>-->	
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
-	<h2 class="text-center">Inscripción de Miembro</h2>
+	<h1 class="text-center">Inscripción de Miembro</h1>
 	<form method="POST" enctype="multipart/form-data" action="../model/action/action_inscripcion_m.php">
 	<!-- Button trigger modal -->
 	<div class="container">
@@ -108,16 +109,20 @@
 			<label>Femenino</label>
 			<input type="radio" name="genero" value="F"><br><br>			
 			<div class="well well-lg">
-			<h2>Dirección</h2><br>
-			<label>* Departamento</label>
-			<select class="combobox form-control" id="departamento" name="departamento">
+			<h2>Dirección</h2>
+			<br>
+			<label>Departamento</label>
+			<select class="combobox form-control" id="departamento" name="departamento" required/>
 			</select><br>
 			<label>* Municipio</label>
 			</label>
-			<select class="combobox form-control" id="municipio" name="municipio">			
-			</select><br>			
-			<label>* Calle:</label>
-			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{5,20}" maxlength="20" required/><br>
+			<select class="combobox form-control" id="municipio" name="municipio" required/>
+			
+			</select>
+
+			<br>
+			<label>Calle:</label>
+			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{5,20}" maxlength="20" required/><br>
 			<label>Colonia:</label>
 			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{3,20}" maxlength="20"><br>
 			<label>* No. Casa:</label>
@@ -140,11 +145,17 @@
 		<select class="combobox form-control" name="grupo" id="grupo">
 		</select><br><br>
 		<div id="mapa">
-		</div><br><br>
-			<button class="btn btn-danger">
-				Cancelar
-			</button>
+
+		
+		</div>
+		<br>
+		<br>
+			
+			<a class="btn btn-primary" href="login.tpl.php" role="button">Cancelar
+			</a>
+			
 			<button class="btn btn-success" type="submit" name="Guardar "id="Guardar" value="Enviar" onclick="insertBR()">
+
 				Guardar
 			</button><br><br><br>
 		</div>

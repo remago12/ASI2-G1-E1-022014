@@ -39,7 +39,7 @@
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../views/indexJefe.php">Inicio</a></li>
         <li><a href="../views/solicitudesGrupo.php">Solicitudes</a> </li>
-        <li><a href="../views/miembrosGrupo.php">Miembros</a></li>
+        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
         <li><a href="../views/perfilGrupo.php">Grupo</a></li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
@@ -89,7 +89,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="../views/miembrosGrupo.php">Miembros de Grupo</a>
+              <a href="../views/miembrosGrupo.tpl.php">Miembros de Grupo</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">

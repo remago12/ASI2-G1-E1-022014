@@ -1,5 +1,16 @@
 $(document).ready(function(){
 
+$('#nomgrup').keyup(function(){
+
+grupos();
+
+});
+
+$('#grupo').change(function(){
+grupos();
+
+});
+
 $('#departamento').change(function(){
 grupos();
 }); 
@@ -68,6 +79,8 @@ $("ul.paginacion").on("click","li", function(){
     // alert($(this).find("span.pag").text());
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
+var Idgrup=$('#grupo').val();
+var nomgruo = $('#nomgrup').val();
 //var IdEst = $('#estado').val();
 if (IdDep== "Seleccione un departamento" || IdDep==""){
 	IdDep ="%";
@@ -75,11 +88,22 @@ if (IdDep== "Seleccione un departamento" || IdDep==""){
 if (IdMun =="Selecciona un municipio" || IdMun==""){
 	IdMun ="%";
 }
+
+if (IdGrup =="Seleccione un grupo" || IdGrup==""){
+  IdGrup ="%";
+}
+
+if (nomgruo==" "){
+  nomgruo ="%";
+}else{
+  nomgruo=nomgruo+"%";
+}
+
 var Limite = 5;
 var pags = $(this).find("span.pag").text();
 var Inicio = (parseInt(pags)*parseInt(Limite))-parseInt(Limite);
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"grupos",IdDep:IdDep,IdMun:IdMun,Inicio:Inicio,Limite:Limite},function(data){
+$.post("../model/clases/ajax.php",{action:"grupos",IdDep:IdDep,IdMun:IdMun,Nomgrup:nomgruo,IdGrup:IdGrup,Inicio:Inicio,Limite:Limite},function(data){
 var cadena="";
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
@@ -113,19 +137,33 @@ grupos();
 function grupos(){
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
+var IdGrup=$('#grupo').val();
+var nomgruo= $('#nomgrup').val();
 if (IdDep== "Seleccione un departamento" || IdDep==" "){
 	IdDep ="%";
 }
 if (IdMun =="Selecciona un municipio" || IdMun==" "){
 	IdMun ="%";
 }
-$.post("../model/clases/ajax.php",{action:"contar_grupos",IdDep:IdDep,IdMun:IdMun},function(data){
+
+if (IdGrup =="Seleccione un grupo" || IdGrup==""){
+  IdGrup ="%";
+}
+
+if (nomgruo==" "){
+  nomgruo ="%";
+}else{
+  nomgruo=nomgruo+"%";
+}
+
+
+$.post("../model/clases/ajax.php",{action:"contar_grupos",IdDep:IdDep,IdMun:IdMun,Nomgrup:nomgruo,IdGrup:IdGrup},function(data){
 var Limite = 5;
 var rows = data.rows[0]["0"];
 var pags = Math.ceil((parseInt(rows)/parseInt(Limite)));
 var Inicio = 0;
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"grupos",IdDep:IdDep,IdMun:IdMun,Inicio:Inicio,Limite:Limite},function(data){
+$.post("../model/clases/ajax.php",{action:"grupos",IdDep:IdDep,IdMun:IdMun,Nomgrup:nomgruo,IdGrup:IdGrup,Inicio:Inicio,Limite:Limite},function(data){
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
 var cadena="";
