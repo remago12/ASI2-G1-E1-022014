@@ -89,7 +89,7 @@ var Limite = 5;
 var pags = $(this).find("span.pag").text();
 var Inicio = (parseInt(pags)*parseInt(Limite))-parseInt(Limite);
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido},function(data){
+$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido,Inicio:Inicio,Limite:Limite},function(data){
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
 var cadena="";
@@ -178,7 +178,7 @@ var rows = data.rows[0]["0"];
 var pags = Math.ceil((parseInt(rows)/parseInt(Limite)));
 var Inicio = 0;
 var paginacion= "";
-$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido},function(data){
+$.post("../model/clases/ajax.php",{action:"miembros",nis:nis,IdDep:IdDep,IdMun:IdMun,IdGrup:IdGrup,Gen:Gen,nombre:nombre,apellido:apellido,Inicio:Inicio,Limite:Limite},function(data){
 //var cadena="<option>Seleccione un grupo</option>";
 if (data.rows.length == 0){
 var cadena="";

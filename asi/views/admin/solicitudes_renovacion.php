@@ -54,7 +54,6 @@
       <br>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../indexadmin.html">Inicio</a></li>
-        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
         <li><a href="solicitudes_renovacion.html">Renovación</a></li>
         <li><a href="../grupos_scout.html">Grupos Scout</a></li>
         <li><a href="../miembros_scout.html">Miembros Scout</a></li>
@@ -115,13 +114,14 @@
 				<table class="table table-striped">
 					<thead>
 						<tr>
-							<th>Nombre Completo</th>
+							<th>N°Solicitud</th>
+							<th>NIS</th>
+							<th>Nombre</th>
+							<th>Genero</th>
 							<th>Edad</th>
-							<th>Género</th>
-							<th>Usuario</th>
-							<th>No. de Grupo</th>
-							<th>Cargo</th>
-							<th>Cargo Nacional</th>
+							<th>Departamento</th>
+							<th>Municipio</th>
+							<th>N°Grupo</th>
 						</tr>
 					</thead>
 					<tbody name="loop" id="loop">
