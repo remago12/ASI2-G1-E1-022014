@@ -1,4 +1,32 @@
-
+<?php
+    //Database
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+ 
+  session_start();
+    // Objetos
+     $oUsuario   = new Usuario();
+    // revisando sesiones 
+    
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: login.tpl.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.tpl.php");
+          exit();
+        }
+    }else{
+      header("Location: login.tpl.php");
+          exit();
+    }
+    
+  $usuario  = $_SESSION['usuario'];
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
