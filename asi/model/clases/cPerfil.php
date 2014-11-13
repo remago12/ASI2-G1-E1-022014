@@ -109,6 +109,24 @@ class Perfil
 				return false;
 			}
 		}
+	function seleccionar_grup($nisMiem)
+	{
+			$sql = "SELECT * FROM miembro where nisMiem=?";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['nisMiem'];
+					$info[$id]['nisMiem'] 		= $rs->fields['nisMiem'];
+					$info[$id]['grupo_idGrup'] 		= $rs->fields['grupo_idGrup'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}	
 	function seleccionar_inscripcion($nisMiem)
 	{
 			$sql = "SELECT * FROM persona as p, miembro as m, inscripcion as i where m.nisMiem=? AND p.idPersona=m.persona_idPersona AND i.persona_idPersona=p.idPersona";

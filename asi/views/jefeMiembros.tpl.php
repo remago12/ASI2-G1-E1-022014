@@ -2,16 +2,19 @@
     //Database
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
- 
+   require_once '../model/clases/cPerfil.php';
+
+
   session_start();
     // Objetos
      $oUsuario   = new Usuario();
+     $perfil     = new Perfil();
     // revisando sesiones 
     
     if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
-           if ($rol == "1") {   
+           if ($rol == "2") {   
           }else{
              header("Location: login.tpl.php");
             exit(); 
@@ -24,8 +27,29 @@
       header("Location: login.tpl.php");
           exit();
     }
-    
   $usuario  = $_SESSION['usuario'];
+  
+try{
+      $grupos = $perfil->seleccionar_grup($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grupos!=null)
+        {
+        foreach($grupos AS $key => $bl)
+        {
+        $idgruop      = $bl['grupo_idGrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }    
+
+  
   ?>
 <!DOCTYPE html>
 <html>
@@ -39,7 +63,7 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
   <script type="text/javascript" src="../js/script_combo.js"></script>
-  <script type="text/javascript" src="../js/miembros.js"></script>
+  <script type="text/javascript" src="../js/jefe_miembros.js"></script>
   <meta charset="UTF-8">
 
 
@@ -122,7 +146,7 @@
             <div class="col-lg-3">
             <label>Numero de Grupo:</label>
             <h1></h1>
-            <input type="hidden" name="grupo" id="grupo">
+            <input type="input" name="grupo2" id="grupo2" value="<?=$idgruop?>">
               
 
           </div>

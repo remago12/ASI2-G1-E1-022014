@@ -14,7 +14,7 @@
     if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
-           if ($rol == "1") {   
+           if ($rol == "2") {   
           }else{
              header("Location: ../controller/login.php");
             exit(); 
@@ -28,6 +28,26 @@
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
+
+  try{
+      $grupos = $perfil->seleccionar_grup($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grupos!=null)
+        {
+        foreach($grupos AS $key => $bl)
+        {
+        $idgruop      = $bl['grupo_idGrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
 ?>
 <!DOCTYPE html>
 <html>
@@ -58,7 +78,7 @@
         <span class="icon-bar"></span>
       </button>
       <br>
-      <img id="logo2" src="../../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
+      <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
       
 
     </div>
@@ -109,8 +129,8 @@
 		<div class="row">
 			<div class="col-md-3 ">
         <label>Numero del Grupo:</label>
-        <H1></H1>
-        
+        <h1><?=$idgruop?></h1>
+        <input type="hidden" name="grupo2" id="grupo2" value="<?=$idgruop?>">
       </div>
       <div class="col-md-3 ">
         <label>Estado:</label>

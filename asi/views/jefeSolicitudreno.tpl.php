@@ -1,8 +1,8 @@
 <?php
     //Database
-  require_once '../../model/data/dataBase.php';
-  require_once '../../model/clases/cUsuario.php';
-  require_once '../../model/clases/cPerfil.php';
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+  require_once '../model/clases/cPerfil.php';
  
   session_start();
     // Objetos
@@ -13,20 +13,40 @@
     if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
-           if ($rol == "1") {   
+           if ($rol == "2") {   
           }else{
-             header("Location: ../../controller/login.php");
+             header("Location: ../controller/login.php");
             exit(); 
           }
         }else{
-          header("Location: ../../controller/login.php");
+          header("Location: ../controller/login.php");
           exit();
         }
     }else{
-      header("Location: ../../controller/login.php");
+      header("Location: ../controller/login.php");
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
+
+  try{
+      $grupos = $perfil->seleccionar_grup($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grupos!=null)
+        {
+        foreach($grupos AS $key => $bl)
+        {
+        $idgruop      = $bl['grupo_idGrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
         ?>
 <!DOCTYPE html>
 <html>
@@ -35,12 +55,12 @@
 		Solicitudes de Renovación
 	</title>
 
-	<script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
-  	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
-  	<script type="text/javascript" src="../../js/script_combo_admin.js"></script>
-  	 	<script type="text/javascript" src="../../js/renovaciones.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+  	<script type="text/javascript" src="../js/script_combo.js"></script>
+  	 	<script type="text/javascript" src="../js/jefe_renovaciones.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
@@ -72,7 +92,8 @@
 				<label>
 					Numero de Grupo:
 				</label>
-				<h1></h1>
+				<h1><?=$idgruop?></h1>
+				<input type="hidden" name="grupo2" id="grupo2" value="<?=$idgruop?>">
 			</div>
 			<div class="col-md-3">
 				<label>
