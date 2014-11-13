@@ -92,8 +92,13 @@
 				<label>
 					Numero de Grupo:
 				</label>
+<<<<<<< HEAD
 				<h1><?=$idgruop?></h1>
 				<input type="hidden" name="grupo2" id="grupo2" value="<?=$idgruop?>">
+=======
+				<h1></h1>
+				<input type="hidden" name="grupo" id="grupo">
+>>>>>>> 0f254ce9323dffba2d098726fc3f1b706c20f874
 			</div>
 			<div class="col-md-3">
 				<label>
