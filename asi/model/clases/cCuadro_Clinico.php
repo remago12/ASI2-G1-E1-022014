@@ -59,6 +59,29 @@ class CuadroClinico
             return false;
         }
     }
+    function crear_progresion($reg)
+    {
+    $sql="INSERT INTO tipoProgresion (nomTipProg)"
+                            . " values (?) ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function crear_Logro($reg)
+    {
+    $sql="INSERT INTO logro (nomLogro, idReqLogro)"
+                            . " values (?,?) ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
 
 	function mod_alergia($reg)
     {
@@ -228,6 +251,64 @@ class CuadroClinico
 					$id                 	= $rs->fields['idEst'];
 					$info[$id]['idEst']		= $rs->fields['idEst'];
 					$info[$id]['nomEst'] 	= $rs->fields['nomEst'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+
+	function seleccionar_progresion()
+	{
+			$sql = "SELECT * FROM tipoProgresion ORDER BY idTipProg asc";
+  
+		$rs = $this->DATA->Execute($sql);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 	= $rs->fields['idTipProg'];
+					$info[$id]['idTipProg']		= $rs->fields['idTipProg'];
+					$info[$id]['nomTipProg'] 	= $rs->fields['nomTipProg'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}	
+
+		function seleccionar_logro()
+	{
+			$sql = "SELECT * FROM logro ORDER BY idLogro desc";
+  
+		$rs = $this->DATA->Execute($sql);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 	= $rs->fields['idLogro'];
+					$info[$id]['idLogro']		= $rs->fields['idLogro'];
+					$info[$id]['nomLogro'] 	= $rs->fields['nomLogro'];
+					$info[$id]['idReqLogro'] = $rs->fields['idReqLogro'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+		function seleccionar_logroM($req)
+	{
+			$sql = "SELECT * FROM logro where idLogro=?";
+  
+		$rs = $this->DATA->Execute($sql,$req);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['idLogro'];
+					$info[$id]['idLogro']		= $rs->fields['idLogro'];
+					$info[$id]['nomLogro'] 		= $rs->fields['nomLogro'];
+					$info[$id]['idReqLogro'] 	= $rs->fields['idReqLogro'];
 		  		    $rs->MoveNext();
 				}
 				$rs->Close();
