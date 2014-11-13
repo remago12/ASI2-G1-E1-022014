@@ -1,9 +1,9 @@
 <?php
     //Database
-	require_once '../../model/clases/cInscripcion.php';
-	require_once '../../model/data/dataBase.php';
-  require_once '../../model/clases/cUsuario.php';
-  require_once '../../model/clases/cPerfil.php';
+	require_once '../model/clases/cInscripcion.php';
+	require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+  require_once '../model/clases/cPerfil.php';
      session_start();
      //Objetos
      $oInscripcion   = new Inscripcion();
@@ -16,15 +16,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "1") {   
           }else{
-             header("Location: ../../controller/login.php");
+             header("Location: ../controller/login.php");
             exit(); 
           }
         }else{
-          header("Location: ../../controller/login.php");
+          header("Location: ../controller/login.php");
           exit();
         }
     }else{
-      header("Location: ../../controller/login.php");
+      header("Location: ../controller/login.php");
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
@@ -35,12 +35,12 @@
 	<title>
 		Solicitudes de Inscripción
 	</title>
-	<script type="text/javascript" src="../../js/jquery-1.11.1.js"></script>
-	<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
-  	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
-      <script type="text/javascript" src="../../js/script_combo_admin.js"></script>
-      <script type="text/javascript" src="../../js/solicitudes.js"></script>
+	<script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
+	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+  	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+      <script type="text/javascript" src="../js/script_combo.js"></script>
+      <script type="text/javascript" src="../js/jefe_solicitudes.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>
