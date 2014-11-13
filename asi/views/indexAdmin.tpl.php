@@ -68,6 +68,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="#">Inicio</a></li>
+<<<<<<< HEAD
         <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
@@ -80,14 +81,17 @@
 
 
 
+=======
+        <li><a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a> </li>
+>>>>>>> 9610ee57aa85126c287ba731061d2ec3cbff7bd8
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="../controller/mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../controller/mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
             <li class="divider"></li>
-            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../controller/mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
@@ -109,9 +113,13 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
+<<<<<<< HEAD
                <a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a>
                <br>
                <a href="../views/admin/solicitudes_renovacion.php">Insacripcion</a>
+=======
+               <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a>
+>>>>>>> 9610ee57aa85126c287ba731061d2ec3cbff7bd8
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
@@ -121,7 +129,11 @@
               </a>
               <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
               <br>
+<<<<<<< HEAD
               <a href="../views/lista_grupos_scout.tpl.php">Grupos Scout</a>
+=======
+              <a href="../controller/gruposScout.tpl.php">Grupos Scout</a>
+>>>>>>> 9610ee57aa85126c287ba731061d2ec3cbff7bd8
             </div>
           </div>  
         </div>
@@ -141,13 +153,13 @@
                 <h2 class="encabezado">Mantenimiento</h2>
               </div>
               </a>
-              <a href="mantenimiento/manBanco.tpl.php">Banco</a>
+              <a href="../controller/mantenimiento/manBanco.php">Banco</a>
               <br>
-              <a href="../views/mantenimiento/padecimiento.tpl.php">Padecimiento</a>
+              <a href="../controller/mantenimiento/padecimiento.php">Padecimiento</a>
               <br>
-              <a href="../views/mantenimiento/alergias.tpl.php">Alergia</a>
+              <a href="../controller/mantenimiento/alergias.php">Alergia</a>
               <br>
-              <a href="../views/mantenimiento/estado.tpl.php">Estados</a>
+              <a href="../controller/mantenimiento/estado.php">Estados</a>
             </div>
           </div>
         </div>
