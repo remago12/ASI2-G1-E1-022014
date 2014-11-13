@@ -68,7 +68,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/index.tpl.php">Inicio</a></li>
+        <li><a href="../views/indexAdmin.tpl.php">Inicio</a></li>
 
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
@@ -100,7 +100,7 @@
 		<hr class="line"><br>		
 		<div class="row">
 			<div class="col-lg-4">
-				<a href="inscripcion_de_grupo.html" class="btn btn-primary btn-lg" role="button">Agregar un Nuevo Grupo</a>
+				<a href="../controller/nuevo_grupo.php" class="btn btn-primary btn-lg" role="button">Agregar un Nuevo Grupo</a>
 			</div>
 			
 		</div><br>

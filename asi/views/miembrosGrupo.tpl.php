@@ -70,9 +70,24 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../views/indexJefe.php">Inicio</a></li>
-        <li><a href="../views/solicitudesGrupo.php">Solicitudes</a> </li>
         <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
-        <li><a href="">Grupo</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../views/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../views/admin/solicitudes_renovacion.php">Renovacion</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
+            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
+            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li class="divider"></li>
+            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
+          </ul>
+        </li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
         <li class="dropdown">

@@ -68,7 +68,18 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="#">Inicio</a></li>
-        <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a> </li>
+        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a> </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../views/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../views/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            
+          </ul>
+        </li>
+
+
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -99,6 +110,8 @@
                 </div>
                </a>
                <a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a>
+               <br>
+               <a href="../views/admin/solicitudes_renovacion.php">Insacripcion</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
@@ -108,7 +121,7 @@
               </a>
               <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
               <br>
-              <a href="../views/gruposScout.tpl.php">Grupos Scout</a>
+              <a href="../views/lista_grupos_scout.tpl.php">Grupos Scout</a>
             </div>
           </div>  
         </div>
@@ -120,7 +133,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="">Miembros </a>
+              <a href="../views/miembrosGrupo.tpl.php">Miembros </a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
