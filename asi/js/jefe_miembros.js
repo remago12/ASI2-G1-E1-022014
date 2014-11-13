@@ -26,7 +26,7 @@ $('#municipio').change(function(){
 miembros();
 });
 
-$('#grupo').change(function(){
+$('#grupo2').change(function(){
 miembros();
 
 });
@@ -42,7 +42,7 @@ $("ul.paginacion").on("click","li", function(){
 var nis = $('#nis').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
-var IdGrup= $('#grupo').val();
+var IdGrup= $('#grupo2').val();
 var Gen= $('#Genero').val();
 var nombre =$('#nombre').val();
 var apellido =$('#apellido').val();
@@ -128,7 +128,7 @@ function miembros(){
 var nis = $('#nis').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
-var IdGrup=$('#grupo').val();
+var IdGrup=$('#grupo2').val();
 var Gen= $('#Genero').val();
 var nombre =$('#nombre').val();
 var apellido =$('#apellido').val();

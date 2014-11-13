@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-$('#grupo').change(function(){
+$('#grupo2').change(function(){
 renovaciones();
 }); 
 
@@ -19,11 +19,11 @@ renovaciones();
 
 $("ul.paginacion").on("click","li", function(){
     // alert($(this).find("span.pag").text());
-    var IdGrup = $('#grupo').val();
+    var IdGrup = $('#grupo2').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
 var IdEst = $('#estado').val();
-if (IdGrup== "Seleccione un grupo" || IdGrup==""){
+if (IdGrup== ""){
 	IdGrup ="%";
 }
 if (IdDep== "Seleccione un departamento" || IdDep==""){
@@ -39,7 +39,7 @@ var Limite = 5;
 var pags = $(this).find("span.pag").text();
 var Inicio = (parseInt(pags)*parseInt(Limite))-parseInt(Limite);
 var paginacion= "";
-$.post("../../model/clases/ajax.php",{action:"solic_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst,Inicio:Inicio,Limite:Limite},function(data){
+$.post("../model/clases/ajax.php",{action:"solic_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst,Inicio:Inicio,Limite:Limite},function(data){
 var Num_Solic ="";
 var NomPer="";
 var ApelPer ="";
@@ -84,11 +84,11 @@ renovaciones();
 
 
 function renovaciones(){
-	var IdGrup = $('#grupo').val();
+	var IdGrup = $('#grupo2').val();
 var IdDep = $('#departamento').val();
 var IdMun = $('#municipio').val();
 var IdEst = $('#estado').val();
-if (IdGrup== "Seleccione un grupo" || IdGrup==" "){
+if (IdGrup== ""){
 	IdGrup ="%";
 }
 if (IdDep== "Seleccione un departamento" || IdDep==" "){
@@ -100,13 +100,13 @@ if (IdMun =="Seleccione un municipio" || IdMun==" "){
 if (IdEst =="Seleccione un estado" || IdEst==" "){
 	IdEst ="%";
 }
-$.post("../../model/clases/ajax.php",{action:"contar_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst},function(data){
+$.post("../model/clases/ajax.php",{action:"contar_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst},function(data){
 var Limite = 5;
 var rows = data.rows[0]["0"];
 var pags = Math.ceil((parseInt(rows)/parseInt(Limite)));
 var Inicio = 0;
 var paginacion= "";
-$.post("../../model/clases/ajax.php",{action:"solic_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst,Inicio:Inicio,Limite:Limite},function(data){
+$.post("../model/clases/ajax.php",{action:"solic_renovaciones",IdGrup:IdGrup,IdDep:IdDep,IdMun:IdMun,IdEst:IdEst,Inicio:Inicio,Limite:Limite},function(data){
 var Num_Solic ="";
 var NomPer="";
 var ApelPer ="";
