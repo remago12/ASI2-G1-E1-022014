@@ -110,8 +110,8 @@
 			<div class="col-md-3 ">
         <label>Numero del Grupo:</label>
         <H1></H1>
-        
-      </div>
+       <input type="hidden" name="grupo" id="grupo">
+        </div>
       <div class="col-md-3 ">
         <label>Estado:</label>
           <select class="form-control" id="estado" name="estado">
