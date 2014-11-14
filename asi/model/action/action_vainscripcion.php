@@ -18,7 +18,7 @@ require_once '../clases/cHistorial.php';
   $miembro_nisMiem     =$_POST['miembro_nisMiem'];
   $grupo_idGrup        =$_POST['idGrup'];
   $usuario             =$_POST['usuario'];
-  $obserCamEst         =Validacion de Inscripcion;
+  $obserCamEst         ="Validacion de Inscripcion";
 
 try{
   //subida de imagen
@@ -30,12 +30,12 @@ move_uploaded_file($archivo,$ruta_carpeta."imagenes/".$nombreArchivo);
 
 $rutag=$ruta_DB."imagenes/".$nombreArchivo;
 //arrays
-    $reg=array($exeIns,$estado_idEst,$numFactIns,$fchaPagIns,$montoIns,$banco_idBanc,$rutag,$idInsc);   
+    $reg=array($estado_idEst,$exeIns,$numFactIns,$fchaPagIns,$montoIns,$banco_idBanc,$rutag,$idInsc);   
   $Inscripcion->pago_inscripcion($reg);
 
-  $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem);
-  $historial->crear_historial($hestado)  
-  header('Location: ../../views/perfilUsuario.tpl.php');  
+  $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup,$idInsc);
+  $historial->crear_historial($hestado);  
+  header('Location: ../../controller/perfilUsuario.php');  
 
    }catch(Exception $e){
 

@@ -85,7 +85,7 @@ class Inscripcion
   }  
 
   function pago_inscripcion($parametrosReg){
-     $sql="UPDATE inscripcion SET exePagIns=?,estado_idEst=?,numFactIns=?,fchaPagIns=?,montoIns=?,banco_idBanc=?,img_Ins=? where numSolicInsc=?";
+     $sql="UPDATE inscripcion SET estado_idEst=?,exePagIns=?,numFactIns=?,fchaPagIns=?,montoIns=?,banco_idBanc=?,imgIns=? where numSolicInsc=?";
     $save = $this->DATA->Execute($sql, $parametrosReg); 
           if ($save){
             return true;

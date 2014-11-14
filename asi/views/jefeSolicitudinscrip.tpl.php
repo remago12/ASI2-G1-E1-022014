@@ -16,15 +16,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "2") {   
           }else{
-             header("Location: ../controller/login.php");
+             header("Location: login.php");
             exit(); 
           }
         }else{
-          header("Location: ../controller/login.php");
+          header("Location: login.php");
           exit();
         }
     }else{
-      header("Location: ../controller/login.php");
+      header("Location: login.php");
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
@@ -64,7 +64,7 @@
   	<meta charset="UTF-8">
 </head>
 <body>
-<nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -87,37 +87,26 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../index.tpl.php">Inicio</a></li>
+        <li><a href="login.php">Inicio</a></li>
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="manBanco.tpl.php">Renovacion</a></li>
+            <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../mantenimiento/padecimiento.tpl.php">Padecimiento</a></li>
-            <li class="divider"></li>
-            <li><a href="../mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimiento</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
           </ul>
         </li>
+        <li><a href="../controller/jefeMiembros.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="">Oscar Lizama</a></li>
-      	<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Banco</a></li>
-            <li><a href="#">Alergias</a></li>
-            <li><a href="#">Padecimiento</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Salir</a></li>
-          </ul>
-        </li>
+        <li><a href="login.php">Bienvenido <?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -129,15 +118,9 @@
 		<div class="row">
 			<div class="col-md-3 ">
         <label>Numero del Grupo:</label>
-<<<<<<< HEAD
         <h1><?=$idgruop?></h1>
         <input type="hidden" name="grupo2" id="grupo2" value="<?=$idgruop?>">
       </div>
-=======
-        <H1></H1>
-       <input type="hidden" name="grupo" id="grupo">
-        </div>
->>>>>>> 0f254ce9323dffba2d098726fc3f1b706c20f874
       <div class="col-md-3 ">
         <label>Estado:</label>
           <select class="form-control" id="estado" name="estado">

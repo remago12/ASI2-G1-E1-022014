@@ -2,9 +2,32 @@
     //Database
 	require_once '../model/clases/cGrupo.php';
 	require_once '../model/data/dataBase.php';
+	require_once '../model/clases/cUsuario.php';
+ 
+  session_start();
      //Objetos
      $oGrupo   = new Grupo();
      $IdGrup = base64_decode($_GET['IdGrup']);
+     $oUsuario   = new Usuario();
+     // revisando sesiones 
+    if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }else{
+             header("Location: login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: login.php");
+          exit();
+        }
+    }else{
+      header("Location: login.php");
+          exit();
+    }
+    
+  $usuario  = $_SESSION['usuario'];
 
       try{
       $Grupo = $oGrupo->seleccionar_grupo($IdGrup);
@@ -56,29 +79,55 @@
 	</head>
 	<body onload="initialize()">
 		
-	<nav class="navbar navbar-default" role="navigation">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <img id="logo1" src="../img/ases1.jpg" class="img-responsive" alt="Responsive image">
-	      <a  class="navbar-brand" href="#"><h3>SCOUT</h3>El Salvador</a> 
-	      
-	    </div>
-	      
-	      <br>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="indexadmin.html">Inicio</a></li>
-	        <li><a href="solicitudes_inscripcion.html">Inscripciones</a></li>
-        <li><a href="solicitudes_renovacion.html">Renovación</a></li>
-        <li><a href="miembros_scout.html">Miembros Scout</a></li>
-	        <img id="logo2" src="../img/logo1.png" class="img-responsive" alt="Responsive image">
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+    <a class="navbar-brand tema" href="#">Scout</a>
+    
+    <a class="navbar-brand tema" href="#">El Salvador</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <br>
+      <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
+      
 
-	      </ul>
+    </div>
 
-	    </div><!-- /.navbar-collapse -->
-
-	  </div><!-- /.container-fluid -->
-	</nav>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <!--solo tienen que   copiar la siguiente linea para generar mas items -->
+        <li><a href="login.php">Inicio</a></li>
+        <li><a href="../controller/miembrosGrupo.php">Miembros</a> </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li> <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../controller/mantenimiento/manBanco.php">Banco</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimientos</a></li>
+            <li class="divider"></li>
+            <li><a href="../controller/mantenimiento/estado.php">Estado</a></li>
+          </ul>
+        </li>
+        <li><a href=""><img src="..."></a> </li>
+        <li><a href=""><?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 	<div class="container">
 		<form method="POST">

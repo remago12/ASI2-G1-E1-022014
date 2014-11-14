@@ -126,7 +126,7 @@
         </li>
         <li><a href="../controller/jefeMiembros.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
+        <li><a href="login.php">Bienvenido <?=$usuario?></a></li>
         <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->

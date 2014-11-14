@@ -42,7 +42,7 @@ function seleccionar_grupo($IdGrupo)
         $info[$id]['colGrup']=$rs->fields['colGrup'];
         $info[$id]['latGrup']=$rs->fields['latGrup'];
         $info[$id]['lngGrup']=$rs->fields['lngGrup'];
-
+        $info[$id]['fchaFundGrup']=$rs->fields['fchaFundGrup'];
 
       $rs->MoveNext();
       }

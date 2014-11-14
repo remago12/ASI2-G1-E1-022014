@@ -34,7 +34,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/indexJefe.php">Inicio</a></li>
+        <li><a href="login.php">Inicio</a></li>
         <li><a href="../views/solicitudesGrupo.php">Solicitudes</a> </li>
         <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
         <li><a href="">Grupo</a></li>

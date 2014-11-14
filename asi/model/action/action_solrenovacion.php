@@ -9,24 +9,24 @@ require_once '../clases/cHistorial.php';
 
   $idPersona           =$_POST['idPer'];
   $fchaRen             =date('y-m-d');
-  $estado_idEst        =1;
+  $estado_idEst        =7;
   $exeRen              ="N";
   $miembro_nisMiem     =$_POST['miembro_nisMiem'];
   $grupo_idGrup        =$_POST['idGrup'];
   $usuario             =$_POST['usuario'];
-  $obserCamEst         =Solicitud de Renovacion;
+  $obserCamEst         ="Solicitud de Renovacion";
 
 try{
 //arrays
     $reg=array($fchaRen,$estado_idEst,$exeRen,$miembro_nisMiem,$grupo_idGrup);   
   $renovacion->crear_renovacion($reg,$idPersona);
 
-  $estado= array($estado_idEst, $miembro_nisMiem);
-  $renovacion->actualizar_estadoMiem($estado);
+  //$estado= array($estado_idEst, $miembro_nisMiem);
+  //$renovacion->actualizar_estadoMiem($estado);
 
-   $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem);
-  $historial->crear_historial($hestado);  
-  header('Location: ../../views/perfilUsuario.tpl.php');  
+   $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup);
+  $historial->crear_historialSR($hestado);  
+  header('Location: ../../controller/perfilUsuario.php');  
 
    }catch(Exception $e){
 

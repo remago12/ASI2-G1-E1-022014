@@ -109,6 +109,42 @@ class Perfil
 				return false;
 			}
 		}
+	function seleccionar_estadoI($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m, inscripcion as i where m.nisMiem=? AND p.idPersona=i.persona_idPersona";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['numSolicInsc'];
+					$info[$id]['numSolicInsc'] 		= $rs->fields['numSolicInsc'];
+					$info[$id]['estado_idEst'] 		= $rs->fields['estado_idEst'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+	function seleccionar_estadoR($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m, renovacion as r where m.nisMiem=? AND m.nisMiem=r.miembro_nisMiem";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['numSolRen'];
+					$info[$id]['numSolRen'] 		= $rs->fields['numSolRen'];
+					$info[$id]['estado_idEst'] 		= $rs->fields['estado_idEst'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}		
 	function seleccionar_grup($nisMiem)
 	{
 			$sql = "SELECT * FROM miembro where nisMiem=?";
@@ -144,6 +180,24 @@ class Perfil
 			} else {
 				return false;
 			}
-		}		
+		}
+	function seleccionar_renovacion($nisMiem)
+	{
+			$sql = "SELECT * FROM persona as p, miembro as m, renovacion as r where m.nisMiem=? AND m.nisMiem=r.miembro_nisMiem";
+  
+		$rs = $this->DATA->Execute($sql,$nisMiem);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['nisMiem'];
+					$info[$id]['nisMiem'] 		= $rs->fields['nisMiem'];
+					$info[$id]['numSolRen'] 		= $rs->fields['numSolRen'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}			
 }
 

@@ -7,7 +7,9 @@ require_once '../clases/cHistorial.php';
   $renovacion =new Renovacion();
   $historial =new Historial();
 
-  $estado_idEst        =2;
+  $numSolRen           =$_POST['idRen'];
+  $estado_idEst        =7;
+  $estado_M            =4;
   $numFactRen          =$_POST['numFactRen'];
   $fchaPagRen          =$_POST['fchaPagRen'];
   $montoRen            =$_POST['montoRen'];
@@ -15,7 +17,7 @@ require_once '../clases/cHistorial.php';
   $miembro_nisMiem     =$_POST['miembro_nisMiem'];
   $grupo_idGrup        =$_POST['idGrup'];
   $usuario             =$_POST['usuario'];
-  $obserCamEst         =Validacion de Renovacion;
+  $obserCamEst         ="Validacion de Renovacion";
 
 try{
   //subida de imagen
@@ -30,12 +32,12 @@ $rutag=$ruta_DB."imagenes/".$nombreArchivo;
     $reg=array($estado_idEst,$numFactRen,$fchaPagRen,$montoRen,$banco_idBanc,$rutag,$miembro_nisMiem);   
   $renovacion->actualizar_renovacion($reg);  
 
-  $estado= array($estado_idEst, $miembro_nisMiem);
+  $estado= array($estado_M, $miembro_nisMiem);
   $renovacion->actualizar_estadoMiem($estado);
 
-  $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem);
-  $historial->crear_historial($hestado); 
-  header('Location: ../../views/perfilUsuario.tpl.php');  
+  $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup,$numSolRen);
+  $historial->crear_historialR($hestado); 
+  header('Location: ../../controller/perfilUsuario.php');  
 
    }catch(Exception $e){
 

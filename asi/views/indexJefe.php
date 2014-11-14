@@ -15,15 +15,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "2") {   
           }else{
-             header("Location: ../controller/login.php");
+             header("Location: login.php");
             exit(); 
           }
         }else{
-          header("Location: ../controller/login.php");
+          header("Location: login.php");
           exit();
         }
     }else{
-      header("Location: ../controller/login.php");
+      header("Location: login.php");
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
@@ -92,8 +92,8 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            <li><a href="../controller/jefeSolicitudinscrip.php">Inscripcion</a></li>
+            <li><a href="../controller/jefeSolicitudreno.php">Renovacion</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -103,9 +103,9 @@
             <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
           </ul>
         </li>
-        <li><a href="../controller/miembrosGrupo.php">Miembros</a></li>
+        <li><a href="../controller/jefeMiembros.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
+        <li><a href="login.php">Bienvenido <?=$usuario?></a></li>
         <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
@@ -121,8 +121,8 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
-               <a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a>
-               <br><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a>
+               <a href="../controller/jefeSolicitudinscrip.php">Inscripcion</a>
+               <br><a href="../controller/jefeSolicitudreno.php">Renovacion</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">

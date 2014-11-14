@@ -46,7 +46,7 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -62,35 +62,35 @@
       <br>
       <img id="logo2" src="../img/logo1.png" class="img-responsive hidden-xs hidden-sm" alt="Responsive image">
       
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/indexAdmin.tpl.php">Inicio</a></li>
-
+        <li><a href="#">Inicio</a></li>
+        <li><a href="../controller/miembrosGrupo.php">Miembros</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../mantenimiento/manBanco.tpl.php">Inscripcion</a></li>
-            <li><a href="../mantenimiento/alergias.tpl.php">Renovacion</a></li>
-
-          </ul>
+            <li> <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            </ul>
         </li>
-        
-        <li><a href=""><img src="..."></a> </li>
-        <li><a href="">Oscar Lizama</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="../controller/mantenimiento/manBanco.php">Banco</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimientos</a></li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li><a href="../controller/mantenimiento/estado.php">Estado</a></li>
           </ul>
         </li>
+        <li><a href=""><img src="..."></a> </li>
+        <li><a href=""><?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

@@ -123,6 +123,45 @@
         }else{
          echo "No hay datos";
         } 
+        try{
+      $estad = $perfil->seleccionar_estadoI($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($estad!=null)
+        {
+        foreach($estad AS $key => $bl)
+        {
+        $estadoI      = $bl['estado_idEst'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+
+        try{
+      $esta = $perfil->seleccionar_estadoR($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($esta!=null)
+        {
+        foreach($esta AS $key => $bl)
+        {
+        $estadoR      = $bl['estado_idEst'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        } 
 
          try{
       $ins = $perfil->seleccionar_inscripcion($usuario);
@@ -142,7 +181,27 @@
         }
         }else{
          echo "No hay datos";
-        } 
+        }
+
+       try{
+      $ins = $perfil->seleccionar_renovacion($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($ins!=null)
+        {
+        foreach($ins AS $key => $bl)
+        {
+        $renovacion      = $bl['numSolRen'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }  
         ?>
 <!DOCTYPE html>
 <html>
@@ -351,17 +410,17 @@
           <tr><td><?=$telgrup?></td></tr>      
         <br>
         <?php 
-         if ($estado == 8){
+         if ($estadoR == 13){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
            echo 'Validar Renovacion';
        echo '</button>';
        $url="../model/action/action_renovacion.php";
-        }elseif($estado == 7){
+        }elseif($estadoI == 12){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
           echo 'Validar Inscripcion';
         echo '</button>';
         $url="../model/action/action_vainscripcion.php";
-        }elseif ($estado ==5){
+        }elseif ($estado ==11){
           echo'<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2"> ';
           echo 'Solicitar Renovacion';
           echo'</button>';
@@ -388,6 +447,8 @@
         
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
+        <input type="hidden" name="idInsc" value="<?=$inscripcion?>">
+        <input type="hidden" name="idRen" value="<?=$renovacion?>">
         <input type="hidden" name="usuario" value="<?=$usuario?>">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
