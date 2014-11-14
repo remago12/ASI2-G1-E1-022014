@@ -13,15 +13,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "1") {   
           }else{
-             header("Location: login.tpl.php");
+             header("Location: ../controller/login.php");
             exit(); 
           }
         }else{
-          header("Location: login.tpl.php");
+          header("Location: ../controller/login.php");
           exit();
         }
     }else{
-      header("Location: login.tpl.php");
+      header("Location: ../controller/login.php");
           exit();
     }
     

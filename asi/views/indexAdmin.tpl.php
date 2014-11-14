@@ -13,15 +13,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "1") {   
           }else{
-             header("Location: login.tpl.php");
+             header("Location: ../controller/login.php");
             exit(); 
           }
         }else{
-          header("Location: login.tpl.php");
+          header("Location: ../controller/login.php");
           exit();
         }
     }else{
-      header("Location: login.tpl.php");
+      header("Location: ../controller/login.php");
           exit();
     }
     
@@ -109,7 +109,7 @@
                
                <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a>
                <br>
-               <a href="../views/admin/solicitudes_renovacion.php">Insacripcion</a>
+               <a href="../controller/admin/solicitudes_renovacion.php">Inscripcion</a>
 
 
             </div>
@@ -122,7 +122,7 @@
               <a href="../controller/nuevo_grupo.php">Inscripción de Grupo</a>
               <br>
 
-              <a href="../views/lista_grupos_scout.tpl.php">Grupos Scout</a>
+              <a href="../controller/lista_grupos_scout.php">Grupos Scout</a>
             </div>
           </div>  
         </div>
@@ -134,7 +134,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="../views/miembrosGrupo.tpl.php">Miembros </a>
+              <a href="../controller/miembrosGrupo.php">Miembros </a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
