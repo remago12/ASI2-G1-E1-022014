@@ -65,15 +65,22 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../../views/indexAdmin.tpl.php">Inicio</a></li>
-        <li><a href="../../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+        <li><a href="../../views/miembrosGrupo.tpl.php">Miembros</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
+          </ul>
+        </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="../mantenimiento/manBanco.php">Banco</a></li>
+            <li><a href="../mantenimiento/alergias.php">Alergias</a></li>
+            <li><a href="../mantenimiento/padecimiento.php">Padecimientos</a></li>
             <li class="divider"></li>
-            <li><a href="../mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../mantenimiento/estado.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>

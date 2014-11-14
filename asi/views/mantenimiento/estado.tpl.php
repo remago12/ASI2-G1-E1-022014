@@ -38,6 +38,7 @@
   <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../../css/custom.css">
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   <meta charset="UTF-8">
 </head>
   <body>
@@ -64,14 +65,22 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../../controller/indexAdmin.tpl.php">Inicio</a></li>
-        <li><a href="../../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+        <li><a href="../../controller/indexAdmin.php">Inicio</a></li>
+        <li><a href="../../views/miembrosGrupo.tpl.php">Miembros</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
+          </ul>
+        </li>
+
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="manBanco.tpl.php">Banco</a></li>
-            <li><a href="alergias.tpl.php">Alergias</a></li>
-            <li><a href="padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="manBanco.php">Banco</a></li>
+            <li><a href="alergias.php">Alergias</a></li>
+            <li><a href="padecimiento.php">Padecimientos</a></li>
             <li class="divider"></li>
             <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>

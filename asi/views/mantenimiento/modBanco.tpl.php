@@ -85,6 +85,7 @@ session_start();
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../../views/index.html">Inicio</a></li>
+        <li><a href="../../views/miembrosGrupo.tpl.php">Miembros</a></li>
         <li><a href="../../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>

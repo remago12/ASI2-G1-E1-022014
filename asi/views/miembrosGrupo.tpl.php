@@ -39,6 +39,7 @@
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="../css/custom.css">
   <script type="text/javascript" src="../js/script_combo.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   <script type="text/javascript" src="../js/miembros.js"></script>
   <meta charset="UTF-8">
 
@@ -105,9 +106,15 @@
   </div><!-- /.container-fluid -->
 </nav>
 <div class="row">
-			
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+      <h1 class="text-center">Miembros de Grupo.</h1> 
+          <hr class="line">
+          
+        </div>
+      </div>
       <div class="col-lg-8 col-lg-offset-1">
-				<div class="row">
+        <div class="row">
 
           <div class="col-lg-1">
             <label>NIS:</label>

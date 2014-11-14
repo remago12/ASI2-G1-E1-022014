@@ -79,11 +79,11 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../controller/mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../controller/mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../controller/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="../controller/mantenimiento/manBanco.php">Banco</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimientos</a></li>
             <li class="divider"></li>
-            <li><a href="../controller/mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../controller/mantenimiento/estado.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
