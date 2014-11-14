@@ -69,7 +69,7 @@
 ?>
 <!DOCTYPE html>
 <?php 
-  $link = mysql_connect("localhost", "asi2", "equipo1") or die("Could not connect: " . 
+  $link = mysql_connect("192.168.56.102", "asi2", "equipo1") or die("Could not connect: " . 
   mysql_error());
   mysql_selectdb("scout",$link) or die ("Can't use dbmapserver : " . mysql_error());
 ?>

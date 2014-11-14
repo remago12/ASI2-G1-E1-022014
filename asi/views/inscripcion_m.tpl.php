@@ -124,9 +124,9 @@
 
 			<br>
 			<label>Calle:</label>
-			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9]{5,20}" maxlength="20" required/><br>
+			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{2,20}" maxlength="20" required/><br>
 			<label>Colonia:</label>
-			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{3,20}" maxlength="20"><br>
+			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{2,20}" maxlength="20"><br>
 			<label>* No. Casa:</label>
 			<input type="text" name="casa" id="casa" placeholder="Número de casa" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{1,4}" maxlength="4" required/><br>
 		</div>
