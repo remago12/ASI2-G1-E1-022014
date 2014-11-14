@@ -5,7 +5,7 @@
 
 
  	$idI = base64_decode($_GET['idI']);
- 	$idEStado = $_POST['estado'];
+ 	$idEStado = $_POST['estado_inscripcion'];
  	$NIS = $_POST['NIS'];
  	$NIS= $NIS;
  	 echo $idI;
@@ -30,7 +30,7 @@ if ($idEStado == 4){
  	{
  		$reg1 =array($idEstado,$idI);
  		$registro->estado_inscripcion($reg3);
- 		
+
  		
  	}
  	header('Location:../../views/admin/solicitudes_inscripcion.php');
