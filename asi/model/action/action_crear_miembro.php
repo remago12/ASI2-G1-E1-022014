@@ -5,7 +5,7 @@
 
 
  	$idI = base64_decode($_GET['idI']);
- 	$idEStado = $_POST['estado'];
+ 	$idEStado = $_POST['estado_inscripcion'];
  	$NIS = $_POST['NIS'];
  	$NIS= $NIS;
  	 echo $idI;
@@ -14,9 +14,9 @@
  	echo "<br>";
  	 echo $NIS;
 if ($idEStado == 4){
- 	 $reg=array($NIS,$NIS,1);
+ 	 $reg=array($NIS,$NIS,3);
  	  $registro->crear_usuario($reg); 
- 	  $reg2=array($NIS,7,$NIS);
+ 	  $reg2=array($NIS,12,$NIS);
  	  $registro->crear_miembro($reg2,$idI);
  	   $reg3=array($idEStado,$idI);
  	   $registro->estado_inscripcion($reg3);
@@ -26,9 +26,12 @@ if ($idEStado == 4){
  	  $registro->crear_miembro2($reg,$reg2,$idI);
 */
  	}
- 	else
+ 	elseif($idEstado == 5)
  	{
+ 		$reg1 =array($idEstado,$idI);
+ 		$registro->estado_inscripcion($reg3);
+
  		
  	}
- 	header('Location:../../controller/admin/solicitudes_inscripcion.php');
+ 	header('Location:../../views/admin/solicitudes_inscripcion.php');
 ?>
