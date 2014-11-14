@@ -92,6 +92,7 @@ class Inscripcion
       $info[$id]['numGrup']=$rs->fields['numGrup'];
       $info[$id]['idEst']=$rs->fields['idEst'];
       $info[$id]['nomEst']=$rs->fields['nomEst'];
+      $info[$id]['corrPer']=$rs->fields['corrPer'];
       //$info[$id]['municipio_idMunic']=$rs->fields['municipio_idMunic'];
       $rs->MoveNext();
       }
