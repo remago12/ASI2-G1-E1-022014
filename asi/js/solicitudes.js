@@ -66,7 +66,7 @@ if (GenPer == "M"){
 }else{
 	GenPer="Femenino"
 }
-cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.tpl.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+ Num_Solic +"</td><td>"+ NomPer+ " " + ApelPer +"</td><td>"+GenPer+"</td><td>"+Edad+"</td><td>"+Numgrup+"</td><td>"+Dept+"</td><td>"+Munic+"</td><td><a href='solicitud_miembro.php?numSolicInsc="+btoa(Num_Solic)+"'>Editar</a></td></tr>";
 
 
 $('#loop').html(cadena);
