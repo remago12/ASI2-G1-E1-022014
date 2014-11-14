@@ -165,7 +165,7 @@
 				<label>
 				* Límite de Miembros:
 				</label>
-				<input type="number" name="limiteMiem" class="form-control" required pattern="[1]{4}" placeholder="Límite de Miembros" required/><br>
+				<input type="number" name="limiteMiem" class="form-control" required pattern="[1]{4}" placeholder="Límite de Miembros" min="10" max="2000" required/><br>
 				<label>* Departamento</label>
 				<select class="combobox form-control" id="departamento" name="departamento" required/>
 				<option>Elige tu departamento</option>
