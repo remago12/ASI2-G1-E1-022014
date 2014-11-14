@@ -26,8 +26,11 @@ if ($idEStado == 4){
  	  $registro->crear_miembro2($reg,$reg2,$idI);
 */
  	}
- 	else
+ 	elseif($idEstado == 5)
  	{
+ 		$reg1 =array($idEstado,$idI);
+ 		$registro->estado_inscripcion($reg3);
+ 		
  		
  	}
  	header('Location:../../views/admin/solicitudes_inscripcion.php');
