@@ -140,27 +140,7 @@
         
   
     <div class="row">
-      <div class="col-md-2">
-        <div class="panel panel-default">
-          <div class="panel-heading">Buscar por:</div>
-          <div class="panel-body">
-            <form>
-              <label>
-                Departamento:
-              </label>
-              <select class="combobox form-control" id="departamento" name="departamento" required/>
-                <option>Elige tu departamento</option>
-              </select><br>
-              <label>Municipio:</label>
-              <select class="combobox form-control" id="municipio" name="municipio" required/>
-                <option>Elige tu municipio</option>
-              </select>
-              
-            </form>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-10">
+      <div class="col-md-12">
         <div id="map" >
         </div>
         <input type="hidden" name="c_x" class="form-control" id="txt_lat" placeholder="Coordenadas en x">
