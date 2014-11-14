@@ -73,7 +73,7 @@
 	<link rel="stylesheet" type="text/css" href="../../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../../css/custom.css">
   	<script type="text/javascript" src="../../js/inscripcion.js"></script>
-  	  	 <script type="text/javascript" src="../../js/auto-gen.js"></script>
+  	<script type="text/javascript" src="../../js/auto-gen.js"></script>
   	<meta charset="UTF-8">
 </head>
 <body>

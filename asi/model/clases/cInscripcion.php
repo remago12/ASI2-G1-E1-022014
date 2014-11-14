@@ -29,27 +29,6 @@ class Inscripcion
         
     }
 
-
-    /* function seleccionar_inscripcion($idPersona){
-      $result = mysql_query("SELECT i.*, g.numGrup FROM inscripcion AS i, grupo AS g WHERE g.idGrup = i.grupo_idGrup and i.persona_idPersona =".$idPersona);
-  $rows=array();
-  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
-    $rows[]=($row);
-  }
-        return array('rows'=>$rows);
-        
-    }*/
-  /*  function seleccionar_numinscripcion($year){
-      $result = mysql_query("SELECT numSolicInsc FROM inscripcion WHERE numSolicInsc LIKE '%______".$year."%' ORDER BY numSolicInsc desc limit 1 ");
-  $rows=array();
-  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
-    $rows[]=($row);
-  }
-        return array('rows'=>$rows);
-        
-    }
-*/
-    
     function seleccionar_inscripciones()
 {
  $sql= "SELECT i.*,p.*,g.numGrup from inscripcion as i, persona as p , grupo as g where i.persona_idPersona = p.idPersona and i.grupo_idGrup=g.idGrup";
@@ -116,6 +95,16 @@ class Inscripcion
 
 
   }
+function seleccionar_NIS($idI){
+$result = mysql_query("select mi.nisMiem from inscripcion as i,miembro as mi where i.persona_idPersona = mi.persona_idPersona and i.numSolicInsc =".$idI);
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+    $rows[]=($row);
+  }
+        return array('rows'=>$rows);
+
+}
+
 
 
 }

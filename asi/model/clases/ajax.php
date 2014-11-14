@@ -94,6 +94,11 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+			case 'seleccionar_NIS':
+		$response = Inscripcion::seleccionar_NIS($_POST['idI']);
+		echo json_encode($response);
+		break;
+
 
 }
 }
