@@ -113,7 +113,7 @@
 			<div class="well well-lg">
 			<h2>Dirección</h2>
 			<br>
-			<label>Departamento</label>
+			<label>* Departamento</label>
 			<select class="combobox form-control" id="departamento" name="departamento" required/>
 			</select><br>
 			<label>* Municipio</label>
@@ -123,10 +123,10 @@
 			</select>
 
 			<br>
-			<label>Calle:</label>
+			<label>* Calle:</label>
 			<input type="text"   name="calle" id="calle" placeholder="Calle" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{2,20}" maxlength="20" required/><br>
-			<label>Colonia:</label>
-			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{2,20}" maxlength="20"><br>
+			<label>* Colonia:</label>
+			<input type="text"   name="colonia" id="colonia" placeholder="Colonia" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{2,20}" maxlength="20" required/><br>
 			<label>* No. Casa:</label>
 			<input type="text" name="casa" id="casa" placeholder="Número de casa" class="validate[required] medium form-control" pattern="[a-zA-Z0-9 ]{1,4}" maxlength="4" required/><br>
 		</div>
@@ -140,7 +140,7 @@
 		<label>* Correo:</label>
 		<input type="email" name="email" id="email" placeholder="Correo" class="validate[required] medium form-control" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,30}" maxlength="30" required/><br>
 		<label>DUI:</label>
-		<input type="text"  name="dui" id="dui" placeholder="DUI" class="validate[required] medium form-control" pattern="[0-9]{8}[-][0-9]{1}" maxlength="10"><br>
+		<input type="text"  name="dui" id="dui" placeholder="12345678-9" class="validate[required] medium form-control" pattern="[0-9]{8}[-][0-9]{1}" maxlength="10"><br>
 		<label>Pasaporte:</label>
 		<input type="text"  name="pasaporte" id="pasaporte" placeholder="Pasaporte" class="validate[required] medium form-control"><br>
 		<label>* No. de grupo:</label><br>
