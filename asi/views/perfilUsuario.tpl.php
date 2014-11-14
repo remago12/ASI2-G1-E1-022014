@@ -19,15 +19,15 @@
         $rol = $_SESSION['rol'];
            if ($rol == "3") {   
           }else{
-             header("Location: login.tpl.php");
+             header("Location: ../controller/login.php");
             exit(); 
           }
         }else{
-          header("Location: login.tpl.php");
+          header("Location: ../controller/login.php");
           exit();
         }
     }else{
-      header("Location: login.tpl.php");
+      header("Location: ../controller/login.php");
           exit();
     }
    
@@ -388,6 +388,7 @@
         
         <label>Imagen del Recibo:</label>
         <input type="file" name="imagen">
+        <input type="hidden" name="usuario" value="<?=$usuario?>">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
@@ -441,6 +442,7 @@
       <form action="<?=$url?>" method="POST" >
         
       <div class="modal-body">
+        <input type="hidden" name="usuario" value="<?=$usuario?>">
         <input type="hidden" name="idPer" value="<?=$idPer?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">

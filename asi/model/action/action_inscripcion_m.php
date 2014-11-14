@@ -9,10 +9,12 @@
   $registro = new Registro();
   $correo = new Correo();
 
+ 
+  //$NIS          =$_POST['NIS'];
   $nombre       =$_POST['nombre'];
-  $NIS          =$_POST['NIS'];
-  $nombre       =$_POST['nombre'];
+  $nombre2       =$_POST['nombre2'];
   $apellido     =$_POST['apellido'];
+  $apellido2     =$_POST['apellido2'];
   $fechaNac     =$_POST['fechaNac'];
   $genero       =$_POST['genero'];
   $telcasa      =$_POST['telcasa'];
@@ -40,13 +42,13 @@ move_uploaded_file($archivo,$ruta_carpeta."fotos/".$nombreArchivo);
 $rutag=$ruta_DB."fotos/".$nombreArchivo;
 
 //arrays
-    $reg=array($nombre,$apellido,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$rutag,$calle,$casa,$colonia,$municipio,$fecha); 
+    $reg=array($nombre." ".$nombre2,$apellido." ".$apellido2,$fechaNac,$genero,$telcasa,$celular,$email,$dui,$pasaporte,$rutag,$calle,$casa,$colonia,$municipio,$fecha); 
     $registro->crear_registro($reg);
     $nombreCompleto = $nombre." ".$apellido;
     $body = "Estimado ".$nombreCompleto." su solicitud ha sido procesada se le notificara la decision posteriormente";
     $correo->enviarCorreo($email, $nombreCompleto, "Inscripcion procesada", $body );
     
-    $reg3= array(1,1,$grupo);
+    $reg3= array(3,$grupo);
     $registro->crear_inscripcion($reg3); 
   
   header('Location: ../../controller/inscripcion_miem.php');  

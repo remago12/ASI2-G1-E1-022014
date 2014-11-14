@@ -107,8 +107,8 @@ $num_insc="000001".$year;
 }
 
 
-$sql="INSERT INTO inscripcion (estado_idEst,banco_idBanc,grupo_idGrup,numSolicInsc,persona_idPersona)"
-                       . " values (?,?,?,'".$num_insc."',".$id.")";
+$sql="INSERT INTO inscripcion (estado_idEst,grupo_idGrup,numSolicInsc,persona_idPersona)"
+                       . " values (?,?,'".$num_insc."',".$id.")";
     $save = $this->DATA->Execute($sql,$parametrosReg); 
           if ($save){
             return true;

@@ -1,5 +1,5 @@
 <?php
-	require_once 'cRegistro.php';
+	require_once '../clases/cRegistro.php';
  	 require_once '../data/dataBase.php';
  	$registro = new Registro();
 
@@ -13,7 +13,7 @@
  	 echo $idEStado;
  	echo "<br>";
  	 echo $NIS;
-if ($idEStado == 2){
+if ($idEStado == 4){
  	 $reg=array($NIS,$NIS,1);
  	  $registro->crear_usuario($reg); 
  	  $reg2=array($NIS,7,$NIS);
@@ -30,5 +30,5 @@ if ($idEStado == 2){
  	{
  		
  	}
- 	header('Location:../../views/admin/solicitudes_inscripcion.php');
+ 	header('Location:../../controller/admin/solicitudes_inscripcion.php');
 ?>

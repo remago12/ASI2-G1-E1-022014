@@ -19,8 +19,8 @@ class Inscripcion
 				
 		}
 
-      function seleccionar_estado(){
-     $result = mysql_query("SELECT * FROM scout.estado where idESt between 1 and 4");
+      function seleccionar_estado_inscripcion(){
+     $result = mysql_query("SELECT * FROM estado WHERE tipoEstado_idTipEst = 2");
   $rows=array();
   while($row=mysql_fetch_array($result,MYSQL_BOTH)){
     $rows[]=($row);

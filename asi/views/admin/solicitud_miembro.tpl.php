@@ -106,7 +106,7 @@
 </nav>
 
 		<h1 class="text-center">Solicitud de Miembro</h1>
-		<form method="POST" action="../../model/clases/action_crear_miembro.php?idI=<?=base64_encode($idI)?>">
+		<form method="POST" action="../../model/action/action_crear_miembro.php?idI=<?=base64_encode($idI)?>">
 		<div class="container">
 
 		<div class="row">
@@ -167,7 +167,7 @@
 				Estado de la Solicitud:
 				</label>
 				<br>
-				<select id="estado" name="estado">
+				<select id="estado_inscripcion" name="estado_inscripcion">
 					<option value="<?=$idEst?>"> <?=$nomEst?> </option>
 				</select>
 			</div>

@@ -1,9 +1,11 @@
 <?php
 require_once '../data/dataBase.php';
 require_once '../clases/cRenovacion.php';
+require_once '../clases/cHistorial.php';
 
 //variables POST
   $renovacion =new Renovacion();
+  $historial =new Historial();
 
   $estado_idEst        =2;
   $numFactRen          =$_POST['numFactRen'];
@@ -12,6 +14,8 @@ require_once '../clases/cRenovacion.php';
   $banco_idBanc        =$_POST['banco_idBanc'];
   $miembro_nisMiem     =$_POST['miembro_nisMiem'];
   $grupo_idGrup        =$_POST['idGrup'];
+  $usuario             =$_POST['usuario'];
+  $obserCamEst         =Validacion de Renovacion;
 
 try{
   //subida de imagen
@@ -28,6 +32,9 @@ $rutag=$ruta_DB."imagenes/".$nombreArchivo;
 
   $estado= array($estado_idEst, $miembro_nisMiem);
   $renovacion->actualizar_estadoMiem($estado);
+
+  $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem);
+  $historial->crear_historial($hestado); 
   header('Location: ../../views/perfilUsuario.tpl.php');  
 
    }catch(Exception $e){
