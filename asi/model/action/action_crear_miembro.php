@@ -1,5 +1,5 @@
 <?php
-	require_once 'cRegistro.php';
+	require_once '../clases/cRegistro.php';
  	 require_once '../data/dataBase.php';
  	$registro = new Registro();
 
