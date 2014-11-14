@@ -31,6 +31,7 @@
 		$numGrup 	=$bl['numGrup'];
 		$idEst 		=$bl['idEst'];
 		$nomEst 	=$bl['nomEst'];
+		$corrPer 	=$bl['corrPer'];
         ?>
         <?php
         
@@ -119,6 +120,9 @@
 				<div id="nisp" nombre="nisp">
 				<input type="text" name="idI" id="idI" value="<?=$idI?>" class="validate[required] medium form-control"><br>
             <input type="text" name="NIS" id="NIS" placeholder="" class="validate[required] medium form-control"><br>
+			<input type="text" name="nombre" id="nombre" value="<?=$nomPer?>">
+            <input type="text" name="apellido" id="apellido" value="<?=$apelPer?>">
+            <input type="text" name="correo" id="correo" value="<?=$corrPer?>">
 			</div>
 			<label>Numero de Solicitud: <?=$idI?></label> <br>
 			<label>Nombre: <?=$nomPer?> </label> <br>
