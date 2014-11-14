@@ -73,17 +73,17 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="#">Renovacion</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../controller/admin/solicitudes_inscripcion.php">Padecimiento</a></li>
-            <li><a href="#">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimiento</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
           </ul>
         </li>
-        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a></li>
+        <li><a href="../controller/miembrosGrupo.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
         <li><a href="exit.php">Cerrar Sesion</a></li>
@@ -101,8 +101,8 @@
                   <h2 class="encabezado">Solicitudes</h2>
                 </div>
                </a>
-               <a href="../views/solicitudesGrupo.php">Inscripcion</a>
-               <br><a href="../views/solicitudesGrupo.php">Renovacion</a>
+               <a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a>
+               <br><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
@@ -111,7 +111,7 @@
               </div>  
               </a>
               <br>
-              <a href="../controller/perfilGrupo.php">Grupo</a>
+              <a href="../controller/admin/perfilGrupo.php">Grupo</a>
             </div>
           </div>  
         </div>
@@ -123,7 +123,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="../controller/miembros_grupo.php">Miembros de Grupo</a>
+              <a href="../controller/miembrosGrupo.php">Miembros de Grupo</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">
