@@ -67,13 +67,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../index.tpl.php">Inicio</a></li>
-        
+        <li><a href="../../controller/indexAdmin.tpl.php">Inicio</a></li>
+       <li><a href="../miembrosGrupo.tpl.php">Miembros</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="manBanco.tpl.php">Renovacion</a></li>
+             
+            <li><a href="../admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../admin/solicitudes_renovacion.php">Renovacion</a></li>          
           </ul>
         </li>
         <li class="dropdown">

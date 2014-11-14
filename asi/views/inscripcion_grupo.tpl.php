@@ -44,7 +44,7 @@
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
   	<link type="text/css" href="../css/map.css" rel="stylesheet" media="all" />
   	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&language=es"></script>
-  	<script type="text/javascript" src="../js/mapa.js"></script>
+  	<script type="text/javascript" src="../js/mapaGrupo.js"></script>
   	<script type="text/javascript" src="../js/validar.js"></script>
   	<script type="text/javascript" src="../js/script_combo.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
@@ -74,7 +74,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/index.html">Inicio</a></li>
+        <li><a href="../views/indexAdmin.tpl.php">Inicio</a></li>
         <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>

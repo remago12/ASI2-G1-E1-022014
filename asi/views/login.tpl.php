@@ -1,15 +1,18 @@
 <?php
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
+  require_once '../model/clases/cLogUsuario.php';
+
   session_start();
   $oUsuario = new Usuario();
+  $oLogUsuario = new logUsuario();
   
     
   if ( $oUsuario->verSession() == true ) {
     if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
            if ($rol == "1") {
-             header("Location: ../controller/indexAdmin.tpl.php");
+             header("Location: ../controller/indexAdmin.php");
             exit();
           }elseif ($rol== "2") {
              header("Location: ../controller/indexJefe.php");
@@ -32,10 +35,20 @@
     $login = $oUsuario->ingreso($paramsUser);
  
     if ($login){
+      try {
+        $fecha = date('c');
+        echo $fecha;
+        $datosLog = array($user, $fecha);
+        $log = $oLogUsuario->loguearUsuario($datosLog);
+      } catch (Exception $e) {
+        echo "Error del sistema: "+$e;
+      }
+
+
       if (isset($_SESSION['rol'])) {
         $rol = $_SESSION['rol'];
            if ($rol == "1") {
-             header("Location: ../controller/indexAdmin.tpl.php");
+             header("Location: ../controller/indexAdmin.php");
             exit();
           }elseif ($rol== "2") {
              header("Location: ../controller/indexJefe.php");

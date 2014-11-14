@@ -1,10 +1,12 @@
  <?php
-    //Database
-	//require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/clases/cRegistro.php';
-	//require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
-    // Objetos
-     //$oRegistro   = new Registro();
+	$hoy = date('Y-m-d');
+	$fechaMax = strtotime( '-78 month' , strtotime ( $hoy ));
+	$fechaMax = date ( 'Y-m-d' , $fechaMax );
+
+	$fechaMin = strtotime( '-50 year' , strtotime ( $fechaMax ));
+	$fechaMin = date ( 'Y-m-d' , $fechaMin ); 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -100,7 +102,7 @@
 			<label>Segundo Apellido:</label>
 			<input type="text" name="apellido2" id="apellido2" placeholder="Segundo Apellido" class="validate[required] medium form-control" title="Sólo texto" pattern="[A-Za-z]{3,30}" maxlength="30"><br>
 			<label>* Fecha de Nacimiento:</label>
-			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" required/>
+			<input type="date"   name="fechaNac" id="fechaNac" placeholder="Fecha" class="validate[required] medium form-control" min="<?=$fechaMin; ?>" max="<?=$fechaMax; ?>"  required/>
 			<br>
 			<label>Género:</label>
 			<label>Masculino
