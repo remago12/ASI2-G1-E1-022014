@@ -1,10 +1,3 @@
- <?php
-    //Database
-	//require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/clases/cRegistro.php';
-	//require_once '/var/www/html/ASI2-G1-E1-022014/asi/model/data/dataBase.php';
-    // Objetos
-     //$oRegistro   = new Registro();
-?>
 <!DOCTYPE html>
 <html>
 <head>
