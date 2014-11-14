@@ -20,8 +20,8 @@ include_once ("adodb/adodb-exceptions.inc.php");
 // Parametros de configuracion
 // Server
 $driver   = "mysql";
-//$host     = "localhost"; //localhost
-$host     = "192.168.56.102";
+$host     = "localhost"; //localhost
+//$host     = "192.168.56.102";
 $scheme   = "scout";
 $user     = "asi2"; //asi2
 $password = 'equipo1'; //equipo1

@@ -86,7 +86,7 @@ session_start();
         </li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href=""><?=$usuario?></a></li>
-        <li><a href="exit.php">Cerrar Sesion</a></li>
+        <li><a href="../exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
