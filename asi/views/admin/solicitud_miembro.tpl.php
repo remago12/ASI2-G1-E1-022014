@@ -167,7 +167,7 @@
 				Estado de la Solicitud:
 				</label>
 				<br>
-				<select id="estado" name="estado">
+				<select id="estado_inscripcion" name="estado_inscripcion">
 					<option value="<?=$idEst?>"> <?=$nomEst?> </option>
 				</select>
 			</div>

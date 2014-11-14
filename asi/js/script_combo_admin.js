@@ -48,8 +48,8 @@ $('#grupo').html(cadena);
 }},'json');
 }); 
 
-    $('#estado').ready(function(){
-$.post("../../model/clases/ajax.php",{action:"estado"},function(data){
+    $('#estado_inscripcion').ready(function(){
+$.post("../../model/clases/ajax.php",{action:"estado_inscripcion"},function(data){
 var IdEstado="";
 var NomEstado ="";
 var cadena="<option>Seleccione un estado</option>";
