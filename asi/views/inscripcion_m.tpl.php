@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
  <?php
 	$hoy = date('Y-m-d');
 	$fechaMax = strtotime( '-78 month' , strtotime ( $hoy ));
@@ -8,7 +6,7 @@
 	$fechaMin = strtotime( '-50 year' , strtotime ( $fechaMax ));
 	$fechaMin = date ( 'Y-m-d' , $fechaMin ); 
 ?>
->>>>>>> a330b8833a0d8f5f38d1866c2a275e6cd57f009e
+
 <!DOCTYPE html>
 <html>
 <head>
