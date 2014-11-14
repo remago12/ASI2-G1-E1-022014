@@ -27,6 +27,26 @@
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
+
+  try{
+      $grupo = $perfil->seleccionar_grup($usuario);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grupo!=null)
+        {
+        foreach($grupo AS $key => $bl)
+        {
+        $idGrup      = $bl['grupo_idGrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
         ?>
 <!DOCTYPE html>
 <html>
@@ -67,7 +87,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/indexJefe.php">Inicio</a></li>
+        <li><a href="login.php">Inicio</a></li>
         
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
@@ -107,11 +127,11 @@
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box1 box3">
               <a class="cos" href="">
               <div id="dos" class="row borde box3">
-                  <h2 class="encabezado">Grupo</h2>
+                  <h2 class="encabezado">Grupo <?=$idGrup?></h2>
               </div>  
               </a>
               <br>
-              <a href="../controller/admin/perfilGrupo.php">Grupo</a>
+              <a href="perfilGrupo.php?id=<?=base64_encode($idGrup)?>">Grupo</a>
             </div>
           </div>  
         </div>
@@ -123,7 +143,7 @@
                 <h2 class="encabezado">Miembros</h2>
               </div> 
               </a>
-              <a href="../controller/miembrosGrupo.php">Miembros de Grupo</a>
+              <a href="jefeMiembros.php">Miembros de Grupo</a>
             </div>
             <div  class="col-md-11 col-sm-12 col-xs-12 borde box2 box5">
               <a class="cos" href="">

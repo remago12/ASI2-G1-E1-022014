@@ -1,3 +1,74 @@
+<?php
+    //Database
+  require_once '../model/data/dataBase.php';
+  require_once '../model/clases/cUsuario.php';
+  require_once '../model/clases/cPerfilG.php';
+
+  session_start();
+    // Objetos
+     $oUsuario    = new Usuario();
+     $perfilG      = new PerfilGrup();
+  // revisando sesiones
+     if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }elseif($rol =="2"){
+ 
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }  
+  $usuario  = $_SESSION['usuario'];
+  $idG = base64_decode($_GET['id']);
+
+  try{
+      $grup = $perfilG->seleccionar_datos($idG);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($grup!=null)
+        {
+        foreach($grup AS $key => $bl)
+        {
+        $nomMunic    = $bl['nomMunic'];
+        $nomDep      = $bl['nomDep'];
+        $numGrup     = $bl['numGrup'];
+        $nomGruo     = $bl['nomGruo'];
+        $exclGrup    = $bl['exclGrup'];
+        $lugReuGrup  = $bl['lugReuGrup'];
+        $proLugGrup  = $bl['proLugGrup'];
+        $fchaFundGrup = $bl['fchaFundGrup'];
+        $lugNacGrup   = $bl['lugNacGrup'];
+        $diaReuGrup   = $bl['diaReuGrup'];
+        $horaReuGrup  = $bl['horaReuGrup'];
+        $limMiemGrup  = $bl['limMiemGrup'];
+        $callGrup     = $bl['callGrup'];
+        $numCasGrup   = $bl['numCasGrup'];
+        $colGrup      = $bl['colGrup'];
+        $latGrup      = $bl['latGrup'];
+        $lngGrup      = $bl['lngGrup'];
+        $estado_idEst = $bl['estado_idEst'];
+        $fchaCreaGrup = $bl['fchaCreaGrup'];
+        $telgrup      = $bl['telgrup'];
+        ?>
+        <tr>
+        </tr>
+        <?php
+        
+        }
+        }else{
+         echo "No hay datos";
+        }
+  ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,30 +107,26 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
-        <li><a href="../views/indexJefe.php">Inicio</a></li>
-        <li><a href="../views/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+        <li><a href="login.php">Inicio</a></li>
+        
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
-            <li class="divider"></li>
-            <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
+            <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
           </ul>
         </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimientos<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimiento</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
+          </ul>
+        </li>
+        <li><a href="../controller/miembrosGrupo.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="">Oscar Lizama</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -76,7 +143,7 @@
         <label>
           Nombre del Grupo:
         </label>
-        <label> San Antonio</label>
+        <label> <?=$nomGruo?></label>
         <br>
         <label>
           Fecha de Fundación:
