@@ -14,3 +14,9 @@ $('#estado_inscripcion').html(cadena);
 });
 
 });
+
+function NIS(){
+var idPer = $('#idI').val()
+
+
+}
