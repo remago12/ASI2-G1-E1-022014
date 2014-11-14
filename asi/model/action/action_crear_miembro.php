@@ -1,5 +1,5 @@
 <?php
-	require_once 'cRegistro.php';
+	require_once '../clases/cRegistro.php';
  	 require_once '../data/dataBase.php';
  	$registro = new Registro();
 
@@ -30,5 +30,5 @@ if ($idEStado == 2){
  	{
  		
  	}
- 	header('Location:../../views/admin/solicitudes_inscripcion.php');
+ 	header('Location:../../controller/admin/solicitudes_inscripcion.php');
 ?>
