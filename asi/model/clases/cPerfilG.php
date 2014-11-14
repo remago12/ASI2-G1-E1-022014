@@ -9,7 +9,7 @@ class PerfilGrup
 	}
     function seleccionar_datos($idG)
 	{
-			$sql = "SELECT * FROM grupo as g, municipio as mu, departamento as d where g.idGrup=? AND g.municipio_idMunic=mu.idMunic AND mu.departamento_idDep=d.idDep";
+			$sql = "SELECT * FROM grupo as g, municipio as mu, departamento as d, estado as e where g.idGrup=? AND g.municipio_idMunic=mu.idMunic AND mu.departamento_idDep=d.idDep AND g.estado_idEst=e.idEst";
   
 		$rs = $this->DATA->Execute($sql,$idG);
 				if ( $rs->RecordCount()) {
@@ -36,6 +36,7 @@ class PerfilGrup
 					$info[$id]['telgrup'] 		= $rs->fields['telgrup'];
 					$info[$id]['nomMunic'] 		= $rs->fields['nomMunic'];
 					$info[$id]['nomDep'] 		= $rs->fields['nomDep'];
+					$info[$id]['nomEst']		= $rs->fields['nomEst'];
 		  		    $rs->MoveNext();
 				}
 				$rs->Close();

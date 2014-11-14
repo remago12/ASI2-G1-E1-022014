@@ -59,6 +59,7 @@
         $estado_idEst = $bl['estado_idEst'];
         $fchaCreaGrup = $bl['fchaCreaGrup'];
         $telgrup      = $bl['telgrup'];
+        $nomEst       = $bl['nomEst'];
         ?>
         <tr>
         </tr>
@@ -72,7 +73,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Solicitud de Miembro</title>
+	<title>Perfil de Grupo</title>
   <script type="text/javascript" src="../js/jquery-1.11.1.js"></script>
   <script type="text/javascript" src="../js/bootstrap.min.js"></script>
   <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
@@ -123,7 +124,7 @@
             <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
           </ul>
         </li>
-        <li><a href="../controller/miembrosGrupo.php">Miembros</a></li>
+        <li><a href="../controller/jefeMiembros.php">Miembros</a></li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="indexJefe.php">Bienvenido <?=$usuario?></a></li>
         <li><a href="exit.php">Cerrar Sesion</a></li>
@@ -139,6 +140,10 @@
     <div class="row">
       <div class="col-md-6">
         <h1 class="text-center">Datos del Grupo</h1>
+       <label>
+          Numero del Grupo:
+        </label>
+        <label> <?=$numGrup?></label>
         <br>
         <label>
           Nombre del Grupo:
@@ -146,26 +151,78 @@
         <label> <?=$nomGruo?></label>
         <br>
         <label>
+          Exclusivo:
+        </label>
+        <label> <?=$exclGrup?></label>
+        <br>
+        <label>
+         Lugar de la Reunion:
+        </label>
+        <label> <?=$lugReuGrup?></label>
+        <br>
+        <label>
+          Propietario del Lugar:
+        </label>
+        <label> <?=$proLugGrup?></label>
+        <br>
+        <label>
           Fecha de Fundación:
         </label>
         <label>
-          3/10/2014
+          <?=$fchaFundGrup?>
         </label>
         <br>
         <label>
-          Dia de Reunión:
+          Lugar de Nacimiento del Grupo:
         </label>
-
+        <label> <?=$lugNacGrup?></label>
+        <br>
         <label>
-          Sábado
+         Dia de Reunion:
         </label>
+        <label> <?=$diaReuGrup?></label>
+        <br>
+        <label>
+          Hora de Reunion:
+        </label>
+        <label> <?=$horaReuGrup?></label>
+        <br>
+        <label>
+          Limite de Miembro:
+        </label>
+        <label> <?=$limMiemGrup?></label>
+        <br>
+        <label>
+          Departamento:
+        </label>
+        <label> <?=$nomDep?></label>
+        <br>
+        <label>
+          Municipio:
+        </label>
+        <label> <?=$nomMunic?></label>
         <br>
         <label>
           Dirección:
         </label>
         <label>
-          Br el Carmen Parque Municipal Mejicanos.
+          Colonia <?=$colGrup?> calle <?=$callGrup?> numero de casa <?=$numCasGrup?>
         </label>
+        <label>
+          Estado del Grupo:
+        </label>
+        <label> <?=$nomEst?></label>
+        <br>
+        <label>
+          Fecha de Creacion del Grupo:
+        </label>
+        <label> <?=$fchaCreaGrup?></label>
+        <br>
+        <label>
+          Telefono del Grupo:
+        </label>
+        <label> <?=$telgrup?></label>
+        <br>
       </div>
       <div class="col-md-6">
         <h1 class="text-center">Ubicación</h1>
@@ -173,71 +230,13 @@
           <div id="map" >
         
           </div>
-          <input type="hidden" name="txt_lat" id="txt_lat" class="form-control">
-          <input type="hidden" name="txt_lng" id="txt_lng" class="form-control">
+          <input type="hidden" name="txt_lat" id="txt_lat" class="form-control" value="<?=$latGrup?>">
+          <input type="hidden" name="txt_lng" id="txt_lng" class="form-control" value="<?=$lngGrup?>">
 
       </div>
 
     </div>
     <br><br>
-    <div class="row">
-      <div class="col-md-12">
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Nombre Completo</th>
-              <th>Edad</th>
-              <th>Género</th>
-              <th>Usuario</th>
-              <th>Cargo</th>
-              <th>Cargo Nacional</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                Jose Neftali Ramirez Mendoza
-              </td>
-              <td>
-                14
-              </td>
-              <td>
-                M
-              </td>
-              <td>
-                RM000314
-              </td>
-              <td>
-                Lobato
-              </td>
-              <td>
-                ------
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Oscar Antonio Lizama Mejia
-              </td>
-              <td>
-                27
-              </td>
-              <td>
-                M
-              </td>
-              <td>
-                LM000314
-              </td>
-              <td>
-                Dirigente de Manada
-              </td>
-              <td>
-                Comisionado Nacional
-              </td>
-            </tr> 
-          </tbody>
-        </table>
-      </div>
-    </div>
 </div>
 
 <br><br>
