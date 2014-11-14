@@ -21,8 +21,8 @@ try{
     $reg=array($fchaRen,$estado_idEst,$exeRen,$miembro_nisMiem,$grupo_idGrup);   
   $renovacion->crear_renovacion($reg,$idPersona);
 
-  //$estado= array($estado_idEst, $miembro_nisMiem);
-  //$renovacion->actualizar_estadoMiem($estado);
+  $estado= array($estado_idEst, $miembro_nisMiem);
+  $renovacion->actualizar_estadoMiem($estado);
 
    $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup);
   $historial->crear_historialSR($hestado);  

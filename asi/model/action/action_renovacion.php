@@ -9,7 +9,7 @@ require_once '../clases/cHistorial.php';
 
   $numSolRen           =$_POST['idRen'];
   $estado_idEst        =7;
-  $estado_M            =4;
+  $estado_M            =3;
   $numFactRen          =$_POST['numFactRen'];
   $fchaPagRen          =$_POST['fchaPagRen'];
   $montoRen            =$_POST['montoRen'];

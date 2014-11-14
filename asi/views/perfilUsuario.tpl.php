@@ -410,17 +410,17 @@
           <tr><td><?=$telgrup?></td></tr>      
         <br>
         <?php 
-         if ($estadoR == 13){
+         if ($estado == 13){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
            echo 'Validar Renovacion';
        echo '</button>';
        $url="../model/action/action_renovacion.php";
-        }elseif($estadoI == 12){
+        }elseif($estado == 12){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
           echo 'Validar Inscripcion';
         echo '</button>';
         $url="../model/action/action_vainscripcion.php";
-        }elseif ($estado ==11){
+        }elseif ($estado ==5){
           echo'<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2"> ';
           echo 'Solicitar Renovacion';
           echo'</button>';

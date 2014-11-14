@@ -2,10 +2,12 @@
 require_once '../data/dataBase.php';
 require_once '../clases/cInscripcion.php';
 require_once '../clases/cHistorial.php';
+require_once '../clases/cRenovacion.php';
 
 //variables POST
   $Inscripcion  =new Inscripcion();
   $historial    =new Historial();
+  $renovacion   =new Renovacion();
 
   $idInsc          =$_POST['idInsc'];
   $fchaIns             =date('y-m-d');
@@ -32,6 +34,9 @@ $rutag=$ruta_DB."imagenes/".$nombreArchivo;
 //arrays
     $reg=array($estado_idEst,$exeIns,$numFactIns,$fchaPagIns,$montoIns,$banco_idBanc,$rutag,$idInsc);   
   $Inscripcion->pago_inscripcion($reg);
+
+  $estado= array($estado_idEst, $miembro_nisMiem);
+  $renovacion->actualizar_estadoMiem($estado);
 
   $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup,$idInsc);
   $historial->crear_historial($hestado);  

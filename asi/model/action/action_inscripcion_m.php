@@ -55,6 +55,7 @@ $rutag=$ruta_DB."fotos/".$nombreArchivo;
 
   }catch(Exception $e){
 
-   header('Location:  error.php'); 
+   //header('Location:  error.php'); 
+  var_dump($e);
   }
    ?>
