@@ -2,9 +2,32 @@
     //Database
 	require_once '../../model/clases/cInscripcion.php';
 	require_once '../../model/data/dataBase.php';
-     //Objetos
+	require_once '../../model/clases/cUsuario.php';
+     Session_start();
+    // Objetos
+     $oUsuario   = new Usuario();
      $oInscripcion   = new Inscripcion();
      $idI = base64_decode($_GET['numSolicInsc']);
+
+     // revisando sesiones
+     if ( $oUsuario->verSession() == true ) {
+    if (isset($_SESSION['rol'])) {
+        $rol = $_SESSION['rol'];
+           if ($rol == "1") {   
+          }elseif($rol =="2"){
+ 
+          }else{
+             header("Location: ../../controller/login.php");
+            exit(); 
+          }
+        }else{
+          header("Location: ../../controller/login.php");
+          exit();
+        }
+    }else{
+      header("Location: ../../controller/login.php");
+          exit();
+    }
 
       try{
       $inscripcion = $oInscripcion->seleccionar_inscripcion($idI);
