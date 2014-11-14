@@ -13,7 +13,7 @@
  	 echo $idEStado;
  	echo "<br>";
  	 echo $NIS;
-if ($idEStado == 2){
+if ($idEStado == 4){
  	 $reg=array($NIS,$NIS,1);
  	  $registro->crear_usuario($reg); 
  	  $reg2=array($NIS,7,$NIS);
