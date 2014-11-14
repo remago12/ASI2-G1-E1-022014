@@ -75,32 +75,23 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="../views/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            <li><a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
           </ul>
         </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/mantenimiento/manBanco.tpl.php">Banco</a></li>
-            <li><a href="../views/mantenimiento/alergias.tpl.php">Alergias</a></li>
-            <li><a href="../views/mantenimiento/padecimiento.tpl.php">Padecimientos</a></li>
+            <li><a href="../controller/mantenimiento/manBanco.php">Banco</a></li>
+            <li><a href="../controller/mantenimiento/alergias.php">Alergias</a></li>
+            <li><a href="../controller/mantenimiento/padecimiento.php">Padecimientos</a></li>
             <li class="divider"></li>
             <li><a href="../views/mantenimiento/estado.tpl.php">Estado</a></li>
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
-        </li>
+        <li><a href="">Cerar Sesion</a> </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

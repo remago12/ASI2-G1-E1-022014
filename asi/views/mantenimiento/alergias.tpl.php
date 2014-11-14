@@ -71,7 +71,7 @@
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         
         <li><a href="../../controller/indexAdmin.php">Inicio</a></li>
-        <li><a href="../../views/miembrosGrupo.tpl.php">Miembros</a></li>
+        <li><a href="../controller/admin/miembrosGrupo.php">Miembros</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -90,16 +90,8 @@
           </ul>
         </li>
         <li><a href=""><img src="..."></a> </li>
-        <li><a href="">Oscar Lizama</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-          </ul>
+        <li><a href=""><?=$usuario?></a></li>
+        <li><a href="exit.php">Cerrar Sesion</a></li>
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->

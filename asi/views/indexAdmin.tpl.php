@@ -68,12 +68,12 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="#">Inicio</a></li>
-        <li><a href="../views/miembrosGrupo.tpl.php">Miembros</a> </li>
+        <li><a href="../controller/miembrosGrupo.php">Miembros</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="../views/admin/solicitudes_inscripcion.php">Inscripcion</a></li>
-            <li><a href="../views/admin/solicitudes_renovacion.php">Renovacion</a></li>
+            <li> <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a></li>
+            <li><a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a></li>
             </ul>
         </li>
         <li class="dropdown">
@@ -107,9 +107,12 @@
                </a>
 
                
-               <a href="../controller/admin/solicitudes_inscripcion.php">Solicitudes</a>
+               <a href="../controller/admin/solicitudes_inscripcion.php">Inscripcion</a>
                <br>
-               <a href="../controller/admin/solicitudes_renovacion.php">Inscripcion</a>
+
+               <a href="../controller/admin/solicitudes_renovacion.php">Renovacion</a>
+
+              
 
 
             </div>
