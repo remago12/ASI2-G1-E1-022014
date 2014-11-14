@@ -69,7 +69,7 @@
       <ul class="nav navbar-nav navbar-right">
         <!--solo tienen que   copiar la siguiente linea para generar mas items -->
         <li><a href="../../controller/indexAdmin.php">Inicio</a></li>
-       <li><a href="../../views/miembrosGrupo.tpl.php">Miembros</a> </li>
+       <li><a href="../../controller/miembrosGrupo.php">Miembros</a> </li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Solicitudes<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -90,16 +90,7 @@
         </li>
         <li><a href=""><img src="..."></a> </li>
         <li><a href="">Oscar Lizama</a></li>
-      	<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Cerrar Sesion<span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Banco</a></li>
-            <li><a href="#">Alergias</a></li>
-            <li><a href="#">Padecimiento</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Salir</a></li>
-          </ul>
-        </li>
+      	<li> <a href="">Cerrar Sesion</a> </li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
