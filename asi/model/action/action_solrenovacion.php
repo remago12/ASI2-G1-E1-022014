@@ -15,6 +15,7 @@ require_once '../clases/cHistorial.php';
   $grupo_idGrup        =$_POST['idGrup'];
   $usuario             =$_POST['usuario'];
   $obserCamEst         ="Solicitud de Renovacion";
+  $numSolicInsc        =$_POST["numSolicInsc"];
 
 try{
 //arrays
@@ -23,6 +24,9 @@ try{
 
   $estado= array($estado_idEst, $miembro_nisMiem);
   $renovacion->actualizar_estadoMiem($estado);
+
+  $ins= array($estado_idEst, $numSolicInsc);
+  $renovacion->actualizar_inscripcion($ins);
   
    $hestado= array($estado_idEst,$obserCamEst,$usuario,$miembro_nisMiem,$grupo_idGrup);
   $historial->crear_historialSR($hestado);  

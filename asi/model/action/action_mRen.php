@@ -14,7 +14,7 @@
  	$apellido = $_POST['apellido'];
  	$correoP = $_POST['correo'];
  	$idEstado = $_POST['estado_inscripcion'];
- 	$NIS = $_POST['NIS'];
+ 	$NIS = $_POST['NISR'];
  	 echo $idI;
  	 echo "<br>";
  	 echo $idEstado;

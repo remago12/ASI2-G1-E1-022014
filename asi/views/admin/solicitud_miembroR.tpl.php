@@ -3,12 +3,17 @@
 	require_once '../../model/clases/cInscripcion.php';
 	require_once '../../model/data/dataBase.php';
 	require_once '../../model/clases/cUsuario.php';
+  require_once '../../model/clases/cPerfil.php';
+  require_once '../../model/clases/cRenovacion.php';
+
      Session_start();
     // Objetos
      $oUsuario   = new Usuario();
      $oInscripcion   = new Inscripcion();
+     $renovacion    = new Renovacion();
      $idI = base64_decode($_GET['numSolicInsc']);
      $usuario  = $_SESSION['usuario'];
+     $perfil     = new Perfil();
 
      // revisando sesiones
      if ( $oUsuario->verSession() == true ) {
@@ -31,32 +36,38 @@
     }
 
       try{
-      $inscripcion = $oInscripcion->seleccionar_inscripcion($idI);
+      $ren = $renovacion->seleccionar_renovacion($idI);
       }catch(Exception $e){
         echo "Ha ocurrido un error";
       }
-      if($inscripcion!=null)
+      if($ren!=null)
         {
-        foreach($inscripcion AS $key => $bl)
+        foreach($ren AS $key => $bl)
         {
-    
-
-        $nomPer     = $bl['nomPer'];
-        $apelPer    = $bl['apelPer'];
-        $genPer     = $bl['genPer'];
-          if ($bl['genPer'] == "M"){
-        	$genPer= "Masculino";
-        }else{
-        	$genPer= "Femenino";
-        }
-        $fechNacPer =$bl['fechNacPer'];
-        $fecha 		= time() - strtotime($fechNacPer);
-		$edadPer 	= floor((($fecha / 3600) / 24) / 360);
-		$numGrup 	=$bl['numGrup'];
-		$idEst 		=$bl['idEst'];
-		$nomEst 	=$bl['nomEst'];
-		$corrPer 	=$bl['corrPer'];
+        $nomEst       = $bl['nomEst'];  
+        $numGrup      = $bl['numGrup'];
+        $idPersona     = $bl['idPersona'];
+        $nomPer      = $bl['nomPer'];
+        $apelPer  = $bl['apelPer'];
+        $genPer      = $bl['genPer'];
+        $fechNacPer      = $bl['fechNacPer'];
+        $telPer     = $bl['telPer'];
+        $celPer      = $bl['celPer'];
+        $corrPer     = $bl['corrPer'];
+        $duiPer   = $bl['duiPer'];
+        $pasPer      = $bl['pasPer'];
+        $callPer       = $bl['callPer'];
+        $numCasPer    = $bl['numCasPer'];
+        $colPer      = $bl['colPer'];
+        $fchaCreaPer     = $bl['fchaCreaPer'];
+        $nomDep      = $bl['nomDep'];
+        $nomMunic    = $bl['nomMunic'];
+        $imgRen      = $bl['imgRen'];
+        $NISR        = $bl['nisMiem'];
+        
         ?>
+        <tr>
+        </tr>
         <?php
         
         }
@@ -142,7 +153,7 @@
 			<div class="col-lg-4">
 				<div id="nisp" nombre="nisp">
 				<input type="text" name="idI" id="idI" value="<?=$idI?>" class="validate[required] medium form-control"><br>
-            <input type="text" name="NIS" id="NIS" placeholder="" class="validate[required] medium form-control"><br>
+            <input type="text" name="NISR" id="NISR" value="<?=$NISR?>" placeholder="" class="validate[required] medium form-control"><br>
 			<input type="text" name="nombre" id="nombre" value="<?=$nomPer?>">
             <input type="text" name="apellido" id="apellido" value="<?=$apelPer?>">
             <input type="text" name="correo" id="correo" value="<?=$corrPer?>">
@@ -152,7 +163,6 @@
 	<label>Apellido: <?=$apelPer?> </label> <br>
 	<label>Genero: <?=$genPer?> </label> <br>
 	<label>Fecha de Nacimiento: <?=$fechNacPer?> </label> <br>
-	<label>Edad: <?=$edadPer?> </label> <br>
 				<div name="DUI" id="DUI">
 				</div>
 				<div name="fecna" id="fecna">
@@ -172,7 +182,7 @@
 			<div class="col-lg-4">
 				<label>Comprobante de Pago:</label>
 				<br>
-				<img src="../../img/Davivienda.jpg" class="img-responsive bancoimg">
+				<img src="<?=$imgRen?>" class="img-responsive bancoimg">
 				<br>
 			<button class="btn btn-success">Guardar</button>	
 			</div>

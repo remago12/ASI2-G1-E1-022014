@@ -507,6 +507,7 @@
         <input type="hidden" name="idPer" value="<?=$idPer?>">
         <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
         <input type="hidden" name="idGrup" value="<?=$idGrup?>">
+        <input type="hidden" name="numSolicInsc" value="<?=$inscripcion?>">
         <label>
           Fecha de Vencimiento: Marzo/<?=$year?>
         </label>

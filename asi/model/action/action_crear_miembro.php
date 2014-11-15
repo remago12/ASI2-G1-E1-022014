@@ -2,8 +2,10 @@
 	require_once '../clases/cRegistro.php';
  	 require_once '../data/dataBase.php';
  	 require_once '../clases/cCorreo.php';
+ 	 require_once '../clases/cRenovacion.php';
  	$registro = new Registro();
  	$correo = new Correo();
+ 	$renovacion = new Renovacion();
 
 
  	$idI = base64_decode($_GET['idI']);
@@ -31,6 +33,8 @@ if ($idEstado == 4){
  	elseif($idEstado == 5){
  		$reg1=array($idEstado,$idI);
  	   $registro->estado_inscripcion($reg1);
+ 	   $estado= array(5, $NIS);
+  $renovacion->actualizar_estadoMiem($estado);
  		 	$nombreCompleto = $nombre." ".$apellido;
     	$body = "Estimado ".$nombreCompleto." ha realizado el pago de su inscripcion exitosamente";
     	$correo->enviarCorreo($correoP, $nombreCompleto, "Inscripcion aceptadas", $body );
