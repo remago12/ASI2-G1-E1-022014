@@ -420,7 +420,7 @@
           echo 'Validar Inscripcion';
         echo '</button>';
         $url="../model/action/action_vainscripcion.php";
-        }elseif ($estado ==5){
+        }elseif ($estadoI ==5){
           echo'<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2"> ';
           echo 'Solicitar Renovacion';
           echo'</button>';
