@@ -29,7 +29,26 @@
           exit();
     }  
   $usuario  = $_SESSION['usuario'];
-  ?>
+  
+  $idE = base64_decode($_GET['id']);
+      try{
+      $logr = $cuadroC->seleccionar_logroMod($idE);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($logr!=null)
+        {
+        foreach($logr AS $key => $bl)
+        {
+    
+        $nomLogroMod       = $bl['nomLogro'];
+        $idReqLogroMod      = $bl['idReqLogro'];
+        $idLogroMod         = $bl['idLogro']; 
+        }
+        }else{
+         echo "No hay datos";
+        }
+        ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -93,7 +112,7 @@
 </nav>
   
 
-    <form method="POST" action="../../model/action/action_logro.php">
+    <form method="POST" action="../../model/action/action_Modlogro.php">
     <div class="container">
       <div class="row">          
             <h1 class="text-center">Listado de Logros</h1>
@@ -103,7 +122,8 @@
             <label>
               Nombre:
             </label> 
-            <input type="text" class="form-control" name="nomLogro" required/>
+            <input type="text" class="form-control" name="nomLogro" value="<?=$nomLogroMod?>" required/>
+            <input type="hidden" name="idLogro" value="<?=$idLogroMod?>">
             <br>
             <button class="btn btn-success" >Logros</button>
           </div>
@@ -134,6 +154,7 @@
                                     
                                 </select>
           </thead>
+
           <tbody>
           <?php 
       try{

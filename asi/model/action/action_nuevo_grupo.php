@@ -30,7 +30,7 @@
 	$reg=array($numGrup,$nomGruo,$exclGrup,$lugReuGrup,$proLugGrup,$fchaFundGrup,$lugNacGrup,$diaReuGrup,$horaReuGrup,$limMiemGrup,$callGrup,$numCasGrup,$colGrup,$municipio_idMunic,$latGrup,$lngGrup,$idEst,$usuario_nomUsu, $telefono); 
     $grupo->crearGrupo($reg);
 
-    	header('Location: ../../views/inscripcion_grupo.tpl.php');
+    	header('Location: ../../controller/nuevo_grupo.php');
      }catch(Exception $e){
      	header('Location:  error.php');
 	 }

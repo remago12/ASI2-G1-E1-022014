@@ -116,6 +116,16 @@ class CuadroClinico
         }
     }
 
+    function mod_logro($reg)
+    {
+    $sql="UPDATE logro SET nomLogro=?, idReqLogro=? where idLogro=? ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
     function mod_estado($reg)
     {
     $sql="UPDATE estado SET nomEst=? where idEst=? ";
@@ -281,7 +291,7 @@ class CuadroClinico
 
 		function seleccionar_logro()
 	{
-			$sql = "SELECT * FROM logro ORDER BY idLogro desc";
+			$sql = "SELECT * FROM logro ORDER BY idLogro asc";
   
 		$rs = $this->DATA->Execute($sql);
 				if ( $rs->RecordCount()) {
@@ -298,17 +308,39 @@ class CuadroClinico
 				return false;
 			}
 		}
-		function seleccionar_logroM($req)
+
+		function seleccionar_logroMod($Mod)
 	{
 			$sql = "SELECT * FROM logro where idLogro=?";
   
-		$rs = $this->DATA->Execute($sql,$req);
+		$rs = $this->DATA->Execute($sql,$Mod);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 	 = $rs->fields['idLogro'];
+					$info[$id]['idLogro']	 = $rs->fields['idLogro'];
+					$info[$id]['nomLogro'] 	 = $rs->fields['nomLogro'];
+					$info[$id]['idReqLogro'] = $rs->fields['idReqLogro'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+		function seleccionar_logroM()
+	{
+			$sql = "SELECT l.idLogro,l.nomLogro,l.idReqLogro,r.nomLogro as nomReqLogro from logro as l
+left join logro as r on r.idLogro = l.idReqLogro";
+  
+		$rs = $this->DATA->Execute($sql);
 				if ( $rs->RecordCount()) {
 				while(!$rs->EOF){
 					$id                 		= $rs->fields['idLogro'];
 					$info[$id]['idLogro']		= $rs->fields['idLogro'];
 					$info[$id]['nomLogro'] 		= $rs->fields['nomLogro'];
 					$info[$id]['idReqLogro'] 	= $rs->fields['idReqLogro'];
+					$info[$id]['nomReqLogro'] 	= $rs->fields['nomReqLogro'];
 		  		    $rs->MoveNext();
 				}
 				$rs->Close();

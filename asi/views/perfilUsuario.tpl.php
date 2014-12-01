@@ -426,6 +426,8 @@
           echo'</button>';
         $url="../model/action/action_solrenovacion.php";
         
+        }elseif($estado ==8){
+          echo "<label class='pendiente'>Registro Existoso</label>";
         }else{
           echo "<label class='pendiente'>Pendiente de Aprobacion</label>";
         }
