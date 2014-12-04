@@ -213,6 +213,7 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
+    <script type="text/javascript" src="../js/padecimientos.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -409,6 +410,7 @@
         <br>
           <tr><td><?=$telgrup?></td></tr>      
         <br>
+
         <?php 
          if ($estado == 13){
            echo '<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">';
@@ -435,6 +437,127 @@
 
         
       </div>
+      <!-- Button trigger modal -->
+
+<!-- Large modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Agergar Expedieinte</button>
+
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+          <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h2 class="modal-title" id="myModalLabel">Modal title</h2>
+      </div>
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-md-3">
+            <label>
+              Tipo de Sangre:
+            </label>
+            <br>
+            <select class="form-control">
+                <option>
+                  Seleccionar tipo de Sangre
+                </option>
+              <option>
+                  ORH+
+                </option>
+                <option>
+                  ORH-
+                </option>
+                <option>
+                  ARH+
+                </option>
+                <option>
+                  ARH-
+                </option>
+                <option>
+                  BRH+
+                </option>
+                <option>
+                  BRH-
+                </option>
+                <option>
+                  ABRH+
+                </option>
+                <option>
+                  ABRH-
+                </option>
+            </select>
+            <br>
+        </div>
+        <br>
+        <button class="btn btn-primary" name="Guardar_Sangre" id="Guardar_Sangre">Guardar</button>
+        <button class="btn btn-warning" name="Modificar_Sangre" id="Modificar_Sangre">Modificar</button>
+      </div>
+        <div class="row">
+          <div class="col-md-4" name="DivPadecimiento" id="DivPadecimiento">
+          <label>
+            Tipo de Padecimiento:
+          </label>
+            <select class="form-control" name="padecimientos" id="padecimientos">
+              
+            </select>
+            <br>
+                <button class="btn btn-primary">Guardar</button>
+                            
+              <button class="btn btn-success">Borrar</button>
+          
+              </div>
+          
+          
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+              <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Número de solicitud</th>
+              <th>Nombre</th>
+              <th>Género</th>
+              <th>Edad</th>
+              <th>Número de Grupo</th>
+            </tr>
+          </thead>
+          <tbody name="loop" id="loop">
+          <tr>
+              <td>
+                ejemplo
+              </td>
+              <td>
+                ejemplo
+              </td>
+              <td>
+                ejemplo
+              </td>
+              <td>
+                ejemplo
+              </td>
+              <td>
+                ejemplo
+              </td>
+              <td>
+                ejemplo
+              </td>
+          </tr>
+          </tbody>
+        </table>
+
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        
+      </div> 
+      </div>
+    </div>
+  </div>
+
+
+
+
     </div>  
   </div>
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -539,6 +662,7 @@
       </div>
     </div>
   </div>
+  
 </div>  
 </body>
 </html>

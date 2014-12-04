@@ -213,6 +213,17 @@ class CuadroClinico
 			}
 		}
 
+		function seleccionar_padecimientos(){
+			$result = mysql_query("SELECT * from padecimiento");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+
 	function seleccionar_parentesco()
 	{
 			$sql = "SELECT * FROM parentesco ORDER BY idPar desc";

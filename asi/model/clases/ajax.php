@@ -5,6 +5,7 @@ require_once 'cInscripcion.php';
 require_once 'cSolicitudes.php';
 require_once 'cGrupos.php';
 require_once 'cMiembros.php';
+require_once 'cCuadro_Clinico.php';
 
 $response =array();
 try{
@@ -98,6 +99,12 @@ switch ($_POST['action']) {
 		$response = Inscripcion::seleccionar_NIS($_POST['idI']);
 		echo json_encode($response);
 		break;
+
+		case 'padecimientos':
+		$response = CuadroClinico::seleccionar_padecimientos();
+		echo json_encode($response);
+		break;
+
 
 
 }
