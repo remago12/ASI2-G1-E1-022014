@@ -105,6 +105,11 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+		case 'cuadro_clinico':
+		$response = CuadroClinico::verificar_cuadroclinico($_POST['NIS']);
+		echo json_encode($response);
+		break;
+
 
 
 }

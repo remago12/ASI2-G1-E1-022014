@@ -222,7 +222,16 @@ class CuadroClinico
 				return array('rows'=>$rows);
 				
 		}
-
+function verificar_cuadroclinico($NIS){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
 
 	function seleccionar_parentesco()
 	{

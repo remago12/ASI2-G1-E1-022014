@@ -442,7 +442,7 @@
 <!-- Large modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Agergar Expedieinte</button>
 
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <idv class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
@@ -491,61 +491,9 @@
         <button class="btn btn-primary" name="Guardar_Sangre" id="Guardar_Sangre">Guardar</button>
         <button class="btn btn-warning" name="Modificar_Sangre" id="Modificar_Sangre">Modificar</button>
       </div>
-        <div class="row">
-          <div class="col-md-4" name="DivPadecimiento" id="DivPadecimiento">
-          <label>
-            Tipo de Padecimiento:
-          </label>
-            <select class="form-control" name="padecimientos" id="padecimientos">
-              
-            </select>
-            <br>
-                <button class="btn btn-primary">Guardar</button>
-                            
-              <button class="btn btn-success">Borrar</button>
-          
-              </div>
-          
-          
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-              <table class="table table-striped">
-          <thead>
-            <tr>
-              <th>Número de solicitud</th>
-              <th>Nombre</th>
-              <th>Género</th>
-              <th>Edad</th>
-              <th>Número de Grupo</th>
-            </tr>
-          </thead>
-          <tbody name="loop" id="loop">
-          <tr>
-              <td>
-                ejemplo
-              </td>
-              <td>
-                ejemplo
-              </td>
-              <td>
-                ejemplo
-              </td>
-              <td>
-                ejemplo
-              </td>
-              <td>
-                ejemplo
-              </td>
-              <td>
-                ejemplo
-              </td>
-          </tr>
-          </tbody>
-        </table>
-
-            </div>
-        </div>
+      <div id="divPadecimientos">
+        
+      </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
@@ -628,11 +576,11 @@
       <form action="<?=$url?>" method="POST" >
         
       <div class="modal-body">
-        <input type="hidden" name="usuario" value="<?=$usuario?>">
-        <input type="hidden" name="idPer" value="<?=$idPer?>">
-        <input type="hidden" name="miembro_nisMiem" value="<?=$nisMiem?>">
-        <input type="hidden" name="idGrup" value="<?=$idGrup?>">
-        <input type="hidden" name="numSolicInsc" value="<?=$inscripcion?>">
+        <input type="hidden" name="usuario" id="usuario" value="<?=$usuario?>">
+        <input type="hidden" name="idPer" id="idPer" value="<?=$idPer?>">
+        <input type="hidden" name="miembro_nisMiem" id="miembro_nisMiem" value="<?=$nisMiem?>">
+        <input type="hidden" name="idGrup" id="idGrup" value="<?=$idGrup?>">
+        <input type="hidden" name="numSolicInsc" id="numSolicInsc" value="<?=$inscripcion?>">
         <label>
           Fecha de Vencimiento: Marzo/<?=$year?>
         </label>
