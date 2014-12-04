@@ -213,7 +213,7 @@
 	<script type="text/javascript" src="../js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="../css/custom.css">
-    <script type="text/javascript" src="../js/padecimientos.js"></script>
+    <script type="text/javascript" src="../js/exp_clinico.js"></script>
   	<link href='http://fonts.googleapis.com/css?family=Ubuntu+Condensed|Francois+One' rel='stylesheet' type='text/css'>
   	<meta charset="UTF-8">
 </head>
@@ -335,7 +335,7 @@
           NIS:
         </label>
         <br>
-          <tr><td><?=$nisMiem?></td></tr>      
+          <tr><td><label id="NIS"><?=$nisMiem?></label></td></tr>      
         <br>
         <label>
           Poliza:
