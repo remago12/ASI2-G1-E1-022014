@@ -110,6 +110,11 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+		case 'dato_padecimiento':
+		$response = CuadroClinico::dato_padecimiento($_POST['NIS']);
+		echo json_encode($response);
+		break;
+
 
 
 }

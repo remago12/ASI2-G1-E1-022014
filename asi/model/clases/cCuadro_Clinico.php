@@ -233,6 +233,19 @@ where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS
 				
 		}
 
+		function dato_padecimiento($NIS){
+			$result = mysql_query("SELECT rp.*,pad.*,exp.miembro_nisMiem from registropad as rp, padecimiento as pad
+,cuadroclinico as cu,expediente as exp where pad.idPad = rp.padecimiento_idPad 
+and cu.idCuadClin = rp.cuadroClinico_idCuadClin and exp.cuadroClinico_idCuadClin = cu.idCuadClin 
+and exp.miembro_nisMiem like '".$NIS."'");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
 	function seleccionar_parentesco()
 	{
 			$sql = "SELECT * FROM parentesco ORDER BY idPar desc";
