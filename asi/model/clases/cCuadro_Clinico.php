@@ -222,6 +222,7 @@ class CuadroClinico
 				return array('rows'=>$rows);
 				
 		}
+
 function verificar_cuadroclinico($NIS){
 			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
 where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
@@ -245,6 +246,18 @@ and exp.miembro_nisMiem like '".$NIS."'");
 				return array('rows'=>$rows);
 				
 		}
+
+function nuevo_cuadro($NIS,$Sangre){
+			$result = mysql_query("SELECT max(idCuadClin) FROM cuadroclinico");
+ if ($row = mysql_fetch_row($result)) {
+$id = trim($row[0]);
+$id =intval($id) + 1;
+mysql_query("INSERT INTO cuadroclinico (idCuadClin, tipSangCuadClin ) VALUES ('".$id."','".$Sangre."')");
+mysql_query("INSERT INTO expediente(numExp, miembro_nisMiem,cuadroClinico_idCuadClin) VALUES ('".$id."','".$NIS."','".$id."')");
+}
+				
+		}
+
 
 	function seleccionar_parentesco()
 	{

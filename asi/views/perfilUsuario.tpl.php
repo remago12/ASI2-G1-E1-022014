@@ -440,7 +440,7 @@
       <!-- Button trigger modal -->
 
 <!-- Large modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Agergar Expedieinte</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="modal1">Agergar Expedieinte</button>
 
   <idv class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -456,32 +456,32 @@
               Tipo de Sangre:
             </label>
             <br>
-            <select class="form-control">
+            <select class="form-control" id="Sangre">
                 <option>
                   Seleccionar tipo de Sangre
                 </option>
-              <option>
+              <option value="ORH+">
                   ORH+
                 </option>
-                <option>
+                <option value="ORH-">
                   ORH-
                 </option>
-                <option>
+                <option value="ARH+">
                   ARH+
                 </option>
-                <option>
+                <option value="ARH-">
                   ARH-
                 </option>
-                <option>
+                <option value="BRH+">
                   BRH+
                 </option>
-                <option>
+                <option value="BRH-">
                   BRH-
                 </option>
-                <option>
+                <option value="ABRH+">
                   ABRH+
                 </option>
-                <option>
+                <option value="ABRH-">
                   ABRH-
                 </option>
             </select>

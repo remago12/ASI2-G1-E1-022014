@@ -115,6 +115,10 @@ switch ($_POST['action']) {
 		echo json_encode($response);
 		break;
 
+case 'nuevo_cuadro':
+		$response = CuadroClinico::nuevo_cuadro($_POST['NIS'],$_POST['Sangre']);
+		echo json_encode($response);
+		break;
 
 
 }
