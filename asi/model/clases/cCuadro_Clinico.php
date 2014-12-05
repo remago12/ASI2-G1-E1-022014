@@ -267,6 +267,15 @@ where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS
 }		
 		}
 
+			function guardar_padecimiento($NIS,$Padecimiento){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("INSERT INTO registropad(cuadroClinico_idCuadClin,padecimiento_idPad) VALUES ('".$id."','".$Padecimiento."')");
+}		
+		}
+
 
 	function seleccionar_parentesco()
 	{

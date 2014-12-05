@@ -125,6 +125,11 @@ case 'modificar_sangre':
 		echo json_encode($response);
 		break;
 
+		case 'guardar_padecimiento':
+		$response = CuadroClinico::guardar_padecimiento($_POST['NIS'],$_POST['Padecimiento']);
+		echo json_encode($response);
+		break;
+
 }
 }
 	catch(Exception $e){

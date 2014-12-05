@@ -1,18 +1,16 @@
 $(document).ready(function(){
-		$("#modal1").click(function(){
+		$('#modal1').click(function(){
    	cuadro_clinico();
 		});
-$("#Guardar_Sangre").click(function(){
+$('#Guardar_Sangre').click(function(){
    	crear_cuadroclinico();
    	divpadecimientos1();
    	padecimientos();
 		});
 
-$("#Modificar_Sangre").click(function(){
+$('#Modificar_Sangre').click(function(){
   modificar_sangre();
 		});
-
-
 
 });
 
@@ -20,8 +18,8 @@ function cuadro_clinico(){
 	var NIS =$('#miembro_nisMiem').val();
 	$.post("../model/clases/ajax.php",{action:"cuadro_clinico",NIS:NIS},function(data){
 		if (data.rows.length <= 0){
-			$("#Guardar_Sangre").prop( "disabled", false );
-			$("#Modificar_Sangre").prop( "disabled", true );
+			$('#Guardar_Sangre').prop( "disabled", false );
+			$('#Modificar_Sangre').prop( "disabled", true );
 			
 //alert("no hay datos");
 		}else{
@@ -64,9 +62,9 @@ cadena= "<div class='row'>"+
             "<select class='form-control' name='padecimientos' id='padecimientos'>"+
             "</select>"+
             "<br>"+
-                "<button class='btn btn-primary'>Guardar</button>"+
-                            
-              "<button class='btn btn-success'>Borrar</button>"+
+            "<button class='btn btn-primary' name='Guardar_Padecimiento' id='Guardar_Padecimiento'>Guardar</button>"+
+                           
+              "<button class='btn btn-success' id='Borrar_Padecimiento' name='Borrar_Padecimiento'>Borrar</button>"+
           
               "</div>"+
           
@@ -74,6 +72,16 @@ cadena= "<div class='row'>"+
         "</div>"
         +"<div id='datoPadecimientos'></div>";
         $('#divPadecimientos').html(cadena);
+
+        $('#Guardar_Padecimiento').click(function(){
+  guardar_padecimiento();
+ 
+		});
+
+$('#Borrar_Padecimiento').click(function(){
+  //guardar_padecimiento();
+  //datapadecimientos();
+		});
 
 }
 
@@ -128,4 +136,13 @@ function modificar_sangre(){
 	$.post("../model/clases/ajax.php",{action:"modificar_sangre",NIS:NIS,Sangre:Sangre},function(data){
 
 },'json');
+}
+
+function guardar_padecimiento(){
+	var NIS =$('#miembro_nisMiem').val();
+	var Padecimiento =$('#padecimientos').val();
+	$.post("../model/clases/ajax.php",{action:"guardar_padecimiento",NIS:NIS,Padecimiento:Padecimiento},function(data){
+
+},'json');
+	setTimeout(datapadecimientos(), 7000);
 }
