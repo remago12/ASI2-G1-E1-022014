@@ -120,6 +120,10 @@ case 'nuevo_cuadro':
 		echo json_encode($response);
 		break;
 
+case 'modificar_sangre':
+		$response = CuadroClinico::modificar_sangre($_POST['NIS'],$_POST['Sangre']);
+		echo json_encode($response);
+		break;
 
 }
 }

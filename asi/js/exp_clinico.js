@@ -4,7 +4,14 @@ $(document).ready(function(){
 		});
 $("#Guardar_Sangre").click(function(){
    	crear_cuadroclinico();
+   	divpadecimientos1();
+   	padecimientos();
 		});
+
+$("#Modificar_Sangre").click(function(){
+  modificar_sangre();
+		});
+
 
 
 });
@@ -13,11 +20,16 @@ function cuadro_clinico(){
 	var NIS =$('#miembro_nisMiem').val();
 	$.post("../model/clases/ajax.php",{action:"cuadro_clinico",NIS:NIS},function(data){
 		if (data.rows.length <= 0){
+			$("#Guardar_Sangre").prop( "disabled", false );
+			$("#Modificar_Sangre").prop( "disabled", true );
+			
 //alert("no hay datos");
 		}else{
 //alert("hay datos");
+$("#Guardar_Sangre").prop( "disabled", true );
 for(i=0; i < data.rows.length;i++){
 $('#Sangre').val(data.rows[i]["1"]);
+$("#Modificar_Sangre").prop( "disabled", false );
 }
 divpadecimientos1();
 padecimientos();
@@ -108,5 +120,12 @@ function crear_cuadroclinico(){
 	$.post("../model/clases/ajax.php",{action:"nuevo_cuadro",NIS:NIS,Sangre:Sangre},function(data){
 
 },'json');
-cuadro_clinico();
+}
+
+function modificar_sangre(){
+	var NIS =$('#miembro_nisMiem').val();
+	var Sangre =$('#Sangre').val();
+	$.post("../model/clases/ajax.php",{action:"modificar_sangre",NIS:NIS,Sangre:Sangre},function(data){
+
+},'json');
 }

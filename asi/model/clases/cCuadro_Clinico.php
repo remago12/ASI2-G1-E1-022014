@@ -258,6 +258,15 @@ mysql_query("INSERT INTO expediente(numExp, miembro_nisMiem,cuadroClinico_idCuad
 				
 		}
 
+		function modificar_sangre($NIS,$Sangre){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("UPDATE cuadroclinico SET tipSangCuadClin='".$Sangre."' WHERE idCuadClin =".$id);
+}		
+		}
+
 
 	function seleccionar_parentesco()
 	{
