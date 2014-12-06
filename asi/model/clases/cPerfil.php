@@ -53,6 +53,7 @@ class Perfil
 					$info[$id]['telgrup'] 		= $rs->fields['telgrup'];
 					$info[$id]['nomMunic'] 		= $rs->fields['nomMunic'];
 					$info[$id]['nomDep'] 		= $rs->fields['nomDep'];
+					$info[$id]['estado_idEst']  = $rs->fields['estado_idEst'];
 		  		    $rs->MoveNext();
 				}
 				$rs->Close();
@@ -93,7 +94,7 @@ class Perfil
 		}	
 	function seleccionar_estado($nisMiem)
 	{
-			$sql = "SELECT * FROM persona as p, miembro as m where m.nisMiem=? AND p.idPersona=m.persona_idPersona";
+			$sql = "SELECT * FROM persona as p, miembro as m, estado as e where m.nisMiem=? AND p.idPersona=m.persona_idPersona AND e.idEst=m.estado_idEst";
   
 		$rs = $this->DATA->Execute($sql,$nisMiem);
 				if ( $rs->RecordCount()) {
@@ -101,6 +102,7 @@ class Perfil
 					$id                 		= $rs->fields['nisMiem'];
 					$info[$id]['nisMiem'] 		= $rs->fields['nisMiem'];
 					$info[$id]['estado_idEst'] 		= $rs->fields['estado_idEst'];
+					$info[$id]['nomEst'] 		= $rs->fields['nomEst'];
 		  		    $rs->MoveNext();
 				}
 				$rs->Close();
@@ -127,6 +129,44 @@ class Perfil
 				return false;
 			}
 		}
+	function seleccionar_cargoc($G)
+	{
+			$sql = "SELECT * FROM cargo where tipoCargo=? ORDER BY idCargo asc";
+  
+		$rs = $this->DATA->Execute($sql,$G);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['idCargo'];
+					$info[$id]['tipoCargo'] 	= $rs->fields['tipoCargo'];
+					$info[$id]['idCargo'] 		= $rs->fields['idCargo'];
+					$info[$id]['nomCargo'] 		= $rs->fields['nomCargo'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}
+	function seleccionar_cargon($N)
+	{
+			$sql = "SELECT * FROM cargo where tipoCargo=? ORDER BY idCargo asc";
+  
+		$rs = $this->DATA->Execute($sql,$N);
+				if ( $rs->RecordCount()) {
+				while(!$rs->EOF){
+					$id                 		= $rs->fields['idCargo'];
+					$info[$id]['tipoCargo'] 	= $rs->fields['tipoCargo'];
+					$info[$id]['idCargo'] 		= $rs->fields['idCargo'];
+					$info[$id]['nomCargo'] 		= $rs->fields['nomCargo'];
+		  		    $rs->MoveNext();
+				}
+				$rs->Close();
+				return $info;
+			} else {
+				return false;
+			}
+		}		
 	function seleccionar_estadoR($nisMiem)
 	{
 			$sql = "SELECT * FROM persona as p, miembro as m, renovacion as r where m.nisMiem=? AND m.nisMiem=r.miembro_nisMiem";

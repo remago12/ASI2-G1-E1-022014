@@ -112,7 +112,7 @@ Edad = Math.floor((Date.now() - Fechna)/(31557600000));
 grupo = data.rows[i]["1"];
 Departamento=data.rows[i]["6"];
 Municipio=data.rows[i]["7"];
-cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='expediente_miembro_admin.php?id="+btoa(nis)+"'>Editar</a></td></tr>";
 $('#loop').html(cadena);
 } 
 }
@@ -201,7 +201,7 @@ Edad = Math.floor((Date.now() - Fechna)/(31557600000));
 grupo = data.rows[i]["1"];
 Departamento=data.rows[i]["6"];
 Municipio=data.rows[i]["7"];
-cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='modGrupo.php?IdGrup="+btoa(nis)+"'>Editar</a></td></tr>";
+cadena= cadena +"<tr><td>"+nis+"</td><td>"+NomPer +"</td><td>" + ApelPer +"</td><td>"+Genero+"</td><td>"+Edad+"</td><td>"+Departamento+"</td><td>"+Municipio+"</td><td>"+grupo+"</td><td><a href='expediente_miembro_admin.php?id="+btoa(nis)+"'>Editar</a></td></tr>";
 $('#loop').html(cadena);
 } 
 for(p=1; p <= pags;p++){
