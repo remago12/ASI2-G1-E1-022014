@@ -4,12 +4,14 @@
   require_once '../model/clases/cUsuario.php';
   require_once '../model/clases/cPerfil.php';
   require_once '../model/clases/cBancSql.php';
+  require_once '../model/clases/cCuadro_Clinico.php';
  
   session_start();
     // Objetos
      $oUsuario   = new Usuario();
      $perfil     = new Perfil();
      $banco      = new Banco();
+     $cuadroC     = new CuadroClinico();
      $url= "";
      $year= date("y");
     // revisando sesiones 
@@ -247,7 +249,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mantenimiento<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Banco</a></li>
+            <li> <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal3">Contacto de Emergencia</li>
             <li><a href="#">Alergias</a></li>
             <li><a href="#">Padecimiento</a></li>
             <li class="divider"></li>
@@ -262,6 +264,7 @@
 </nav>
 
 	<div class="container">
+
 		<div class="row">
 			<h1 class="text-center">Perfil de Usuario</h1>
 			<div class="col-md-4">
@@ -439,10 +442,11 @@
       </div>
       <!-- Button trigger modal -->
 
+
 <!-- Large modal -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="modal1">Agergar Expedieinte</button>
 
-  <idv class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
@@ -508,6 +512,63 @@
 
     </div>  
   </div>
+  <!-- Modal este es el modal dos -->
+<div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contacto de Emergencia</h4>
+      </div>
+      <form action="../model/action/action_parentesco.php" method="POST" >
+        
+      <div class="modal-body">
+        
+        <input type="hidden" name="miembro_nisMiem" id="miembro_nisMiem" value="<?=$nisMiem?>">
+        
+        <label>
+          NIS: <?=$nisMiem?>
+        </label>
+        <br>
+        <label>
+          Nombre:
+        </label>
+        <input type="text" class="form-control" name="nomCont">
+        <br>
+        <label>
+          Apellido: 
+        </label>
+        <input type="text" class="form-control" name="apelCont">
+        <br>
+        <label>Telefono:
+        </label>
+        <input type="text" class="form-control" name="telCont">
+        <br>
+        <label>
+          Parentesco:
+        </label>
+        <select id="estilo_select" name="id_par" class="form-control">
+                                     <?php
+                          
+                          $par = $cuadroC->seleccionar_parentesco(); 
+                          if($par !=null){
+                          foreach ($par AS $key => $info) {
+                           echo '<option value='.$info["idPar"].'>'.$info["nomPar"].'</option>';
+                            } 
+                          }else{
+                           echo '<option value="">No se encontro..</option>';
+                          }
+                                    ?>
+                                    
+                                </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary">Solicitar</button>
+      </form>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -553,15 +614,15 @@
         <input type="text" class="form-control" name="montoRen"> 
         <label>Fecha de Pago:</label>
         <input type="date" name="fchaPagRen" class="form-control"> 
-      </div>
       <div class="modal-footer">
         <button value="Entrar" class="btn btn-primary">Entrar</button>
+        </div>
       </form>
       </div>
+      
+      </div>
     </div>
-
   </div>
-</div>
 <!-- Button trigger modal -->
 
 

@@ -83,6 +83,18 @@ class CuadroClinico
         }
     }
 
+    function crear_contacto($reg)
+    {
+    $sql="INSERT INTO contactoEmergencia (apelCont,nomCont,telCont,parentesco_idPar,miembro_nisMiem)"
+                            . " values (?,?,?,?,?) ";
+    $save = $this->DATA->Execute($sql, $reg); 
+          if ($save){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 	function mod_alergia($reg)
     {
     $sql="UPDATE alergia SET nomAlerg=? where idAlerg=? ";
@@ -279,7 +291,7 @@ where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS
 
 	function seleccionar_parentesco()
 	{
-			$sql = "SELECT * FROM parentesco ORDER BY idPar desc";
+			$sql = "SELECT * FROM parentesco ORDER BY idPar asc";
   
 		$rs = $this->DATA->Execute($sql);
 				if ( $rs->RecordCount()) {
