@@ -89,7 +89,7 @@ function datapadecimientos(){
 	var cadena2="";
 	$.post("../model/clases/ajax.php",{action:"dato_padecimiento",NIS:NIS},function(data){
 		if (data.rows.length == 0){
-//alert("no hay datos");
+$('#datoPadecimientos').empty();
 		}else{
 cadena=     "<div class='row'>"+
             "<div class='col-md-12'>"+
@@ -110,15 +110,22 @@ cadena=     "<div class='row'>"+
         for(i=0; i < data.rows.length;i++){
 idPad=data.rows[i]["3"];
 NomPad = data.rows[i]["4"];
-cadena2= cadena2 +"<tr><td>"+idPad+"</td><td>"+NomPad+"</td><td><a id='Borrar_Padecimiento' href='#'>Eliminar</a></td></tr>";
+cadena2= cadena2 +"<tr><td class='idPad'>"+idPad+"</td><td>"+NomPad+"</td><td><a href='#'>Eliminar</a></td></tr>";
 $('#loop1').html(cadena2);
 }
-$('#Borrar_Padecimiento').click(function(){
+/*$('#Borrar_Padecimiento').click(function(){
   borrar_padecimiento();
-		});
+		});*/
+	$("#loop1").on("click","a", function(event){
+    //Prevent the hyperlink to perform default behavior
+    event.preventDefault();
+    var $td = $(this).parent().closest('tr').children('td');
+    var idPad = $td.eq(0).text();
+    //alert(idPad);
+ borrar_padecimiento(idPad);
+	});
+}
 
-
-		}
 },'json');
 	
 }
@@ -143,17 +150,33 @@ function guardar_padecimiento(){
 	var NIS =$('#miembro_nisMiem').val();
 	var Padecimiento =$('#padecimientos').val();
 	$.post("../model/clases/ajax.php",{action:"guardar_padecimiento",NIS:NIS,Padecimiento:Padecimiento},function(data){
+$('#padecimientos')[0].selectedIndex = 0;
 datapadecimientos();
 },'json');
 	
 }
 
-function borrar_padecimiento(){
-	var NIS =$('#miembro_nisMiem').val();
-	alert("");
-//	var Padecimiento =$('#padecimientos').val();
-	/*$.post("../model/clases/ajax.php",{action:"borrar_padecimiento",NIS:NIS,Padecimiento:Padecimiento},function(data){
+function borrar_padecimiento(idPad){
+	var NIS =$('#miembro_nisMiem').val();	
+	$.post("../model/clases/ajax.php",{action:"borrar_padecimiento",NIS:NIS,idPad:idPad},function(data){
 datapadecimientos();
-},'json');*/
+},'json');
 	
+}
+
+function padecimientos(){
+		$('#padecimientos').ready(function(){
+$.post("../model/clases/ajax.php",{action:"padecimientos"},function(data){
+var IdPad="";
+var NomPad ="";
+var cadena="<option>Seleccione un Padecimiento</option>";
+for(i=0; i < data.rows.length;i++){
+IdPad=data.rows[i]["0"];
+NomPad=data.rows[i]["1"];
+cadena=cadena + "<option value='"+IdPad+"'>"+NomPad+"</option>";
+$('#padecimientos').html(cadena); 
+}},'json');
+
+});
+
 }
