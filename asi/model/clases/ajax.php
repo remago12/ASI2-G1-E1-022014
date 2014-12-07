@@ -131,7 +131,7 @@ case 'modificar_sangre':
 		break;
 
 		case 'borrar_padecimiento':
-		$response = CuadroClinico::borrar_padecimiento($_POST['NIS'],$_POST['idPa']);
+		$response = CuadroClinico::borrar_padecimiento($_POST['NIS'],$_POST['idPad']);
 		echo json_encode($response);
 		break;
 
@@ -152,6 +152,26 @@ case 'guardar_alergia':
 
 		case 'borrar_alergia':
 		$response = CuadroClinico::borrar_alergia($_POST['NIS'],$_POST['idAl']);
+		echo json_encode($response);
+		break;
+
+		case 'discapacidades':
+		$response = CuadroClinico::seleccionar_discapacidades();
+		echo json_encode($response);
+		break;
+
+		case 'guardar_discapacidad':
+		$response = CuadroClinico::guardar_discapacidad($_POST['NIS'],$_POST['Discapacidad']);
+		echo json_encode($response);
+		break;
+
+		case 'dato_discapacidad':
+		$response = CuadroClinico::dato_discapacidad($_POST['NIS']);
+		echo json_encode($response);
+		break;
+
+		case 'borrar_discapacidad':
+		$response = CuadroClinico::borrar_discapacidad($_POST['NIS'],$_POST['idDis']);
 		echo json_encode($response);
 		break;
 

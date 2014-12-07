@@ -444,14 +444,14 @@
 
 
 <!-- Large modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="modal1">Agergar Expedieinte</button>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg" id="modal1">Cuadro Clinico</button>
 
   <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
           <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h2 class="modal-title" id="myModalLabel">Modal title</h2>
+        <h2 class="modal-title" id="myModalLabel">Cuadro Clinico</h2>
       </div>
       <div class="modal-body">
       <div class="row">
@@ -495,10 +495,11 @@
         <button class="btn btn-primary" name="Guardar_Sangre" id="Guardar_Sangre">Guardar</button>
         <button class="btn btn-warning" name="Modificar_Sangre" id="Modificar_Sangre">Modificar</button>
       </div>
-      <div id="divPadecimientos">
-        
+      <div id="divPadecimientos"> 
       </div>
       <div id="divAlergias">
+      </div>
+      <div id="divDiscapacidades">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

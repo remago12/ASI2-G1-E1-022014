@@ -337,6 +337,47 @@ where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS
 }		
 		}
 
+			function seleccionar_discapacidades(){
+			$result = mysql_query("SELECT * from discapacidad");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+			function guardar_discapacidad($NIS,$Discapacidad){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("INSERT INTO registrodisc(cuadroClinico_idCuadClin,discapacidad_idDisc) VALUES ('".$id."','".$Discapacidad."')");
+}		
+		}
+
+		function dato_discapacidad($NIS){
+			$result =mysql_query("SELECT rd.*,dis.*,exp.miembro_nisMiem from registrodisc as rd, discapacidad as dis
+,cuadroclinico as cu,expediente as exp where dis.idDisc = rd.discapacidad_idDisc 
+and cu.idCuadClin = rd.cuadroClinico_idCuadClin and exp.cuadroClinico_idCuadClin = cu.idCuadClin 
+and exp.miembro_nisMiem like '".$NIS."'");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+					function borrar_discapacidad($NIS,$idDis){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("DELETE FROM registrodisc WHERE cuadroClinico_idCuadClin =".$id." and discapacidad_idDisc =".$idDis);
+}		
+		}
+
 
 	function seleccionar_parentesco()
 	{
