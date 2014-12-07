@@ -288,6 +288,55 @@ where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS
 }		
 		}
 
+					function borrar_padecimiento($NIS,$idPad){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("DELETE FROM registropad WHERE cuadroClinico_idCuadClin =".$id." and padecimiento_idPad =".$idPad);
+}		
+		}
+
+			function seleccionar_alergias(){
+			$result = mysql_query("SELECT * from alergia");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+			function dato_alergia($NIS){
+			$result =mysql_query("SELECT ral.*,al.*,exp.miembro_nisMiem from registroalerg as ral, alergia as al
+,cuadroclinico as cu,expediente as exp where al.idAlerg = ral.alergia_idAlerg 
+and cu.idCuadClin = ral.cuadroClinico_idCuadClin and exp.cuadroClinico_idCuadClin = cu.idCuadClin 
+and exp.miembro_nisMiem like '".$NIS."'");
+  $rows=array();
+  while($row=mysql_fetch_array($result,MYSQL_BOTH)){
+  	$rows[]=($row);
+  }
+				return array('rows'=>$rows);
+				
+		}
+
+			function guardar_alergia($NIS,$Alergia){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("INSERT INTO registroalerg(cuadroClinico_idCuadClin,alergia_idAlerg) VALUES ('".$id."','".$Alergia."')");
+}		
+		}
+
+					function borrar_alergia($NIS,$idAl){
+			$result = mysql_query("SELECT cu.*,exp.* from cuadroclinico as cu, expediente as exp 
+where exp.cuadroClinico_idCuadClin = idCuadClin and miembro_nisMiem like '".$NIS."'");
+ if ($row = mysql_fetch_row($result)) {
+ 	$id = trim($row[0]);
+ 	mysql_query("DELETE FROM registroalerg WHERE cuadroClinico_idCuadClin =".$id." and alergia_idAlerg =".$idAl);
+}		
+		}
+
 
 	function seleccionar_parentesco()
 	{

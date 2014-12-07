@@ -130,6 +130,31 @@ case 'modificar_sangre':
 		echo json_encode($response);
 		break;
 
+		case 'borrar_padecimiento':
+		$response = CuadroClinico::borrar_padecimiento($_POST['NIS'],$_POST['idPa']);
+		echo json_encode($response);
+		break;
+
+		case 'alergias':
+		$response = CuadroClinico::seleccionar_alergias();
+		echo json_encode($response);
+		break;
+
+case 'guardar_alergia':
+		$response = CuadroClinico::guardar_alergia($_POST['NIS'],$_POST['Alergia']);
+		echo json_encode($response);
+		break;
+
+		case 'dato_alergia':
+		$response = CuadroClinico::dato_alergia($_POST['NIS']);
+		echo json_encode($response);
+		break;
+
+		case 'borrar_alergia':
+		$response = CuadroClinico::borrar_alergia($_POST['NIS'],$_POST['idAl']);
+		echo json_encode($response);
+		break;
+
 }
 }
 	catch(Exception $e){

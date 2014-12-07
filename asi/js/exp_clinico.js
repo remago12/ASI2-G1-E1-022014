@@ -32,6 +32,9 @@ $("#Modificar_Sangre").prop( "disabled", false );
 divpadecimientos1();
 padecimientos();
 datapadecimientos();
+   	divalergias();
+   	alergias();
+   	dataalergias();
 		}
 },'json');
 }
@@ -75,9 +78,6 @@ cadena= "<div class='row'>"+
  
 		});
 
-$('#Borrar_Padecimiento').click(function(){
-  borrar_padecimiento();
-		});
 
 }
 
@@ -164,19 +164,111 @@ datapadecimientos();
 	
 }
 
-function padecimientos(){
-		$('#padecimientos').ready(function(){
-$.post("../model/clases/ajax.php",{action:"padecimientos"},function(data){
-var IdPad="";
-var NomPad ="";
-var cadena="<option>Seleccione un Padecimiento</option>";
+function divalergias(){
+cadena= "<hr>"+
+"<div class='row'>"+
+          "<div class='col-md-4'>"+
+          "<label>"+
+            "Tipo de Alergia:"+
+          "</label>"+
+            "<select class='form-control' name='Alergias' id='Alergias'>"+
+            "</select>"+
+            "<br>"+
+            "<button class='btn btn-primary' name='Guardar_Alergia' id='Guardar_Alergia'>Guardar</button>"+
+              "</div>"+
+          
+          
+        "</div>"
+        +"<div id='datoAlergias'></div>";
+        $('#divAlergias').html(cadena);
+
+        $('#Guardar_Alergia').click(function(){
+ guardar_alergia();
+
+		});
+
+}
+
+function alergias(){
+		$('#Alergias').ready(function(){
+$.post("../model/clases/ajax.php",{action:"alergias"},function(data){
+var IdAl="";
+var NomAl ="";
+var cadena="<option>Seleccione una Alergia</option>";
 for(i=0; i < data.rows.length;i++){
-IdPad=data.rows[i]["0"];
-NomPad=data.rows[i]["1"];
-cadena=cadena + "<option value='"+IdPad+"'>"+NomPad+"</option>";
-$('#padecimientos').html(cadena); 
+IdAl=data.rows[i]["0"];
+NomAl=data.rows[i]["1"];
+cadena=cadena + "<option value='"+IdAl+"'>"+NomAl+"</option>";
+$('#Alergias').html(cadena); 
 }},'json');
 
 });
 
+}
+
+function dataalergias(){
+	var NIS =$('#miembro_nisMiem').val();
+	var IdAl="";
+	var NomAl="";
+	var cadena="";
+	var cadena2="";
+	$.post("../model/clases/ajax.php",{action:"dato_alergia",NIS:NIS},function(data){
+		if (data.rows.length == 0){
+$('#datoAlergias').empty();
+		}else{
+cadena=     "<div class='row'>"+
+            "<div class='col-md-12'>"+
+              "<table class='table table-striped'>"+
+          "<thead>"+
+            "<tr>"+
+              "<th>N°Alergia</th>"+
+              "<th>Alergia</th>"+
+            "</tr>"+
+          "</thead>"+
+          "<tbody name='loop2' id='loop2'>"+
+          "</tbody>"+
+        "</table>"+
+ " </div>"+
+        "</div>";
+        $('#datoAlergias').html(cadena);
+      
+        for(i=0; i < data.rows.length;i++){
+idAl=data.rows[i]["3"];
+NomAl = data.rows[i]["4"];
+cadena2= cadena2 +"<tr><td class='idAl'>"+idAl+"</td><td>"+NomAl+"</td><td><a href='#'>Eliminar</a></td></tr>";
+$('#loop2').html(cadena2);
+}
+/*$('#Borrar_Padecimiento').click(function(){
+  borrar_padecimiento();
+		});*/
+	$("#loop2").on("click","a", function(event){
+    //Prevent the hyperlink to perform default behavior
+    event.preventDefault();
+    var $td = $(this).parent().closest('tr').children('td');
+    var idAl = $td.eq(0).text();
+    //alert(idPad);
+ borrar_alergia(idAl);
+	});
+}
+
+},'json');
+	
+}
+
+function guardar_alergia(){
+	var NIS =$('#miembro_nisMiem').val();
+	var Alergia =$('#Alergias').val();
+	$.post("../model/clases/ajax.php",{action:"guardar_alergia",NIS:NIS,Alergia:Alergia},function(data){
+$('#Alergias')[0].selectedIndex = 0;
+dataalergias();
+},'json');
+	
+}
+
+function borrar_alergia(idAl){
+	var NIS =$('#miembro_nisMiem').val();	
+	$.post("../model/clases/ajax.php",{action:"borrar_alergia",NIS:NIS,idAl:idAl},function(data){
+dataalergias();
+},'json');
+	
 }
