@@ -63,9 +63,6 @@ cadena= "<div class='row'>"+
             "</select>"+
             "<br>"+
             "<button class='btn btn-primary' name='Guardar_Padecimiento' id='Guardar_Padecimiento'>Guardar</button>"+
-                           
-              "<button class='btn btn-success' id='Borrar_Padecimiento' name='Borrar_Padecimiento'>Borrar</button>"+
-          
               "</div>"+
           
           
@@ -79,8 +76,7 @@ cadena= "<div class='row'>"+
 		});
 
 $('#Borrar_Padecimiento').click(function(){
-  //guardar_padecimiento();
-  //datapadecimientos();
+  borrar_padecimiento();
 		});
 
 }
@@ -114,9 +110,14 @@ cadena=     "<div class='row'>"+
         for(i=0; i < data.rows.length;i++){
 idPad=data.rows[i]["3"];
 NomPad = data.rows[i]["4"];
-cadena2= cadena2 +"<tr><td>"+idPad+"</td><td>"+NomPad+"</td></tr>";
+cadena2= cadena2 +"<tr><td>"+idPad+"</td><td>"+NomPad+"</td><td><a id='Borrar_Padecimiento' href='#'>Eliminar</a></td></tr>";
 $('#loop1').html(cadena2);
 }
+$('#Borrar_Padecimiento').click(function(){
+  borrar_padecimiento();
+		});
+
+
 		}
 },'json');
 	
@@ -142,7 +143,17 @@ function guardar_padecimiento(){
 	var NIS =$('#miembro_nisMiem').val();
 	var Padecimiento =$('#padecimientos').val();
 	$.post("../model/clases/ajax.php",{action:"guardar_padecimiento",NIS:NIS,Padecimiento:Padecimiento},function(data){
-
+datapadecimientos();
 },'json');
-	setTimeout(datapadecimientos(), 7000);
+	
+}
+
+function borrar_padecimiento(){
+	var NIS =$('#miembro_nisMiem').val();
+	alert("");
+//	var Padecimiento =$('#padecimientos').val();
+	/*$.post("../model/clases/ajax.php",{action:"borrar_padecimiento",NIS:NIS,Padecimiento:Padecimiento},function(data){
+datapadecimientos();
+},'json');*/
+	
 }
