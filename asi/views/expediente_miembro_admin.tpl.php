@@ -3,15 +3,15 @@
   require_once '../model/data/dataBase.php';
   require_once '../model/clases/cUsuario.php';
   require_once '../model/clases/cPerfil.php';
-  require_once '../model/clases/cBancSql.php';
+  require_once '../model/clases/cExpediente.php';
   require_once '../model/clases/cCuadro_Clinico.php';
  
   session_start();
     // Objetos
      $oUsuario   = new Usuario();
      $perfil     = new Perfil();
-     $banco      = new Banco();
-     $cuadroC     = new CuadroClinico();
+     $expe       = new Expedientes();
+     $cuadroC    = new CuadroClinico();
      $url= "";
      $year= date("y");
     // revisando sesiones 
@@ -169,45 +169,7 @@
          echo "No hay datos";
         } 
 
-         try{
-      $ins = $perfil->seleccionar_inscripcion($NisPerfil);
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($ins!=null)
-        {
-        foreach($ins AS $key => $bl)
-        {
-        $inscripcion      = $bl['numSolicInsc'];
-        ?>
-        <tr>
-        </tr>
-        <?php
         
-        }
-        }else{
-         echo "No hay datos";
-        }
-
-       try{
-      $ins = $perfil->seleccionar_renovacion($NisPerfil);
-      }catch(Exception $e){
-        echo "Ha ocurrido un error";
-      }
-      if($ins!=null)
-        {
-        foreach($ins AS $key => $bl)
-        {
-        $renovacion      = $bl['numSolRen'];
-        ?>
-        <tr>
-        </tr>
-        <?php
-        
-        }
-        }else{
-         echo "No hay datos";
-        }  
         ?>
 <!DOCTYPE html>
 <html>
@@ -441,11 +403,32 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Rover</td>
-								<td>12/3/14</td>
-								<td>Isabel Mariana Valle</td>
-							</tr>	
+							<?php 
+      try{
+      $cuadro = $expe->seleccionar_cargoeg($NisPerfil);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($cuadro!=null)
+        {
+        foreach($cuadro AS $key => $bl)
+        {
+        $nomCargoen      = $bl['nomCargo'];
+        $fechacreacn      = $bl['fechaCrea'];
+        $usucreacn      = $bl['usuCrea'];
+        ?>
+              <tr>
+                <td><?=$nomCargoen?></td>
+                <td><?=$fechacreacn?></td>
+                <td><?=$usucreacn?></td>
+              </tr> 
+        <?php
+        
+        }
+        }else{
+         echo "No posee cargos en el grupo";
+        }
+        ?> 	
 						</tbody>
 					</table>
 					<!-- Large modal -->
@@ -458,15 +441,16 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Cargo Grupo</h4>
       </div>
-      <form action="../model/action/action_parentesco.php" method="POST" >
+      <form action="../model/action/action_cargoc.php" method="POST" >
         
       <div class="modal-body">
         
         <input type="hidden" name="miembro_nisMiem" id="miembro_nisMiem" value="<?=$nisMiem?>">
+        <input type="hidden" name="usuario" id="usuario" value="<?=$usuario?>">
         <label>
           Cargo:
         </label>
-        <select id="estilo_select" name="id_par" class="form-control">
+        <select id="estilo_select" name="id_cargoc" class="form-control">
                                      <?php
                           
                           $cgrup = $perfil->seleccionar_cargoc(G); 
@@ -496,12 +480,40 @@
 			<hr class="line">
 				<table class="table table-striped">
 					<thead>
-						<tr>
-							<td>Cargo de Grupo</td>
-							<td>Fecha de Asignación</td>
-							<td>Asignado por</td>
-						</tr>
-					</thead>
+              <tr>
+                <td>Cargo de Grupo</td>
+                <td>Fecha de Asignación</td>
+                <td>Asignado por</td>
+              </tr>
+            </thead>
+            <tbody>
+            <?php 
+      try{
+      $cuadro = $expe->seleccionar_cargoen($NisPerfil);
+      }catch(Exception $e){
+        echo "Ha ocurrido un error";
+      }
+      if($cuadro!=null)
+        {
+        foreach($cuadro AS $key => $bl)
+        {
+        $nomCargoen      = $bl['nomCargo'];
+        $fechacreacn      = $bl['fechaCrea'];
+        $usucreacn      = $bl['usuCrea'];
+        ?>
+              <tr>
+                <td><?=$nomCargoen?></td>
+                <td><?=$fechacreacn?></td>
+                <td><?=$usucreacn?></td>
+              </tr> 
+        <?php
+        
+        }
+        }else{
+         echo "No posee cargos Nacionales";
+        }
+        ?> 
+            </tbody>
 				</table>
         <!-- Large modal -->
   <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal1">Nuevo Cargo</button>
@@ -513,15 +525,16 @@
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel">Cargo Grupo</h4>
       </div>
-      <form action="../model/action/action_parentesco.php" method="POST" >
+      <form action="../model/action/action_cargoc.php" method="POST" >
         
       <div class="modal-body">
         
         <input type="hidden" name="miembro_nisMiem" id="miembro_nisMiem" value="<?=$nisMiem?>">
+         <input type="hidden" name="usuario" id="usuario" value="<?=$usuario?>">
         <label>
           Cargo:
         </label>
-        <select id="estilo_select" name="id_par" class="form-control">
+        <select id="estilo_select" name="id_cargoc" class="form-control">
                                      <?php
                           
                           $cgrup = $perfil->seleccionar_cargon(N); 
@@ -580,6 +593,46 @@
 				</tbody>
 				
 			</table>
+      <!-- Large modal -->
+  <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal2">Nivel de progresion</button>
+  <!-- Modal este es el modal tres -->
+<div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Progresion</h4>
+      </div>
+      <form action="../model/action/action_parentesco.php" method="POST" >
+        
+      <div class="modal-body">
+        
+        <input type="hidden" name="miembro_nisMiem" id="miembro_nisMiem" value="<?=$nisMiem?>">
+        <label>
+          Cargo:
+        </label>
+        <select id="estilo_select" name="id_par" class="form-control">
+                                     <?php
+                          
+                          $cgrup = $perfil->seleccionar_cargoc(G); 
+                          if($cgrup !=null){
+                          foreach ($cgrup AS $key => $info) {
+                           echo '<option value='.$info["idCargo"].'>'.$info["nomCargo"].'</option>';
+                            } 
+                          }else{
+                           echo '<option value="">No se encontro..</option>';
+                          }
+                                    ?>
+                                    
+                                </select>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary">Ingresar</button>
+      </form>
+      </div>
+    </div>
+  </div>
+  <!-- Modal end -->
 				
 			</div>
 		</div>
@@ -628,10 +681,10 @@
         <select id="estilo_select" name="id_par" class="form-control">
                                      <?php
                           
-                          $cgrup = $perfil->seleccionar_cargoc(G); 
-                          if($cgrup !=null){
-                          foreach ($cgrup AS $key => $info) {
-                           echo '<option value='.$info["idCargo"].'>'.$info["nomCargo"].'</option>';
+                          $logroe = $expe->seleccionar_logro(); 
+                          if($logroe !=null){
+                          foreach ($logroe AS $key => $info) {
+                           echo '<option value='.$info["idLogro"].'>'.$info["nomLogro"].'</option>';
                             } 
                           }else{
                            echo '<option value="">No se encontro..</option>';
