@@ -10,6 +10,8 @@ $('#Guardar_Sangre').click(function(){
    	alergias();
    	divdiscapacidades()
    	discapacidades()
+   	$("#Guardar_Sangre").prop( "disabled", true );
+   	$("#Modificar_Sangre").prop( "disabled", false );
 		});
 
 $('#Modificar_Sangre').click(function(){
